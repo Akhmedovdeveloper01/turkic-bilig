@@ -1,0 +1,40 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import EntryCard from '../../../components/EntryCard.astro';
+import { locales } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+
+const facts = await getCollection('scholarFacts');
+
+const items = await Promise.all(
+  facts.map(async (fact) => {
+    const slug = fact.id;
+    const localized = await getEntry('scholars', `${lang}/${slug}`);
+    const original = localized ?? (await getEntry('scholars', `uz/${slug}`));
+    return { slug, entry: original, isFallback: !localized };
+  })
+);
+---
+
+<BaseLayout lang={lang!} title={t('nav.scholars')}>
+  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.scholars')}</h1>
+  <ul class="grid gap-4 sm:grid-cols-2">
+    {items.map(({ slug, entry, isFallback }) => entry && (
+      <EntryCard
+        lang={lang!}
+        href={`/${lang}/allomalar/${slug}`}
+        title={entry.data.title}
+        summary={entry.data.summary}
+        isFallback={isFallback}
+      />
+    ))}
+  </ul>
+</BaseLayout>

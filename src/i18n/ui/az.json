@@ -24,7 +24,9 @@
     "changelog": "Dəyişikliklər tarixçəsi",
     "readMore": "Ətraflı oxu",
     "period": "Dövrü",
-    "capital": "Paytaxtı"
+    "capital": "Paytaxtı",
+    "field": "Sahə",
+    "approximate": "təxminən"
   },
   "translation": {
     "notTranslated": "Bu səhifə hələ {lang} dilinə tərcümə edilməyib. Aşağıda orijinal mətn göstərilir.",

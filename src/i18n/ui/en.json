@@ -24,7 +24,9 @@
     "changelog": "Changelog",
     "readMore": "Read more",
     "period": "Period",
-    "capital": "Capital"
+    "capital": "Capital",
+    "field": "Field",
+    "approximate": "approximate"
   },
   "translation": {
     "notTranslated": "This page has not yet been translated into {lang}. The original text is shown below.",

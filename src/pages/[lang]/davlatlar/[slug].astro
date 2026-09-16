@@ -33,6 +33,17 @@ const sourceEntries = facts
   ? await Promise.all(facts.data.sources.map((ref) => getEntry(ref)))
   : [];
 
+const allScholarFacts = await getCollection('scholarFacts');
+const relatedScholarFacts = allScholarFacts.filter((sf) =>
+  sf.data.relatedStates.some((ref) => ref.id === slug)
+);
+const scholarEntries = await Promise.all(
+  relatedScholarFacts.map(async (sf) => {
+    const localizedScholar = await getEntry('scholars', `${lang}/${sf.id}`);
+    return localizedScholar ?? (await getEntry('scholars', `uz/${sf.id}`));
+  })
+);
+
 function formatYear(year: number, era: 'm.av' | 'milodiy') {
   return era === 'm.av' ? `mil. av. ${year}` : `${year}`;
 }
@@ -69,6 +80,24 @@ function formatYear(year: number, era: 'm.av' | 'milodiy') {
   <article class="prose prose-slate max-w-none dark:prose-invert">
     <Content />
   </article>
+
+  {scholarEntries.length > 0 && (
+    <section class="mt-8">
+      <h2 class="mb-3 text-lg font-semibold text-ink">{t('nav.scholars')}</h2>
+      <ul class="flex flex-wrap gap-2">
+        {scholarEntries.map((s) => s && (
+          <li>
+            <a
+              href={`/${lang}/allomalar/${s.id.split('/').slice(1).join('/')}`}
+              class="inline-block rounded-full border border-line bg-surface-alt px-3 py-1 text-sm text-ink transition-colors hover:border-brand/40 hover:text-brand"
+            >
+              {s.data.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   {facts && <DisputedList lang={lang!} topics={facts.data.disputed} />}
 

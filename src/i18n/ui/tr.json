@@ -24,7 +24,9 @@
     "changelog": "Değişiklik geçmişi",
     "readMore": "Devamını oku",
     "period": "Dönem",
-    "capital": "Başkent"
+    "capital": "Başkent",
+    "field": "Alan",
+    "approximate": "yaklaşık"
   },
   "translation": {
     "notTranslated": "Bu sayfa henüz {lang} diline çevrilmedi. Aşağıda orijinal metin gösterilmektedir.",

@@ -9,7 +9,7 @@ import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 
 export async function getStaticPaths() {
-  const facts = await getCollection('peopleFacts');
+  const facts = await getCollection('scholarFacts');
   return locales.flatMap((locale) =>
     facts.map((fact) => ({ params: { lang: locale.code, slug: fact.id } }))
   );
@@ -18,11 +18,11 @@ export async function getStaticPaths() {
 const { lang, slug } = Astro.params;
 const t = createTranslator(lang!);
 
-const localized = await getEntry('peoples', `${lang}/${slug}`);
-const entry = localized ?? (await getEntry('peoples', `uz/${slug}`));
+const localized = await getEntry('scholars', `${lang}/${slug}`);
+const entry = localized ?? (await getEntry('scholars', `uz/${slug}`));
 
 if (!entry) {
-  return Astro.redirect(`/${lang}/xalqlar`);
+  return Astro.redirect(`/${lang}/allomalar`);
 }
 
 const isFallback = !localized;
@@ -35,21 +35,19 @@ const sourceEntries = facts
 
 const stateEntries = facts
   ? await Promise.all(
-      facts.data.historicalStates.map(async (ref) => {
+      facts.data.relatedStates.map(async (ref) => {
         const localizedState = await getEntry('states', `${lang}/${ref.id}`);
         return localizedState ?? (await getEntry('states', `uz/${ref.id}`));
       })
     )
   : [];
 
-const scholarEntries = facts
-  ? await Promise.all(
-      facts.data.scholars.map(async (ref) => {
-        const localizedScholar = await getEntry('scholars', `${lang}/${ref.id}`);
-        return localizedScholar ?? (await getEntry('scholars', `uz/${ref.id}`));
-      })
-    )
-  : [];
+function formatYear(year: number | undefined, era: 'm.av' | 'milodiy') {
+  if (year === undefined) return null;
+  return era === 'm.av' ? `mil. av. ${year}` : `${year}`;
+}
+const birth = facts ? formatYear(facts.data.birthYear, facts.data.birthEra) : null;
+const death = facts ? formatYear(facts.data.deathYear, facts.data.deathEra) : null;
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
@@ -62,18 +60,21 @@ const scholarEntries = facts
 
   <p class="mb-6 text-lg text-ink-muted">{entry.data.summary}</p>
 
-  {facts && facts.data.population.length > 0 && (
-    <section class="mb-6 rounded-xl border border-line bg-surface-alt p-5">
-      <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-ink-muted">
-        {t('common.summary')}: {t('nav.peoples')}
-      </h2>
-      <ul class="text-sm text-ink">
-        {facts.data.population.map((p) => (
-          <li>
-            {new Intl.NumberFormat(lang).format(p.value)} — {p.country} ({p.year})
-          </li>
-        ))}
-      </ul>
+  {facts && (
+    <section class="mb-6 flex flex-wrap gap-6 rounded-xl border border-line bg-surface-alt p-5 text-sm">
+      {(birth || death) && (
+        <div>
+          <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.period')}</p>
+          <p class="text-ink">
+            {birth ?? '?'} — {death ?? '?'}
+            {facts.data.datesUncertain && <span class="ms-1 text-xs text-gold">({t('common.approximate')})</span>}
+          </p>
+        </div>
+      )}
+      <div>
+        <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.field')}</p>
+        <p class="text-ink">{facts.data.field.join(', ')}</p>
+      </div>
     </section>
   )}
 
@@ -89,24 +90,6 @@ const scholarEntries = facts
           <li>
             <a
               href={`/${lang}/davlatlar/${s.id.split('/').slice(1).join('/')}`}
-              class="inline-block rounded-full border border-line bg-surface-alt px-3 py-1 text-sm text-ink transition-colors hover:border-brand/40 hover:text-brand"
-            >
-              {s.data.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  {scholarEntries.length > 0 && (
-    <section class="mt-8">
-      <h2 class="mb-3 text-lg font-semibold text-ink">{t('nav.scholars')}</h2>
-      <ul class="flex flex-wrap gap-2">
-        {scholarEntries.map((s) => s && (
-          <li>
-            <a
-              href={`/${lang}/allomalar/${s.id.split('/').slice(1).join('/')}`}
               class="inline-block rounded-full border border-line bg-surface-alt px-3 py-1 text-sm text-ink transition-colors hover:border-brand/40 hover:text-brand"
             >
               {s.data.title}

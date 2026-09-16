@@ -24,7 +24,9 @@
     "changelog": "O'zgarishlar tarixi",
     "readMore": "Batafsil o'qish",
     "period": "Davri",
-    "capital": "Poytaxti"
+    "capital": "Poytaxti",
+    "field": "Soha",
+    "approximate": "taxminiy"
   },
   "translation": {
     "notTranslated": "Bu sahifa hali {lang} tiliga tarjima qilinmagan. Quyida asl matn ko'rsatilmoqda.",

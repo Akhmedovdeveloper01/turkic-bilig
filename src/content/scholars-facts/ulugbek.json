@@ -1,0 +1,12 @@
+{
+  "birthYear": 1394,
+  "birthEra": "milodiy",
+  "deathYear": 1449,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["astronomiya", "matematika", "davlat boshqaruvi"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["temuriylar"],
+  "sources": ["golden-1992", "findley-2005"],
+  "verified": false
+}

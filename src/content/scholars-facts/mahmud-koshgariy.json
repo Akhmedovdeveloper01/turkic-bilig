@@ -1,0 +1,12 @@
+{
+  "birthYear": 1005,
+  "birthEra": "milodiy",
+  "deathYear": 1102,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["tilshunoslik", "leksikografiya"],
+  "relatedPeoples": [],
+  "relatedStates": ["qoraxoniylar"],
+  "sources": ["golden-1992", "devonu-lugotit-turk"],
+  "verified": false
+}

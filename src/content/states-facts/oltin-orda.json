@@ -1,0 +1,20 @@
+{
+  "endonym": "Oltin O'rda",
+  "period": {
+    "startYear": 1242,
+    "startEra": "milodiy",
+    "endYear": 1502,
+    "endEra": "milodiy"
+  },
+  "capital": "Saroy (Saroy-Botu, keyinchalik Saroy-Berka)",
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Oltin O'rda siyosiy jihatdan Chingizxon avlodlari (mo'g'ul sulolasi) tomonidan asos solingan bo'lsa-da, davlatning tili va madaniyati tez orada qipchoq-turkiy tusga kirgan; shu sababli uni \"mo'g'ul\" yoki \"turkiy\" davlat sifatida yagona tasniflash soddalashtirish bo'ladi",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

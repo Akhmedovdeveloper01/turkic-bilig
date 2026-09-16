@@ -6,7 +6,7 @@
   ],
   "regions": ["Markaziy Osiyo", "Eron (shimoliy-sharqiy)", "Afg'oniston (shimoliy-g'arbiy)"],
   "religion": ["Islom (sunniylik)"],
-  "historicalStates": [],
+  "historicalStates": ["saljuqiylar"],
   "scholars": [],
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false,

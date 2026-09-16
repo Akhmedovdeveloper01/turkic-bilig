@@ -1,0 +1,20 @@
+{
+  "endonym": "Kök Türk",
+  "period": {
+    "startYear": 552,
+    "startEra": "milodiy",
+    "endYear": 744,
+    "endEra": "milodiy"
+  },
+  "capital": "Ötüken",
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "552-744 oralig'ida xoqonlik bir necha bor Sharqiy va G'arbiy qismlarga bo'lingan hamda vaqtincha Xitoy hukmronligi ostida bo'lgan; shu sababli \"yagona davlat\" sifatida tasvirlash soddalashtirish bo'lishi mumkin",
+      "sourceIds": ["golden-1992", "sinor-1990"]
+    }
+  ]
+}

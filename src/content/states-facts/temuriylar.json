@@ -1,0 +1,20 @@
+{
+  "endonym": "Temuriylar",
+  "period": {
+    "startYear": 1370,
+    "startEra": "milodiy",
+    "endYear": 1507,
+    "endEra": "milodiy"
+  },
+  "capital": "Samarqand (keyinchalik Hirot)",
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992", "findley-2005"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Temuriylar sulolasi va uning madaniyati tarixiy adabiyotda ko'pincha \"turkiy-mo'g'ul\" yoki \"turk-fors\" (Turko-Persian) sintezi sifatida tavsiflanadi; sulolaning etnik/madaniy o'ziga xosligini yagona bir tomonlama yorliq bilan belgilash tarixchilar orasida soddalashtirish hisoblanadi",
+      "sourceIds": ["golden-1992", "findley-2005"]
+    }
+  ]
+}

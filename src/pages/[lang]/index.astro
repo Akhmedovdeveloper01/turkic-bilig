@@ -47,12 +47,15 @@ const t = createTranslator(lang!);
       <p class="text-sm text-ink-muted">{t('home.topicsCardDesc')}</p>
     </a>
 
-    <div class="rounded-2xl border border-dashed border-line p-6 opacity-60">
-      <svg viewBox="0 0 24 24" class="mb-4 h-8 w-8 text-ink-muted" fill="none" stroke="currentColor" stroke-width="1.6">
+    <a
+      href={`/${lang}/davlatlar`}
+      class="group rounded-2xl border border-line bg-surface-alt p-6 transition-colors hover:border-brand/40"
+    >
+      <svg viewBox="0 0 24 24" class="mb-4 h-8 w-8 text-brand" fill="none" stroke="currentColor" stroke-width="1.6">
         <path d="M4 21V10l8-6 8 6v11M4 21h16M9 21v-6h6v6" />
       </svg>
-      <h2 class="mb-1 font-semibold text-ink">{t('home.statesCardTitle')}</h2>
+      <h2 class="mb-1 font-semibold text-ink group-hover:text-brand">{t('home.statesCardTitle')}</h2>
       <p class="text-sm text-ink-muted">{t('home.statesCardDesc')}</p>
-    </div>
+    </a>
   </section>
 </BaseLayout>

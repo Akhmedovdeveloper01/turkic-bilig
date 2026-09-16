@@ -6,7 +6,7 @@
   ],
   "regions": ["Anadolu", "Sharqiy Frakiya", "G'arbiy Yevropa (diaspora)"],
   "religion": ["Islom (sunniylik ko'pchilik, alaviylik ozchilik)"],
-  "historicalStates": [],
+  "historicalStates": ["saljuqiylar", "usmonli-imperiyasi"],
   "scholars": [],
   "sources": ["golden-1992", "findley-2005", "un-desa-2024"],
   "verified": false,

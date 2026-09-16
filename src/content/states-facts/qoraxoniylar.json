@@ -1,0 +1,20 @@
+{
+  "endonym": "Qoraxoniylar",
+  "period": {
+    "startYear": 840,
+    "startEra": "milodiy",
+    "endYear": 1212,
+    "endEra": "milodiy"
+  },
+  "capital": "Balasog'un / Qashg'ar / Samarqand",
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Qoraxoniylar davlatini tashkil etgan qabilalar ittifoqining aniq tarkibi (qarluq, chigil, yag'mo va boshqa guruhlarning nisbati) manbalarda to'liq bir xil talqin qilinmaydi",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

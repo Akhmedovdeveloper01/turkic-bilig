@@ -6,7 +6,7 @@
   ],
   "regions": ["Markaziy Osiyo", "Afg'oniston (shimoliy)", "Tojikiston", "Qirg'iziston", "Turkmaniston"],
   "religion": ["Islom (sunniylik)"],
-  "historicalStates": [],
+  "historicalStates": ["qoraxoniylar", "temuriylar"],
   "scholars": [],
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false,

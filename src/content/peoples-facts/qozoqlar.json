@@ -6,7 +6,7 @@
   ],
   "regions": ["Markaziy Osiyo", "Xitoy (Shinjon)", "Rossiya", "Mo'g'uliston", "O'zbekiston"],
   "religion": ["Islom (sunniylik)"],
-  "historicalStates": [],
+  "historicalStates": ["oltin-orda"],
   "scholars": [],
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false

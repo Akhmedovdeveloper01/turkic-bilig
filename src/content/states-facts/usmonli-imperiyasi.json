@@ -1,0 +1,14 @@
+{
+  "endonym": "Osmanlı Devleti",
+  "period": {
+    "startYear": 1299,
+    "startEra": "milodiy",
+    "endYear": 1922,
+    "endEra": "milodiy"
+  },
+  "capital": "Bursa / Adirna (Edirne) / Istanbul",
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992", "findley-2005"],
+  "verified": false
+}

@@ -1,0 +1,57 @@
+{
+  "site": {
+    "title": "Turkic Bilig",
+    "description": "Türk Xalqları Ensiklopediyası"
+  },
+  "nav": {
+    "home": "Ana səhifə",
+    "peoples": "Xalqlar",
+    "states": "Dövlətlər",
+    "scholars": "Alimlər",
+    "topics": "Mövzular",
+    "search": "Axtarış"
+  },
+  "common": {
+    "summary": "Qısaca",
+    "details": "Ətraflı",
+    "sources": "Mənbələr",
+    "verified": "Təsdiqlənib",
+    "underReview": "Yoxlanılır",
+    "disputed": "Mübahisəli mövzu",
+    "reportError": "Xəta barədə bildir",
+    "lastReviewed": "Son yoxlama tarixi",
+    "reviewers": "Rəyçilər",
+    "changelog": "Dəyişikliklər tarixçəsi",
+    "readMore": "Ətraflı oxu",
+    "period": "Dövrü",
+    "capital": "Paytaxtı"
+  },
+  "translation": {
+    "notTranslated": "Bu səhifə hələ {lang} dilinə tərcümə edilməyib. Aşağıda orijinal mətn göstərilir.",
+    "machineWarning": "Bu tərcümə maşın tərəfindən edilib və hələ insan tərəfindən yoxlanılmayıb.",
+    "outdated": "Orijinal mətn yenilənib; bu tərcümə hazırda yoxlanılır."
+  },
+  "languageSwitcher": {
+    "turkic": "Türk dilləri",
+    "other": "Digər dillər",
+    "label": "Dili seçin"
+  },
+  "footer": {
+    "sourceCode": "Mənbə kodu",
+    "rights": "Bütün hüquqlar qorunur"
+  },
+  "topics": {
+    "capitalsMapTitle": "Paytaxtlar xəritədə",
+    "capitalsMapNote": "Xəritədə yalnız paytaxt şəhərlərinin coğrafi yerləşməsi göstərilir — bu tarixi sərhədlərin dəqiq təsviri deyil."
+  },
+  "home": {
+    "heroTagline": "Elmi mənbələrə əsaslanan, açıq türk xalqları ensiklopediyası",
+    "heroLead": "Mənşəyi, dili, coğrafiyası, tarixi və mədəniyyəti — hər bir iddia bir mənbəyə bağlıdır.",
+    "peoplesCardTitle": "Xalqlar",
+    "peoplesCardDesc": "Mənşəyi, dili, coğrafiyası və tarixi",
+    "topicsCardTitle": "Ümumi mövzular",
+    "topicsCardDesc": "Etnogenez, dil təsnifatı, dövlətlərin xronologiyası",
+    "statesCardTitle": "Dövlətlər",
+    "statesCardDesc": "Tarixi xaqanlıqlar və imperiyalar"
+  }
+}

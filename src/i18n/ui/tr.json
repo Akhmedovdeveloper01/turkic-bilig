@@ -1,0 +1,57 @@
+{
+  "site": {
+    "title": "Turkic Bilig",
+    "description": "Türk Halkları Ansiklopedisi"
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "peoples": "Halklar",
+    "states": "Devletler",
+    "scholars": "Bilginler",
+    "topics": "Konular",
+    "search": "Ara"
+  },
+  "common": {
+    "summary": "Özet",
+    "details": "Ayrıntılar",
+    "sources": "Kaynaklar",
+    "verified": "Doğrulandı",
+    "underReview": "İncelemede",
+    "disputed": "Tartışmalı konu",
+    "reportError": "Hata bildir",
+    "lastReviewed": "Son inceleme tarihi",
+    "reviewers": "İncelemeciler",
+    "changelog": "Değişiklik geçmişi",
+    "readMore": "Devamını oku",
+    "period": "Dönem",
+    "capital": "Başkent"
+  },
+  "translation": {
+    "notTranslated": "Bu sayfa henüz {lang} diline çevrilmedi. Aşağıda orijinal metin gösterilmektedir.",
+    "machineWarning": "Bu çeviri makine tarafından yapılmıştır ve henüz bir insan tarafından incelenmemiştir.",
+    "outdated": "Orijinal metin güncellendi; bu çeviri şu anda inceleniyor."
+  },
+  "languageSwitcher": {
+    "turkic": "Türk dilleri",
+    "other": "Diğer diller",
+    "label": "Dil seçin"
+  },
+  "footer": {
+    "sourceCode": "Kaynak kod",
+    "rights": "Tüm hakları saklıdır"
+  },
+  "topics": {
+    "capitalsMapTitle": "Haritada başkentler",
+    "capitalsMapNote": "Haritada yalnızca başkent şehirlerinin coğrafi konumu gösterilmektedir — bu tarihi sınırların kesin bir tasviri değildir."
+  },
+  "home": {
+    "heroTagline": "Bilimsel kaynaklara dayanan, açık Türk halkları ansiklopedisi",
+    "heroLead": "Köken, dil, coğrafya, tarih ve kültür — her iddia bir kaynağa bağlı.",
+    "peoplesCardTitle": "Halklar",
+    "peoplesCardDesc": "Köken, dil, coğrafya ve tarih",
+    "topicsCardTitle": "Genel konular",
+    "topicsCardDesc": "Etnogenez, dil sınıflandırması, devletler kronolojisi",
+    "statesCardTitle": "Devletler",
+    "statesCardDesc": "Tarihi hakanlıklar ve imparatorluklar"
+  }
+}

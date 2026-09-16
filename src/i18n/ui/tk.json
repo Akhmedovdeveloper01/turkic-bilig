@@ -1,0 +1,57 @@
+{
+  "site": {
+    "title": "Turkic Bilig",
+    "description": "Türki Halklaryň Ensiklopediýasy"
+  },
+  "nav": {
+    "home": "Baş sahypa",
+    "peoples": "Halklar",
+    "states": "Döwletler",
+    "scholars": "Alymlar",
+    "topics": "Temalar",
+    "search": "Gözleg"
+  },
+  "common": {
+    "summary": "Gysgaça",
+    "details": "Jikme-jik",
+    "sources": "Çeşmeler",
+    "verified": "Tassyklanan",
+    "underReview": "Barlanýar",
+    "disputed": "Jedelli mesele",
+    "reportError": "Ýalňyşlyk barada habar ber",
+    "lastReviewed": "Soňky barlag senesi",
+    "reviewers": "Synçylar",
+    "changelog": "Üýtgeşmeler taryhy",
+    "readMore": "Doly oka",
+    "period": "Döwri",
+    "capital": "Paýtagty"
+  },
+  "translation": {
+    "notTranslated": "Bu sahypa entek {lang} diline terjime edilmedi. Aşakda asyl tekst görkezilýär.",
+    "machineWarning": "Bu terjime maşyn tarapyndan edildi we entek adam tarapyndan barlanmady.",
+    "outdated": "Asyl tekst täzelendi; bu terjime häzir barlanýar."
+  },
+  "languageSwitcher": {
+    "turkic": "Türki diller",
+    "other": "Beýleki diller",
+    "label": "Dili saýlaň"
+  },
+  "footer": {
+    "sourceCode": "Çeşme kody",
+    "rights": "Ähli hukuklar goralan"
+  },
+  "topics": {
+    "capitalsMapTitle": "Paýtagtlar kartada",
+    "capitalsMapNote": "Kartada diňe paýtagt şäherleriniň geografik ýerleşişi görkezilýär — bu taryhy serhetleriň takyk şekili däl."
+  },
+  "home": {
+    "heroTagline": "Ylmy çeşmelere esaslanan, açyk türki halklaryň ensiklopediýasy",
+    "heroLead": "Gelip çykyşy, dili, geografiýasy, taryhy we medeniýeti — her bir pikir bir çeşmä baglanan.",
+    "peoplesCardTitle": "Halklar",
+    "peoplesCardDesc": "Gelip çykyşy, dili, geografiýasy we taryhy",
+    "topicsCardTitle": "Umumy temalar",
+    "topicsCardDesc": "Etnogenez, dil klassifikasiýasy, döwletleriň hronologiýasy",
+    "statesCardTitle": "Döwletler",
+    "statesCardDesc": "Taryhy hakanlyklar we imperiýalar"
+  }
+}

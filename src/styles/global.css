@@ -1,2 +1,46 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/*
+ * Turkic Bilig dizayn tokenlari.
+ * Rang tanlovi turkiy madaniy ramzlarga asoslangan:
+ *  - "ko'k" (turkuaz-moviy) — Ko'k Turk xoqonligi va osmon ramzi
+ *  - terrakota — Samarqand/Buxoro koshinkorligida keng uchraydigan urg'u rang
+ *  - oltin — qo'lyozma bezaklari, "tasdiqlangan" holat uchun urg'u
+ * Qorong'i rejim shu o'zgaruvchilarni qayta belgilash orqali ishlaydi —
+ * utility klasslar (bg-surface, text-ink va h.k.) o'zgarishsiz qoladi.
+ */
+@theme {
+  --color-surface: #faf8f4;
+  --color-surface-alt: #f2ece0;
+  --color-ink: #1c1a17;
+  --color-ink-muted: #5b564c;
+  --color-line: #e4ddd0;
+  --color-brand: #0e7c86;
+  --color-brand-dark: #0a5a62;
+  --color-accent: #c1553a;
+  --color-accent-soft: #f3e3dc;
+  --color-gold: #a9821f;
+  --color-gold-soft: #f4ecd3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: #14181a;
+    --color-surface-alt: #1b2124;
+    --color-ink: #f2ede4;
+    --color-ink-muted: #b3ac9f;
+    --color-line: #2c3336;
+    --color-brand: #35b6c0;
+    --color-brand-dark: #1c8890;
+    --color-accent: #e2896a;
+    --color-accent-soft: #3a2620;
+    --color-gold: #dcb949;
+    --color-gold-soft: #3a331c;
+  }
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}

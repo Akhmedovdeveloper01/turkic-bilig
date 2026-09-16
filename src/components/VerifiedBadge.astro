@@ -1,0 +1,20 @@
+---
+import { createTranslator } from '../i18n/ui';
+
+interface Props {
+  lang: string;
+  verified: boolean;
+}
+const { lang, verified } = Astro.props;
+const t = createTranslator(lang);
+---
+
+{verified ? (
+  <span class="inline-flex items-center gap-1 rounded-full bg-brand/10 px-2.5 py-0.5 text-xs font-medium text-brand-dark">
+    {t('common.verified')}
+  </span>
+) : (
+  <span class="inline-flex items-center gap-1 rounded-full bg-gold-soft px-2.5 py-0.5 text-xs font-medium text-gold">
+    {t('common.underReview')}
+  </span>
+)}

@@ -37,5 +37,15 @@
   "footer": {
     "sourceCode": "Source code",
     "rights": "All rights reserved"
+  },
+  "home": {
+    "heroTagline": "An open encyclopedia of Turkic peoples, grounded in scholarly sources",
+    "heroLead": "Origins, language, geography, history, and culture — every claim tied to a source.",
+    "peoplesCardTitle": "Peoples",
+    "peoplesCardDesc": "Origins, language, geography, and history",
+    "topicsCardTitle": "General topics",
+    "topicsCardDesc": "Ethnogenesis, language classification, chronology of states",
+    "statesCardTitle": "States",
+    "statesCardDesc": "Historical khaganates and empires (coming soon)"
   }
 }

@@ -1,0 +1,30 @@
+---
+import { createTranslator } from '../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lang: string;
+  sources: (CollectionEntry<'sources'> | undefined)[];
+}
+const { lang, sources } = Astro.props;
+const t = createTranslator(lang);
+---
+
+{sources.length > 0 && (
+  <section class="mt-8 border-t border-line pt-5">
+    <h2 class="mb-3 text-lg font-semibold text-ink">{t('common.sources')}</h2>
+    <ul class="space-y-1.5 text-sm text-ink-muted">
+      {sources.map((s) => s && (
+        <li>
+          {s.data.author}, <em class="text-ink">{s.data.title}</em>
+          {s.data.year ? ` (${s.data.year})` : ''}
+          {s.data.status === 'tekshirilishi-kerak' && (
+            <span class="ms-2 rounded bg-gold-soft px-1.5 py-0.5 text-xs font-medium text-gold">
+              {t('common.underReview')}
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

@@ -1,0 +1,18 @@
+---
+/**
+ * Logotip belgisi: ikkita bir-biriga 45° burchak ostida qo'yilgan kvadratdan
+ * hosil bo'lgan sakkiz qirrali yulduz — Markaziy Osiyo va keng turkiy-islom
+ * me'morchiligida (koshinkorlik, ganchkorlik) keng tarqalgan geometrik
+ * bezak. Bironta aniq davlat ramzi bilan bog'liq emas, shu sababli
+ * umumturkiy kontekstga mos.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-6 w-6' } = Astro.props;
+---
+
+<svg viewBox="0 0 24 24" class={className} aria-hidden="true">
+  <rect x="5" y="5" width="14" height="14" fill="currentColor" />
+  <rect x="5" y="5" width="14" height="14" fill="currentColor" transform="rotate(45 12 12)" />
+</svg>

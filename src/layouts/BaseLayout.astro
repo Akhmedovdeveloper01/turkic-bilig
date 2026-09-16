@@ -4,6 +4,8 @@ import { getLocale, defaultLocale } from '../i18n/locales';
 import { SCRIPT_FONT_IMPORTS, SCRIPT_FONT_WEIGHT_IMPORTS } from '../i18n/fonts';
 import { createTranslator } from '../i18n/ui';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import Logo from '../components/Logo.astro';
+import OrnamentDivider from '../components/OrnamentDivider.astro';
 
 interface Props {
   lang: string;
@@ -31,26 +33,36 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
     <title>{pageTitle}</title>
     <meta name="description" content={description ?? t('site.description')} />
   </head>
-  <body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100" style="font-family: var(--font-sans);">
-    <header class="border-b border-slate-200 dark:border-slate-800">
-      <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-        <a href={`/${locale.code}/`} class="font-semibold">
-          {t('site.title')}
+  <body class="min-h-screen bg-surface text-ink antialiased" style="font-family: var(--font-sans);">
+    <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <a href={`/${locale.code}/`} class="flex items-center gap-2 text-brand">
+          <Logo class="h-6 w-6" />
+          <span class="text-lg font-semibold tracking-tight text-ink">{t('site.title')}</span>
         </a>
-        <nav class="flex items-center gap-4 text-sm">
-          <a href={`/${locale.code}/xalqlar`}>{t('nav.peoples')}</a>
-          <a href={`/${locale.code}/davlatlar`}>{t('nav.states')}</a>
-          <a href={`/${locale.code}/allomalar`}>{t('nav.scholars')}</a>
-          <a href={`/${locale.code}/mavzular`}>{t('nav.topics')}</a>
+        <nav class="flex items-center gap-5">
+          <a href={`/${locale.code}/xalqlar`} class="hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
+            {t('nav.peoples')}
+          </a>
+          <a href={`/${locale.code}/mavzular`} class="hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
+            {t('nav.topics')}
+          </a>
           <LanguageSwitcher currentLang={locale.code} />
         </nav>
       </div>
+      <OrnamentDivider class="text-brand/25" />
     </header>
-    <main class="mx-auto max-w-5xl px-4 py-8">
+    <main class="mx-auto max-w-6xl px-4 py-10">
       <slot />
     </main>
-    <footer class="border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
-      <p>Turkic Bilig — {t('footer.rights')}</p>
+    <footer class="mt-16">
+      <OrnamentDivider class="text-line" />
+      <div class="mx-auto max-w-6xl px-4 py-8 text-center text-sm text-ink-muted">
+        <p class="flex items-center justify-center gap-1.5">
+          <Logo class="h-4 w-4 text-brand" />
+          Turkic Bilig — {t('footer.rights')}
+        </p>
+      </div>
     </footer>
   </body>
 </html>

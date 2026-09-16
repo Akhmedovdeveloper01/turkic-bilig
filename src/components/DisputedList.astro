@@ -1,0 +1,26 @@
+---
+import { createTranslator } from '../i18n/ui';
+
+interface Props {
+  lang: string;
+  topics: { topic: string }[];
+}
+const { lang, topics } = Astro.props;
+const t = createTranslator(lang);
+---
+
+{topics.length > 0 && (
+  <section class="mt-8 rounded-xl border border-accent/30 bg-accent-soft p-5">
+    <h2 class="mb-2 flex items-center gap-2 text-lg font-semibold text-ink">
+      <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 9v4M12 17h.01M10.3 3.9 2.6 18a2 2 0 0 0 1.8 3h15.2a2 2 0 0 0 1.8-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
+      </svg>
+      {t('common.disputed')}
+    </h2>
+    <ul class="list-disc ps-5 text-sm text-ink-muted">
+      {topics.map((d) => (
+        <li>{d.topic}</li>
+      ))}
+    </ul>
+  </section>
+)}

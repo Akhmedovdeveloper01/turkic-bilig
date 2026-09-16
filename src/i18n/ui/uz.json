@@ -37,5 +37,15 @@
   "footer": {
     "sourceCode": "Manba kodi",
     "rights": "Barcha huquqlar himoyalangan"
+  },
+  "home": {
+    "heroTagline": "Ilmiy manbalarga asoslangan, ochiq turkiy xalqlar ensiklopediyasi",
+    "heroLead": "Kelib chiqishi, tili, joylashuvi, tarixi va madaniyati — har bir da'vo manbaga bog'langan holda.",
+    "peoplesCardTitle": "Xalqlar",
+    "peoplesCardDesc": "Kelib chiqishi, tili, joylashuvi va tarixi",
+    "topicsCardTitle": "Umumiy mavzular",
+    "topicsCardDesc": "Etnogenez, til tasnifi, davlatlar xronologiyasi",
+    "statesCardTitle": "Davlatlar",
+    "statesCardDesc": "Tarixiy xoqonlik va imperiyalar (tez orada)"
   }
 }

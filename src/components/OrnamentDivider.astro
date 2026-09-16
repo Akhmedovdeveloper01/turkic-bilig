@@ -1,0 +1,20 @@
+---
+/**
+ * Nozik zigzag chizig'i — Markaziy Osiyo kigiz gilamlari va to'qimachiligida
+ * keng uchraydigan "bo'ri tishi" naqshiga ishora. `currentColor`dan
+ * foydalanadi, shuning uchun matn rangi klassi (masalan text-line yoki
+ * text-brand/30) orqali boshqariladi va yorug'/qorong'i rejimda avtomatik
+ * moslashadi.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = 'text-line' } = Astro.props;
+---
+
+<div
+  class={`h-2 w-full ${className}`}
+  style="background-image: linear-gradient(135deg, currentColor 25%, transparent 25%), linear-gradient(225deg, currentColor 25%, transparent 25%); background-position: 0 0, 6px 0; background-size: 12px 8px; background-repeat: repeat-x;"
+  aria-hidden="true"
+>
+</div>

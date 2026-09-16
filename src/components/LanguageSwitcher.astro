@@ -18,18 +18,31 @@ function pathFor(code: string): string {
 }
 ---
 
-<details class="relative">
-  <summary class="cursor-pointer list-none rounded border border-slate-300 px-2 py-1 dark:border-slate-700">
+<details class="group relative">
+  <summary
+    class="flex cursor-pointer list-none items-center gap-1.5 rounded-full border border-line bg-surface-alt px-3 py-1.5 text-sm font-medium text-ink transition-colors hover:border-brand/40 hover:text-brand"
+  >
+    <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" />
+    </svg>
     {t('languageSwitcher.label')}
   </summary>
-  <div class="absolute end-0 z-10 mt-2 w-56 rounded border border-slate-200 bg-white p-3 shadow-lg dark:border-slate-700 dark:bg-slate-800">
-    <p class="mb-1 text-xs font-semibold uppercase text-slate-500">{t('languageSwitcher.turkic')}</p>
-    <ul class="mb-3">
+  <div
+    class="absolute end-0 z-10 mt-2 w-64 rounded-xl border border-line bg-surface p-3 shadow-lg shadow-ink/5"
+  >
+    <p class="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wide text-ink-muted">
+      {t('languageSwitcher.turkic')}
+    </p>
+    <ul class="mb-3 grid grid-cols-2 gap-0.5">
       {turkicLocales.map((locale) => (
         <li>
           <a
             href={pathFor(locale.code)}
-            class="block rounded px-2 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            class:list={[
+              'block rounded-md px-2 py-1 text-sm transition-colors hover:bg-surface-alt hover:text-brand',
+              locale.code === currentLang ? 'font-semibold text-brand' : 'text-ink',
+            ]}
             aria-current={locale.code === currentLang ? 'true' : undefined}
           >
             {locale.endonym}
@@ -37,13 +50,18 @@ function pathFor(code: string): string {
         </li>
       ))}
     </ul>
-    <p class="mb-1 text-xs font-semibold uppercase text-slate-500">{t('languageSwitcher.other')}</p>
-    <ul>
+    <p class="mb-1.5 px-1 text-xs font-semibold uppercase tracking-wide text-ink-muted">
+      {t('languageSwitcher.other')}
+    </p>
+    <ul class="grid grid-cols-2 gap-0.5">
       {otherLocales.map((locale) => (
         <li>
           <a
             href={pathFor(locale.code)}
-            class="block rounded px-2 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            class:list={[
+              'block rounded-md px-2 py-1 text-sm transition-colors hover:bg-surface-alt hover:text-brand',
+              locale.code === currentLang ? 'font-semibold text-brand' : 'text-ink',
+            ]}
             aria-current={locale.code === currentLang ? 'true' : undefined}
           >
             {locale.endonym}

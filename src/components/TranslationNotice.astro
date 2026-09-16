@@ -1,0 +1,15 @@
+---
+import { createTranslator } from '../i18n/ui';
+import { getLocale, defaultLocale } from '../i18n/locales';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+const t = createTranslator(lang);
+const endonym = (getLocale(lang) ?? getLocale(defaultLocale)!).endonym;
+---
+
+<p class="mb-6 rounded-lg border border-gold/40 bg-gold-soft px-4 py-3 text-sm text-ink">
+  {t('translation.notTranslated', { lang: endonym })}
+</p>

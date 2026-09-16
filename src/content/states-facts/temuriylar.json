@@ -11,6 +11,14 @@
     { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
     { "name": "Hirot", "lat": 34.3529, "lng": 62.204 }
   ],
+  "extentPoints": [
+    { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
+    { "name": "Buxoro", "lat": 39.77, "lng": 64.42 },
+    { "name": "Tabriz", "lat": 38.08, "lng": 46.29 },
+    { "name": "Isfahon", "lat": 32.6546, "lng": 51.668 },
+    { "name": "Kobul", "lat": 34.56, "lng": 69.21 },
+    { "name": "Hirot", "lat": 34.3529, "lng": 62.204 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],

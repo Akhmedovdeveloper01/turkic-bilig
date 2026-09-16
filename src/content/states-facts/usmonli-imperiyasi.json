@@ -12,8 +12,22 @@
     { "name": "Adirna (Edirne)", "lat": 41.6771, "lng": 26.5557 },
     { "name": "Istanbul", "lat": 41.0082, "lng": 28.9784 }
   ],
+  "extentPoints": [
+    { "name": "Budapesht atrofi", "lat": 47.5, "lng": 19.05 },
+    { "name": "Istanbul", "lat": 41.0082, "lng": 28.9784 },
+    { "name": "Bag'dod", "lat": 33.3, "lng": 44.36 },
+    { "name": "Makka atrofi", "lat": 21.4, "lng": 39.8 },
+    { "name": "Qohira", "lat": 30.04, "lng": 31.24 },
+    { "name": "Jazoir atrofi", "lat": 36.75, "lng": 3.06 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],
-  "verified": false
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Usmonli imperiyasi 623 yil davomida mavjud bo'lgan (1299-1922); uning hududi bu davr mobaynida keskin o'zgargan — 1299-yildagi kichik beklikdan XVI-XVII asrlardagi uch qit'aga yoyilgan imperiyagacha. Xaritadagi taxminiy hudud faqat eng katta yoyilish davriga (taxminan XVI-XVII asrlar) tegishli, butun mavjudlik davri uchun emas",
+      "sourceIds": ["findley-2005"]
+    }
+  ]
 }

@@ -46,6 +46,11 @@
     "originMapTitle": "Origins and spread",
     "originMapNote": "The red point is the hypothesized ancient homeland of the Turkic peoples (a scholarly theory, not an established fact). Blue points are each people's main present-day location. The connecting lines are schematic and do not represent an exact historical migration route."
   },
+  "states": {
+    "territoryMapTitle": "Approximate extent",
+    "territoryMapNote": "This is not a border — it is a schematic shape illustrating the general extent described in the text, roughly corresponding to the state's period of greatest expansion.",
+    "territoryPopup": "Approximate, schematic extent — not a precise historical border."
+  },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",
     "capitalsMapNote": "The map only shows the geographic location of capital cities — it is not a depiction of historical borders."

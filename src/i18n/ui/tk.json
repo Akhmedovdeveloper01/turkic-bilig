@@ -46,6 +46,11 @@
     "originMapTitle": "Gelip çykyşy we ýaýrawy",
     "originMapNote": "Gyzyl nokat türki halklaryň çak edilýän ilkinji watanydyr (ylmy nazaryýet, takyk fakt däl). Gök nokatlar her halkyň häzirki esasy ýerleşýän ýeridir. Birikdiriji çyzyklar şertli bolup, takyk taryhy göçüş ýoluny aňlatmaýar."
   },
+  "states": {
+    "territoryMapTitle": "Takmyny giňişlik",
+    "territoryMapNote": "Bu serhet däl — tekstde beýan edilen umumy ýaýrawy görkezýän şertli şekil, döwletiň iň giň ýaýran döwrüne takmynan gabat gelýär.",
+    "territoryPopup": "Takmyny, şertli giňişlik — takyk taryhy serhet däl."
+  },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",
     "capitalsMapNote": "Kartada diňe paýtagt şäherleriniň geografik ýerleşişi görkezilýär — bu taryhy serhetleriň takyk şekili däl."

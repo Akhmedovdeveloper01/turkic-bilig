@@ -113,6 +113,20 @@ const stateFacts = defineCollection({
         })
       )
       .default([]),
+    /** Taxminiy hudud shakli — aniq tarixiy CHEGARA emas (bunga hali
+     * tekshirilgan GeoJSON manba yo'q), balki matnda tasvirlangan umumiy
+     * yoyilish yo'nalishini ko'rsatuvchi sxematik ko'pburchak uchun
+     * chegaraviy nuqtalar. Har doim aniq ogohlantirish bilan birga
+     * ko'rsatiladi. */
+    extentPoints: z
+      .array(
+        z.object({
+          name: z.string(),
+          lat: z.number(),
+          lng: z.number(),
+        })
+      )
+      .default([]),
     predecessors: z.array(reference('stateFacts')).default([]),
     successors: z.array(reference('stateFacts')).default([]),
     sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),

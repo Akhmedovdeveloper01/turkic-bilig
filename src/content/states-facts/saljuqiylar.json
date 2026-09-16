@@ -12,6 +12,12 @@
     { "name": "Ray", "lat": 35.5892, "lng": 51.4381 },
     { "name": "Isfahon", "lat": 32.6546, "lng": 51.668 }
   ],
+  "extentPoints": [
+    { "name": "Marv", "lat": 37.66, "lng": 62.19 },
+    { "name": "Tbilisi atrofi", "lat": 41.72, "lng": 44.78 },
+    { "name": "Bag'dod", "lat": 33.3, "lng": 44.36 },
+    { "name": "Isfahon", "lat": 32.6546, "lng": 51.668 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],

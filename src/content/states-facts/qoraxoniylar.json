@@ -12,6 +12,14 @@
     { "name": "Qashg'ar", "lat": 39.4704, "lng": 75.9898 },
     { "name": "Samarqand", "lat": 39.627, "lng": 66.975 }
   ],
+  "extentPoints": [
+    { "name": "Talas", "lat": 42.5, "lng": 72.2 },
+    { "name": "Balasog'un", "lat": 42.84, "lng": 75.31 },
+    { "name": "Qashg'ar", "lat": 39.4704, "lng": 75.9898 },
+    { "name": "Farg'ona", "lat": 40.4, "lng": 71.8 },
+    { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
+    { "name": "Buxoro", "lat": 39.77, "lng": 64.42 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992"],

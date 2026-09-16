@@ -46,6 +46,11 @@
     "originMapTitle": "Köken ve yayılma",
     "originMapNote": "Kırmızı nokta, Türk halklarının varsayılan ilk anayurdunu gösterir (bilimsel bir teoridir, kesinleşmiş bir gerçek değildir). Mavi noktalar her halkın bugünkü ana konumudur. Bağlantı çizgileri şematiktir ve kesin bir tarihi göç güzergahını temsil etmez."
   },
+  "states": {
+    "territoryMapTitle": "Yaklaşık kapsam",
+    "territoryMapNote": "Bu bir sınır değildir — metinde tasvir edilen genel yayılımı gösteren şematik bir şekildir, devletin en geniş dönemine yaklaşık olarak karşılık gelir.",
+    "territoryPopup": "Yaklaşık, şematik kapsam — kesin bir tarihi sınır değildir."
+  },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",
     "capitalsMapNote": "Haritada yalnızca başkent şehirlerinin coğrafi konumu gösterilmektedir — bu tarihi sınırların kesin bir tasviri değildir."

@@ -46,6 +46,11 @@
     "originMapTitle": "Kelib chiqishi va tarqalishi",
     "originMapNote": "Qizil nuqta — turkiy xalqlarning gipotetik ilk vatani (ilmiy nazariya, aniq fakt emas). Ko'k nuqtalar — har bir xalqning bugungi asosiy joylashuvi. Ular orasidagi chiziqlar sxematik bo'lib, aniq tarixiy ko'chish yo'lini bildirmaydi."
   },
+  "states": {
+    "territoryMapTitle": "Taxminiy hudud",
+    "territoryMapNote": "Bu chegara emas — matnda tasvirlangan umumiy yoyilishni ko'rsatuvchi sxematik shakl, davlatning eng katta yoyilish davriga taxminan mos keladi.",
+    "territoryPopup": "Taxminiy, sxematik hudud — aniq tarixiy chegara emas."
+  },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",
     "capitalsMapNote": "Xaritada faqat poytaxt shaharlarining geografik joylashuvi ko'rsatilgan — bu tarixiy chegaralarning aniq tasviri emas."

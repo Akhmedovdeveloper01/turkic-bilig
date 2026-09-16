@@ -8,6 +8,13 @@
   },
   "capital": "Saroy (Saroy-Botu, keyinchalik Saroy-Berka)",
   "capitals": [{ "name": "Saroy", "lat": 47.86, "lng": 46.9 }],
+  "extentPoints": [
+    { "name": "Kiyev atrofi", "lat": 50.45, "lng": 30.52 },
+    { "name": "Ural dashti", "lat": 51.0, "lng": 55.0 },
+    { "name": "G'arbiy Sibir", "lat": 55.0, "lng": 68.0 },
+    { "name": "Xorazm", "lat": 41.1, "lng": 60.6 },
+    { "name": "Qrim", "lat": 45.0, "lng": 34.0 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992"],

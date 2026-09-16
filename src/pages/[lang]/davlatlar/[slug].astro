@@ -5,6 +5,7 @@ import VerifiedBadge from '../../../components/VerifiedBadge.astro';
 import TranslationNotice from '../../../components/TranslationNotice.astro';
 import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
+import StateTerritoryMap from '../../../components/StateTerritoryMap.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 
@@ -74,6 +75,18 @@ function formatYear(year: number, era: 'm.av' | 'milodiy') {
           <p class="text-ink">{facts.data.capital}</p>
         </div>
       )}
+    </section>
+  )}
+
+  {facts && facts.data.extentPoints.length >= 3 && (
+    <section class="mb-8">
+      <h2 class="mb-1 text-lg font-semibold text-ink">{t('states.territoryMapTitle')}</h2>
+      <p class="mb-3 text-xs text-ink-muted">{t('states.territoryMapNote')}</p>
+      <StateTerritoryMap
+        capitals={facts.data.capitals}
+        extentPoints={facts.data.extentPoints}
+        popupText={t('states.territoryPopup')}
+      />
     </section>
   )}
 

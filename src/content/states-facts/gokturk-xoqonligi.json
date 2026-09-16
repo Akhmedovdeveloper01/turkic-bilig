@@ -8,6 +8,13 @@
   },
   "capital": "Ötüken",
   "capitals": [{ "name": "Ötüken", "lat": 47.2, "lng": 102.8 }],
+  "extentPoints": [
+    { "name": "Qora dengiz mintaqasi", "lat": 45.0, "lng": 34.0 },
+    { "name": "Baykal ko'li mintaqasi", "lat": 53.5, "lng": 108.0 },
+    { "name": "Manchuriya", "lat": 45.0, "lng": 125.0 },
+    { "name": "Qashg'ar atrofi", "lat": 40.0, "lng": 77.0 },
+    { "name": "Orol dengizi mintaqasi", "lat": 45.0, "lng": 60.0 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "sinor-1990"],

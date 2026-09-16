@@ -1,0 +1,41 @@
+{
+  "site": {
+    "title": "Turkic Bilig",
+    "description": "Encyclopedia of Turkic Peoples"
+  },
+  "nav": {
+    "home": "Home",
+    "peoples": "Peoples",
+    "states": "States",
+    "scholars": "Scholars",
+    "topics": "Topics",
+    "search": "Search"
+  },
+  "common": {
+    "summary": "Summary",
+    "details": "Details",
+    "sources": "Sources",
+    "verified": "Verified",
+    "underReview": "Under review",
+    "disputed": "Disputed topic",
+    "reportError": "Report an error",
+    "lastReviewed": "Last reviewed",
+    "reviewers": "Reviewers",
+    "changelog": "Changelog",
+    "readMore": "Read more"
+  },
+  "translation": {
+    "notTranslated": "This page has not yet been translated into {lang}. The original text is shown below.",
+    "machineWarning": "This translation was produced by machine translation and has not yet been reviewed by a human.",
+    "outdated": "The original text was updated; this translation is being reviewed."
+  },
+  "languageSwitcher": {
+    "turkic": "Turkic languages",
+    "other": "Other languages",
+    "label": "Choose language"
+  },
+  "footer": {
+    "sourceCode": "Source code",
+    "rights": "All rights reserved"
+  }
+}

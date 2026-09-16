@@ -1,0 +1,44 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { locales, getLocale, defaultLocale } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+const localeEndonym = (getLocale(lang!) ?? getLocale(defaultLocale)!).endonym;
+
+const facts = await getCollection('peopleFacts');
+
+const items = await Promise.all(
+  facts.map(async (fact) => {
+    const slug = fact.id;
+    const localized = await getEntry('peoples', `${lang}/${slug}`);
+    const original = localized ?? (await getEntry('peoples', `uz/${slug}`));
+    return { slug, entry: original, isFallback: !localized };
+  })
+);
+---
+
+<BaseLayout lang={lang!} title={t('nav.peoples')}>
+  <h1 class="mb-6 text-2xl font-bold">{t('nav.peoples')}</h1>
+  <ul class="grid gap-4 sm:grid-cols-2">
+    {items.map(({ slug, entry, isFallback }) => entry && (
+      <li class="rounded border border-slate-200 p-4 dark:border-slate-700">
+        <a href={`/${lang}/xalqlar/${slug}`} class="text-lg font-semibold hover:underline">
+          {entry.data.title}
+        </a>
+        <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">{entry.data.summary}</p>
+        {isFallback && (
+          <p class="mt-2 text-xs text-amber-600 dark:text-amber-400">
+            {t('translation.notTranslated', { lang: localeEndonym })}
+          </p>
+        )}
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

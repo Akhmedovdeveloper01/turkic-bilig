@@ -1,0 +1,37 @@
+{
+  "note": "Tillarning guruhlarga taqsimlanishi umumiy qiyosiy-tarixiy tasnif asosida berilgan. Aniq sahifa raqami va mutaxassis (tilshunos) tekshiruvi hali kiritilmagan — verified: false.",
+  "sourceId": "johanson-csato-2021",
+  "verified": false,
+  "branches": [
+    {
+      "id": "oguz",
+      "name": "O'g'uz guruhi",
+      "languages": ["tr", "az", "tk", "gag"]
+    },
+    {
+      "id": "qipchoq",
+      "name": "Qipchoq guruhi",
+      "languages": ["kk", "ky", "tt", "ba", "kaa", "crh", "krc", "kum", "nog"]
+    },
+    {
+      "id": "qarluq",
+      "name": "Qarluq guruhi",
+      "languages": ["uz", "ug"]
+    },
+    {
+      "id": "sibir",
+      "name": "Sibir (janubiy sibir) guruhi",
+      "languages": ["alt", "tyv", "kjh", "sah"]
+    },
+    {
+      "id": "ogur",
+      "name": "O'g'ur guruhi",
+      "languages": ["cv"]
+    },
+    {
+      "id": "argu",
+      "name": "Arg'u guruhi",
+      "languages": []
+    }
+  ]
+}

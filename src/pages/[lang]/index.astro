@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locales } from '../../i18n/locales';
+import { createTranslator } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+---
+
+<BaseLayout lang={lang!}>
+  <h1 class="mb-4 text-3xl font-bold">{t('site.title')}</h1>
+  <p class="text-lg text-slate-600 dark:text-slate-400">{t('site.description')}</p>
+</BaseLayout>

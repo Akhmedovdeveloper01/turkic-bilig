@@ -1,0 +1,19 @@
+{
+  "endonym": "o'zbeklar",
+  "languageBranch": "qarluq",
+  "population": [
+    { "value": 30300000, "year": 2024, "country": "O'zbekiston", "sourceId": "un-desa-2024" }
+  ],
+  "regions": ["Markaziy Osiyo", "Afg'oniston (shimoliy)", "Tojikiston", "Qirg'iziston", "Turkmaniston"],
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "un-desa-2024"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "O'zbeklarning etnogenezida ko'chmanchi turkiy va o'troq mahalliy (sug'diy-tojik) komponentlarning nisbati",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

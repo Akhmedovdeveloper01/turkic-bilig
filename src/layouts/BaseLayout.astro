@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import { getLocale, defaultLocale } from '../i18n/locales';
+import { SCRIPT_FONT_IMPORTS, SCRIPT_FONT_WEIGHT_IMPORTS } from '../i18n/fonts';
+import { createTranslator } from '../i18n/ui';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+
+interface Props {
+  lang: string;
+  title?: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+const locale = getLocale(lang) ?? getLocale(defaultLocale)!;
+
+// Faqat shu sahifaga kerakli skript uchun shrift yuklanadi.
+await SCRIPT_FONT_IMPORTS[locale.script]();
+await SCRIPT_FONT_WEIGHT_IMPORTS[locale.script]();
+
+const t = createTranslator(locale.code);
+const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')} — ${t('site.description')}`;
+---
+
+<html lang={locale.code} dir={locale.dir} style={`--font-sans: '${locale.font}', system-ui, sans-serif;`}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? t('site.description')} />
+  </head>
+  <body class="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100" style="font-family: var(--font-sans);">
+    <header class="border-b border-slate-200 dark:border-slate-800">
+      <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+        <a href={`/${locale.code}/`} class="font-semibold">
+          {t('site.title')}
+        </a>
+        <nav class="flex items-center gap-4 text-sm">
+          <a href={`/${locale.code}/xalqlar`}>{t('nav.peoples')}</a>
+          <a href={`/${locale.code}/davlatlar`}>{t('nav.states')}</a>
+          <a href={`/${locale.code}/allomalar`}>{t('nav.scholars')}</a>
+          <a href={`/${locale.code}/mavzular`}>{t('nav.topics')}</a>
+          <LanguageSwitcher currentLang={locale.code} />
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto max-w-5xl px-4 py-8">
+      <slot />
+    </main>
+    <footer class="border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-400">
+      <p>Turkic Bilig — {t('footer.rights')}</p>
+    </footer>
+  </body>
+</html>

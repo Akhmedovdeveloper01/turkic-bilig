@@ -1,0 +1,55 @@
+---
+import { turkicLocales, otherLocales } from '../i18n/locales';
+import { createTranslator } from '../i18n/ui';
+
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const t = createTranslator(currentLang);
+
+// Joriy sahifadagi til qismini almashtirib, qolgan yo'lni saqlab qolamiz
+// (masalan /uz/xalqlar/ozbeklar -> /tr/xalqlar/ozbeklar).
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const rest = segments.slice(1).join('/');
+function pathFor(code: string): string {
+  return rest ? `/${code}/${rest}` : `/${code}/`;
+}
+---
+
+<details class="relative">
+  <summary class="cursor-pointer list-none rounded border border-slate-300 px-2 py-1 dark:border-slate-700">
+    {t('languageSwitcher.label')}
+  </summary>
+  <div class="absolute end-0 z-10 mt-2 w-56 rounded border border-slate-200 bg-white p-3 shadow-lg dark:border-slate-700 dark:bg-slate-800">
+    <p class="mb-1 text-xs font-semibold uppercase text-slate-500">{t('languageSwitcher.turkic')}</p>
+    <ul class="mb-3">
+      {turkicLocales.map((locale) => (
+        <li>
+          <a
+            href={pathFor(locale.code)}
+            class="block rounded px-2 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            aria-current={locale.code === currentLang ? 'true' : undefined}
+          >
+            {locale.endonym}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="mb-1 text-xs font-semibold uppercase text-slate-500">{t('languageSwitcher.other')}</p>
+    <ul>
+      {otherLocales.map((locale) => (
+        <li>
+          <a
+            href={pathFor(locale.code)}
+            class="block rounded px-2 py-1 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            aria-current={locale.code === currentLang ? 'true' : undefined}
+          >
+            {locale.endonym}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</details>

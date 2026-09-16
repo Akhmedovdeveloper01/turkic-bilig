@@ -1,0 +1,41 @@
+{
+  "site": {
+    "title": "Turkic Bilig",
+    "description": "Turkiy xalqlar ensiklopediyasi"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "peoples": "Xalqlar",
+    "states": "Davlatlar",
+    "scholars": "Allomalar",
+    "topics": "Mavzular",
+    "search": "Qidiruv"
+  },
+  "common": {
+    "summary": "Qisqacha",
+    "details": "Batafsil",
+    "sources": "Manbalar",
+    "verified": "Tasdiqlangan",
+    "underReview": "Tekshiruvda",
+    "disputed": "Munozarali masala",
+    "reportError": "Xato haqida xabar berish",
+    "lastReviewed": "Oxirgi tekshiruv sanasi",
+    "reviewers": "Taqrizchilar",
+    "changelog": "O'zgarishlar tarixi",
+    "readMore": "Batafsil o'qish"
+  },
+  "translation": {
+    "notTranslated": "Bu sahifa hali {lang} tiliga tarjima qilinmagan. Quyida asl matn ko'rsatilmoqda.",
+    "machineWarning": "Bu tarjima mashina tomonidan amalga oshirilgan va hali inson tomonidan tekshirilmagan.",
+    "outdated": "Asl matn yangilangan, tarjima hozircha eski holatda — tekshirilmoqda."
+  },
+  "languageSwitcher": {
+    "turkic": "Turkiy tillar",
+    "other": "Boshqa tillar",
+    "label": "Tilni tanlang"
+  },
+  "footer": {
+    "sourceCode": "Manba kodi",
+    "rights": "Barcha huquqlar himoyalangan"
+  }
+}

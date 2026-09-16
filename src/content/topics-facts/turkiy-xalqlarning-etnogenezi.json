@@ -1,0 +1,16 @@
+{
+  "category": "etnogenez",
+  "relatedPeoples": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Xiongnu (Hunnu) konfederatsiyasi va turkiy xalqlar o'rtasidagi til/etnik bog'liqlik darajasi",
+      "sourceIds": ["golden-1992", "sinor-1990"]
+    },
+    {
+      "topic": "\"Turk\" etnonimining birinchi marta paydo bo'lishi va uning dastlabki ma'nosi (siyosiy ittifoq nomi yoki til guruhi nomi)",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

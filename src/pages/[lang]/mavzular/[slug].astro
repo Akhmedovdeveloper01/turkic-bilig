@@ -1,0 +1,113 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { locales, getLocale, defaultLocale } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+import languagesData from '../../../data/languages.json';
+
+export async function getStaticPaths() {
+  const facts = await getCollection('topicFacts');
+  return locales.flatMap((locale) =>
+    facts.map((fact) => ({ params: { lang: locale.code, slug: fact.id } }))
+  );
+}
+
+const { lang, slug } = Astro.params;
+const t = createTranslator(lang!);
+const localeEndonym = (getLocale(lang!) ?? getLocale(defaultLocale)!).endonym;
+
+const localized = await getEntry('topics', `${lang}/${slug}`);
+const entry = localized ?? (await getEntry('topics', `uz/${slug}`));
+
+if (!entry) {
+  return Astro.redirect(`/${lang}/mavzular`);
+}
+
+const isFallback = !localized;
+const facts = await getEntry(entry.data.factsId);
+const { Content } = await render(entry);
+
+const sourceEntries = facts
+  ? await Promise.all(facts.data.sources.map((ref) => getEntry(ref)))
+  : [];
+
+const showLanguageBranches = facts?.data.category === 'til-tasnifi';
+---
+
+<BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
+  <div class="mb-4 flex flex-wrap items-center gap-2">
+    <h1 class="text-3xl font-bold">{entry.data.title}</h1>
+    {facts?.data.verified ? (
+      <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">
+        {t('common.verified')}
+      </span>
+    ) : (
+      <span class="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+        {t('common.underReview')}
+      </span>
+    )}
+  </div>
+
+  {isFallback && (
+    <p class="mb-6 rounded border border-amber-300 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-200">
+      {t('translation.notTranslated', { lang: localeEndonym })}
+    </p>
+  )}
+
+  <p class="mb-6 text-lg text-slate-600 dark:text-slate-400">{entry.data.summary}</p>
+
+  <article class="prose prose-slate max-w-none dark:prose-invert">
+    <Content />
+  </article>
+
+  {showLanguageBranches && (
+    <section class="mt-8 rounded border border-slate-200 p-4 dark:border-slate-700">
+      <h2 class="mb-3 text-lg font-semibold">{t('nav.topics')}: {entry.data.title}</h2>
+      {!languagesData.verified && (
+        <p class="mb-3 text-xs text-amber-600 dark:text-amber-400">{languagesData.note}</p>
+      )}
+      <div class="grid gap-4 sm:grid-cols-2">
+        {languagesData.branches.map((branch) => (
+          <div>
+            <h3 class="font-semibold">{branch.name}</h3>
+            <ul class="mt-1 list-disc ps-5 text-sm text-slate-600 dark:text-slate-400">
+              {branch.languages.map((code) => {
+                const l = getLocale(code);
+                return l && <li>{l.endonym}</li>;
+              })}
+              {branch.languages.length === 0 && <li class="italic">—</li>}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {facts && facts.data.disputed.length > 0 && (
+    <section class="mt-8 rounded border border-slate-300 p-4 dark:border-slate-600">
+      <h2 class="mb-2 text-lg font-semibold">{t('common.disputed')}</h2>
+      <ul class="list-disc ps-5 text-sm">
+        {facts.data.disputed.map((d) => (
+          <li>{d.topic}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {sourceEntries.length > 0 && (
+    <section class="mt-8 border-t border-slate-200 pt-4 dark:border-slate-700">
+      <h2 class="mb-2 text-lg font-semibold">{t('common.sources')}</h2>
+      <ul class="list-disc ps-5 text-sm">
+        {sourceEntries.map((s) => s && (
+          <li>
+            {s.data.author}, <em>{s.data.title}</em>
+            {s.data.year ? ` (${s.data.year})` : ''}
+            {s.data.status === 'tekshirilishi-kerak' && (
+              <span class="ms-2 text-xs text-amber-600 dark:text-amber-400">[{t('common.underReview')}]</span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</BaseLayout>

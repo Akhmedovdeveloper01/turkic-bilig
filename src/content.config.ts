@@ -63,6 +63,15 @@ const peopleFacts = defineCollection({
       .min(1, "Kamida bitta aholi statistikasi va uning manbasi shart"),
     regions: z.array(z.string()).default([]),
     religion: z.array(z.string()).default([]),
+    /** Bugungi asosiy joylashuvi (odatda asosiy davlat poytaxti) — xaritada
+     * ko'rsatish uchun. Geografik koordinata, alohida manba talab qilinmaydi. */
+    location: z
+      .object({
+        name: z.string(),
+        lat: z.number(),
+        lng: z.number(),
+      })
+      .optional(),
     historicalStates: z.array(reference('stateFacts')).default([]),
     scholars: z.array(reference('scholarFacts')).default([]),
     sources: z.array(sourceRef).min(1, 'Kamida bitta umumiy manba shart'),

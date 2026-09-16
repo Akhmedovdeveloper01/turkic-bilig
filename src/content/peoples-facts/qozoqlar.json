@@ -5,6 +5,7 @@
     { "value": 13400000, "year": 2024, "country": "Qozog'iston", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Markaziy Osiyo", "Xitoy (Shinjon)", "Rossiya", "Mo'g'uliston", "O'zbekiston"],
+  "location": { "name": "Astana", "lat": 51.1694, "lng": 71.4491 },
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["oltin-orda"],
   "scholars": [],

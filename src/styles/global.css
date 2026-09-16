@@ -44,3 +44,25 @@ body {
   background-color: var(--color-surface);
   color: var(--color-ink);
 }
+
+/* Leaflet xaritalarida ishlatiladigan neytral yulduz-marker (StatesMap, OriginMap). */
+.tb-map-marker {
+  background: none;
+  border: none;
+}
+.tb-map-marker-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background-color: #0e7c86;
+  border: 2px solid #faf8f4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+.tb-map-marker-inner.tb-map-marker-homeland {
+  width: 34px;
+  height: 34px;
+  background-color: #c1553a;
+}

@@ -5,6 +5,7 @@
     { "value": 30300000, "year": 2024, "country": "O'zbekiston", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Markaziy Osiyo", "Afg'oniston (shimoliy)", "Tojikiston", "Qirg'iziston", "Turkmaniston"],
+  "location": { "name": "Toshkent", "lat": 41.2995, "lng": 69.2401 },
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["qoraxoniylar", "temuriylar"],
   "scholars": ["ulugbek"],

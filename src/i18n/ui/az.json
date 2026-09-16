@@ -42,6 +42,10 @@
     "sourceCode": "Mənbə kodu",
     "rights": "Bütün hüquqlar qorunur"
   },
+  "peoples": {
+    "originMapTitle": "Mənşəyi və yayılması",
+    "originMapNote": "Qırmızı nöqtə türk xalqlarının fərziyyə edilən ilkin vətənidir (elmi nəzəriyyədir, kəsin faktı bildirmir). Mavi nöqtələr hər bir xalqın bugünkü əsas yerləşməsidir. Birləşdirici xətlər şərtidir və dəqiq tarixi köç marşrutunu göstərmir."
+  },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",
     "capitalsMapNote": "Xəritədə yalnız paytaxt şəhərlərinin coğrafi yerləşməsi göstərilir — bu tarixi sərhədlərin dəqiq təsviri deyil."

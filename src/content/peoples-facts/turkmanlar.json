@@ -5,6 +5,7 @@
     { "value": 6300000, "year": 2024, "country": "Turkmaniston", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Markaziy Osiyo", "Eron (shimoliy-sharqiy)", "Afg'oniston (shimoliy-g'arbiy)"],
+  "location": { "name": "Ashgabat", "lat": 37.9601, "lng": 58.3261 },
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["saljuqiylar"],
   "scholars": [],

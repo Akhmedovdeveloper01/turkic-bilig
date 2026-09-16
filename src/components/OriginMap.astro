@@ -1,0 +1,95 @@
+---
+/**
+ * Turkiy xalqlarning gipotetik ilk vatani va bugungi asosiy joylashuvini
+ * ko'rsatuvchi interaktiv xarita (Leaflet).
+ *
+ * Ikkita narsa ataylab aniq ajratilgan:
+ * 1. "Gipotetik ilk vatan" — bitta taxminiy nuqta, ilmiy gipoteza sifatida
+ *    belgilangan (ILMIY QOIDA 3: konsensus va munozara ajratiladi).
+ * 2. Har bir xalqning bugungi asosiy joylashuvi — bahssiz geografik fakt.
+ * Ular orasidagi chiziqlar SXEMATIK — aniq tarixiy ko'chish yo'li yoki
+ * marshrut emas, faqat kelib chiqish bilan bugungi joylashuv orasidagi
+ * umumiy bog'liqlikni ko'rsatadi.
+ */
+interface Point {
+  href?: string;
+  name: string;
+  lat: number;
+  lng: number;
+}
+interface Props {
+  homeland: Point;
+  peoples: Point[];
+}
+const { homeland, peoples } = Astro.props;
+---
+
+<div
+  id="origin-map"
+  class="h-[28rem] w-full overflow-hidden rounded-xl border border-line"
+  data-homeland={JSON.stringify(homeland)}
+  data-peoples={JSON.stringify(peoples)}
+>
+</div>
+
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+
+  interface Point {
+    href?: string;
+    name: string;
+    lat: number;
+    lng: number;
+  }
+
+  function starDivIcon(homeland: boolean) {
+    return L.divIcon({
+      className: 'tb-map-marker',
+      html: `<div class="tb-map-marker-inner${homeland ? ' tb-map-marker-homeland' : ''}"><svg viewBox="0 0 24 24" width="${homeland ? 18 : 14}" height="${homeland ? 18 : 14}"><rect x="5" y="5" width="14" height="14" fill="#fff" /><rect x="5" y="5" width="14" height="14" fill="#fff" transform="rotate(45 12 12)" /></svg></div>`,
+      iconSize: homeland ? [34, 34] : [28, 28],
+      iconAnchor: homeland ? [17, 17] : [14, 14],
+      popupAnchor: [0, -16],
+    });
+  }
+
+  const el = document.getElementById('origin-map');
+  if (el) {
+    const homeland: Point = JSON.parse(el.dataset.homeland || '{}');
+    const peoples: Point[] = JSON.parse(el.dataset.peoples || '[]');
+
+    const map = L.map(el).setView([homeland.lat, homeland.lng], 3);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 10,
+    }).addTo(map);
+
+    const homelandMarker = L.marker([homeland.lat, homeland.lng], {
+      icon: starDivIcon(true),
+    }).addTo(map);
+    homelandMarker.bindPopup(
+      `<strong>${homeland.name}</strong>` + (homeland.href ? `<br><a href="${homeland.href}">Batafsil</a>` : '')
+    );
+
+    const allPoints: [number, number][] = [[homeland.lat, homeland.lng]];
+
+    for (const p of peoples) {
+      const marker = L.marker([p.lat, p.lng], { icon: starDivIcon(false) }).addTo(map);
+      marker.bindPopup(p.href ? `<a href="${p.href}">${p.name}</a>` : p.name);
+      allPoints.push([p.lat, p.lng]);
+
+      L.polyline(
+        [
+          [homeland.lat, homeland.lng],
+          [p.lat, p.lng],
+        ],
+        { color: '#c1553a', weight: 1.5, opacity: 0.5, dashArray: '4 6' }
+      ).addTo(map);
+    }
+
+    if (allPoints.length > 1) {
+      map.fitBounds(L.latLngBounds(allPoints).pad(0.25));
+    }
+  }
+</script>

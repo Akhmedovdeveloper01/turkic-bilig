@@ -5,6 +5,7 @@
     { "value": 87400000, "year": 2024, "country": "Turkiya (mamlakat aholisi)", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Anadolu", "Sharqiy Frakiya", "G'arbiy Yevropa (diaspora)"],
+  "location": { "name": "Anqara", "lat": 39.9334, "lng": 32.8597 },
   "religion": ["Islom (sunniylik ko'pchilik, alaviylik ozchilik)"],
   "historicalStates": ["saljuqiylar", "usmonli-imperiyasi"],
   "scholars": [],

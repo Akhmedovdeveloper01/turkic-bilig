@@ -2,8 +2,10 @@
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import EntryCard from '../../../components/EntryCard.astro';
+import OriginMap from '../../../components/OriginMap.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
+import origin from '../../../data/origin.json';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { lang: locale.code } }));
@@ -19,13 +21,39 @@ const items = await Promise.all(
     const slug = fact.id;
     const localized = await getEntry('peoples', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('peoples', `uz/${slug}`));
-    return { slug, entry: original, isFallback: !localized };
+    return { slug, entry: original, isFallback: !localized, location: fact.data.location };
   })
 );
+
+const mapPeoples = items
+  .filter((i) => i.entry && i.location)
+  .map((i) => ({
+    href: `/${lang}/xalqlar/${i.slug}`,
+    name: i.entry!.data.title,
+    lat: i.location!.lat,
+    lng: i.location!.lng,
+  }));
+
+const homelandPoint = {
+  href: `/${lang}/mavzular/turkiy-xalqlarning-etnogenezi`,
+  name: origin.point.name,
+  lat: origin.point.lat,
+  lng: origin.point.lng,
+};
 ---
 
 <BaseLayout lang={lang!} title={t('nav.peoples')}>
-  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.peoples')}</h1>
+  <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.peoples')}</h1>
+
+  <div class="mb-8">
+    <h2 class="mb-1 text-lg font-semibold text-ink">{t('peoples.originMapTitle')}</h2>
+    <p class="mb-3 text-xs text-ink-muted">{t('peoples.originMapNote')}</p>
+    {!origin.verified && (
+      <p class="mb-3 text-xs text-gold">{origin.note}</p>
+    )}
+    <OriginMap homeland={homelandPoint} peoples={mapPeoples} />
+  </div>
+
   <ul class="grid gap-4 sm:grid-cols-2">
     {items.map(({ slug, entry, isFallback }) => entry && (
       <EntryCard

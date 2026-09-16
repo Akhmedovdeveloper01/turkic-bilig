@@ -5,6 +5,7 @@
     { "value": 9300000, "year": 2024, "country": "Ozarbayjon", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Janubiy Kavkaz", "Eron (shimoliy-g'arbiy, Janubiy Ozarbayjon)", "Turkiya", "Rossiya"],
+  "location": { "name": "Boku", "lat": 40.4093, "lng": 49.8671 },
   "religion": ["Islom (shialik va sunniylik)"],
   "historicalStates": ["saljuqiylar"],
   "scholars": [],

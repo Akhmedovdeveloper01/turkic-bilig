@@ -5,6 +5,7 @@
     { "value": 5100000, "year": 2024, "country": "Qirg'iziston", "sourceId": "un-desa-2024" }
   ],
   "regions": ["Markaziy Osiyo", "Xitoy (Shinjon)", "Tojikiston", "O'zbekiston"],
+  "location": { "name": "Bishkek", "lat": 42.8746, "lng": 74.5698 },
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],

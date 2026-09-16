@@ -42,6 +42,10 @@
     "sourceCode": "Kaynak kod",
     "rights": "Tüm hakları saklıdır"
   },
+  "peoples": {
+    "originMapTitle": "Köken ve yayılma",
+    "originMapNote": "Kırmızı nokta, Türk halklarının varsayılan ilk anayurdunu gösterir (bilimsel bir teoridir, kesinleşmiş bir gerçek değildir). Mavi noktalar her halkın bugünkü ana konumudur. Bağlantı çizgileri şematiktir ve kesin bir tarihi göç güzergahını temsil etmez."
+  },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",
     "capitalsMapNote": "Haritada yalnızca başkent şehirlerinin coğrafi konumu gösterilmektedir — bu tarihi sınırların kesin bir tasviri değildir."

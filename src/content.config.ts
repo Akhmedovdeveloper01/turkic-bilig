@@ -92,6 +92,18 @@ const stateFacts = defineCollection({
       endEra: z.enum(['m.av', 'milodiy']),
     }),
     capital: z.string().optional(),
+    /** Xaritada nuqta sifatida ko'rsatish uchun — shahar koordinatasi
+     * geografik fakt (bahssiz), tarixiy chegaralardan farqli o'laroq
+     * alohida manba talab qilinmaydi. */
+    capitals: z
+      .array(
+        z.object({
+          name: z.string(),
+          lat: z.number(),
+          lng: z.number(),
+        })
+      )
+      .default([]),
     predecessors: z.array(reference('stateFacts')).default([]),
     successors: z.array(reference('stateFacts')).default([]),
     sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),

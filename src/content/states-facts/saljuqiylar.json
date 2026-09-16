@@ -7,6 +7,11 @@
     "endEra": "milodiy"
   },
   "capital": "Nishopur / Ray / Isfahon",
+  "capitals": [
+    { "name": "Nishopur", "lat": 36.213, "lng": 58.7958 },
+    { "name": "Ray", "lat": 35.5892, "lng": 51.4381 },
+    { "name": "Isfahon", "lat": 32.6546, "lng": 51.668 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],

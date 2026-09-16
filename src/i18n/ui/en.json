@@ -22,7 +22,9 @@
     "lastReviewed": "Last reviewed",
     "reviewers": "Reviewers",
     "changelog": "Changelog",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "period": "Period",
+    "capital": "Capital"
   },
   "translation": {
     "notTranslated": "This page has not yet been translated into {lang}. The original text is shown below.",
@@ -37,6 +39,10 @@
   "footer": {
     "sourceCode": "Source code",
     "rights": "All rights reserved"
+  },
+  "topics": {
+    "capitalsMapTitle": "Capitals on the map",
+    "capitalsMapNote": "The map only shows the geographic location of capital cities — it is not a depiction of historical borders."
   },
   "home": {
     "heroTagline": "An open encyclopedia of Turkic peoples, grounded in scholarly sources",

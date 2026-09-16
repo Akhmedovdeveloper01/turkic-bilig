@@ -7,6 +7,7 @@
     "endEra": "milodiy"
   },
   "capital": "Ötüken",
+  "capitals": [{ "name": "Ötüken", "lat": 47.2, "lng": 102.8 }],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "sinor-1990"],

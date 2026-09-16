@@ -7,6 +7,11 @@
     "endEra": "milodiy"
   },
   "capital": "Balasog'un / Qashg'ar / Samarqand",
+  "capitals": [
+    { "name": "Balasog'un", "lat": 42.84, "lng": 75.31 },
+    { "name": "Qashg'ar", "lat": 39.4704, "lng": 75.9898 },
+    { "name": "Samarqand", "lat": 39.627, "lng": 66.975 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992"],

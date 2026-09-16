@@ -8,6 +8,7 @@ import SourcesList from '../../../components/SourcesList.astro';
 import { locales, getLocale } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import languagesData from '../../../data/languages.json';
+import StatesMap from '../../../components/StatesMap.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('topicFacts');
@@ -35,6 +36,27 @@ const sourceEntries = facts
   : [];
 
 const showLanguageBranches = facts?.data.category === 'til-tasnifi';
+
+const showStatesMap = facts?.data.category === 'xronologiya';
+let mapPoints: { href: string; stateTitle: string; name: string; lat: number; lng: number }[] = [];
+if (showStatesMap) {
+  const allStateFacts = await getCollection('stateFacts');
+  const nested = await Promise.all(
+    allStateFacts.map(async (sf) => {
+      const localizedState = await getEntry('states', `${lang}/${sf.id}`);
+      const stateEntry = localizedState ?? (await getEntry('states', `uz/${sf.id}`));
+      if (!stateEntry) return [];
+      return sf.data.capitals.map((c) => ({
+        href: `/${lang}/davlatlar/${sf.id}`,
+        stateTitle: stateEntry.data.title,
+        name: c.name,
+        lat: c.lat,
+        lng: c.lng,
+      }));
+    })
+  );
+  mapPoints = nested.flat();
+}
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
@@ -50,6 +72,14 @@ const showLanguageBranches = facts?.data.category === 'til-tasnifi';
   <article class="prose prose-slate max-w-none dark:prose-invert">
     <Content />
   </article>
+
+  {showStatesMap && mapPoints.length > 0 && (
+    <section class="mt-8">
+      <h2 class="mb-1 text-lg font-semibold text-ink">{t('topics.capitalsMapTitle')}</h2>
+      <p class="mb-3 text-xs text-ink-muted">{t('topics.capitalsMapNote')}</p>
+      <StatesMap points={mapPoints} />
+    </section>
+  )}
 
   {showLanguageBranches && (
     <section class="mt-8 rounded-xl border border-line bg-surface-alt p-5">

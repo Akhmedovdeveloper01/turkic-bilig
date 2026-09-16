@@ -22,7 +22,9 @@
     "lastReviewed": "Oxirgi tekshiruv sanasi",
     "reviewers": "Taqrizchilar",
     "changelog": "O'zgarishlar tarixi",
-    "readMore": "Batafsil o'qish"
+    "readMore": "Batafsil o'qish",
+    "period": "Davri",
+    "capital": "Poytaxti"
   },
   "translation": {
     "notTranslated": "Bu sahifa hali {lang} tiliga tarjima qilinmagan. Quyida asl matn ko'rsatilmoqda.",
@@ -37,6 +39,10 @@
   "footer": {
     "sourceCode": "Manba kodi",
     "rights": "Barcha huquqlar himoyalangan"
+  },
+  "topics": {
+    "capitalsMapTitle": "Poytaxtlar xaritada",
+    "capitalsMapNote": "Xaritada faqat poytaxt shaharlarining geografik joylashuvi ko'rsatilgan — bu tarixiy chegaralarning aniq tasviri emas."
   },
   "home": {
     "heroTagline": "Ilmiy manbalarga asoslangan, ochiq turkiy xalqlar ensiklopediyasi",

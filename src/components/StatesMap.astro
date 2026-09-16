@@ -1,0 +1,70 @@
+---
+/**
+ * Poytaxt nuqtalarini ko'rsatuvchi interaktiv xarita (Leaflet).
+ * Tarixiy CHEGARALAR emas, faqat poytaxt shahar(lar)ining geografik
+ * joylashuvi ko'rsatiladi — chegara chizig'i uchun hali tekshirilgan
+ * GeoJSON manba yo'q (ILMIY QOIDA 6), shahar koordinatasi esa bahssiz
+ * geografik fakt.
+ */
+interface Point {
+  href: string;
+  stateTitle: string;
+  name: string;
+  lat: number;
+  lng: number;
+}
+interface Props {
+  points: Point[];
+}
+const { points } = Astro.props;
+---
+
+<div id="states-map" class="h-96 w-full overflow-hidden rounded-xl border border-line" data-points={JSON.stringify(points)}>
+</div>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+  import icon from 'leaflet/dist/images/marker-icon.png';
+  import icon2x from 'leaflet/dist/images/marker-icon-2x.png';
+  import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+  // Vite/bundler bilan Leaflet standart ikonka yo'llari buzilishining
+  // ma'lum yechimi.
+  // @ts-expect-error - Leaflet ichki xususiyati
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: icon2x,
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+  });
+
+  interface Point {
+    href: string;
+    stateTitle: string;
+    name: string;
+    lat: number;
+    lng: number;
+  }
+
+  const el = document.getElementById('states-map');
+  if (el) {
+    const points: Point[] = JSON.parse(el.dataset.points || '[]');
+    const map = L.map(el).setView([40, 65], 3);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 12,
+    }).addTo(map);
+
+    const markers = points.map((p) => {
+      const marker = L.marker([p.lat, p.lng]).addTo(map);
+      marker.bindPopup(`<a href="${p.href}">${p.stateTitle}</a><br>${p.name}`);
+      return marker;
+    });
+
+    if (markers.length > 0) {
+      const group = L.featureGroup(markers);
+      map.fitBounds(group.getBounds().pad(0.3));
+    }
+  }
+</script>

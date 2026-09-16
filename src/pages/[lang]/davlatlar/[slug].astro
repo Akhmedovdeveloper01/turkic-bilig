@@ -51,7 +51,7 @@ function formatYear(year: number, era: 'm.av' | 'milodiy') {
   {facts && (
     <section class="mb-6 flex flex-wrap gap-6 rounded-xl border border-line bg-surface-alt p-5 text-sm">
       <div>
-        <p class="font-semibold uppercase tracking-wide text-ink-muted">Davri</p>
+        <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.period')}</p>
         <p class="text-ink">
           {formatYear(facts.data.period.startYear, facts.data.period.startEra)} —{' '}
           {formatYear(facts.data.period.endYear, facts.data.period.endEra)}
@@ -59,7 +59,7 @@ function formatYear(year: number, era: 'm.av' | 'milodiy') {
       </div>
       {facts.data.capital && (
         <div>
-          <p class="font-semibold uppercase tracking-wide text-ink-muted">Poytaxti</p>
+          <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.capital')}</p>
           <p class="text-ink">{facts.data.capital}</p>
         </div>
       )}

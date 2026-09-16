@@ -7,6 +7,11 @@
     "endEra": "milodiy"
   },
   "capital": "Bursa / Adirna (Edirne) / Istanbul",
+  "capitals": [
+    { "name": "Bursa", "lat": 40.1885, "lng": 29.061 },
+    { "name": "Adirna (Edirne)", "lat": 41.6771, "lng": 26.5557 },
+    { "name": "Istanbul", "lat": 41.0082, "lng": 28.9784 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],

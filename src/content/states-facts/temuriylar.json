@@ -7,6 +7,10 @@
     "endEra": "milodiy"
   },
   "capital": "Samarqand (keyinchalik Hirot)",
+  "capitals": [
+    { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
+    { "name": "Hirot", "lat": 34.3529, "lng": 62.204 }
+  ],
   "predecessors": [],
   "successors": [],
   "sources": ["golden-1992", "findley-2005"],

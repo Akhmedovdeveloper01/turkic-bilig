@@ -1,0 +1,23 @@
+{
+  "endonym": "türkler",
+  "languageBranch": "o'g'uz",
+  "population": [
+    { "value": 87400000, "year": 2024, "country": "Turkiya (mamlakat aholisi)", "sourceId": "un-desa-2024" }
+  ],
+  "regions": ["Anadolu", "Sharqiy Frakiya", "G'arbiy Yevropa (diaspora)"],
+  "religion": ["Islom (sunniylik ko'pchilik, alaviylik ozchilik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "findley-2005", "un-desa-2024"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Turkiya rasmiy aholini ro'yxatga olishda etnik mansublikni so'ramaydi, shu sababli yuqoridagi son mamlakatning UMUMIY aholisi bo'lib, aynan etnik turklarning aniq sonini bildirmaydi",
+      "sourceIds": ["un-desa-2024"]
+    },
+    {
+      "topic": "Anadolu turklarining etnogenezida O'rta Osiyodan kelgan turkiy ko'chmanchilar va mahalliy Anadoli (vizantiyalik, yunon, arman va boshqa) aholisining nisbati — bu masala tilshunoslik va tarixiy demografiya nuqtai nazaridan hamon muhokama qilinadi",
+      "sourceIds": ["golden-1992", "findley-2005"]
+    }
+  ]
+}

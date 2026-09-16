@@ -1,0 +1,13 @@
+{
+  "endonym": "qırgızdar",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 5100000, "year": 2024, "country": "Qirg'iziston", "sourceId": "un-desa-2024" }
+  ],
+  "regions": ["Markaziy Osiyo", "Xitoy (Shinjon)", "Tojikiston", "O'zbekiston"],
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "un-desa-2024"],
+  "verified": false
+}

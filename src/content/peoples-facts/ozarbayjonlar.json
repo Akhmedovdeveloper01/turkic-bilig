@@ -1,0 +1,19 @@
+{
+  "endonym": "azərbaycanlılar",
+  "languageBranch": "o'g'uz",
+  "population": [
+    { "value": 9300000, "year": 2024, "country": "Ozarbayjon", "sourceId": "un-desa-2024" }
+  ],
+  "regions": ["Janubiy Kavkaz", "Eron (shimoliy-g'arbiy, Janubiy Ozarbayjon)", "Turkiya", "Rossiya"],
+  "religion": ["Islom (shialik va sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "un-desa-2024"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Eronda yashovchi ozarbayjonlarning umumiy soni — Eron rasmiy aholini ro'yxatga olishda etnik mansublikni so'ramaydi, shu sababli turli manbalar va tomonlar (Eron rasmiylari, ozarbayjon milliy harakatlari, xalqaro tashkilotlar) juda farqli baholarni keltiradi",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

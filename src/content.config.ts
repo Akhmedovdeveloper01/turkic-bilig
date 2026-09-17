@@ -75,6 +75,17 @@ const peopleFacts = defineCollection({
     historicalStates: z.array(reference('stateFacts')).default([]),
     scholars: z.array(reference('scholarFacts')).default([]),
     sources: z.array(sourceRef).min(1, 'Kamida bitta umumiy manba shart'),
+    /** Xalq sahifasini individuallashtirish uchun sof dizayn tanlovi — manba
+     * talab qilinmaydi (etnografik "milliy rang/naqsh" da'vosi emas). */
+    accentColor: z
+      .object({
+        light: z.string(),
+        dark: z.string(),
+      })
+      .optional(),
+    /** Mavhum geometrik bezak turi — hech qanday aniq xalqqa tegishli deb
+     * da'vo qilinmaydi, faqat vizual farqlash uchun. */
+    pattern: z.enum(['zigzag', 'diamond', 'dots', 'wave', 'key', 'cross']).optional(),
     ...verificationFields,
   }),
 });

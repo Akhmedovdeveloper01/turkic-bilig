@@ -1,5 +1,7 @@
 {
   "endonym": "türkler",
+  "accentColor": { "light": "#b3273f", "dark": "#e0637a" },
+  "pattern": "cross",
   "languageBranch": "o'g'uz",
   "population": [
     { "value": 87400000, "year": 2024, "country": "Turkiya (mamlakat aholisi)", "sourceId": "un-desa-2024" }

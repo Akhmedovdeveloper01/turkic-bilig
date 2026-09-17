@@ -1,5 +1,7 @@
 {
   "endonym": "türkmenler",
+  "accentColor": { "light": "#9c3b3b", "dark": "#d97a7a" },
+  "pattern": "zigzag",
   "languageBranch": "o'g'uz",
   "population": [
     { "value": 6300000, "year": 2024, "country": "Turkmaniston", "sourceId": "un-desa-2024" }

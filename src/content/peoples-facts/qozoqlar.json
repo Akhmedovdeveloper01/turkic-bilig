@@ -1,5 +1,7 @@
 {
   "endonym": "qazaqtar",
+  "accentColor": { "light": "#b8860b", "dark": "#e8b34a" },
+  "pattern": "diamond",
   "languageBranch": "qipchoq",
   "population": [
     { "value": 13400000, "year": 2024, "country": "Qozog'iston", "sourceId": "un-desa-2024" }

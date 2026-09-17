@@ -1,0 +1,47 @@
+{
+  "stateId": "oltin-orda",
+  "year": 1350,
+  "sourceIds": ["golden-1992", "favereau-2021"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "ortacha",
+      "notes": "Dasht mintaqasidagi ko'chmanchi davlat chegarasi sxematik.",
+      "ring": [
+        [30.3, 46.2],
+        [49.07, 54.98],
+        [80.3, 50.4],
+        [68.36, 44.0],
+        [59.15, 42.33],
+        [48.29, 42.06],
+        [33.86, 44.75]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "ortacha",
+      "notes": "Rus knyazliklari (Vladimir, Moskva, Tver, Ryazan, Nijniy Novgorod)",
+      "ring": [
+        [35.9, 56.86],
+        [44.0, 56.30],
+        [40.4, 56.13],
+        [39.7, 54.63],
+        [37.62, 55.75]
+      ]
+    },
+    {
+      "zone": "ta'sir-doirasi",
+      "confidence": "past",
+      "notes": "Sharqiy Qipchoq (Ko'k O'rda/Oq O'rda) chegarasi Zaysan ko'li tomon",
+      "point": [84.0, 48.0],
+      "radiusKm": 200
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Saroy (Saroy-Botu)", "lon": 47.40, "lat": 46.60 },
+    { "kind": "city", "name": "Saroy al-Jadid (Saroy-Berke)", "lon": 48.60, "lat": 45.30, "notes": "XIV asr o'rtasidan — aniq joylashuvi tarixchilar orasida munozarali" },
+    { "kind": "city", "name": "Kaffa", "lon": 35.38, "lat": 45.03, "notes": "Genuya savdo koloniyasi — Oltin O'rda hududida, lekin alohida maqomda" },
+    { "kind": "city", "name": "Tana", "lon": 39.42, "lat": 47.10, "notes": "Venetsiya savdo koloniyasi — alohida maqomda" },
+    { "kind": "city", "name": "Novgorod", "lon": 31.28, "lat": 58.52, "notes": "Faqat o'lpon to'lagan, bevosita boshqarilmagan" }
+  ]
+}

@@ -49,7 +49,25 @@
   "states": {
     "territoryMapTitle": "Təxmini əhatə",
     "territoryMapNote": "Bu sərhəd deyil — mətndə təsvir olunan ümumi yayılmanı göstərən sxematik formadır, dövlətin ən geniş yayılma dövrünə təxminən uyğun gəlir.",
-    "territoryPopup": "Təxmini, sxematik əhatə — dəqiq tarixi sərhəd deyil."
+    "territoryPopup": "Təxmini, sxematik əhatə — dəqiq tarixi sərhəd deyil.",
+    "legendTitle": "Şərti işarələr",
+    "legendCenter": "Mərkəz",
+    "legendVassal": "Vassal / tabe ərazi",
+    "legendInfluence": "Təsir dairəsi",
+    "confidenceBaland": "Yüksək etibarlılıq",
+    "confidenceOrtacha": "Orta etibarlılıq",
+    "confidencePast": "Aşağı etibarlılıq (təxmini)",
+    "tableCaption": "Xəritə məlumatlarının mətn alternativi",
+    "tableZone": "Zona növü",
+    "tableConfidence": "Etibarlılıq",
+    "tableNotes": "Qeyd",
+    "tableSources": "Mənbələr",
+    "mapDisclaimer": "Sərhədlər təxmini və sxematikdir — bu, hələ ekspert tərəfindən tam yoxlanılmamış qaralamadır.",
+    "mapAriaLabel": "{title} dövlətinin təxmini əhatəsini göstərən interaktiv xəritə",
+    "kindCapital": "Paytaxt",
+    "kindCity": "Şəhər",
+    "kindCampaign": "Hərbi yürüş",
+    "kindRegion": "Ərazi"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

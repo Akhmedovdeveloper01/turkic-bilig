@@ -1,0 +1,269 @@
+---
+/**
+ * Bitta davlatning taxminiy hudud xaritasi (MapLibre GL).
+ *
+ * Zonalar `scripts/geo/build-state.ts` tomonidan generatsiya qilingan
+ * GeoJSON'dan keladi: "markaz" (to'liq rang), "vassal" (chiziqli naqsh +
+ * uzuq chegara), "ta'sir-doirasi" (faqat uzuq chegara, fill yo'q). Bularning
+ * barchasi aniq tarixiy CHEGARA emas — tayanch nuqtalardan hosil qilingan
+ * sxematik shakl (ILMIY QOIDA 6), shu sababli sahifada doim aniq
+ * ogohlantirish va matnli muqobil jadval bilan birga chiqadi.
+ */
+import { getEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import type { FeatureCollection } from 'geojson';
+
+interface Props {
+  geojson: FeatureCollection;
+  mapColor?: { light: string; dark: string };
+  lang: string;
+  title: string;
+}
+
+const { geojson, mapColor, lang, title } = Astro.props;
+const t = createTranslator(lang);
+const color = mapColor ?? { light: '#0e7c86', dark: '#35b6c0' };
+
+const zoneFeatures = geojson.features.filter(
+  (f) => f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon'
+);
+
+function zoneLabel(zone: string) {
+  if (zone === 'markaz') return t('states.legendCenter');
+  if (zone === 'vassal') return t('states.legendVassal');
+  return t('states.legendInfluence');
+}
+function confidenceLabel(c: string) {
+  if (c === 'baland') return t('states.confidenceBaland');
+  if (c === 'ortacha') return t('states.confidenceOrtacha');
+  return t('states.confidencePast');
+}
+
+const zoneRows = await Promise.all(
+  zoneFeatures.map(async (f) => {
+    const props = f.properties as {
+      zone: string;
+      confidence: string;
+      notes: string | null;
+      sourceIds: string[];
+    };
+    const sourceEntries = await Promise.all(props.sourceIds.map((id) => getEntry('sources', id)));
+    const sources = sourceEntries
+      .filter((s) => s !== undefined)
+      .map((s) => `${s.data.author} (${s.data.year ?? '?'})`);
+    return {
+      zone: zoneLabel(props.zone),
+      confidence: confidenceLabel(props.confidence),
+      notes: props.notes,
+      sources: sources.join('; '),
+    };
+  })
+);
+
+const mapAriaLabel = t('states.mapAriaLabel', { title });
+---
+
+<div class="not-prose">
+  <div
+    id="state-map"
+    class="h-[28rem] w-full overflow-hidden rounded-xl border border-line"
+    role="application"
+    aria-label={mapAriaLabel}
+    data-geojson={JSON.stringify(geojson)}
+    data-color-light={color.light}
+    data-color-dark={color.dark}
+  >
+  </div>
+
+  <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-ink-muted">
+    <span class="flex items-center gap-1.5">
+      <span class="h-3 w-3 rounded-sm" style={`background-color:${color.light}`}></span>
+      {t('states.legendCenter')}
+    </span>
+    <span class="flex items-center gap-1.5">
+      <span class="h-3 w-3 rounded-sm border-2 border-dashed" style={`border-color:${color.light}`}></span>
+      {t('states.legendVassal')}
+    </span>
+    <span class="flex items-center gap-1.5">
+      <span class="h-3 w-3 rounded-sm border-2 border-dotted" style={`border-color:${color.light}`}></span>
+      {t('states.legendInfluence')}
+    </span>
+  </div>
+
+  <p class="mt-2 text-xs text-gold">{t('states.mapDisclaimer')}</p>
+
+  <div class="mt-4 overflow-x-auto">
+    <table class="w-full min-w-[28rem] border-collapse text-xs">
+      <caption class="mb-1 text-start text-ink-muted">{t('states.tableCaption')}</caption>
+      <thead>
+        <tr class="border-b border-line text-ink-muted">
+          <th class="py-1 pe-3 text-start font-medium">{t('states.tableZone')}</th>
+          <th class="py-1 pe-3 text-start font-medium">{t('states.tableConfidence')}</th>
+          <th class="py-1 pe-3 text-start font-medium">{t('states.tableNotes')}</th>
+          <th class="py-1 text-start font-medium">{t('states.tableSources')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {zoneRows.map((row) => (
+          <tr class="border-b border-line/60">
+            <td class="py-1.5 pe-3 text-ink">{row.zone}</td>
+            <td class="py-1.5 pe-3 text-ink">{row.confidence}</td>
+            <td class="py-1.5 pe-3 text-ink-muted">{row.notes ?? '—'}</td>
+            <td class="py-1.5 text-ink-muted">{row.sources || '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  import * as maplibregl from 'maplibre-gl';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+  import type { FeatureCollection, Geometry, Position } from 'geojson';
+
+  const el = document.getElementById('state-map');
+  if (el) {
+    const geojson: FeatureCollection = JSON.parse(el.dataset.geojson || '{"type":"FeatureCollection","features":[]}');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const color = (isDark ? el.dataset.colorDark : el.dataset.colorLight) || '#0e7c86';
+    const isRtl = document.documentElement.dir === 'rtl';
+
+    const map = new maplibregl.Map({
+      container: el,
+      style: {
+        version: 8,
+        sources: {
+          osm: {
+            type: 'raster',
+            tiles: [
+              'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            ],
+            tileSize: 256,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          },
+        },
+        layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
+      },
+      center: [50, 40],
+      zoom: 2,
+      cooperativeGestures: true,
+      attributionControl: { compact: true },
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), isRtl ? 'top-left' : 'top-right');
+
+    map.on('load', () => {
+      // "vassal" zonasi uchun diagonal chiziqli naqsh (rang bilan birga —
+      // faqat rangga tayanmaslik uchun, ko'r-rang ajratmaydiganlar uchun ham).
+      const size = 16;
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, size);
+        ctx.lineTo(size, 0);
+        ctx.stroke();
+        map.addImage('hatch-pattern', ctx.getImageData(0, 0, size, size));
+      }
+
+      map.addSource('territory', { type: 'geojson', data: geojson });
+
+      map.addLayer({
+        id: 'markaz-fill',
+        type: 'fill',
+        source: 'territory',
+        filter: ['==', ['get', 'zone'], 'markaz'],
+        paint: { 'fill-color': color, 'fill-opacity': 0.32 },
+      });
+      map.addLayer({
+        id: 'markaz-line',
+        type: 'line',
+        source: 'territory',
+        filter: ['==', ['get', 'zone'], 'markaz'],
+        paint: { 'line-color': color, 'line-width': 2 },
+      });
+
+      map.addLayer({
+        id: 'vassal-fill',
+        type: 'fill',
+        source: 'territory',
+        filter: ['==', ['get', 'zone'], 'vassal'],
+        paint: { 'fill-pattern': 'hatch-pattern', 'fill-opacity': 0.55 },
+      });
+      map.addLayer({
+        id: 'vassal-line',
+        type: 'line',
+        source: 'territory',
+        filter: ['==', ['get', 'zone'], 'vassal'],
+        paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [3, 2] },
+      });
+
+      map.addLayer({
+        id: 'influence-line',
+        type: 'line',
+        source: 'territory',
+        filter: ['==', ['get', 'zone'], "ta'sir-doirasi"],
+        paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [1, 2], 'line-opacity': 0.7 },
+      });
+
+      // "past" ishonchlilikdagi zonalarni yanada xiraroq ko'rsatish.
+      map.setPaintProperty('markaz-fill', 'fill-opacity', [
+        'case',
+        ['==', ['get', 'confidence'], 'past'],
+        0.16,
+        0.32,
+      ]);
+      map.setPaintProperty('markaz-line', 'line-dasharray', [
+        'case',
+        ['==', ['get', 'confidence'], 'past'],
+        ['literal', [1, 2]],
+        ['literal', [1, 0]],
+      ]);
+
+      const coordsList: Position[] = [];
+      const collect = (geom: Geometry) => {
+        if (geom.type === 'Polygon') geom.coordinates.forEach((ring) => ring.forEach((c) => coordsList.push(c)));
+        else if (geom.type === 'MultiPolygon')
+          geom.coordinates.forEach((poly) => poly.forEach((ring) => ring.forEach((c) => coordsList.push(c))));
+        else if (geom.type === 'Point') coordsList.push(geom.coordinates);
+      };
+      geojson.features.forEach((f) => collect(f.geometry));
+      if (coordsList.length > 0) {
+        const lons = coordsList.map((c) => c[0]);
+        const lats = coordsList.map((c) => c[1]);
+        map.fitBounds(
+          [
+            [Math.min(...lons), Math.min(...lats)],
+            [Math.max(...lons), Math.max(...lats)],
+          ],
+          { padding: 30, duration: 0 }
+        );
+      }
+
+      geojson.features
+        .filter((f) => f.geometry.type === 'Point')
+        .forEach((f) => {
+          const props = f.properties as { name: string; notes: string | null } | null;
+          const markerEl = document.createElement('div');
+          markerEl.className = 'tb-map-marker-inner';
+          markerEl.innerHTML =
+            '<svg viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="5" width="14" height="14" fill="#fff" /><rect x="5" y="5" width="14" height="14" fill="#fff" transform="rotate(45 12 12)" /></svg>';
+          new maplibregl.Marker({ element: markerEl })
+            .setLngLat(f.geometry.type === 'Point' ? (f.geometry.coordinates as [number, number]) : [0, 0])
+            .setPopup(
+              new maplibregl.Popup({ offset: 16 }).setHTML(
+                `<strong>${props?.name ?? ''}</strong>${props?.notes ? `<br>${props.notes}` : ''}`
+              )
+            )
+            .addTo(map);
+        });
+    });
+  }
+</script>

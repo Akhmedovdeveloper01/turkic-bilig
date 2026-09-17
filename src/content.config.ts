@@ -101,6 +101,16 @@ const stateFacts = defineCollection({
       endEra: z.enum(['m.av', 'milodiy']),
     }),
     capital: z.string().optional(),
+    /** Xaritada shu davlatga doimiy ajratilgan rang — sof dizayn tanlovi,
+     * manba talab qilinmaydi (tarixiy "davlat rangi" da'vosi emas). */
+    mapColor: z
+      .object({
+        light: z.string(),
+        dark: z.string(),
+      })
+      .optional(),
+    /** src/data/geo/states/{slug}/{mapYear}.geojson faylini topish uchun. */
+    mapYear: z.number().int().optional(),
     /** Xaritada nuqta sifatida ko'rsatish uchun — shahar koordinatasi
      * geografik fakt (bahssiz), tarixiy chegaralardan farqli o'laroq
      * alohida manba talab qilinmaydi. */

@@ -5,7 +5,8 @@ import VerifiedBadge from '../../../components/VerifiedBadge.astro';
 import TranslationNotice from '../../../components/TranslationNotice.astro';
 import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
-import StateTerritoryMap from '../../../components/StateTerritoryMap.astro';
+import StateMap from '../../../components/map/StateMap.astro';
+import { getStateGeoJSON } from '../../../data/geo';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 
@@ -48,6 +49,9 @@ const scholarEntries = await Promise.all(
 function formatYear(year: number, era: 'm.av' | 'milodiy') {
   return era === 'm.av' ? `mil. av. ${year}` : `${year}`;
 }
+
+const stateGeoJSON =
+  facts?.data.mapYear !== undefined ? getStateGeoJSON(slug!, facts.data.mapYear) : undefined;
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
@@ -78,15 +82,11 @@ function formatYear(year: number, era: 'm.av' | 'milodiy') {
     </section>
   )}
 
-  {facts && facts.data.extentPoints.length >= 3 && (
+  {stateGeoJSON && (
     <section class="mb-8">
       <h2 class="mb-1 text-lg font-semibold text-ink">{t('states.territoryMapTitle')}</h2>
       <p class="mb-3 text-xs text-ink-muted">{t('states.territoryMapNote')}</p>
-      <StateTerritoryMap
-        capitals={facts.data.capitals}
-        extentPoints={facts.data.extentPoints}
-        popupText={t('states.territoryPopup')}
-      />
+      <StateMap geojson={stateGeoJSON} mapColor={facts?.data.mapColor} lang={lang!} title={entry.data.title} />
     </section>
   )}
 

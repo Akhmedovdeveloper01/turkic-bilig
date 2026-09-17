@@ -49,7 +49,25 @@
   "states": {
     "territoryMapTitle": "Takmyny giňişlik",
     "territoryMapNote": "Bu serhet däl — tekstde beýan edilen umumy ýaýrawy görkezýän şertli şekil, döwletiň iň giň ýaýran döwrüne takmynan gabat gelýär.",
-    "territoryPopup": "Takmyny, şertli giňişlik — takyk taryhy serhet däl."
+    "territoryPopup": "Takmyny, şertli giňişlik — takyk taryhy serhet däl.",
+    "legendTitle": "Şertli belgiler",
+    "legendCenter": "Merkez",
+    "legendVassal": "Wassal / garaşly çäk",
+    "legendInfluence": "Täsir çägi",
+    "confidenceBaland": "Ýokary ynamdarlyk",
+    "confidenceOrtacha": "Orta ynamdarlyk",
+    "confidencePast": "Pes ynamdarlyk (takmyny)",
+    "tableCaption": "Karta maglumatlarynyň tekst alternatiwasy",
+    "tableZone": "Çäk görnüşi",
+    "tableConfidence": "Ynamdarlyk",
+    "tableNotes": "Bellik",
+    "tableSources": "Çeşmeler",
+    "mapDisclaimer": "Serhetler takmyny we şertli — bu heniz bilermen tarapyndan doly barlanmadyk çaklama.",
+    "mapAriaLabel": "{title} döwletiniň takmyny giňişligini görkezýän interaktiw karta",
+    "kindCapital": "Paýtagt",
+    "kindCity": "Şäher",
+    "kindCampaign": "Harby ýöriş",
+    "kindRegion": "Sebit"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

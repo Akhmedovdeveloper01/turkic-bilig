@@ -49,7 +49,25 @@
   "states": {
     "territoryMapTitle": "Yaklaşık kapsam",
     "territoryMapNote": "Bu bir sınır değildir — metinde tasvir edilen genel yayılımı gösteren şematik bir şekildir, devletin en geniş dönemine yaklaşık olarak karşılık gelir.",
-    "territoryPopup": "Yaklaşık, şematik kapsam — kesin bir tarihi sınır değildir."
+    "territoryPopup": "Yaklaşık, şematik kapsam — kesin bir tarihi sınır değildir.",
+    "legendTitle": "Lejant",
+    "legendCenter": "Merkez",
+    "legendVassal": "Vasal / bağımlı bölge",
+    "legendInfluence": "Etki alanı",
+    "confidenceBaland": "Yüksek güvenilirlik",
+    "confidenceOrtacha": "Orta güvenilirlik",
+    "confidencePast": "Düşük güvenilirlik (yaklaşık)",
+    "tableCaption": "Harita verilerinin metin alternatifi",
+    "tableZone": "Bölge türü",
+    "tableConfidence": "Güvenilirlik",
+    "tableNotes": "Not",
+    "tableSources": "Kaynaklar",
+    "mapDisclaimer": "Sınırlar yaklaşık ve şematiktir — bu, henüz uzman incelemesinden tam geçmemiş bir taslaktır.",
+    "mapAriaLabel": "{title} devletinin yaklaşık kapsamını gösteren interaktif harita",
+    "kindCapital": "Başkent",
+    "kindCity": "Şehir",
+    "kindCampaign": "Askeri sefer",
+    "kindRegion": "Bölge"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

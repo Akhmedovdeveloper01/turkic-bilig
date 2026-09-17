@@ -49,7 +49,25 @@
   "states": {
     "territoryMapTitle": "Taxminiy hudud",
     "territoryMapNote": "Bu chegara emas — matnda tasvirlangan umumiy yoyilishni ko'rsatuvchi sxematik shakl, davlatning eng katta yoyilish davriga taxminan mos keladi.",
-    "territoryPopup": "Taxminiy, sxematik hudud — aniq tarixiy chegara emas."
+    "territoryPopup": "Taxminiy, sxematik hudud — aniq tarixiy chegara emas.",
+    "legendTitle": "Belgilar",
+    "legendCenter": "Markaz",
+    "legendVassal": "Vassal / tobe hudud",
+    "legendInfluence": "Ta'sir doirasi",
+    "confidenceBaland": "Ishonchli",
+    "confidenceOrtacha": "O'rtacha ishonchli",
+    "confidencePast": "Past ishonchli (taxminiy)",
+    "tableCaption": "Xaritadagi ma'lumotlarning matnli ko'rinishi",
+    "tableZone": "Hudud turi",
+    "tableConfidence": "Ishonchlilik",
+    "tableNotes": "Izoh",
+    "tableSources": "Manbalar",
+    "mapDisclaimer": "Chegaralar taxminiy va sxematik shakl bo'lib, hali ekspert tomonidan to'liq tekshirilmagan qoralama hisoblanadi.",
+    "mapAriaLabel": "{title} davlatining taxminiy hududini ko'rsatuvchi interaktiv xarita",
+    "kindCapital": "Poytaxt",
+    "kindCity": "Shahar",
+    "kindCampaign": "Harbiy yurish",
+    "kindRegion": "Hudud"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

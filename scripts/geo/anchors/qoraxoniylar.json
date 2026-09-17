@@ -1,0 +1,28 @@
+{
+  "stateId": "qoraxoniylar",
+  "year": 1040,
+  "sourceIds": ["golden-1992", "bosworth-1996"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "ortacha",
+      "notes": "1040-yil — bo'linishdan oldingi yagona davlat sifatida ko'rsatilgan. Sharqiy chegara (Oqsuv atrofi)dan sharqda Qocho uyg'ur davlati boshlanadi.",
+      "ring": [
+        [71.37, 42.90],
+        [75.24, 42.75],
+        [80.26, 41.17],
+        [79.92, 37.11],
+        [75.99, 39.47],
+        [67.28, 37.22],
+        [64.42, 39.77],
+        [66.97, 39.65],
+        [69.77, 42.30]
+      ]
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Bolasog'un", "lon": 75.24, "lat": 42.75 },
+    { "kind": "city", "name": "Qashg'ar", "lon": 75.99, "lat": 39.47 },
+    { "kind": "city", "name": "Samarqand", "lon": 66.97, "lat": 39.65, "notes": "1040-yildan keyin G'arbiy xonlik poytaxti" }
+  ]
+}

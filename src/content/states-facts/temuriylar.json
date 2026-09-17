@@ -7,6 +7,8 @@
     "endEra": "milodiy"
   },
   "capital": "Samarqand (keyinchalik Hirot)",
+  "mapColor": { "light": "#7a4a8c", "dark": "#b98bc9" },
+  "mapYear": 1405,
   "capitals": [
     { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
     { "name": "Hirot", "lat": 34.3529, "lng": 62.204 }

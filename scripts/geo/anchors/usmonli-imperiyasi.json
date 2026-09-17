@@ -1,0 +1,59 @@
+{
+  "stateId": "usmonli-imperiyasi",
+  "year": 1683,
+  "sourceIds": ["findley-2005", "pitcher-1972"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "ortacha",
+      "notes": "1683-yil — imperiyaning eng katta yoyilish davri (Vena qamali yili). 1299-1922 davrining boshqa davrlariga mos kelmaydi.",
+      "ring": [
+        [19.04, 47.50],
+        [26.58, 48.68],
+        [28.98, 41.01],
+        [44.36, 33.31],
+        [39.83, 21.42],
+        [31.24, 30.04],
+        [13.19, 32.89]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "ortacha",
+      "notes": "Qrim xonligi, Moldaviya, Valaxiya, Transilvaniya",
+      "ring": [
+        [23.6, 46.77],
+        [27.6, 47.16],
+        [33.86, 44.75],
+        [26.10, 44.43]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Jazoir — amalda avtonom \"ojaq\"",
+      "point": [3.06, 36.75],
+      "radiusKm": 150
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Tunis — amalda avtonom \"ojaq\"",
+      "point": [10.18, 36.80],
+      "radiusKm": 120
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "G'arbiy Gruziya qismlari",
+      "point": [42.7, 42.25],
+      "radiusKm": 100
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Istanbul", "lon": 28.98, "lat": 41.01 },
+    { "kind": "city", "name": "Bag'dod", "lon": 44.36, "lat": 33.31 },
+    { "kind": "region", "name": "Kipr", "lon": 33.0, "lat": 35.0, "notes": "Orol, bevosita boshqarilgan" },
+    { "kind": "region", "name": "Krit", "lon": 24.8, "lat": 35.24, "notes": "1669-yildan bevosita boshqarilgan" }
+  ]
+}

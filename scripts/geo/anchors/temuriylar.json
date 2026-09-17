@@ -1,0 +1,54 @@
+{
+  "stateId": "temuriylar",
+  "year": 1405,
+  "sourceIds": ["bregel-2003", "manz-1989", "golden-1992", "findley-2005"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "ortacha",
+      "notes": "Tayanch nuqtalar orasidagi chegara chizig'i sxematik ravishda tortilgan (daryo/tog' kabi tabiiy chegaralarga qat'iy mos kelmasligi mumkin) — ekspert tekshiruvi kerak.",
+      "ring": [
+        [59.15, 42.33],
+        [68.25, 43.30],
+        [68.30, 42.85],
+        [66.97, 39.65],
+        [69.18, 34.53],
+        [65.71, 31.61],
+        [56.27, 27.10],
+        [57.08, 30.28],
+        [52.53, 29.59],
+        [47.78, 30.51],
+        [44.36, 33.31],
+        [40.73, 37.31],
+        [39.49, 39.75],
+        [46.30, 38.08],
+        [48.80, 36.43],
+        [62.20, 34.35]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Gruziya (Tbilisi)",
+      "point": [44.80, 41.70],
+      "radiusKm": 120
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Shirvon (Darband)",
+      "point": [48.29, 42.06],
+      "radiusKm": 100
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Samarqand", "lon": 66.97, "lat": 39.65 },
+    { "kind": "city", "name": "Hirot", "lon": 62.20, "lat": 34.35, "notes": "Shohruh Mirzo davrida poytaxt" },
+    { "kind": "campaign", "name": "Dehli yurishi (1398-99)", "lon": 77.20, "lat": 28.60, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
+    { "kind": "campaign", "name": "Multon (1398-99 yurishi)", "lon": 71.47, "lat": 30.20, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
+    { "kind": "campaign", "name": "Damashq yurishi (1400-01)", "lon": 36.30, "lat": 33.51, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
+    { "kind": "campaign", "name": "Anqara jangi (1402)", "lon": 32.85, "lat": 39.93, "notes": "Bir martalik jang, doimiy hudud emas" },
+    { "kind": "campaign", "name": "Dashti Qipchoq yurishlari (1391/1395)", "lon": 46.90, "lat": 47.86, "notes": "Oltin O'rdaga qarshi yurishlar, doimiy hudud emas" },
+    { "kind": "campaign", "name": "Qashqar/Mo'g'uliston", "lon": 75.99, "lat": 39.47, "notes": "Chegaraviy yurishlar, doimiy hudud emas" }
+  ]
+}

@@ -49,7 +49,25 @@
   "states": {
     "territoryMapTitle": "Approximate extent",
     "territoryMapNote": "This is not a border — it is a schematic shape illustrating the general extent described in the text, roughly corresponding to the state's period of greatest expansion.",
-    "territoryPopup": "Approximate, schematic extent — not a precise historical border."
+    "territoryPopup": "Approximate, schematic extent — not a precise historical border.",
+    "legendTitle": "Legend",
+    "legendCenter": "Core",
+    "legendVassal": "Vassal / tributary",
+    "legendInfluence": "Sphere of influence",
+    "confidenceBaland": "High confidence",
+    "confidenceOrtacha": "Medium confidence",
+    "confidencePast": "Low confidence (approximate)",
+    "tableCaption": "Text alternative for the map data",
+    "tableZone": "Zone type",
+    "tableConfidence": "Confidence",
+    "tableNotes": "Notes",
+    "tableSources": "Sources",
+    "mapDisclaimer": "Borders are approximate and schematic — this is a draft not yet fully reviewed by an expert.",
+    "mapAriaLabel": "Interactive map showing the approximate extent of {title}",
+    "kindCapital": "Capital",
+    "kindCity": "City",
+    "kindCampaign": "Military campaign",
+    "kindRegion": "Region"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

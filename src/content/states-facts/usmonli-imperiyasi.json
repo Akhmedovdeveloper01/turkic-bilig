@@ -7,6 +7,8 @@
     "endEra": "milodiy"
   },
   "capital": "Bursa / Adirna (Edirne) / Istanbul",
+  "mapColor": { "light": "#a13d3d", "dark": "#d97a7a" },
+  "mapYear": 1683,
   "capitals": [
     { "name": "Bursa", "lat": 40.1885, "lng": 29.061 },
     { "name": "Adirna (Edirne)", "lat": 41.6771, "lng": 26.5557 },

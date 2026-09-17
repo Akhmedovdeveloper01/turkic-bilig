@@ -1,0 +1,65 @@
+{
+  "stateId": "gokturk-xoqonligi",
+  "year": 576,
+  "sourceIds": ["golden-1992", "sinor-1990"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "past",
+      "notes": "Ko'chmanchi konfederatsiya sifatida chegara tushunchasi zamonaviy davlat chegarasidan farq qiladi — bu chiziq faqat nazorat qilingan umumiy dasht mintaqasini ko'rsatadi.",
+      "ring": [
+        [36.47, 45.36],
+        [105.0, 51.5],
+        [120.0, 47.0],
+        [110.0, 41.0],
+        [75.20, 42.80]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Tarim havzasi shahar-davlati: Ko'cha",
+      "point": [82.96, 41.72],
+      "radiusKm": 90
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Tarim havzasi shahar-davlati: Turfon",
+      "point": [89.19, 42.95],
+      "radiusKm": 90
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "So'g'd: Samarqand",
+      "point": [66.975, 39.627],
+      "radiusKm": 100
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Toxariston: Termiz",
+      "point": [67.28, 37.22],
+      "radiusKm": 100
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Enasoy qirg'izlari",
+      "point": [92.0, 53.0],
+      "radiusKm": 150
+    },
+    {
+      "zone": "ta'sir-doirasi",
+      "confidence": "past",
+      "notes": "Amudaryo janubi (Kobul tomon) — asosan VII asr boshi, G'arbiy xoqonlik davri",
+      "point": [69.21, 34.56],
+      "radiusKm": 120
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Ötüken", "lon": 101.5, "lat": 47.5 },
+    { "kind": "city", "name": "Suyob (G'arbiy yabg'u qarorgohi)", "lon": 75.20, "lat": 42.80 }
+  ]
+}

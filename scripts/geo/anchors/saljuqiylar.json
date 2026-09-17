@@ -1,0 +1,62 @@
+{
+  "stateId": "saljuqiylar",
+  "year": 1092,
+  "sourceIds": ["golden-1992", "findley-2005", "peacock-2015"],
+  "zones": [
+    {
+      "zone": "markaz",
+      "confidence": "ortacha",
+      "notes": "Malikshoh vafoti (1092) yilidagi eng katta yoyilish davri.",
+      "ring": [
+        [59.15, 42.33],
+        [61.84, 37.66],
+        [62.20, 34.35],
+        [57.08, 30.28],
+        [51.67, 32.65],
+        [44.36, 33.31],
+        [36.30, 33.51],
+        [36.16, 36.20],
+        [43.13, 36.34],
+        [46.30, 38.08],
+        [51.43, 35.60]
+      ]
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Rum saljuqiylari (Nikeya, 1081-97) — yarim mustaqil",
+      "point": [29.72, 40.43],
+      "radiusKm": 150
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Movarounnahr Qoraxoniylari — nomigagina tobe, ma'muriy jihatdan mustaqil",
+      "point": [66.975, 39.627],
+      "radiusKm": 120
+    },
+    {
+      "zone": "vassal",
+      "confidence": "past",
+      "notes": "Gruziya",
+      "point": [44.80, 41.70],
+      "radiusKm": 120
+    },
+    {
+      "zone": "ta'sir-doirasi",
+      "confidence": "past",
+      "notes": "Falastin va Hijoz — faqat nomigagina, xutba o'qilgan (Artuqiylar va boshqa mahalliy sulolalar amalda boshqargan)",
+      "ring": [
+        [35.23, 31.78],
+        [39.61, 24.47],
+        [39.83, 21.42]
+      ]
+    }
+  ],
+  "points": [
+    { "kind": "capital", "name": "Isfahon", "lon": 51.67, "lat": 32.65, "notes": "1092-yilda asosiy poytaxt" },
+    { "kind": "city", "name": "Nishopur", "lon": 58.80, "lat": 36.20 },
+    { "kind": "city", "name": "Ray", "lon": 51.43, "lat": 35.60 },
+    { "kind": "city", "name": "Marv", "lon": 61.84, "lat": 37.66, "notes": "Sulton Sanjar davrida poytaxt" }
+  ]
+}

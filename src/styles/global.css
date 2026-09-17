@@ -16,33 +16,114 @@
   --color-ink: #1c1a17;
   --color-ink-muted: #5b564c;
   --color-line: #e4ddd0;
-  --color-brand: #0e7c86;
-  --color-brand-dark: #0a5a62;
-  --color-accent: #c1553a;
-  --color-accent-soft: #f3e3dc;
-  --color-gold: #a9821f;
-  --color-gold-soft: #f4ecd3;
+  --color-brand: #0891a0;
+  --color-brand-dark: #066572;
+  --color-accent: #e0532e;
+  --color-accent-soft: #fbe1d4;
+  --color-gold: #c99414;
+  --color-gold-soft: #f7ecd0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-surface: #14181a;
-    --color-surface-alt: #1b2124;
-    --color-ink: #f2ede4;
+    --color-surface: #12181a;
+    --color-surface-alt: #1a2226;
+    --color-ink: #f4efe6;
     --color-ink-muted: #b3ac9f;
     --color-line: #2c3336;
-    --color-brand: #35b6c0;
-    --color-brand-dark: #1c8890;
-    --color-accent: #e2896a;
-    --color-accent-soft: #3a2620;
-    --color-gold: #dcb949;
-    --color-gold-soft: #3a331c;
+    --color-brand: #2dd4e0;
+    --color-brand-dark: #17a8b5;
+    --color-accent: #ff8156;
+    --color-accent-soft: #3d2419;
+    --color-gold: #ffcb47;
+    --color-gold-soft: #3a2f14;
   }
+}
+
+/* Bosh sahifa hero fonida va bezaklarda ishlatiladigan tovlanuvchi gradient. */
+:root {
+  --gradient-hero: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 45%, var(--color-accent) 100%);
 }
 
 body {
   background-color: var(--color-surface);
   color: var(--color-ink);
+}
+
+/* ---- Animatsiya utilitalari ---- */
+/* Harakatni kamaytirishni tanlagan foydalanuvchilar uchun barcha animatsiyalar
+ * o'chiriladi — mazmun darhol, yakuniy holatida ko'rinadi (ILMIY QOIDA emas,
+ * lekin loyihaning "accessibility" tamoyiliga mos). */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes tb-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes tb-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-16px) rotate(8deg);
+    }
+  }
+  @keyframes tb-gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .tb-animate-fade-up {
+    opacity: 0;
+    animation: tb-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .tb-animate-float {
+    animation: tb-float 7s ease-in-out infinite;
+  }
+  .tb-animate-gradient {
+    background-size: 200% 200%;
+    animation: tb-gradient-shift 10s ease-in-out infinite;
+  }
+  .tb-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .tb-reveal.tb-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigatsiya havolalari — pastdan o'sib chiquvchi chiziq (harakat kamaytirilsa ham ishlaydi, chunki oddiy CSS transition). */
+.tb-nav-link {
+  position: relative;
+}
+.tb-nav-link::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-brand);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+.tb-nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* Leaflet xaritalarida ishlatiladigan neytral yulduz-marker (StatesMap, OriginMap). */

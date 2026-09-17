@@ -55,13 +55,14 @@ const homelandPoint = {
   </div>
 
   <ul class="grid gap-4 sm:grid-cols-2">
-    {items.map(({ slug, entry, isFallback }) => entry && (
+    {items.map(({ slug, entry, isFallback }, index) => entry && (
       <EntryCard
         lang={lang!}
         href={`/${lang}/xalqlar/${slug}`}
         title={entry.data.title}
         summary={entry.data.summary}
         isFallback={isFallback}
+        index={index}
       />
     ))}
   </ul>

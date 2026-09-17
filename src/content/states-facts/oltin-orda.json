@@ -9,6 +9,7 @@
   "capital": "Saroy (Saroy-Botu, keyinchalik Saroy-Berka)",
   "mapColor": { "light": "#3a5a9c", "dark": "#7d97d1" },
   "mapYear": 1350,
+  "mapImage": "oltin-orda.png",
   "capitals": [{ "name": "Saroy", "lat": 47.86, "lng": 46.9 }],
   "extentPoints": [
     { "name": "Kiyev atrofi", "lat": 50.45, "lng": 30.52 },

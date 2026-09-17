@@ -64,6 +64,7 @@
     "tableSources": "Sources",
     "mapDisclaimer": "Borders are approximate and schematic — this is a draft not yet fully reviewed by an expert.",
     "mapAriaLabel": "Interactive map showing the approximate extent of {title}",
+    "imageDisclaimer": "Image shown for general illustration only, from a source not academically verified. Do not treat it as a precise border.",
     "kindCapital": "Capital",
     "kindCity": "City",
     "kindCampaign": "Military campaign",

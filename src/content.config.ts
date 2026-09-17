@@ -111,6 +111,10 @@ const stateFacts = defineCollection({
       .optional(),
     /** src/data/geo/states/{slug}/{mapYear}.geojson faylini topish uchun. */
     mapYear: z.number().int().optional(),
+    /** public/maps/ papkasidagi tayyor xarita tasviri fayl nomi (masalan
+     * "temuriylar.png"). Mavjud bo'lsa, sahifada interaktiv xarita o'rniga
+     * shu rasm ko'rsatiladi. */
+    mapImage: z.string().optional(),
     /** Xaritada nuqta sifatida ko'rsatish uchun — shahar koordinatasi
      * geografik fakt (bahssiz), tarixiy chegaralardan farqli o'laroq
      * alohida manba talab qilinmaydi. */

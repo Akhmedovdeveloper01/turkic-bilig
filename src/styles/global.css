@@ -68,10 +68,10 @@ body {
   @keyframes tb-float {
     0%,
     100% {
-      transform: translateY(0) rotate(0deg);
+      transform: translateY(0) rotate(0deg) scale(1);
     }
     50% {
-      transform: translateY(-16px) rotate(8deg);
+      transform: translateY(-26px) rotate(18deg) scale(1.08);
     }
   }
   @keyframes tb-gradient-shift {
@@ -92,8 +92,8 @@ body {
     animation: tb-float 7s ease-in-out infinite;
   }
   .tb-animate-gradient {
-    background-size: 200% 200%;
-    animation: tb-gradient-shift 10s ease-in-out infinite;
+    background-size: 220% 220%;
+    animation: tb-gradient-shift 6s ease-in-out infinite;
   }
   .tb-reveal {
     opacity: 0;

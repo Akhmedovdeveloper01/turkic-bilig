@@ -21,12 +21,16 @@ const items = await Promise.all(
     const slug = fact.id;
     const localized = await getEntry('peoples', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('peoples', `uz/${slug}`));
-    return { slug, entry: original, isFallback: !localized, location: fact.data.location };
+    const population = fact.data.population.reduce((sum, p) => sum + p.value, 0);
+    return { slug, entry: original, isFallback: !localized, location: fact.data.location, population };
   })
 );
 
+// Aholisi ko'p xalqlar yorliq joyini birinchi oladi (zich xaritada qolganlari
+// faqat nuqta bo'lib qoladi).
 const mapPeoples = items
   .filter((i) => i.entry && i.location)
+  .sort((a, b) => b.population - a.population)
   .map((i) => ({
     href: `/${lang}/xalqlar/${i.slug}`,
     name: i.entry!.data.title,

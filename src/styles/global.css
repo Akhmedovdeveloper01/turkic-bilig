@@ -271,6 +271,18 @@ body {
 .tb-pt-label-s {
   transform: translate(-50%, 9px);
 }
+.tb-pt-label-ne {
+  transform: translate(5px, calc(-100% - 5px));
+}
+.tb-pt-label-se {
+  transform: translate(5px, 5px);
+}
+.tb-pt-label-nw {
+  transform: translate(calc(-100% - 5px), calc(-100% - 5px));
+}
+.tb-pt-label-sw {
+  transform: translate(calc(-100% - 5px), 5px);
+}
 
 .tb-swatch {
   display: inline-block;

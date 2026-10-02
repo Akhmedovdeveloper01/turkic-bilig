@@ -41,7 +41,7 @@ const fc: FeatureCollection = {
   })),
 };
 // Faqat nuqtalar bo'lgani uchun chekka kengroq — chetdagi nomlarga joy qolsin.
-const proj = createProjection(fc, { lon: 0.38, lat: 0.3 });
+const proj = createProjection(fc, { lon: 0.06, lat: 0.12 });
 const land = landPath(proj);
 const grid = graticulePath(proj);
 
@@ -67,8 +67,19 @@ const rawPoints = [
   const [x, y] = proj.project([p.lng, p.lat]);
   return { ...p, x, y };
 });
-const placed = placeLabels(rawPoints, proj.width, proj.height);
-const points = rawPoints.map((p, i) => ({ ...p, ...placed[i] }));
+// Zich xarita: yorliq joyi mobil va desktop uchun alohida hisoblanadi; joy
+// topilmagan yorliq yashiriladi (nuqta qoladi, nomi sarlavhada — title).
+const mobile = placeLabels(rawPoints, proj.width, proj.height, { dropOnCollision: true });
+const desktop = placeLabels(rawPoints, proj.width, proj.height, { renderWidth: 760, charWidth: 7, dropOnCollision: true });
+const points = rawPoints.map((p, i) => ({
+  ...p,
+  left: mobile[i].left,
+  top: mobile[i].top,
+  labels: [
+    { place: mobile[i].place, cls: 'sm:hidden' },
+    { place: desktop[i].place, cls: 'hidden sm:block' },
+  ].filter((l) => l.place),
+}));
 ---
 
 <figure class="not-prose">
@@ -115,21 +126,22 @@ const points = rawPoints.map((p, i) => ({ ...p, ...placed[i] }));
     <div class="pointer-events-none absolute inset-0">
       {points.map((p) => (
         <div class="absolute h-0 w-0" style={`left:${p.left}%;top:${p.top}%`}>
-          <span class:list={['tb-pt', p.homeland ? 'tb-pt-homeland' : 'tb-pt-people']} aria-hidden="true"></span>
-          {p.place && (
+          <span class:list={['tb-pt', p.homeland ? 'tb-pt-homeland' : 'tb-pt-people']} title={p.name} aria-hidden="true"></span>
+          {p.labels.map((l) =>
             p.href ? (
               <a
                 href={p.href}
                 class:list={[
                   'tb-pt-label pointer-events-auto underline-offset-2 hover:text-brand hover:underline',
-                  `tb-pt-label-${p.place}`,
+                  `tb-pt-label-${l.place}`,
+                  l.cls,
                   p.homeland && 'font-bold',
                 ]}
               >
                 {p.label}
               </a>
             ) : (
-              <span class:list={['tb-pt-label', `tb-pt-label-${p.place}`, p.homeland && 'font-bold']}>{p.label}</span>
+              <span class:list={['tb-pt-label', `tb-pt-label-${l.place}`, l.cls, p.homeland && 'font-bold']}>{p.label}</span>
             )
           )}
         </div>

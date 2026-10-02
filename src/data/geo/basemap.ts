@@ -32,9 +32,38 @@ function getLand(): LandGeometry {
     const file = path.join(process.cwd(), 'node_modules/world-atlas/land-50m.json');
     const topology = JSON.parse(readFileSync(file, 'utf-8')) as Topology;
     const land = feature(topology, topology.objects.land) as unknown as FeatureCollection<Polygon | MultiPolygon>;
-    landCache = land.features[0];
+    landCache = unwrapAntimeridian(land.features[0]);
   }
   return landCache;
+}
+
+/**
+ * 180° meridianni kesib o'tuvchi halqalarni (Yevroosiyo — Chukotka) "ochadi":
+ * qo'shni nuqtalar orasidagi ±360° sakrash olib tashlanadi, shunda halqa
+ * uzluksiz bo'ladi (Chukotka 180° dan katta uzunlikka o'tadi). Aks holda
+ * kesish paytida xarita bo'ylab gorizontal soxta chiziqlar paydo bo'ladi.
+ */
+function unwrapAntimeridian(f: LandGeometry): LandGeometry {
+  const unwrapRing = (ring: Position[]): Position[] => {
+    let offset = 0;
+    const out = ring.map((p, i) => {
+      if (i > 0) {
+        const d = p[0] - ring[i - 1][0];
+        if (d > 180) offset -= 360;
+        else if (d < -180) offset += 360;
+      }
+      return [p[0] + offset, p[1]];
+    });
+    const minLon = Math.min(...out.map((p) => p[0]));
+    return minLon < -180 ? out.map((p) => [p[0] + 360, p[1]]) : out;
+  };
+  const g = f.geometry;
+  const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+  // Antarktida (qutbni o'rab oluvchi halqa) o'zgartirilmaydi — u bu xaritalarga tushmaydi.
+  const fixed = polys.map((poly) =>
+    poly.map((ring) => (Math.min(...ring.map((p) => p[1])) < -60 ? ring : unwrapRing(ring)))
+  );
+  return turf.multiPolygon(fixed) as LandGeometry;
 }
 
 export interface Projection {

@@ -17,6 +17,7 @@
 import { getEntry } from 'astro:content';
 import { createTranslator } from '../../i18n/ui';
 import { createProjection, geometryToPath, graticulePath, landPath } from '../../data/geo/basemap';
+import { placeLabels } from '../../data/geo/labels';
 import type { FeatureCollection, MultiPolygon, Point, Polygon } from 'geojson';
 
 interface Props {
@@ -61,13 +62,7 @@ const zones = geojson.features
 const hasZone = (z: ZoneProps['zone']) => zones.some((zone) => zone.props.zone === z);
 
 // ---- Nuqtalar va ularning yorliqlari ----
-// Yorliq joyini tanlash mobil kenglik (~360px, shrift ~10px) bo'yicha
-// hisoblanadi — kengroq ekranda joy faqat ko'payadi; nomlar bir-birining ustiga tushmasligi uchun sharq → g'arb →
-// shimol → janub tartibida birinchi bo'sh joy tanlanadi.
-const RENDER_SCALE = 360 / proj.width;
 const KIND_ORDER = { capital: 0, city: 1, region: 2, campaign: 3 } as const;
-type Box = [number, number, number, number];
-const overlaps = (a: Box, b: Box) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
 
 const rawPoints = geojson.features
   .filter((f) => f.geometry.type === 'Point')
@@ -78,40 +73,12 @@ const rawPoints = geojson.features
   })
   .sort((a, b) => KIND_ORDER[a.kind] - KIND_ORDER[b.kind]);
 
-const occupied: Box[] = rawPoints.map((p) => {
-  const px = p.x * RENDER_SCALE;
-  const py = p.y * RENDER_SCALE;
-  return [px - 5, py - 5, px + 5, py + 5];
-});
-const maxX = proj.width * RENDER_SCALE;
-const maxY = proj.height * RENDER_SCALE;
-
-const points = rawPoints.map((p) => {
-  let place: 'e' | 'w' | 'n' | 's' | null = null;
-  if (p.kind !== 'campaign') {
-    const px = p.x * RENDER_SCALE;
-    const py = p.y * RENDER_SCALE;
-    const w = p.label.length * 6 + 8;
-    const h = 14;
-    const candidates: ['e' | 'w' | 'n' | 's', Box][] = [
-      ['e', [px + 6, py - h / 2, px + 6 + w, py + h / 2]],
-      ['w', [px - 6 - w, py - h / 2, px - 6, py + h / 2]],
-      ['n', [px - w / 2, py - 6 - h, px + w / 2, py - 6]],
-      ['s', [px - w / 2, py + 6, px + w / 2, py + 6 + h]],
-    ];
-    const inBounds = (b: Box) => b[0] >= 0 && b[1] >= 0 && b[2] <= maxX && b[3] <= maxY;
-    const free = candidates.find(([, b]) => inBounds(b) && !occupied.some((o) => overlaps(o, b)));
-    const chosen = free ?? candidates.find(([, b]) => inBounds(b)) ?? candidates[0];
-    place = chosen[0];
-    occupied.push(chosen[1]);
-  }
-  return {
-    ...p,
-    place,
-    left: ((p.x / proj.width) * 100).toFixed(2),
-    top: ((p.y / proj.height) * 100).toFixed(2),
-  };
-});
+const placed = placeLabels(
+  rawPoints.map((p) => ({ x: p.x, y: p.y, label: p.kind === 'campaign' ? null : p.label })),
+  proj.width,
+  proj.height
+);
+const points = rawPoints.map((p, i) => ({ ...p, ...placed[i] }));
 
 const hasKind = (k: PointProps['kind']) => points.some((p) => p.kind === k);
 

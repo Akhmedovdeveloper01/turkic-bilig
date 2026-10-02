@@ -46,10 +46,10 @@ export interface Projection {
 }
 
 /** Hudud chegaralari atrofida chekka (padding) qo'shib, nisbatni me'yorlab proyeksiya quradi. */
-export function createProjection(fc: FeatureCollection): Projection {
+export function createProjection(fc: FeatureCollection, pad = { lon: 0.1, lat: 0.12 }): Projection {
   let [minLon, minLat, maxLon, maxLat] = turf.bbox(fc);
-  const padLon = (maxLon - minLon) * 0.1 + 1.5;
-  const padLat = (maxLat - minLat) * 0.12 + 1.5;
+  const padLon = (maxLon - minLon) * pad.lon + 1.5;
+  const padLat = (maxLat - minLat) * pad.lat + 1.5;
   minLon -= padLon;
   maxLon += padLon;
   minLat -= padLat;

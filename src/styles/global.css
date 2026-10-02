@@ -293,3 +293,21 @@ body {
 .tb-swatch-influence {
   border-style: dotted;
 }
+
+/* OriginMap: gipotetik ilk vatan (terrakota) va xalqlarning bugungi joylashuvi (ko'k). */
+.tb-pt-homeland {
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: var(--color-accent);
+  border: 2.5px solid var(--color-surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.tb-pt-people {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: var(--color-brand);
+  border: 2.5px solid var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}

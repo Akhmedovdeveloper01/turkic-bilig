@@ -1,0 +1,95 @@
+---
+/**
+ * O'rxun alifbosi jadvali — src/data/old-turkic.json (Unicode nomlari va
+ * kod nuqtalari standartdan, o'qilishi Tekin 1968 an'anasi bo'yicha).
+ * Juft undoshlar "orqa qator | old qator" jadvalida yonma-yon ko'rsatiladi.
+ */
+import '@fontsource/noto-sans-old-turkic/old-turkic-400.css';
+import data from '../../data/old-turkic.json';
+import { createTranslator } from '../../i18n/ui';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+const t = createTranslator(lang);
+
+type Letter = (typeof data.letters)[number];
+const byGroup = (g: string) => data.letters.filter((l) => l.group === g);
+// Juftlar nomi bo'yicha aniq bog'lanadi (Unicode tartibi ikki qatorda bir xil emas):
+// AB↔AEB, AG↔AEG, ...; istisnolar: AQ↔AEK, ASH↔ESH.
+const byKey = Object.fromEntries(data.letters.map((l) => [l.key, l])) as Record<string, Letter>;
+const FRONT_OF: Record<string, string> = { AQ: 'AEK', ASH: 'ESH' };
+const pairs = byGroup('orqa').map((b) => [b, byKey[FRONT_OF[b.key] ?? `AE${b.key.slice(1)}`]] as [Letter, Letter]);
+
+const GROUPS = [
+  { title: t('topics.groupVowels'), letters: byGroup('unli') },
+  { title: t('topics.groupWithVowel'), letters: byGroup('unli-bilan') },
+  { title: t('topics.groupNeutral'), letters: byGroup('neytral') },
+  { title: t('topics.groupLigature'), letters: byGroup('qoshma') },
+  { title: t('topics.groupLogogram'), letters: byGroup('logogramma') },
+];
+---
+
+<section class="mt-10" aria-labelledby="runic-alphabet-title">
+  <h2 id="runic-alphabet-title" class="mb-1 text-lg font-semibold text-ink">{t('topics.runicAlphabetTitle')}</h2>
+  <p class="mb-4 text-xs text-ink-muted">{t('topics.runicAlphabetNote', { n: String(data.letters.length) })}</p>
+
+  <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+    <div class="space-y-4">
+      {GROUPS.slice(0, 1).map((g) => (
+        <div class="rounded-xl border border-line bg-surface-alt p-4">
+          <h3 class="mb-3 text-sm font-medium text-ink-muted">{g.title}</h3>
+          <ul class="grid grid-cols-4 gap-2">
+            {g.letters.map((l) => (
+              <li class="tb-rune-card" title={`${l.cp} ${l.name}`}>
+                <span class="tb-runic text-3xl" lang="otk">{l.char}</span>
+                <span class="text-xs text-ink">{l.translit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <div class="rounded-xl border border-line bg-surface-alt p-4">
+        <h3 class="mb-3 text-sm font-medium text-ink-muted">{t('topics.groupPaired')}</h3>
+        <table class="w-full text-center text-sm">
+          <thead>
+            <tr class="text-xs text-ink-muted">
+              <th class="pb-2 font-medium">{t('topics.colBack')} (¹)</th>
+              <th class="pb-2 font-medium">{t('topics.colFront')} (²)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pairs.map(([b, f]) => (
+              <tr class="border-t border-line">
+                {[b, f].map((l) => (
+                  <td class="py-1.5" title={`${l.cp} ${l.name}`}>
+                    <span class="tb-runic me-2 inline-block w-8 text-2xl" lang="otk">{l.char}</span>
+                    <span class="inline-block w-12 text-start text-ink">{l.translit}</span>
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      {GROUPS.slice(1).map((g) => (
+        <div class="rounded-xl border border-line bg-surface-alt p-4">
+          <h3 class="mb-3 text-sm font-medium text-ink-muted">{g.title}</h3>
+          <ul class="grid grid-cols-3 gap-2 sm:grid-cols-6 lg:grid-cols-3">
+            {g.letters.map((l) => (
+              <li class="tb-rune-card" title={`${l.cp} ${l.name}`}>
+                <span class="tb-runic text-3xl" lang="otk">{l.char}</span>
+                <span class="text-center text-xs text-ink">{l.translit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

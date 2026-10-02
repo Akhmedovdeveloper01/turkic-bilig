@@ -1,0 +1,20 @@
+{
+  "category": "yozuv",
+  "relatedPeoples": [],
+  "sources": [
+    "tekin-1968",
+    "unicode-old-turkic",
+    "orxun-yozuvlari",
+    "golden-1992"
+  ],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "O'rxun yozuvining kelib chiqishi — so'g'd (oromiy asosidagi) yozuvidan kelib chiqqani haqidagi qarash keng tarqalgan; ba'zi belgilarni qabila tamg'alari bilan bog'lovchi qarashlar ham mavjud. Masala to'liq hal etilmagan.",
+      "sourceIds": [
+        "tekin-1968",
+        "golden-1992"
+      ]
+    }
+  ]
+}

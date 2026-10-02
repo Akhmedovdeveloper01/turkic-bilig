@@ -1,0 +1,40 @@
+---
+/** Yodgorliklardagi namunaviy so'zlar — belgilar kalitlar ro'yxatidan yig'iladi. */
+import '@fontsource/noto-sans-old-turkic/old-turkic-400.css';
+import data from '../../data/old-turkic.json';
+import { createTranslator } from '../../i18n/ui';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+const t = createTranslator(lang);
+
+const charOf = Object.fromEntries(data.letters.map((l) => [l.key, l]));
+const MEANING: Record<string, string> = {
+  turk: t('topics.sampleTurk'),
+  tengri: t('topics.sampleTengri'),
+  'bilge-qagan': t('topics.sampleBilgeQagan'),
+  'kul-tigin': t('topics.sampleKulTigin'),
+};
+const samples = data.samples.map((s) => ({
+  ...s,
+  runic: s.words.map((w) => w.map((k) => charOf[k].char).join('')).join('⁚'),
+  meaning: MEANING[s.id],
+}));
+---
+
+<section class="mt-10" aria-labelledby="runic-samples-title">
+  <h2 id="runic-samples-title" class="mb-1 text-lg font-semibold text-ink">{t('topics.samplesTitle')}</h2>
+  <p class="mb-4 text-xs text-ink-muted">{t('topics.samplesNote')}</p>
+  <ul class="grid gap-3 sm:grid-cols-2">
+    {samples.map((s) => (
+      <li class="rounded-xl border border-line bg-surface-alt p-4">
+        <p class="tb-runic text-4xl text-ink" lang="otk" dir="rtl">{s.runic}</p>
+        <p class="mt-2 font-semibold text-ink">{s.translit}</p>
+        <p class="text-sm text-ink-muted">{s.meaning}</p>
+        <p class="mt-1 text-xs text-ink-muted">{s.letters}</p>
+      </li>
+    ))}
+  </ul>
+</section>

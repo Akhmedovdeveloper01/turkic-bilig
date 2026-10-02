@@ -1,0 +1,412 @@
+{
+  "note": "Orxon variantidagi 42 ta belgi (Unicode 5.2). O'qilishi Unicode belgi nomlari va Tekin (1968) an'anaviy transliteratsiyasi asosida; ¹ — orqa qator (yo'g'on) unlilar bilan, ² — old qator (ingichka) unlilar bilan. Ekspert tekshiruvi kerak.",
+  "sourceIds": [
+    "unicode-old-turkic",
+    "tekin-1968"
+  ],
+  "verified": false,
+  "letters": [
+    {
+      "cp": "U+10C00",
+      "char": "𐰀",
+      "key": "A",
+      "name": "OLD TURKIC LETTER ORKHON A",
+      "translit": "a, ä",
+      "group": "unli"
+    },
+    {
+      "cp": "U+10C03",
+      "char": "𐰃",
+      "key": "I",
+      "name": "OLD TURKIC LETTER ORKHON I",
+      "translit": "ı, i",
+      "group": "unli"
+    },
+    {
+      "cp": "U+10C06",
+      "char": "𐰆",
+      "key": "O",
+      "name": "OLD TURKIC LETTER ORKHON O",
+      "translit": "o, u",
+      "group": "unli"
+    },
+    {
+      "cp": "U+10C07",
+      "char": "𐰇",
+      "key": "OE",
+      "name": "OLD TURKIC LETTER ORKHON OE",
+      "translit": "ö, ü",
+      "group": "unli"
+    },
+    {
+      "cp": "U+10C09",
+      "char": "𐰉",
+      "key": "AB",
+      "name": "OLD TURKIC LETTER ORKHON AB",
+      "translit": "b¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C0B",
+      "char": "𐰋",
+      "key": "AEB",
+      "name": "OLD TURKIC LETTER ORKHON AEB",
+      "translit": "b²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C0D",
+      "char": "𐰍",
+      "key": "AG",
+      "name": "OLD TURKIC LETTER ORKHON AG",
+      "translit": "g¹ (ɣ)",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C0F",
+      "char": "𐰏",
+      "key": "AEG",
+      "name": "OLD TURKIC LETTER ORKHON AEG",
+      "translit": "g²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C11",
+      "char": "𐰑",
+      "key": "AD",
+      "name": "OLD TURKIC LETTER ORKHON AD",
+      "translit": "d¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C13",
+      "char": "𐰓",
+      "key": "AED",
+      "name": "OLD TURKIC LETTER ORKHON AED",
+      "translit": "d²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C14",
+      "char": "𐰔",
+      "key": "EZ",
+      "name": "OLD TURKIC LETTER ORKHON EZ",
+      "translit": "z",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C16",
+      "char": "𐰖",
+      "key": "AY",
+      "name": "OLD TURKIC LETTER ORKHON AY",
+      "translit": "y¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C18",
+      "char": "𐰘",
+      "key": "AEY",
+      "name": "OLD TURKIC LETTER ORKHON AEY",
+      "translit": "y²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C1A",
+      "char": "𐰚",
+      "key": "AEK",
+      "name": "OLD TURKIC LETTER ORKHON AEK",
+      "translit": "k",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C1C",
+      "char": "𐰜",
+      "key": "OEK",
+      "name": "OLD TURKIC LETTER ORKHON OEK",
+      "translit": "k + ö/ü",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C1E",
+      "char": "𐰞",
+      "key": "AL",
+      "name": "OLD TURKIC LETTER ORKHON AL",
+      "translit": "l¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C20",
+      "char": "𐰠",
+      "key": "AEL",
+      "name": "OLD TURKIC LETTER ORKHON AEL",
+      "translit": "l²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C21",
+      "char": "𐰡",
+      "key": "ELT",
+      "name": "OLD TURKIC LETTER ORKHON ELT",
+      "translit": "lt, ld",
+      "group": "qoshma"
+    },
+    {
+      "cp": "U+10C22",
+      "char": "𐰢",
+      "key": "EM",
+      "name": "OLD TURKIC LETTER ORKHON EM",
+      "translit": "m",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C23",
+      "char": "𐰣",
+      "key": "AN",
+      "name": "OLD TURKIC LETTER ORKHON AN",
+      "translit": "n¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C24",
+      "char": "𐰤",
+      "key": "AEN",
+      "name": "OLD TURKIC LETTER ORKHON AEN",
+      "translit": "n²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C26",
+      "char": "𐰦",
+      "key": "ENT",
+      "name": "OLD TURKIC LETTER ORKHON ENT",
+      "translit": "nt, nd",
+      "group": "qoshma"
+    },
+    {
+      "cp": "U+10C28",
+      "char": "𐰨",
+      "key": "ENC",
+      "name": "OLD TURKIC LETTER ORKHON ENC",
+      "translit": "nč",
+      "group": "qoshma"
+    },
+    {
+      "cp": "U+10C2A",
+      "char": "𐰪",
+      "key": "ENY",
+      "name": "OLD TURKIC LETTER ORKHON ENY",
+      "translit": "ñ (ny)",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C2D",
+      "char": "𐰭",
+      "key": "ENG",
+      "name": "OLD TURKIC LETTER ORKHON ENG",
+      "translit": "ŋ",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C2F",
+      "char": "𐰯",
+      "key": "EP",
+      "name": "OLD TURKIC LETTER ORKHON EP",
+      "translit": "p",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C30",
+      "char": "𐰰",
+      "key": "OP",
+      "name": "OLD TURKIC LETTER ORKHON OP",
+      "translit": "p + o/u",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C31",
+      "char": "𐰱",
+      "key": "IC",
+      "name": "OLD TURKIC LETTER ORKHON IC",
+      "translit": "č + ı/i",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C32",
+      "char": "𐰲",
+      "key": "EC",
+      "name": "OLD TURKIC LETTER ORKHON EC",
+      "translit": "č",
+      "group": "neytral"
+    },
+    {
+      "cp": "U+10C34",
+      "char": "𐰴",
+      "key": "AQ",
+      "name": "OLD TURKIC LETTER ORKHON AQ",
+      "translit": "q",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C36",
+      "char": "𐰶",
+      "key": "IQ",
+      "name": "OLD TURKIC LETTER ORKHON IQ",
+      "translit": "q + ı",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C38",
+      "char": "𐰸",
+      "key": "OQ",
+      "name": "OLD TURKIC LETTER ORKHON OQ",
+      "translit": "q + o/u",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C3A",
+      "char": "𐰺",
+      "key": "AR",
+      "name": "OLD TURKIC LETTER ORKHON AR",
+      "translit": "r¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C3C",
+      "char": "𐰼",
+      "key": "AER",
+      "name": "OLD TURKIC LETTER ORKHON AER",
+      "translit": "r²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C3D",
+      "char": "𐰽",
+      "key": "AS",
+      "name": "OLD TURKIC LETTER ORKHON AS",
+      "translit": "s¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C3E",
+      "char": "𐰾",
+      "key": "AES",
+      "name": "OLD TURKIC LETTER ORKHON AES",
+      "translit": "s²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C3F",
+      "char": "𐰿",
+      "key": "ASH",
+      "name": "OLD TURKIC LETTER ORKHON ASH",
+      "translit": "š¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C41",
+      "char": "𐱁",
+      "key": "ESH",
+      "name": "OLD TURKIC LETTER ORKHON ESH",
+      "translit": "š²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C43",
+      "char": "𐱃",
+      "key": "AT",
+      "name": "OLD TURKIC LETTER ORKHON AT",
+      "translit": "t¹",
+      "group": "orqa"
+    },
+    {
+      "cp": "U+10C45",
+      "char": "𐱅",
+      "key": "AET",
+      "name": "OLD TURKIC LETTER ORKHON AET",
+      "translit": "t²",
+      "group": "old"
+    },
+    {
+      "cp": "U+10C47",
+      "char": "𐱇",
+      "key": "OT",
+      "name": "OLD TURKIC LETTER ORKHON OT",
+      "translit": "t + o/u",
+      "group": "unli-bilan"
+    },
+    {
+      "cp": "U+10C48",
+      "char": "𐱈",
+      "key": "BASH",
+      "name": "OLD TURKIC LETTER ORKHON BASH",
+      "translit": "baš (\"bosh\")",
+      "group": "logogramma"
+    }
+  ],
+  "samples": [
+    {
+      "id": "turk",
+      "translit": "türk",
+      "words": [
+        [
+          "AET",
+          "OE",
+          "AER",
+          "AEK"
+        ]
+      ],
+      "letters": "t² ü r² k"
+    },
+    {
+      "id": "tengri",
+      "translit": "täŋri",
+      "words": [
+        [
+          "AET",
+          "ENG",
+          "AER",
+          "I"
+        ]
+      ],
+      "letters": "t² ŋ r² i"
+    },
+    {
+      "id": "bilge-qagan",
+      "translit": "bilgä qaɣan",
+      "words": [
+        [
+          "AEB",
+          "I",
+          "AEL",
+          "AEG",
+          "A"
+        ],
+        [
+          "AQ",
+          "AG",
+          "AN"
+        ]
+      ],
+      "letters": "b² i l² g² ä · q ɣ n¹"
+    },
+    {
+      "id": "kul-tigin",
+      "translit": "kül tigin",
+      "words": [
+        [
+          "AEK",
+          "OE",
+          "AEL"
+        ],
+        [
+          "AET",
+          "I",
+          "AEG",
+          "AEN"
+        ]
+      ],
+      "letters": "k ü l² · t² i g² n²"
+    }
+  ],
+  "samplesNote": "Namunaviy so'zlar yodgorliklarda uchraydigan an'anaviy yozilishi bo'yicha (Tekin, 1968). Ekspert tekshiruvi kerak."
+}

@@ -9,6 +9,9 @@ import { locales, getLocale } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import languagesData from '../../../data/languages.json';
 import CapitalsMap from '../../../components/map/CapitalsMap.astro';
+import RunicTransliterator from '../../../components/runic/RunicTransliterator.astro';
+import RunicAlphabet from '../../../components/runic/RunicAlphabet.astro';
+import RunicSamples from '../../../components/runic/RunicSamples.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('topicFacts');
@@ -38,6 +41,7 @@ const sourceEntries = facts
 const showLanguageBranches = facts?.data.category === 'til-tasnifi';
 
 const showStatesMap = facts?.data.category === 'xronologiya';
+const showRunic = facts?.data.category === 'yozuv';
 let mapPoints: { href: string; stateTitle: string; name: string; lat: number; lng: number; category: 'turkiy' | 'turkiy-sulola' | 'munozarali' }[] = [];
 if (showStatesMap) {
   const allStateFacts = await getCollection('stateFacts');
@@ -70,9 +74,14 @@ if (showStatesMap) {
 
   <p class="mb-6 text-lg text-ink-muted">{entry.data.summary}</p>
 
+  {showRunic && <RunicTransliterator lang={lang!} />}
+
   <article class="prose prose-slate max-w-none dark:prose-invert">
     <Content />
   </article>
+
+  {showRunic && <RunicAlphabet lang={lang!} />}
+  {showRunic && <RunicSamples lang={lang!} />}
 
   {showStatesMap && mapPoints.length > 0 && (
     <section class="mt-8">

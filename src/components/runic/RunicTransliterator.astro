@@ -1,0 +1,79 @@
+---
+/**
+ * "Ismingizni runik yozuvda yozing" — kichik interaktiv orolcha (islands):
+ * faqat shu sahifada, oddiy <script> bilan. Mantiq src/lib/runic.ts da.
+ */
+import '@fontsource/noto-sans-old-turkic/old-turkic-400.css';
+import { createTranslator } from '../../i18n/ui';
+import { toRunic } from '../../lib/runic';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+const t = createTranslator(lang);
+const initial = toRunic('Temur');
+---
+
+<section class="mb-8 overflow-hidden rounded-2xl border border-line bg-surface-alt" aria-labelledby="runic-translit-title">
+  <div class="tb-runic-hero p-5 sm:p-6">
+    <h2 id="runic-translit-title" class="mb-3 text-lg font-semibold text-ink">{t('topics.translitTitle')}</h2>
+    <label for="runic-input" class="mb-1.5 block text-sm text-ink-muted">{t('topics.translitLabel')}</label>
+    <input
+      id="runic-input"
+      type="text"
+      value="Temur"
+      maxlength="60"
+      autocomplete="off"
+      placeholder={t('topics.translitPlaceholder')}
+      class="w-full rounded-lg border border-line bg-surface px-3 py-2 text-lg text-ink focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
+    />
+
+    <div class="mt-4 rounded-xl border border-line bg-surface p-4">
+      <div class="flex items-start justify-between gap-3">
+        <p class="text-xs font-medium uppercase tracking-wide text-ink-muted">{t('topics.translitResult')}</p>
+        <button
+          type="button"
+          id="runic-copy"
+          class="rounded-full border border-line px-3 py-1 text-xs text-ink-muted transition-colors hover:border-brand/40 hover:text-brand"
+          data-copied={t('topics.copied')}
+        >
+          {t('topics.copy')}
+        </button>
+      </div>
+      <output id="runic-output" for="runic-input" class="tb-runic mt-1 block min-h-[3.5rem] break-all text-5xl text-ink" lang="otk" dir="rtl" aria-live="polite">{initial.runic}</output>
+      <p class="mt-2 text-xs text-ink-muted">
+        {t('topics.translitBreakdown')}: <span id="runic-breakdown">{initial.breakdown.join('  ·  ')}</span>
+      </p>
+    </div>
+    <p class="mt-3 text-xs text-gold">{t('topics.translitWarning')}</p>
+  </div>
+</section>
+
+<script>
+  import { toRunic } from '../../lib/runic';
+
+  const input = document.getElementById('runic-input') as HTMLInputElement | null;
+  const output = document.getElementById('runic-output');
+  const breakdown = document.getElementById('runic-breakdown');
+  const copy = document.getElementById('runic-copy') as HTMLButtonElement | null;
+
+  if (input && output && breakdown) {
+    const update = () => {
+      const r = toRunic(input.value);
+      output.textContent = r.runic;
+      breakdown.textContent = r.breakdown.join('  ·  ');
+    };
+    input.addEventListener('input', update);
+    copy?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(output.textContent ?? '');
+        const label = copy.textContent;
+        copy.textContent = copy.dataset.copied ?? label;
+        setTimeout(() => (copy.textContent = label), 1500);
+      } catch {
+        /* clipboard ruxsati bo'lmasa — jim o'tkazib yuboriladi */
+      }
+    });
+  }
+</script>

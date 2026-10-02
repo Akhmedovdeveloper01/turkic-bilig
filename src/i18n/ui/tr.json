@@ -132,7 +132,11 @@
     "timelineTitle": "Kronoloji",
     "timelineNote": "Her çubuk bir devletin var olduğu dönemi gösterir. Uçları soluk çubuklar — tarih yaklaşıktır. Devlet sayfasını açmak için çubuğa tıklayın.",
     "legendApprox": "Yaklaşık tarih",
-    "timelineAria": "Türk devletleri kronolojisi"
+    "timelineAria": "Türk devletleri kronolojisi",
+    "capitalsMapTitle": "Başkentler haritası",
+    "capitalsMapNote": "Her nokta en az bir devletin (farklı dönemlerde) başkentidir; tarihî sınırlar değildir. Sayılı nokta, birden fazla devlete başkentlik yapmış şehirdir. Devlet listesini görmek için imleci noktanın üzerine getirin.",
+    "legendMultiCapital": "Birden fazla devletin başkenti",
+    "capitalsListTitle": "Başkentler listesi ({n} şehir)"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

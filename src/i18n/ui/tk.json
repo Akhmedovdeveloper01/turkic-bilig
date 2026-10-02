@@ -132,7 +132,11 @@
     "timelineTitle": "Hronologiýa",
     "timelineNote": "Her zolak döwletiň bar bolan döwrüni görkezýär. Uçlary solgun zolaklar — senesi takmyny. Döwlet sahypasyny açmak üçin zolaga basyň.",
     "legendApprox": "Takmyny sene",
-    "timelineAria": "Türki döwletleriň hronologiýasy"
+    "timelineAria": "Türki döwletleriň hronologiýasy",
+    "capitalsMapTitle": "Paýtagtlar kartasy",
+    "capitalsMapNote": "Her nokat iň bolmanda bir döwletiň (dürli döwürlerde) paýtagty; bular taryhy serhetler däl. Sanly nokat — birnäçe döwlete paýtagt bolan şäher. Döwletleriň sanawyny görmek üçin kursory nokadyň üstüne getiriň.",
+    "legendMultiCapital": "Birnäçe döwletiň paýtagty",
+    "capitalsListTitle": "Paýtagtlaryň sanawy ({n} şäher)"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

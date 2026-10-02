@@ -132,7 +132,11 @@
     "timelineTitle": "Xronologiya",
     "timelineNote": "Hər zolaq dövlətin mövcud olduğu dövrü göstərir. Ucları solğun zolaqlar — tarix təxminidir. Dövlət səhifəsini açmaq üçün zolağa klikləyin.",
     "legendApprox": "Təxmini tarix",
-    "timelineAria": "Türk dövlətlərinin xronologiyası"
+    "timelineAria": "Türk dövlətlərinin xronologiyası",
+    "capitalsMapTitle": "Paytaxtlar xəritəsi",
+    "capitalsMapNote": "Hər nöqtə ən azı bir dövlətin (müxtəlif dövrlərdə) paytaxtıdır; bunlar tarixi sərhədlər deyil. Rəqəmli nöqtə bir neçə dövlətə paytaxt olmuş şəhərdir. Dövlətlərin siyahısını görmək üçün kursoru nöqtənin üzərinə gətirin.",
+    "legendMultiCapital": "Bir neçə dövlətin paytaxtı",
+    "capitalsListTitle": "Paytaxtların siyahısı ({n} şəhər)"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

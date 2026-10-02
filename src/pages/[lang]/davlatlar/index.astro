@@ -7,6 +7,7 @@ import { createTranslator } from '../../../i18n/ui';
 import StateCategoryBadge from '../../../components/states/StateCategoryBadge.astro';
 import StatesStats from '../../../components/states/StatesStats.astro';
 import StatesTimeline from '../../../components/states/StatesTimeline.astro';
+import CapitalsMap from '../../../components/map/CapitalsMap.astro';
 import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -42,6 +43,19 @@ items.sort(
     sortableYear(b.facts.period.startYear, b.facts.period.startEra)
 );
 
+const capitalPoints = items
+  .filter((i) => i.entry)
+  .flatMap((i) =>
+    i.facts.capitals.map((c) => ({
+      href: `/${lang}/davlatlar/${i.slug}`,
+      stateTitle: i.entry!.data.title,
+      name: c.name,
+      lat: c.lat,
+      lng: c.lng,
+      category: i.facts.category,
+    }))
+  );
+
 const chartItems = items
   .filter((i) => i.entry)
   .map((i) => ({ href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts }));
@@ -52,6 +66,11 @@ const chartItems = items
   <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
 
   <StatesStats lang={lang!} items={chartItems} />
+
+  <section class="mb-8" aria-labelledby="capitals-map-heading">
+    <h2 id="capitals-map-heading" class="mb-3 text-lg font-semibold text-ink">{t('states.capitalsMapTitle')}</h2>
+    <CapitalsMap lang={lang!} points={capitalPoints} />
+  </section>
 
   {/* Toifa filtri: JavaScript'siz — radio guruhi + CSS :has() (global.css, .tb-filter). */}
   <div class="tb-filter">

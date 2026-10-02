@@ -1,0 +1,138 @@
+---
+/**
+ * Tarixiy davlatlar poytaxtlari xaritasi — StateMap/OriginMap uslubidagi
+ * build-time SVG (JavaScript'siz). Tarixiy CHEGARALAR emas, faqat poytaxt
+ * shaharlarning geografik joylashuvi (bahssiz geografik fakt).
+ *
+ * Bir necha davlatga poytaxt bo'lgan shahar bitta nuqta bo'lib, ichida
+ * davlatlar soni yoziladi; bitta davlat poytaxti esa davlat toifasi rangida.
+ * Xarita ostida matnli muqobil — "shahar → davlatlar" ro'yxati (havolalar bilan).
+ */
+import type { FeatureCollection } from 'geojson';
+import { createProjection, graticulePath, landPath } from '../../data/geo/basemap';
+import { placeLabels } from '../../data/geo/labels';
+import { createTranslator } from '../../i18n/ui';
+
+type Category = 'turkiy' | 'turkiy-sulola' | 'munozarali';
+interface Point {
+  href: string;
+  stateTitle: string;
+  name: string;
+  lat: number;
+  lng: number;
+  category: Category;
+}
+interface Props {
+  lang: string;
+  points: Point[];
+}
+const { lang, points } = Astro.props;
+const t = createTranslator(lang);
+
+// Bir shahar — bitta nuqta. Bazada bir shahar sal farqli koordinatalar bilan
+// yozilgan bo'lishi mumkin, shuning uchun 0,35° dan yaqin nuqtalar birlashtiriladi.
+const NEAR = 0.35;
+const groups: { names: string[]; lat: number; lng: number; states: Point[] }[] = [];
+for (const p of points) {
+  const g = groups.find((c) => Math.abs(c.lat - p.lat) < NEAR && Math.abs(c.lng - p.lng) < NEAR);
+  if (!g) {
+    groups.push({ names: [p.name], lat: p.lat, lng: p.lng, states: [p] });
+    continue;
+  }
+  if (!g.names.includes(p.name)) g.names.push(p.name);
+  if (!g.states.some((s) => s.href === p.href)) g.states.push(p);
+}
+const cities = groups
+  .map((g) => ({ ...g, name: g.names.join(' / ') }))
+  .sort((a, b) => b.states.length - a.states.length || a.name.localeCompare(b.name));
+
+const fc: FeatureCollection = {
+  type: 'FeatureCollection',
+  features: cities.map((c) => ({ type: 'Feature', properties: {}, geometry: { type: 'Point', coordinates: [c.lng, c.lat] } })),
+};
+const proj = createProjection(fc, { lon: 0.04, lat: 0.1 });
+const land = landPath(proj);
+const grid = graticulePath(proj);
+
+const raw = cities.map((c) => {
+  const [x, y] = proj.project([c.lng, c.lat]);
+  return { ...c, x, y, label: c.name };
+});
+const mobile = placeLabels(raw, proj.width, proj.height, { dropOnCollision: true });
+const desktop = placeLabels(raw, proj.width, proj.height, { renderWidth: 760, charWidth: 7, dropOnCollision: true });
+const markers = raw.map((c, i) => ({
+  ...c,
+  left: mobile[i].left,
+  top: mobile[i].top,
+  labels: [
+    { place: mobile[i].place, cls: 'sm:hidden' },
+    { place: desktop[i].place, cls: 'hidden sm:block' },
+  ].filter((l) => l.place),
+  catClass: c.states.length > 1 ? 'tb-pt-cap-multi' : `tb-pt-cap-${c.states[0].category === 'turkiy-sulola' ? 'sulola' : c.states[0].category}`,
+  tip: `${c.name}: ${c.states.map((s) => s.stateTitle).join(', ')}`,
+}));
+
+const LEGEND = [
+  { cls: 'tb-pt-cap-turkiy', label: t('states.categoryTurkiy') },
+  { cls: 'tb-pt-cap-sulola', label: t('states.categorySulola') },
+  { cls: 'tb-pt-cap-munozarali', label: t('states.categoryMunozarali') },
+  { cls: 'tb-pt-cap-multi', label: t('states.legendMultiCapital'), n: '2+' },
+].filter((l) => l.n || markers.some((m) => m.catClass === l.cls));
+---
+
+<figure class="not-prose">
+  <div class="relative overflow-hidden rounded-xl border border-line bg-map-sea [container-type:inline-size]">
+    <svg viewBox={`0 0 ${proj.width} ${proj.height}`} class="block h-auto w-full" role="img" aria-labelledby="capitals-map-title">
+      <title id="capitals-map-title">{t('states.capitalsMapTitle')}</title>
+      <rect width={proj.width} height={proj.height} fill="var(--color-map-sea)"></rect>
+      <path d={grid} fill="none" stroke="var(--color-map-grid)" stroke-width="0.75" stroke-dasharray="2 5" vector-effect="non-scaling-stroke"></path>
+      <path d={land} fill="var(--color-map-land)" stroke="var(--color-map-coast)" stroke-width="0.9" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+    </svg>
+
+    {/* Nuqta va yorliqlar qatlami — geografik joylashuv RTL'da aylanmaydi,
+        shuning uchun ataylab fizik left/top. Matnli muqobil quyidagi ro'yxatda. */}
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      {markers.map((m) => (
+        <div class="absolute h-0 w-0" style={`left:${m.left}%;top:${m.top}%`}>
+          <span class:list={['tb-pt pointer-events-auto', m.catClass]} title={m.tip}>
+            {m.states.length > 1 && m.states.length}
+          </span>
+          {m.labels.map((l) => (
+            <span class:list={['tb-pt-label', `tb-pt-label-${l.place}`, l.cls, m.states.length > 1 && 'font-bold']}>{m.name}</span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <figcaption class="mt-3 space-y-2">
+    <ul class="flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-ink-muted">
+      {LEGEND.map((l) => (
+        <li class="flex items-center gap-1.5">
+          <span class="relative inline-block h-4 w-4"><span class:list={['tb-pt', l.cls]}>{l.n}</span></span>
+          {l.label}
+        </li>
+      ))}
+    </ul>
+    <p class="text-xs text-ink-muted">{t('states.capitalsMapNote')}</p>
+    <p class="text-[0.7rem] text-ink-muted">{t('states.basemapCredit')}</p>
+  </figcaption>
+
+  <details class="mt-3 rounded-xl border border-line bg-surface-alt p-4 text-sm">
+    <summary class="cursor-pointer font-medium text-ink">{t('states.capitalsListTitle', { n: String(cities.length) })}</summary>
+    <ul class="mt-3 grid gap-x-6 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3">
+      {cities.map((c) => (
+        <li>
+          <span class="font-medium text-ink">{c.name}</span>
+          <span class="text-ink-muted"> — </span>
+          {c.states.map((s, i) => (
+            <>
+              {i > 0 && <span class="text-ink-muted">, </span>}
+              <a href={s.href} class="text-ink-muted hover:text-brand hover:underline">{s.stateTitle}</a>
+            </>
+          ))}
+        </li>
+      ))}
+    </ul>
+  </details>
+</figure>

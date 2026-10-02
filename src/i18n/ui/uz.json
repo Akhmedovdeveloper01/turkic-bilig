@@ -132,7 +132,11 @@
     "timelineTitle": "Xronologiya",
     "timelineNote": "Har bir chiziq davlat mavjud bo'lgan davrni ko'rsatadi. Xira uchli chiziqlar — sanasi taxminiy. Chiziqni bosing — davlat sahifasi ochiladi.",
     "legendApprox": "Sana taxminiy",
-    "timelineAria": "Turkiy davlatlar xronologiyasi"
+    "timelineAria": "Turkiy davlatlar xronologiyasi",
+    "capitalsMapTitle": "Poytaxtlar xaritasi",
+    "capitalsMapNote": "Har bir nuqta — kamida bitta davlatning (turli davrlardagi) poytaxti; bu tarixiy chegaralar emas. Raqamli nuqta — bir necha davlatga poytaxt bo'lgan shahar. Nuqtaga sichqonchani olib boring — davlatlar ro'yxati chiqadi.",
+    "legendMultiCapital": "Bir necha davlat poytaxti",
+    "capitalsListTitle": "Poytaxtlar ro'yxati ({n} ta shahar)"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

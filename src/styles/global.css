@@ -185,27 +185,6 @@ body {
   background-size: 22px 22px;
 }
 
-/* Leaflet xaritalarida ishlatiladigan neytral yulduz-marker (StatesMap, OriginMap). */
-.tb-map-marker {
-  background: none;
-  border: none;
-}
-.tb-map-marker-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 9999px;
-  background-color: #0e7c86;
-  border: 2px solid #faf8f4;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-}
-.tb-map-marker-inner.tb-map-marker-homeland {
-  width: 34px;
-  height: 34px;
-  background-color: #c1553a;
-}
 
 /* ---- Statik hudud xaritasi (components/map/StateMap.astro) ---- */
 /* Har bir davlatning o'z rangi (`mapColor`) inline --tc-light / --tc-dark orqali keladi. */
@@ -427,4 +406,43 @@ body {
   /* Qisqa chiziqlar butunlay xiralashmasligi uchun xiralik uzunlikka nisbatan cheklanadi. */
   -webkit-mask-image: linear-gradient(90deg, rgb(0 0 0 / 0.25) 0, #000 min(10px, 25%), #000 max(calc(100% - 10px), 75%), rgb(0 0 0 / 0.25) 100%);
   mask-image: linear-gradient(90deg, rgb(0 0 0 / 0.25) 0, #000 min(10px, 25%), #000 max(calc(100% - 10px), 75%), rgb(0 0 0 / 0.25) 100%);
+}
+
+/* CapitalsMap: poytaxt nuqtalari davlat toifasi rangida; bir necha davlat
+ * poytaxti bo'lgan shahar — ichida son yozilgan to'q nuqta. */
+.tb-pt-cap-turkiy,
+.tb-pt-cap-sulola,
+.tb-pt-cap-munozarali {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.tb-pt-cap-turkiy {
+  background-color: var(--color-cat-turkiy);
+}
+.tb-pt-cap-sulola {
+  background-color: var(--color-cat-sulola);
+  border-radius: 2px;
+}
+.tb-pt-cap-munozarali {
+  background-color: var(--color-cat-munozarali);
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 1px;
+}
+.tb-pt-cap-multi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background-color: var(--color-ink);
+  color: var(--color-surface);
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
 }

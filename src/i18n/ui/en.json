@@ -132,7 +132,11 @@
     "timelineTitle": "Timeline",
     "timelineNote": "Each bar shows the period a state existed. Bars with faded ends have approximate dates. Click a bar to open the state's page.",
     "legendApprox": "Approximate date",
-    "timelineAria": "Timeline of Turkic states"
+    "timelineAria": "Timeline of Turkic states",
+    "capitalsMapTitle": "Map of capitals",
+    "capitalsMapNote": "Each dot is the capital of at least one state (in different periods); these are not historical borders. A numbered dot is a city that served as capital of several states. Hover over a dot to see the list of states.",
+    "legendMultiCapital": "Capital of several states",
+    "capitalsListTitle": "List of capitals ({n} cities)"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

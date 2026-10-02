@@ -9,7 +9,6 @@
   "capital": "Balasog'un / Qashg'ar / Samarqand",
   "mapColor": { "light": "#4a7c59", "dark": "#7fbb8f" },
   "mapYear": 1040,
-  "mapImage": "qoraxoniylar.png",
   "capitals": [
     { "name": "Balasog'un", "lat": 42.84, "lng": 75.31 },
     { "name": "Qashg'ar", "lat": 39.4704, "lng": 75.9898 },

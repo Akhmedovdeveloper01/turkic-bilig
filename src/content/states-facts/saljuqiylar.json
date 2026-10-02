@@ -9,7 +9,6 @@
   "capital": "Nishopur / Ray / Isfahon",
   "mapColor": { "light": "#a0651f", "dark": "#d99a52" },
   "mapYear": 1092,
-  "mapImage": "saljuqiylar.png",
   "capitals": [
     { "name": "Nishopur", "lat": 36.213, "lng": 58.7958 },
     { "name": "Ray", "lat": 35.5892, "lng": 51.4381 },

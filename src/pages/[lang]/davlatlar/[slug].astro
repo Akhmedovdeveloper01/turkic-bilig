@@ -82,25 +82,12 @@ const stateGeoJSON =
     </section>
   )}
 
-  {facts?.data.mapImage ? (
+  {stateGeoJSON && (
     <section class="mb-8">
       <h2 class="mb-1 text-lg font-semibold text-ink">{t('states.territoryMapTitle')}</h2>
-      <img
-        src={`/maps/${facts.data.mapImage}`}
-        alt={`${entry.data.title} — ${t('states.territoryMapTitle')}`}
-        class="w-full rounded-xl border border-line"
-        loading="lazy"
-      />
-      <p class="mt-2 text-xs text-gold">{t('states.imageDisclaimer')}</p>
+      <p class="mb-3 text-xs text-ink-muted">{t('states.territoryMapNote')}</p>
+      <StateMap geojson={stateGeoJSON} mapColor={facts?.data.mapColor} lang={lang!} title={entry.data.title} />
     </section>
-  ) : (
-    stateGeoJSON && (
-      <section class="mb-8">
-        <h2 class="mb-1 text-lg font-semibold text-ink">{t('states.territoryMapTitle')}</h2>
-        <p class="mb-3 text-xs text-ink-muted">{t('states.territoryMapNote')}</p>
-        <StateMap geojson={stateGeoJSON} mapColor={facts?.data.mapColor} lang={lang!} title={entry.data.title} />
-      </section>
-    )
   )}
 
   <article class="prose prose-slate max-w-none dark:prose-invert">

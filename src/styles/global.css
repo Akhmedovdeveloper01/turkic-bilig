@@ -22,6 +22,11 @@
   --color-accent-soft: #fbe1d4;
   --color-gold: #c99414;
   --color-gold-soft: #f7ecd0;
+  /* Statik hudud xaritalari (StateMap): dengiz, quruqlik, qirg'oq, koordinata to'ri. */
+  --color-map-sea: #d9ecef;
+  --color-map-land: #f6f1e7;
+  --color-map-coast: #c4b79e;
+  --color-map-grid: #9cc4ca;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +42,10 @@
     --color-accent-soft: #3d2419;
     --color-gold: #ffcb47;
     --color-gold-soft: #3a2f14;
+    --color-map-sea: #0b1e23;
+    --color-map-land: #232d31;
+    --color-map-coast: #3d4a4e;
+    --color-map-grid: #1f4a52;
   }
 }
 
@@ -188,4 +197,99 @@ body {
   width: 34px;
   height: 34px;
   background-color: #c1553a;
+}
+
+/* ---- Statik hudud xaritasi (components/map/StateMap.astro) ---- */
+/* Har bir davlatning o'z rangi (`mapColor`) inline --tc-light / --tc-dark orqali keladi. */
+.tb-state-color {
+  color: var(--tc-light, var(--color-brand));
+}
+@media (prefers-color-scheme: dark) {
+  .tb-state-color {
+    color: var(--tc-dark, var(--color-brand));
+  }
+}
+
+.tb-pt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+}
+.tb-pt-capital {
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: var(--color-ink);
+  border: 2.5px solid var(--color-gold);
+  box-shadow: 0 0 0 1.5px var(--color-surface);
+}
+.tb-pt-city {
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-ink);
+}
+.tb-pt-campaign {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 2px dashed var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+.tb-pt-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  /* Xarita konteyneri kengligiga moslashadi: mobil ekranda ~10px, desktopda ~12px. */
+  font-size: clamp(10px, 1.6cqi, 12px);
+  line-height: 1;
+  color: var(--color-ink);
+  font-weight: 600;
+  text-shadow:
+    0 0 3px var(--color-surface),
+    0 0 3px var(--color-surface),
+    0 0 6px var(--color-surface);
+}
+.tb-pt-label.font-bold {
+  font-weight: 700;
+  font-size: clamp(11px, 1.75cqi, 13px);
+}
+.tb-pt-label-e {
+  transform: translate(9px, -50%);
+}
+.tb-pt-label-w {
+  transform: translate(calc(-100% - 9px), -50%);
+}
+.tb-pt-label-n {
+  transform: translate(-50%, calc(-100% - 9px));
+}
+.tb-pt-label-s {
+  transform: translate(-50%, 9px);
+}
+
+.tb-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 11px;
+  border-radius: 2px;
+  border: 2px solid currentColor;
+}
+.tb-swatch-center {
+  background-color: color-mix(in srgb, currentColor 36%, transparent);
+}
+.tb-swatch-vassal {
+  border-style: dashed;
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, currentColor 45%, transparent) 0 2px,
+    transparent 2px 5px
+  );
+}
+.tb-swatch-influence {
+  border-style: dotted;
 }

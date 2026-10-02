@@ -9,7 +9,6 @@
   "capital": "Ötüken",
   "mapColor": { "light": "#1f6f8b", "dark": "#4fa9c9" },
   "mapYear": 576,
-  "mapImage": "kok-turk.png",
   "capitals": [{ "name": "Ötüken", "lat": 47.2, "lng": 102.8 }],
   "extentPoints": [
     { "name": "Qora dengiz mintaqasi", "lat": 45.0, "lng": 34.0 },

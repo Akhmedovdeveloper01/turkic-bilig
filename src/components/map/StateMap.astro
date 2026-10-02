@@ -1,17 +1,23 @@
 ---
 /**
- * Bitta davlatning taxminiy hudud xaritasi (MapLibre GL).
+ * Bitta davlatning taxminiy hudud xaritasi — build vaqtida chiziladigan
+ * statik SVG (JavaScript'siz).
  *
  * Zonalar `scripts/geo/build-state.ts` tomonidan generatsiya qilingan
  * GeoJSON'dan keladi: "markaz" (to'liq rang), "vassal" (chiziqli naqsh +
- * uzuq chegara), "ta'sir-doirasi" (faqat uzuq chegara, fill yo'q). Bularning
+ * uzuq chegara), "ta'sir-doirasi" (faqat nuqtali chegara). Bularning
  * barchasi aniq tarixiy CHEGARA emas — tayanch nuqtalardan hosil qilingan
- * sxematik shakl (ILMIY QOIDA 6), shu sababli sahifada doim aniq
- * ogohlantirish va matnli muqobil jadval bilan birga chiqadi.
+ * sxematik shakl (ILMIY QOIDA 6), shu sababli xarita doim ogohlantirish va
+ * matnli muqobil jadval bilan birga chiqadi.
+ *
+ * Asos xarita (quruqlik) — Natural Earth, `src/data/geo/basemap.ts`.
+ * Shahar nomlari SVG ichida emas, HTML qatlamda: shunda shrift o'lchami
+ * mobil ekranda ham o'qiladigan bo'lib qoladi.
  */
 import { getEntry } from 'astro:content';
 import { createTranslator } from '../../i18n/ui';
-import type { FeatureCollection } from 'geojson';
+import { createProjection, geometryToPath, graticulePath, landPath } from '../../data/geo/basemap';
+import type { FeatureCollection, MultiPolygon, Point, Polygon } from 'geojson';
 
 interface Props {
   geojson: FeatureCollection;
@@ -20,14 +26,96 @@ interface Props {
   title: string;
 }
 
+interface ZoneProps {
+  zone: 'markaz' | 'vassal' | "ta'sir-doirasi";
+  confidence: 'baland' | 'ortacha' | 'past';
+  notes: string | null;
+  sourceIds: string[];
+}
+
+interface PointProps {
+  kind: 'capital' | 'city' | 'campaign' | 'region';
+  name: string;
+  notes: string | null;
+}
+
 const { geojson, mapColor, lang, title } = Astro.props;
 const t = createTranslator(lang);
 const color = mapColor ?? { light: '#0e7c86', dark: '#35b6c0' };
+const stateId = String(geojson.features[0]?.properties?.stateId ?? 'state');
+const uid = `tb-map-${stateId}`;
 
-const zoneFeatures = geojson.features.filter(
-  (f) => f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon'
-);
+const proj = createProjection(geojson);
+const land = landPath(proj);
+const grid = graticulePath(proj);
 
+const ZONE_ORDER = { "ta'sir-doirasi": 0, vassal: 1, markaz: 2 } as const;
+const zones = geojson.features
+  .filter((f) => f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon')
+  .map((f) => ({
+    props: f.properties as ZoneProps,
+    d: geometryToPath(f.geometry as Polygon | MultiPolygon, proj),
+  }))
+  .sort((a, b) => ZONE_ORDER[a.props.zone] - ZONE_ORDER[b.props.zone]);
+
+const hasZone = (z: ZoneProps['zone']) => zones.some((zone) => zone.props.zone === z);
+
+// ---- Nuqtalar va ularning yorliqlari ----
+// Yorliq joyini tanlash mobil kenglik (~360px, shrift ~10px) bo'yicha
+// hisoblanadi — kengroq ekranda joy faqat ko'payadi; nomlar bir-birining ustiga tushmasligi uchun sharq → g'arb →
+// shimol → janub tartibida birinchi bo'sh joy tanlanadi.
+const RENDER_SCALE = 360 / proj.width;
+const KIND_ORDER = { capital: 0, city: 1, region: 2, campaign: 3 } as const;
+type Box = [number, number, number, number];
+const overlaps = (a: Box, b: Box) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
+
+const rawPoints = geojson.features
+  .filter((f) => f.geometry.type === 'Point')
+  .map((f) => {
+    const [x, y] = proj.project((f.geometry as Point).coordinates);
+    const props = f.properties as PointProps;
+    return { ...props, x, y, label: props.name.split(' (')[0] };
+  })
+  .sort((a, b) => KIND_ORDER[a.kind] - KIND_ORDER[b.kind]);
+
+const occupied: Box[] = rawPoints.map((p) => {
+  const px = p.x * RENDER_SCALE;
+  const py = p.y * RENDER_SCALE;
+  return [px - 5, py - 5, px + 5, py + 5];
+});
+const maxX = proj.width * RENDER_SCALE;
+const maxY = proj.height * RENDER_SCALE;
+
+const points = rawPoints.map((p) => {
+  let place: 'e' | 'w' | 'n' | 's' | null = null;
+  if (p.kind !== 'campaign') {
+    const px = p.x * RENDER_SCALE;
+    const py = p.y * RENDER_SCALE;
+    const w = p.label.length * 6 + 8;
+    const h = 14;
+    const candidates: ['e' | 'w' | 'n' | 's', Box][] = [
+      ['e', [px + 6, py - h / 2, px + 6 + w, py + h / 2]],
+      ['w', [px - 6 - w, py - h / 2, px - 6, py + h / 2]],
+      ['n', [px - w / 2, py - 6 - h, px + w / 2, py - 6]],
+      ['s', [px - w / 2, py + 6, px + w / 2, py + 6 + h]],
+    ];
+    const inBounds = (b: Box) => b[0] >= 0 && b[1] >= 0 && b[2] <= maxX && b[3] <= maxY;
+    const free = candidates.find(([, b]) => inBounds(b) && !occupied.some((o) => overlaps(o, b)));
+    const chosen = free ?? candidates.find(([, b]) => inBounds(b)) ?? candidates[0];
+    place = chosen[0];
+    occupied.push(chosen[1]);
+  }
+  return {
+    ...p,
+    place,
+    left: ((p.x / proj.width) * 100).toFixed(2),
+    top: ((p.y / proj.height) * 100).toFixed(2),
+  };
+});
+
+const hasKind = (k: PointProps['kind']) => points.some((p) => p.kind === k);
+
+// ---- Matnli muqobil jadvallar ----
 function zoneLabel(zone: string) {
   if (zone === 'markaz') return t('states.legendCenter');
   if (zone === 'vassal') return t('states.legendVassal');
@@ -38,15 +126,15 @@ function confidenceLabel(c: string) {
   if (c === 'ortacha') return t('states.confidenceOrtacha');
   return t('states.confidencePast');
 }
+function kindLabel(k: PointProps['kind']) {
+  if (k === 'capital') return t('states.kindCapital');
+  if (k === 'city') return t('states.kindCity');
+  if (k === 'campaign') return t('states.kindCampaign');
+  return t('states.kindRegion');
+}
 
 const zoneRows = await Promise.all(
-  zoneFeatures.map(async (f) => {
-    const props = f.properties as {
-      zone: string;
-      confidence: string;
-      notes: string | null;
-      sourceIds: string[];
-    };
+  zones.map(async ({ props }) => {
     const sourceEntries = await Promise.all(props.sourceIds.map((id) => getEntry('sources', id)));
     const sources = sourceEntries
       .filter((s) => s !== undefined)
@@ -63,34 +151,164 @@ const zoneRows = await Promise.all(
 const mapAriaLabel = t('states.mapAriaLabel', { title });
 ---
 
-<div class="not-prose">
-  <div
-    id="state-map"
-    class="h-[28rem] w-full overflow-hidden rounded-xl border border-line"
-    role="application"
-    aria-label={mapAriaLabel}
-    data-geojson={JSON.stringify(geojson)}
-    data-color-light={color.light}
-    data-color-dark={color.dark}
-  >
+<figure class="not-prose" style={`--tc-light:${color.light};--tc-dark:${color.dark}`}>
+  <div class="relative overflow-hidden rounded-xl border border-line bg-map-sea [container-type:inline-size]">
+    <svg
+      viewBox={`0 0 ${proj.width} ${proj.height}`}
+      class="tb-state-color block h-auto w-full"
+      role="img"
+      aria-labelledby={`${uid}-title`}
+    >
+      <title id={`${uid}-title`}>{mapAriaLabel}</title>
+      <defs>
+        <pattern
+          id={`${uid}-hatch`}
+          width="9"
+          height="9"
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(45)"
+        >
+          <rect width="9" height="9" fill="currentColor" fill-opacity="0.08"></rect>
+          <line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width="3" stroke-opacity="0.45"></line>
+        </pattern>
+        <filter id={`${uid}-shadow`} x="-5%" y="-5%" width="110%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.18"></feDropShadow>
+        </filter>
+      </defs>
+
+      <rect width={proj.width} height={proj.height} fill="var(--color-map-sea)"></rect>
+      <path
+        d={grid}
+        fill="none"
+        stroke="var(--color-map-grid)"
+        stroke-width="0.75"
+        stroke-dasharray="2 5"
+        vector-effect="non-scaling-stroke"
+      ></path>
+      <path
+        d={land}
+        fill="var(--color-map-land)"
+        stroke="var(--color-map-coast)"
+        stroke-width="0.9"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+      ></path>
+
+      {zones.map(({ props, d }) => {
+        if (props.zone === 'markaz') {
+          const low = props.confidence === 'past';
+          return (
+            <path
+              d={d}
+              fill="currentColor"
+              fill-opacity={low ? 0.2 : 0.36}
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linejoin="round"
+              stroke-dasharray={low ? '7 4' : undefined}
+              vector-effect="non-scaling-stroke"
+              filter={`url(#${uid}-shadow)`}
+            ></path>
+          );
+        }
+        if (props.zone === 'vassal') {
+          return (
+            <path
+              d={d}
+              fill={`url(#${uid}-hatch)`}
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+              stroke-dasharray="6 4"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          );
+        }
+        return (
+          <path
+            d={d}
+            fill="currentColor"
+            fill-opacity="0.06"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-dasharray="0.5 5"
+            stroke-opacity="0.85"
+            vector-effect="non-scaling-stroke"
+          ></path>
+        );
+      })}
+    </svg>
+
+    {/* Nuqta va yorliqlar qatlami. Geografik joylashuv RTL'da ko'zguli
+        aylanmaydi, shuning uchun bu yerda ataylab fizik left/top ishlatiladi
+        (logical xossalar emas). Matnli ko'rinishi pastdagi jadvalda. */}
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      {points.map((p) => (
+        <div class="absolute h-0 w-0" style={`left:${p.left}%;top:${p.top}%`}>
+          {p.kind === 'capital' && <span class="tb-pt tb-pt-capital"></span>}
+          {p.kind === 'city' && <span class="tb-pt tb-pt-city"></span>}
+          {p.kind === 'campaign' && <span class="tb-pt tb-pt-campaign" title={p.name}></span>}
+          {p.place && (
+            <span
+              class:list={[
+                'tb-pt-label',
+                `tb-pt-label-${p.place}`,
+                p.kind === 'capital' && 'font-bold',
+                p.kind === 'region' && 'italic',
+                p.kind === 'city' && 'hidden sm:block',
+              ]}
+            >
+              {p.label}
+            </span>
+          )}
+        </div>
+      ))}
+    </div>
   </div>
 
-  <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-ink-muted">
-    <span class="flex items-center gap-1.5">
-      <span class="h-3 w-3 rounded-sm" style={`background-color:${color.light}`}></span>
-      {t('states.legendCenter')}
-    </span>
-    <span class="flex items-center gap-1.5">
-      <span class="h-3 w-3 rounded-sm border-2 border-dashed" style={`border-color:${color.light}`}></span>
-      {t('states.legendVassal')}
-    </span>
-    <span class="flex items-center gap-1.5">
-      <span class="h-3 w-3 rounded-sm border-2 border-dotted" style={`border-color:${color.light}`}></span>
-      {t('states.legendInfluence')}
-    </span>
-  </div>
-
-  <p class="mt-2 text-xs text-gold">{t('states.mapDisclaimer')}</p>
+  <figcaption class="mt-3 space-y-2">
+    <ul class="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-ink-muted">
+      {hasZone('markaz') && (
+        <li class="flex items-center gap-1.5">
+          <span class="tb-state-color tb-swatch tb-swatch-center"></span>
+          {t('states.legendCenter')}
+        </li>
+      )}
+      {hasZone('vassal') && (
+        <li class="flex items-center gap-1.5">
+          <span class="tb-state-color tb-swatch tb-swatch-vassal"></span>
+          {t('states.legendVassal')}
+        </li>
+      )}
+      {hasZone("ta'sir-doirasi") && (
+        <li class="flex items-center gap-1.5">
+          <span class="tb-state-color tb-swatch tb-swatch-influence"></span>
+          {t('states.legendInfluence')}
+        </li>
+      )}
+      {hasKind('capital') && (
+        <li class="flex items-center gap-1.5">
+          <span class="relative h-3 w-3"><span class="tb-pt tb-pt-capital"></span></span>
+          {t('states.kindCapital')}
+        </li>
+      )}
+      {hasKind('city') && (
+        <li class="flex items-center gap-1.5">
+          <span class="relative h-3 w-3"><span class="tb-pt tb-pt-city"></span></span>
+          {t('states.kindCity')}
+        </li>
+      )}
+      {hasKind('campaign') && (
+        <li class="flex items-center gap-1.5">
+          <span class="relative h-3 w-3"><span class="tb-pt tb-pt-campaign"></span></span>
+          {t('states.kindCampaign')}
+        </li>
+      )}
+    </ul>
+    <p class="text-xs text-gold">{t('states.mapDisclaimer')}</p>
+    <p class="text-[0.7rem] text-ink-muted">{t('states.basemapCredit')}</p>
+  </figcaption>
 
   <div class="mt-4 overflow-x-auto">
     <table class="w-full min-w-[28rem] border-collapse text-xs">
@@ -115,155 +333,28 @@ const mapAriaLabel = t('states.mapAriaLabel', { title });
       </tbody>
     </table>
   </div>
-</div>
 
-<script>
-  import * as maplibregl from 'maplibre-gl';
-  import 'maplibre-gl/dist/maplibre-gl.css';
-  import type { FeatureCollection, Geometry, Position } from 'geojson';
-
-  const el = document.getElementById('state-map');
-  if (el) {
-    const geojson: FeatureCollection = JSON.parse(el.dataset.geojson || '{"type":"FeatureCollection","features":[]}');
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const color = (isDark ? el.dataset.colorDark : el.dataset.colorLight) || '#0e7c86';
-    const isRtl = document.documentElement.dir === 'rtl';
-
-    const map = new maplibregl.Map({
-      container: el,
-      style: {
-        version: 8,
-        sources: {
-          osm: {
-            type: 'raster',
-            tiles: [
-              'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            ],
-            tileSize: 256,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-          },
-        },
-        layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
-      },
-      center: [50, 40],
-      zoom: 2,
-      cooperativeGestures: true,
-      attributionControl: { compact: true },
-    });
-
-    map.addControl(new maplibregl.NavigationControl(), isRtl ? 'top-left' : 'top-right');
-
-    map.on('load', () => {
-      // "vassal" zonasi uchun diagonal chiziqli naqsh (rang bilan birga —
-      // faqat rangga tayanmaslik uchun, ko'r-rang ajratmaydiganlar uchun ham).
-      const size = 16;
-      const canvas = document.createElement('canvas');
-      canvas.width = size;
-      canvas.height = size;
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(0, size);
-        ctx.lineTo(size, 0);
-        ctx.stroke();
-        map.addImage('hatch-pattern', ctx.getImageData(0, 0, size, size));
-      }
-
-      map.addSource('territory', { type: 'geojson', data: geojson });
-
-      map.addLayer({
-        id: 'markaz-fill',
-        type: 'fill',
-        source: 'territory',
-        filter: ['==', ['get', 'zone'], 'markaz'],
-        paint: { 'fill-color': color, 'fill-opacity': 0.32 },
-      });
-      map.addLayer({
-        id: 'markaz-line',
-        type: 'line',
-        source: 'territory',
-        filter: ['==', ['get', 'zone'], 'markaz'],
-        paint: { 'line-color': color, 'line-width': 2 },
-      });
-
-      map.addLayer({
-        id: 'vassal-fill',
-        type: 'fill',
-        source: 'territory',
-        filter: ['==', ['get', 'zone'], 'vassal'],
-        paint: { 'fill-pattern': 'hatch-pattern', 'fill-opacity': 0.55 },
-      });
-      map.addLayer({
-        id: 'vassal-line',
-        type: 'line',
-        source: 'territory',
-        filter: ['==', ['get', 'zone'], 'vassal'],
-        paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [3, 2] },
-      });
-
-      map.addLayer({
-        id: 'influence-line',
-        type: 'line',
-        source: 'territory',
-        filter: ['==', ['get', 'zone'], "ta'sir-doirasi"],
-        paint: { 'line-color': color, 'line-width': 1.5, 'line-dasharray': [1, 2], 'line-opacity': 0.7 },
-      });
-
-      // "past" ishonchlilikdagi zonalarni yanada xiraroq ko'rsatish.
-      map.setPaintProperty('markaz-fill', 'fill-opacity', [
-        'case',
-        ['==', ['get', 'confidence'], 'past'],
-        0.16,
-        0.32,
-      ]);
-      map.setPaintProperty('markaz-line', 'line-dasharray', [
-        'case',
-        ['==', ['get', 'confidence'], 'past'],
-        ['literal', [1, 2]],
-        ['literal', [1, 0]],
-      ]);
-
-      const coordsList: Position[] = [];
-      const collect = (geom: Geometry) => {
-        if (geom.type === 'Polygon') geom.coordinates.forEach((ring) => ring.forEach((c) => coordsList.push(c)));
-        else if (geom.type === 'MultiPolygon')
-          geom.coordinates.forEach((poly) => poly.forEach((ring) => ring.forEach((c) => coordsList.push(c))));
-        else if (geom.type === 'Point') coordsList.push(geom.coordinates);
-      };
-      geojson.features.forEach((f) => collect(f.geometry));
-      if (coordsList.length > 0) {
-        const lons = coordsList.map((c) => c[0]);
-        const lats = coordsList.map((c) => c[1]);
-        map.fitBounds(
-          [
-            [Math.min(...lons), Math.min(...lats)],
-            [Math.max(...lons), Math.max(...lats)],
-          ],
-          { padding: 30, duration: 0 }
-        );
-      }
-
-      geojson.features
-        .filter((f) => f.geometry.type === 'Point')
-        .forEach((f) => {
-          const props = f.properties as { name: string; notes: string | null } | null;
-          const markerEl = document.createElement('div');
-          markerEl.className = 'tb-map-marker-inner';
-          markerEl.innerHTML =
-            '<svg viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="5" width="14" height="14" fill="#fff" /><rect x="5" y="5" width="14" height="14" fill="#fff" transform="rotate(45 12 12)" /></svg>';
-          new maplibregl.Marker({ element: markerEl })
-            .setLngLat(f.geometry.type === 'Point' ? (f.geometry.coordinates as [number, number]) : [0, 0])
-            .setPopup(
-              new maplibregl.Popup({ offset: 16 }).setHTML(
-                `<strong>${props?.name ?? ''}</strong>${props?.notes ? `<br>${props.notes}` : ''}`
-              )
-            )
-            .addTo(map);
-        });
-    });
-  }
-</script>
+  {points.length > 0 && (
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full min-w-[28rem] border-collapse text-xs">
+        <caption class="mb-1 text-start text-ink-muted">{t('states.pointsCaption')}</caption>
+        <thead>
+          <tr class="border-b border-line text-ink-muted">
+            <th class="py-1 pe-3 text-start font-medium">{t('states.tableName')}</th>
+            <th class="py-1 pe-3 text-start font-medium">{t('states.tableKind')}</th>
+            <th class="py-1 text-start font-medium">{t('states.tableNotes')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {points.map((p) => (
+            <tr class="border-b border-line/60">
+              <td class="py-1.5 pe-3 text-ink">{p.name}</td>
+              <td class="py-1.5 pe-3 text-ink">{kindLabel(p.kind)}</td>
+              <td class="py-1.5 text-ink-muted">{p.notes ?? '—'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</figure>

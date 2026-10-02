@@ -21,7 +21,7 @@
     { "name": "Kobul", "lat": 34.56, "lng": 69.21 },
     { "name": "Hirot", "lat": 34.3529, "lng": 62.204 }
   ],
-  "predecessors": [],
+  "predecessors": ["chigatoy-ulusi"],
   "successors": [],
   "symbols": [
     { "id": "temur-uch-halqa", "kind": "tamga", "sourceIds": ["clavijo-1406"], "confidence": "ortacha", "verified": false }

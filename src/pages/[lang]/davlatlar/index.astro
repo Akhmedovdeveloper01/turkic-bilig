@@ -8,6 +8,7 @@ import StateCategoryBadge from '../../../components/states/StateCategoryBadge.as
 import StatesStats from '../../../components/states/StatesStats.astro';
 import StatesTimeline from '../../../components/states/StatesTimeline.astro';
 import CapitalsMap from '../../../components/map/CapitalsMap.astro';
+import StatesGenealogy from '../../../components/states/StatesGenealogy.astro';
 import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -58,7 +59,7 @@ const capitalPoints = items
 
 const chartItems = items
   .filter((i) => i.entry)
-  .map((i) => ({ href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts }));
+  .map((i) => ({ slug: i.slug, href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts }));
 ---
 
 <BaseLayout lang={lang!} title={t('nav.states')}>
@@ -71,6 +72,8 @@ const chartItems = items
     <h2 id="capitals-map-heading" class="mb-3 text-lg font-semibold text-ink">{t('states.capitalsMapTitle')}</h2>
     <CapitalsMap lang={lang!} points={capitalPoints} />
   </section>
+
+  <StatesGenealogy lang={lang!} items={chartItems} />
 
   {/* Toifa filtri: JavaScript'siz — radio guruhi + CSS :has() (global.css, .tb-filter). */}
   <div class="tb-filter">

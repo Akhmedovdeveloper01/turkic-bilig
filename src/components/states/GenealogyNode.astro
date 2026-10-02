@@ -1,0 +1,46 @@
+---
+/**
+ * Davlatlar shajarasining bitta tuguni (rekursiv: bolalari Astro.self orqali).
+ * Bir necha "ota"si bo'lgan davlat (masalan, Boburiylar) har bir ota ostida
+ * takrorlanadi va boshqa otasi kichik izohda ko'rsatiladi.
+ */
+export interface GenealogyItem {
+  slug: string;
+  href: string;
+  title: string;
+  period: string;
+  category: 'turkiy' | 'turkiy-sulola' | 'munozarali';
+  children: string[];
+  parents: string[];
+}
+interface Props {
+  slug: string;
+  parentSlug?: string;
+  nodes: Record<string, GenealogyItem>;
+  alsoLabel: string;
+}
+const { slug, parentSlug, nodes, alsoLabel } = Astro.props;
+const node = nodes[slug];
+const otherParents = node.parents.filter((p) => p !== parentSlug).map((p) => nodes[p]);
+const catCls = `tb-tl-${node.category === 'turkiy-sulola' ? 'sulola' : node.category}`;
+---
+
+<li class="tb-gen-node">
+  <a href={node.href} class="group inline-flex flex-wrap items-baseline gap-x-2 rounded-lg py-0.5 pe-2">
+    <span class:list={['relative top-[1px] inline-block h-2.5 w-2.5 shrink-0 rounded-full', catCls]} aria-hidden="true"></span>
+    <span class="text-sm font-medium text-ink group-hover:text-brand group-hover:underline">{node.title}</span>
+    <span class="text-xs tabular-nums text-ink-muted">{node.period}</span>
+  </a>
+  {parentSlug && otherParents.length > 0 && (
+    <p class="ps-[1.1rem] text-[0.7rem] text-ink-muted">
+      {alsoLabel}: {otherParents.map((p) => p.title).join(', ')}
+    </p>
+  )}
+  {node.children.length > 0 && (
+    <ul class="tb-gen-children">
+      {node.children.map((c) => (
+        <Astro.self slug={c} parentSlug={slug} nodes={nodes} alsoLabel={alsoLabel} />
+      ))}
+    </ul>
+  )}
+</li>

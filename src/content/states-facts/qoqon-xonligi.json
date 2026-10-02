@@ -10,7 +10,7 @@
   "capitals": [
     { "name": "Qo'qon", "lat": 40.53, "lng": 70.94 }
   ],
-  "predecessors": [],
+  "predecessors": ["ashtarxoniylar"],
   "successors": [],
   "sources": ["bosworth-1996"],
   "verified": false

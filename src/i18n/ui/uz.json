@@ -136,7 +136,13 @@
     "capitalsMapTitle": "Poytaxtlar xaritasi",
     "capitalsMapNote": "Har bir nuqta — kamida bitta davlatning (turli davrlardagi) poytaxti; bu tarixiy chegaralar emas. Raqamli nuqta — bir necha davlatga poytaxt bo'lgan shahar. Nuqtaga sichqonchani olib boring — davlatlar ro'yxati chiqadi.",
     "legendMultiCapital": "Bir necha davlat poytaxti",
-    "capitalsListTitle": "Poytaxtlar ro'yxati ({n} ta shahar)"
+    "capitalsListTitle": "Poytaxtlar ro'yxati ({n} ta shahar)",
+    "genealogyTitle": "Davlatlar shajarasi",
+    "genealogyNote": "Bog'lanish — siyosiy yoki sulolaviy vorislik: davlat oldingisining tarkibidan yoki uning o'rnida vujudga kelgan. Bu etnik davomiylikni anglatmaydi. Oraliq davlat saytda bo'lmasa, bog'lanish ko'rsatilmaydi.",
+    "genealogyAlso": "Shuningdek",
+    "successionTitle": "Vorislik",
+    "predecessorsLabel": "Oldingi davlat(lar)",
+    "successorsLabel": "Keyingi davlat(lar)"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

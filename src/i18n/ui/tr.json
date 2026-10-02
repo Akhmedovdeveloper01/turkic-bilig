@@ -136,7 +136,13 @@
     "capitalsMapTitle": "Başkentler haritası",
     "capitalsMapNote": "Her nokta en az bir devletin (farklı dönemlerde) başkentidir; tarihî sınırlar değildir. Sayılı nokta, birden fazla devlete başkentlik yapmış şehirdir. Devlet listesini görmek için imleci noktanın üzerine getirin.",
     "legendMultiCapital": "Birden fazla devletin başkenti",
-    "capitalsListTitle": "Başkentler listesi ({n} şehir)"
+    "capitalsListTitle": "Başkentler listesi ({n} şehir)",
+    "genealogyTitle": "Devletlerin soy ağacı",
+    "genealogyNote": "Bağ, siyasi veya hanedan halefiyetini ifade eder: devlet, öncülünün bünyesinden veya onun yerine ortaya çıkmıştır. Etnik süreklilik anlamına gelmez. Aradaki devlet sitede yoksa bağ gösterilmez.",
+    "genealogyAlso": "Ayrıca",
+    "successionTitle": "Halefiyet",
+    "predecessorsLabel": "Öncül devlet(ler)",
+    "successorsLabel": "Halef devlet(ler)"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

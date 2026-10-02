@@ -22,7 +22,7 @@
     { "name": "Samarqand", "lat": 39.627, "lng": 66.975 },
     { "name": "Buxoro", "lat": 39.77, "lng": 64.42 }
   ],
-  "predecessors": [],
+  "predecessors": ["qarluq-yabguligi"],
   "successors": [],
   "symbols": [],
   "symbolsStatus": "manba-topilmagan",

@@ -136,7 +136,13 @@
     "capitalsMapTitle": "Paýtagtlar kartasy",
     "capitalsMapNote": "Her nokat iň bolmanda bir döwletiň (dürli döwürlerde) paýtagty; bular taryhy serhetler däl. Sanly nokat — birnäçe döwlete paýtagt bolan şäher. Döwletleriň sanawyny görmek üçin kursory nokadyň üstüne getiriň.",
     "legendMultiCapital": "Birnäçe döwletiň paýtagty",
-    "capitalsListTitle": "Paýtagtlaryň sanawy ({n} şäher)"
+    "capitalsListTitle": "Paýtagtlaryň sanawy ({n} şäher)",
+    "genealogyTitle": "Döwletleriň şejeresi",
+    "genealogyNote": "Baglanyşyk — syýasy ýa-da nebere mirasdüşerligi: döwlet öňküsiniň düzüminden ýa-da onuň ornunda döräpdir. Bu etniki dowamlylygy aňlatmaýar. Aralykdaky döwlet saýtda ýok bolsa, baglanyşyk görkezilmeýär.",
+    "genealogyAlso": "Şeýle hem",
+    "successionTitle": "Mirasdüşerlik",
+    "predecessorsLabel": "Öňki döwlet(ler)",
+    "successorsLabel": "Soňky döwlet(ler)"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

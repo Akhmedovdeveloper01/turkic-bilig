@@ -39,6 +39,21 @@ const sourceEntries = facts
   ? await Promise.all(facts.data.sources.map((ref) => getEntry(ref)))
   : [];
 
+// Vorislik: oldingi davlatlar faktlarda, keyingilari esa teskari hisoblanadi.
+const allStateFacts = await getCollection('stateFacts');
+const stateLink = async (id: string) => {
+  const e = (await getEntry('states', `${lang}/${id}`)) ?? (await getEntry('states', `uz/${id}`));
+  return e ? { href: `/${lang}/davlatlar/${id}`, title: e.data.title } : null;
+};
+const predecessorLinks = facts
+  ? (await Promise.all(facts.data.predecessors.map((r) => stateLink(r.id)))).filter((x) => x !== null)
+  : [];
+const successorLinks = (
+  await Promise.all(
+    allStateFacts.filter((sf) => sf.data.predecessors.some((r) => r.id === slug)).map((sf) => stateLink(sf.id))
+  )
+).filter((x) => x !== null);
+
 const allScholarFacts = await getCollection('scholarFacts');
 const relatedScholarFacts = allScholarFacts.filter((sf) =>
   sf.data.relatedStates.some((ref) => ref.id === slug)
@@ -80,6 +95,28 @@ const stateGeoJSON =
           <p class="text-ink">{facts.data.capital}</p>
         </div>
       )}
+    </section>
+  )}
+
+  {(predecessorLinks.length > 0 || successorLinks.length > 0) && (
+    <section class="mb-6 grid gap-4 rounded-xl border border-line bg-surface-alt p-5 text-sm sm:grid-cols-2" aria-label={t('states.successionTitle')}>
+      {[
+        { label: t('states.predecessorsLabel'), links: predecessorLinks, arrow: '←' },
+        { label: t('states.successorsLabel'), links: successorLinks, arrow: '→' },
+      ].filter((g) => g.links.length > 0).map((g) => (
+        <div>
+          <p class="mb-1.5 font-semibold uppercase tracking-wide text-ink-muted">{g.label}</p>
+          <ul class="flex flex-wrap gap-2">
+            {g.links.map((l) => (
+              <li>
+                <a href={l.href} class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-ink transition-colors hover:border-brand/40 hover:text-brand">
+                  <span aria-hidden="true" class="text-ink-muted rtl:-scale-x-100">{g.arrow}</span>{l.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
   )}
 

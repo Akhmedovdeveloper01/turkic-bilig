@@ -11,7 +11,7 @@
     { "name": "Tabriz", "lat": 38.08, "lng": 46.29 },
     { "name": "Isfahon", "lat": 32.65, "lng": 51.67 }
   ],
-  "predecessors": [],
+  "predecessors": ["oqqoyunlular"],
   "successors": [],
   "sources": ["bosworth-1996", "findley-2005"],
   "verified": false,

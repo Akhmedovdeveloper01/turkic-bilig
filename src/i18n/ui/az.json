@@ -136,7 +136,13 @@
     "capitalsMapTitle": "Paytaxtlar xəritəsi",
     "capitalsMapNote": "Hər nöqtə ən azı bir dövlətin (müxtəlif dövrlərdə) paytaxtıdır; bunlar tarixi sərhədlər deyil. Rəqəmli nöqtə bir neçə dövlətə paytaxt olmuş şəhərdir. Dövlətlərin siyahısını görmək üçün kursoru nöqtənin üzərinə gətirin.",
     "legendMultiCapital": "Bir neçə dövlətin paytaxtı",
-    "capitalsListTitle": "Paytaxtların siyahısı ({n} şəhər)"
+    "capitalsListTitle": "Paytaxtların siyahısı ({n} şəhər)",
+    "genealogyTitle": "Dövlətlərin şəcərəsi",
+    "genealogyNote": "Əlaqə siyasi və ya sülalə varisliyini bildirir: dövlət sələfinin tərkibindən və ya onun yerində yaranıb. Bu, etnik davamlılıq demək deyil. Aradakı dövlət saytda yoxdursa, əlaqə göstərilmir.",
+    "genealogyAlso": "Həmçinin",
+    "successionTitle": "Varislik",
+    "predecessorsLabel": "Əvvəlki dövlət(lər)",
+    "successorsLabel": "Sonrakı dövlət(lər)"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

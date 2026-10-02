@@ -20,7 +20,7 @@
     { "name": "Bag'dod", "lat": 33.3, "lng": 44.36 },
     { "name": "Isfahon", "lat": 32.6546, "lng": 51.668 }
   ],
-  "predecessors": [],
+  "predecessors": ["oguz-yabguligi"],
   "successors": [],
   "symbols": [],
   "symbolsStatus": "ekspert-kutilmoqda",

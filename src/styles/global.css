@@ -446,3 +446,23 @@ body {
   font-weight: 700;
   line-height: 1;
 }
+
+/* ---- Davlatlar shajarasi (StatesGenealogy) — ichma-ich ro'yxat, mantiqiy
+ * xossalar bilan bog'lovchi chiziqlar (RTL'da avtomatik ko'zgulanadi). ---- */
+.tb-gen-children {
+  margin-inline-start: 0.3rem;
+  padding-inline-start: 1rem;
+  border-inline-start: 1.5px solid var(--color-line);
+}
+.tb-gen-children > .tb-gen-node {
+  position: relative;
+  margin-top: 0.25rem;
+}
+.tb-gen-children > .tb-gen-node::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -1rem;
+  top: 0.8rem;
+  width: 0.8rem;
+  border-top: 1.5px solid var(--color-line);
+}

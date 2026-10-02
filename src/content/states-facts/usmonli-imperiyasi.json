@@ -22,7 +22,7 @@
     { "name": "Qohira", "lat": 30.04, "lng": 31.24 },
     { "name": "Jazoir atrofi", "lat": 36.75, "lng": 3.06 }
   ],
-  "predecessors": [],
+  "predecessors": ["rum-saljuqiylari"],
   "successors": [],
   "symbols": [],
   "symbolsStatus": "ekspert-kutilmoqda",

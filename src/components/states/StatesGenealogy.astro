@@ -1,0 +1,69 @@
+---
+/**
+ * Davlatlar shajarasi: stateFacts.predecessors bog'lanishlaridan quriladigan
+ * daraxtlar. Bog'lanish — siyosiy yoki sulolaviy vorislik (davlat oldingisining
+ * tarkibidan yoki uning o'rnida vujudga kelgan), etnik davomiylik EMAS.
+ * Faqat kamida bitta bog'lanishi bor davlatlar ko'rsatiladi.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import { formatPeriod, sortableYear } from '../../i18n/years';
+import GenealogyNode, { type GenealogyItem } from './GenealogyNode.astro';
+
+interface Item {
+  slug: string;
+  href: string;
+  title: string;
+  facts: CollectionEntry<'stateFacts'>['data'];
+}
+interface Props {
+  lang: string;
+  items: Item[];
+}
+const { lang, items } = Astro.props;
+const t = createTranslator(lang);
+
+const start = (i: Item) => sortableYear(i.facts.period.startYear, i.facts.period.startEra);
+const bySlug = new Map(items.map((i) => [i.slug, i]));
+
+const nodes: Record<string, GenealogyItem> = {};
+for (const i of items) {
+  nodes[i.slug] = {
+    slug: i.slug,
+    href: i.href,
+    title: i.title,
+    period: formatPeriod(t, i.facts.period),
+    category: i.facts.category,
+    parents: i.facts.predecessors.map((p) => p.id).filter((p) => bySlug.has(p)),
+    children: [],
+  };
+}
+for (const n of Object.values(nodes)) for (const p of n.parents) nodes[p].children.push(n.slug);
+for (const n of Object.values(nodes)) n.children.sort((a, b) => start(bySlug.get(a)!) - start(bySlug.get(b)!));
+
+const countDesc = (slug: string, seen = new Set<string>()): number => {
+  if (seen.has(slug)) return 0;
+  seen.add(slug);
+  return 1 + nodes[slug].children.reduce((s, c) => s + countDesc(c, seen), 0);
+};
+
+// Ildizlar: oldingi davlati bazada yo'q, lekin kamida bitta vorisi bor davlatlar.
+const roots = Object.values(nodes)
+  .filter((n) => n.parents.length === 0 && n.children.length > 0)
+  .sort((a, b) => countDesc(b.slug) - countDesc(a.slug) || start(bySlug.get(a.slug)!) - start(bySlug.get(b.slug)!));
+---
+
+<section class="mb-8" aria-labelledby="states-genealogy-title">
+  <h2 id="states-genealogy-title" class="mb-1 text-lg font-semibold text-ink">{t('states.genealogyTitle')}</h2>
+  <p class="mb-4 text-xs text-ink-muted">{t('states.genealogyNote')}</p>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {roots.map((r) => (
+      <div class="rounded-xl border border-line bg-surface-alt p-4">
+        <ul class="tb-gen-root">
+          <GenealogyNode slug={r.slug} nodes={nodes} alsoLabel={t('states.genealogyAlso')} />
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

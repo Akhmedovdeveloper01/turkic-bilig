@@ -136,7 +136,13 @@
     "capitalsMapTitle": "Map of capitals",
     "capitalsMapNote": "Each dot is the capital of at least one state (in different periods); these are not historical borders. A numbered dot is a city that served as capital of several states. Hover over a dot to see the list of states.",
     "legendMultiCapital": "Capital of several states",
-    "capitalsListTitle": "List of capitals ({n} cities)"
+    "capitalsListTitle": "List of capitals ({n} cities)",
+    "genealogyTitle": "Family tree of states",
+    "genealogyNote": "A link means political or dynastic succession: the state emerged from or in place of its predecessor. It does not imply ethnic continuity. If an intermediate state is not on the site, no link is shown.",
+    "genealogyAlso": "Also from",
+    "successionTitle": "Succession",
+    "predecessorsLabel": "Predecessor(s)",
+    "successorsLabel": "Successor(s)"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

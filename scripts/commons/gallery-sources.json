@@ -1,0 +1,191 @@
+{
+  "_note": "Karusel uchun qo'lda tanlangan Wikimedia Commons fayllari. Har bir rasm ko'z bilan tekshirilgan. fetch-gallery.py metama'lumotni (muallif, litsenziya, o'lcham) src/data/gallery.json ga yozadi. unescoYear — UNESCO Jahon merosi ro'yxatiga kiritilgan yil (tekshirilishi kerak).",
+  "peoples/ozbeklar": [
+    {
+      "id": "kalta-minor",
+      "commons": "File:Kalta Minor 06.jpg",
+      "unescoYear": 1990
+    },
+    {
+      "id": "poi-kalon",
+      "commons": "File:Poi Kalon Ensemble, Bukhara (4933989373).jpg",
+      "unescoYear": 1993
+    },
+    {
+      "id": "shohizinda",
+      "commons": "File:Shah-i-Zinda 02.jpg",
+      "unescoYear": 2001
+    },
+    {
+      "id": "gerb",
+      "commons": "File:Emblem of Uzbekistan.svg",
+      "kind": "gerb"
+    }
+  ],
+  "peoples/qozoqlar": [
+    {
+      "id": "yassaviy",
+      "commons": "File:Mausoleum of Khoja Ahmed Yasawi in Turkistan 2.jpg",
+      "unescoYear": 2003
+    },
+    {
+      "id": "tamgali",
+      "commons": "File:Tamgaly Petroglyphs Horses and humans.jpg",
+      "unescoYear": 2004
+    },
+    {
+      "id": "gerb",
+      "commons": "File:Emblem of Kazakhstan latin.svg",
+      "kind": "gerb"
+    }
+  ],
+  "peoples/qirgizlar": [
+    {
+      "id": "sulaymon-too",
+      "commons": "File:Osh 03-2016 img06 Sulayman Mountain.jpg",
+      "unescoYear": 2009
+    },
+    {
+      "id": "burana",
+      "commons": "File:Burana Tower, Kyrgyzstan 01.jpg",
+      "unescoYear": 2014
+    },
+    {
+      "id": "gerb",
+      "commons": "File:Emblem of Kyrgyzstan.svg",
+      "kind": "gerb"
+    }
+  ],
+  "peoples/turkmanlar": [
+    {
+      "id": "marv",
+      "commons": "File:Sultan Sanjar Mausoleum, Merv, Turkmenistan 2019 01 (cropped).jpg",
+      "unescoYear": 1999
+    },
+    {
+      "id": "urganch",
+      "commons": "File:Kunya-Urgench-130382.jpg",
+      "unescoYear": 2005
+    },
+    {
+      "id": "gerb",
+      "commons": "File:Emblem of Turkmenistan.svg",
+      "kind": "gerb"
+    }
+  ],
+  "peoples/ozarbayjonlar": [
+    {
+      "id": "qiz-qala",
+      "commons": "File:Maiden Tower in Baku 2015.jpg",
+      "unescoYear": 2000
+    },
+    {
+      "id": "qobiston",
+      "commons": "File:Petroglyphs in Gobustan 07.jpg",
+      "unescoYear": 2007
+    },
+    {
+      "id": "gerb",
+      "commons": "File:Emblem of Azerbaijan.svg",
+      "kind": "gerb"
+    }
+  ],
+  "peoples/turklar": [
+    {
+      "id": "goreme",
+      "commons": "File:Göreme Open Air Museum 01.jpg",
+      "unescoYear": 1985
+    },
+    {
+      "id": "selimiya",
+      "commons": "File:Selimiye Mosque in Edirne 01.jpg",
+      "unescoYear": 2011
+    },
+    {
+      "id": "divrigi",
+      "commons": "File:Divrigi mosque detail009.jpg",
+      "unescoYear": 1985
+    },
+    {
+      "id": "gerb",
+      "kind": "gerb-yoq"
+    }
+  ],
+  "states/gokturk-xoqonligi": [
+    {
+      "id": "kul-tigin",
+      "commons": "File:Kultegin monument Mongolia.JPG",
+      "unescoYear": 2004
+    },
+    {
+      "id": "bilga-xoqon",
+      "commons": "File:Bilge Khagan monument Mongolia.JPG",
+      "unescoYear": 2004
+    }
+  ],
+  "states/qoraxoniylar": [
+    {
+      "id": "burana",
+      "commons": "File:Burana Tower, Kyrgyzstan.jpg",
+      "unescoYear": 2014
+    },
+    {
+      "id": "kalon",
+      "commons": "File:Kalan Minaret 01.jpg",
+      "unescoYear": 1993
+    }
+  ],
+  "states/saljuqiylar": [
+    {
+      "id": "sanjar",
+      "commons": "File:Gorskii 01333u.jpg",
+      "unescoYear": 1999
+    },
+    {
+      "id": "isfahon",
+      "commons": "File:Jameh Mosque of Isfahan 16.jpg",
+      "unescoYear": 2012
+    }
+  ],
+  "states/oltin-orda": [
+    {
+      "id": "qora-palata",
+      "commons": "File:Черная палата в Болгаре.JPG",
+      "unescoYear": 2014
+    }
+  ],
+  "states/temuriylar": [
+    {
+      "id": "guri-amir",
+      "commons": "File:Gur-e Amir 01.jpg",
+      "unescoYear": 2001
+    },
+    {
+      "id": "bibixonim",
+      "commons": "File:Bibi-Khanym Mosque, Samarkand.jpg",
+      "unescoYear": 2001
+    },
+    {
+      "id": "shohizinda",
+      "commons": "File:Shah-i-Zinda 01.jpg",
+      "unescoYear": 2001
+    }
+  ],
+  "states/usmonli-imperiyasi": [
+    {
+      "id": "sulaymoniya",
+      "commons": "File:Süleymaniye Mosque, 22 January 2025.jpg",
+      "unescoYear": 1985
+    },
+    {
+      "id": "topqopi",
+      "commons": "File:Istanbul asv2020-02 img23 Topkapı Palace.jpg",
+      "unescoYear": 1985
+    },
+    {
+      "id": "sultonahmad",
+      "commons": "File:Exterior of Sultan Ahmed I Mosque in Istanbul, Turkey 002.jpg",
+      "unescoYear": 1985
+    }
+  ]
+}

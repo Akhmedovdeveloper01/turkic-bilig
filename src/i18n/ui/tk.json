@@ -198,5 +198,19 @@
     "statesLead": "Hunlardan Osmanlylara çenli — türki döwletler we nebereler, olaryň hronologiýasy we mirasdüşerligi.",
     "scholarsLead": "Türki dünýäsiniň alymlary, şahyrlary we akyldarlary.",
     "topicsLead": "Etnogenez, dil toparlary, ýazuw we beýleki umumy mowzuklar."
+  },
+  "gallery": {
+    "title": "Görmäge degerli ýerler we nyşanlar",
+    "unesco": "ÝUNESKO-nyň Bütindünýä mirasy · {year}",
+    "emblem": "{name} döwlet tugrasy",
+    "flag": "{name} döwlet baýdagy",
+    "noEmblem": "Türkiýe Respublikasynyň kanun bilen tassyklanan resmi döwlet tugrasy ýok.",
+    "prev": "Öňki",
+    "next": "Indiki",
+    "pause": "Saklamak",
+    "play": "Dowam etdirmek",
+    "slide": "{n}-nji surat, jemi {total}",
+    "region": "Suratlar karuseli",
+    "symbol": "Nyşan"
   }
 }

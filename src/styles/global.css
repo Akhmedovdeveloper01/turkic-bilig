@@ -511,3 +511,46 @@ body {
     linear-gradient(to top, rgb(8 18 20 / 0.85) 0%, rgb(8 18 20 / 0.15) 60%),
     linear-gradient(to left, rgb(8 18 20 / 0.55), transparent 70%);
 }
+
+/* ---- Karusel (components/gallery/Carousel.astro) ---- */
+.tb-car-track {
+  scrollbar-width: none;
+}
+.tb-car-track::-webkit-scrollbar {
+  display: none;
+}
+.tb-car-track:focus-visible,
+.tb-car-btn:focus-visible,
+.tb-car-dot:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+.tb-car-btn {
+  display: inline-flex;
+  height: 2rem;
+  min-width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-surface-alt);
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  transition: border-color 0.15s, color 0.15s;
+}
+.tb-car-btn:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+.tb-car-dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-line);
+  transition: width 0.2s, background-color 0.2s;
+}
+.tb-car-dot[aria-current='true'] {
+  width: 1.5rem;
+  background-color: var(--color-brand);
+}

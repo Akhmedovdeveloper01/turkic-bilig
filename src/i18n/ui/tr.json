@@ -198,5 +198,19 @@
     "statesLead": "Hunlardan Osmanlılara — Türk devletleri ve hanedanları, kronolojileri ve halefiyetleri.",
     "scholarsLead": "Türk dünyasının bilginleri, şairleri ve düşünürleri.",
     "topicsLead": "Etnogenez, dil sınıflandırması, yazı ve diğer genel konular."
+  },
+  "gallery": {
+    "title": "Görülecek yerler ve semboller",
+    "unesco": "UNESCO Dünya Mirası · {year}",
+    "emblem": "{name} devlet arması",
+    "flag": "{name} devlet bayrağı",
+    "noEmblem": "Türkiye Cumhuriyeti'nin kanunla belirlenmiş resmî bir devlet arması yoktur.",
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "pause": "Duraklat",
+    "play": "Devam et",
+    "slide": "Görsel {n} / {total}",
+    "region": "Görsel karuseli",
+    "symbol": "Sembol"
   }
 }

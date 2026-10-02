@@ -1,0 +1,197 @@
+---
+/**
+ * "Diqqatga sazovor joylar va ramzlar" karuseli (xalq va davlat sahifalari).
+ *
+ * Kirish imkoniyati (WCAG 2.2.2): avtomatik aylanish 6 soniyada bir; pauza
+ * tugmasi bor; sichqoncha ustida yoki fokus ichkarida bo'lsa to'xtaydi;
+ * "harakatni kamaytirish" yoqilgan bo'lsa umuman aylanmaydi. Oldingi/keyingi
+ * tugmalari va nuqtalar klaviaturadan ishlaydi; trek scroll-snap bilan
+ * barmoq bilan ham suriladi. RTL'da yo'nalish teskari hisoblanadi.
+ *
+ * Fotosuratlar Wikimedia Commons'dan build vaqtida olinadi va siqiladi
+ * (astro.config: image.domains); har slaydda muallif va litsenziya.
+ */
+import { Image } from 'astro:assets';
+import StateSymbol from '../symbols/StateSymbol.astro';
+import { createTranslator } from '../../i18n/ui';
+
+export type Slide =
+  | {
+      kind: 'photo';
+      src: string;
+      width: number;
+      height: number;
+      caption: string;
+      unescoYear?: number | null;
+      credit: { author: string; license: string; licenseUrl: string | null; sourceUrl: string };
+    }
+  | {
+      kind: 'emblem' | 'flag';
+      src: string;
+      caption: string;
+      credit?: { author: string; license: string; licenseUrl: string | null; sourceUrl: string };
+    }
+  | { kind: 'symbol'; symbol: 'gokturk-bori-tugi' | 'temur-uch-halqa'; caption: string; colorLight?: string; colorDark?: string }
+  | { kind: 'note'; caption: string };
+
+interface Props {
+  lang: string;
+  slides: Slide[];
+}
+const { lang, slides } = Astro.props;
+const t = createTranslator(lang);
+const total = slides.length;
+---
+
+{total > 0 && (
+  <section
+    class="tb-carousel mb-8"
+    data-carousel
+    aria-roledescription="carousel"
+    aria-labelledby="gallery-title"
+  >
+    <div class="mb-3 flex items-center justify-between gap-3">
+      <h2 id="gallery-title" class="text-lg font-semibold text-ink">{t('gallery.title')}</h2>
+      {total > 1 && (
+        <div class="flex items-center gap-1.5">
+          <button type="button" class="tb-car-btn" data-prev aria-label={t('gallery.prev')}>
+            <span aria-hidden="true" class="rtl:-scale-x-100">‹</span>
+          </button>
+          <button type="button" class="tb-car-btn" data-toggle aria-label={t('gallery.pause')} data-label-pause={t('gallery.pause')} data-label-play={t('gallery.play')}>
+            <span aria-hidden="true" data-icon>❚❚</span>
+          </button>
+          <button type="button" class="tb-car-btn" data-next aria-label={t('gallery.next')}>
+            <span aria-hidden="true" class="rtl:-scale-x-100">›</span>
+          </button>
+        </div>
+      )}
+    </div>
+
+    <div class="tb-car-track flex snap-x snap-mandatory overflow-x-auto rounded-2xl border border-line bg-surface-alt" data-track tabindex="0" aria-label={t('gallery.region')}>
+      {slides.map((s, i) => (
+        <figure
+          class="relative w-full shrink-0 snap-start"
+          aria-roledescription="slide"
+          aria-label={t('gallery.slide', { n: String(i + 1), total: String(total) })}
+        >
+          <div class="relative aspect-[16/9] w-full overflow-hidden bg-surface sm:aspect-[21/9]">
+            {s.kind === 'photo' && (
+              <Image
+                src={s.src}
+                width={s.width}
+                height={s.height}
+                widths={[640, 1024, 1600]}
+                sizes="(min-width: 1152px) 1120px, 100vw"
+                alt={s.caption}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                class="h-full w-full object-cover"
+              />
+            )}
+            {(s.kind === 'emblem' || s.kind === 'flag') && (
+              <div class="tb-pattern-dots flex h-full w-full items-center justify-center p-6 text-line">
+                <img src={s.src} alt={s.caption} loading="lazy" class:list={['max-h-full w-auto drop-shadow-md', s.kind === 'flag' && 'max-w-[70%] rounded ring-1 ring-black/10']} />
+              </div>
+            )}
+            {s.kind === 'symbol' && (
+              <div
+                class="tb-pattern-dots flex h-full w-full items-center justify-center p-6 text-line"
+                style={`--tc-light:${s.colorLight ?? ''};--tc-dark:${s.colorDark ?? ''}`}
+              >
+                <div class="h-full max-h-64 w-48"><StateSymbol symbol={s.symbol} label={s.caption} /></div>
+              </div>
+            )}
+            {s.kind === 'note' && (
+              <div class="flex h-full w-full items-center justify-center p-8 text-center">
+                <p class="max-w-md text-sm text-ink-muted">{s.caption}</p>
+              </div>
+            )}
+          </div>
+          {s.kind !== 'note' && (
+            <figcaption class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3">
+              <span class="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
+                {s.caption}
+                {s.kind === 'photo' && s.unescoYear && (
+                  <a href="https://whc.unesco.org/en/list/" class="rounded-full border border-brand/40 bg-brand/10 px-2 py-0.5 text-[0.7rem] font-medium text-brand-dark hover:underline dark:text-brand">
+                    {t('gallery.unesco', { year: String(s.unescoYear) })}
+                  </a>
+                )}
+              </span>
+              {'credit' in s && s.credit && (
+                <span class="text-[0.7rem] text-ink-muted">
+                  {t('common.photoCredit')}:{' '}
+                  <a href={s.credit.sourceUrl} class="underline decoration-line hover:text-brand">{s.credit.author || 'Wikimedia Commons'}</a>
+                  {', '}
+                  {s.credit.licenseUrl ? <a href={s.credit.licenseUrl} class="underline decoration-line hover:text-brand">{s.credit.license}</a> : s.credit.license}
+                </span>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+
+    {total > 1 && (
+      <div class="mt-3 flex justify-center gap-1.5" data-dots>
+        {slides.map((_, i) => (
+          <button type="button" class="tb-car-dot" data-dot={i} aria-label={t('gallery.slide', { n: String(i + 1), total: String(total) })} aria-current={i === 0 ? 'true' : undefined}></button>
+        ))}
+      </div>
+    )}
+  </section>
+)}
+
+<script>
+  const INTERVAL = 6000;
+
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('[data-track]');
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+    const toggle = root.querySelector<HTMLButtonElement>('[data-toggle]');
+    if (!track || dots.length < 2) return;
+
+    const rtl = getComputedStyle(root).direction === 'rtl';
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const count = dots.length;
+    let index = 0;
+    let playing = !reduced;
+    let hovered = false;
+    let focused = false;
+    let timer: number | undefined;
+
+    const width = () => track.clientWidth;
+    const goTo = (i: number) => {
+      index = (i + count) % count;
+      track.scrollTo({ left: (rtl ? -1 : 1) * index * width(), behavior: reduced ? 'auto' : 'smooth' });
+    };
+    const sync = () => {
+      index = Math.round(Math.abs(track.scrollLeft) / Math.max(1, width()));
+      dots.forEach((d, i) => d.setAttribute('aria-current', i === index ? 'true' : 'false'));
+    };
+    const schedule = () => {
+      window.clearInterval(timer);
+      if (playing && !hovered && !focused && !document.hidden) timer = window.setInterval(() => goTo(index + 1), INTERVAL);
+    };
+    const renderToggle = () => {
+      if (!toggle) return;
+      toggle.setAttribute('aria-label', (playing ? toggle.dataset.labelPause : toggle.dataset.labelPlay) ?? '');
+      const icon = toggle.querySelector('[data-icon]');
+      if (icon) icon.textContent = playing ? '❚❚' : '▶';
+    };
+
+    root.querySelector('[data-prev]')?.addEventListener('click', () => { goTo(index - 1); schedule(); });
+    root.querySelector('[data-next]')?.addEventListener('click', () => { goTo(index + 1); schedule(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); schedule(); }));
+    toggle?.addEventListener('click', () => { playing = !playing; renderToggle(); schedule(); });
+
+    let raf = 0;
+    track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(sync); });
+    root.addEventListener('mouseenter', () => { hovered = true; schedule(); });
+    root.addEventListener('mouseleave', () => { hovered = false; schedule(); });
+    root.addEventListener('focusin', () => { focused = true; schedule(); });
+    root.addEventListener('focusout', (e) => { if (!root.contains(e.relatedTarget as Node)) { focused = false; schedule(); } });
+    document.addEventListener('visibilitychange', schedule);
+
+    renderToggle();
+    schedule();
+  });
+</script>

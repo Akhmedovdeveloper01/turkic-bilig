@@ -198,5 +198,19 @@
     "statesLead": "Xunnudan Usmonlilargacha — turkiy davlatlar va sulolalar, ularning xronologiyasi va vorisligi.",
     "scholarsLead": "Turkiy dunyo olimlari, shoirlari va mutafakkirlari.",
     "topicsLead": "Etnogenez, til tasnifi, yozuv va boshqa umumiy mavzular."
+  },
+  "gallery": {
+    "title": "Diqqatga sazovor joylar va ramzlar",
+    "unesco": "UNESCO Jahon merosi · {year}",
+    "emblem": "{name} davlat gerbi",
+    "flag": "{name} davlat bayrog'i",
+    "noEmblem": "Turkiya Respublikasining rasmiy davlat gerbi yo'q — qonun bilan tasdiqlangan gerb mavjud emas.",
+    "prev": "Oldingi",
+    "next": "Keyingi",
+    "pause": "To'xtatish",
+    "play": "Davom ettirish",
+    "slide": "{n}-rasm, jami {total}",
+    "region": "Rasmlar karuseli",
+    "symbol": "Ramz"
   }
 }

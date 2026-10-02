@@ -133,6 +133,8 @@ const peoples = defineCollection({
     title: z.string(),
     summary: z.string(),
     factsId: reference('peopleFacts'),
+    /** Karusel rasmlari izohlari (tarjima qilinadi), kaliti — src/data/gallery.json dagi `id`. */
+    galleryTexts: z.record(z.string(), z.string()).default({}),
     ...translationFields,
   }),
 });
@@ -223,6 +225,8 @@ const states = defineCollection({
     title: z.string(),
     summary: z.string(),
     factsId: reference('stateFacts'),
+    /** Karusel rasmlari izohlari (tarjima qilinadi), kaliti — src/data/gallery.json dagi `id`. */
+    galleryTexts: z.record(z.string(), z.string()).default({}),
     /** "Bilasizmi?" kartochkalari — faqat shu sahifa matnida manbasi bilan
      * keltirilgan faktlar (yangi da'vo emas). Tarjima qilinadi. */
     didYouKnow: z

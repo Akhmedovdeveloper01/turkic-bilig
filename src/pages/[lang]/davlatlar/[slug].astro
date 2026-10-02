@@ -7,6 +7,8 @@ import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
 import StateMap from '../../../components/map/StateMap.astro';
 import StateSymbols from '../../../components/symbols/StateSymbols.astro';
+import Carousel, { type Slide } from '../../../components/gallery/Carousel.astro';
+import galleryData from '../../../data/gallery.json';
 import { getStateGeoJSON } from '../../../data/geo';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
@@ -54,6 +56,22 @@ const successorLinks = (
   )
 ).filter((x) => x !== null);
 
+// Karusel: shu davlat davri obidalari (Commons) va manbada qayd etilgan ramzlar.
+const galleryTexts = { ...(sourceEntry?.data.galleryTexts ?? {}), ...(entry.data.galleryTexts ?? {}) };
+const symbolTexts = { ...(sourceEntry?.data.symbolTexts ?? {}), ...(entry.data.symbolTexts ?? {}) };
+const slides: Slide[] = [];
+for (const g of (galleryData as Record<string, any[]>)[`states/${slug}`] ?? []) {
+  slides.push({
+    kind: 'photo', src: g.src, width: g.width, height: g.height, caption: galleryTexts[g.id] ?? g.id, unescoYear: g.unescoYear,
+    credit: { author: g.author, license: g.license, licenseUrl: g.licenseUrl, sourceUrl: g.sourceUrl },
+  });
+}
+if (slides.length > 0) {
+  for (const sym of facts?.data.symbols ?? []) {
+    slides.push({ kind: 'symbol', symbol: sym.id, caption: `${t('gallery.symbol')}: ${symbolTexts[sym.id]?.title ?? sym.id}`, colorLight: facts?.data.mapColor?.light, colorDark: facts?.data.mapColor?.dark });
+  }
+}
+
 const allScholarFacts = await getCollection('scholarFacts');
 const relatedScholarFacts = allScholarFacts.filter((sf) =>
   sf.data.relatedStates.some((ref) => ref.id === slug)
@@ -97,6 +115,8 @@ const stateGeoJSON =
       )}
     </section>
   )}
+
+  <Carousel lang={lang!} slides={slides} />
 
   {(predecessorLinks.length > 0 || successorLinks.length > 0) && (
     <section class="mb-6 grid gap-4 rounded-xl border border-line bg-surface-alt p-5 text-sm sm:grid-cols-2" aria-label={t('states.successionTitle')}>

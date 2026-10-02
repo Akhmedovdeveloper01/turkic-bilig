@@ -198,5 +198,19 @@
     "statesLead": "From the Xiongnu to the Ottomans — Turkic states and dynasties, their chronology and succession.",
     "scholarsLead": "Scholars, poets and thinkers of the Turkic world.",
     "topicsLead": "Ethnogenesis, language classification, script and other general topics."
+  },
+  "gallery": {
+    "title": "Landmarks and symbols",
+    "unesco": "UNESCO World Heritage · {year}",
+    "emblem": "State emblem of {name}",
+    "flag": "State flag of {name}",
+    "noEmblem": "The Republic of Türkiye has no official state emblem established by law.",
+    "prev": "Previous",
+    "next": "Next",
+    "pause": "Pause",
+    "play": "Play",
+    "slide": "Slide {n} of {total}",
+    "region": "Image carousel",
+    "symbol": "Symbol"
   }
 }

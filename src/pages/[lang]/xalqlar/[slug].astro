@@ -6,6 +6,9 @@ import TranslationNotice from '../../../components/TranslationNotice.astro';
 import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
 import PeopleStatehood from '../../../components/peoples/PeopleStatehood.astro';
+import Carousel, { type Slide } from '../../../components/gallery/Carousel.astro';
+import galleryData from '../../../data/gallery.json';
+import flags from '../../../data/flags.json';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 
@@ -52,6 +55,21 @@ const scholarEntries = facts
     )
   : [];
 
+// Karusel: obidalar (Commons), davlat gerbi va bayrog'i (statehood dan).
+const galleryTexts = { ...(isFallback ? {} : ((await getEntry('peoples', `uz/${slug}`))?.data.galleryTexts ?? {})), ...(entry.data.galleryTexts ?? {}) };
+const mainEntity = facts?.data.statehood?.entities[0]?.name ?? '';
+const slides: Slide[] = [];
+for (const g of (galleryData as Record<string, any[]>)[`peoples/${slug}`] ?? []) {
+  const credit = g.sourceUrl ? { author: g.author, license: g.license, licenseUrl: g.licenseUrl, sourceUrl: g.sourceUrl } : undefined;
+  if (g.kind === 'obida') slides.push({ kind: 'photo', src: g.src, width: g.width, height: g.height, caption: galleryTexts[g.id] ?? g.id, unescoYear: g.unescoYear, credit: credit! });
+  else if (g.kind === 'gerb') slides.push({ kind: 'emblem', src: g.src, caption: t('gallery.emblem', { name: mainEntity }), credit });
+  else if (g.kind === 'gerb-yoq') slides.push({ kind: 'note', caption: t('gallery.noEmblem') });
+}
+for (const e of facts?.data.statehood?.entities ?? []) {
+  const f = e.flag ? flags[e.flag as keyof typeof flags] : undefined;
+  if (f && slides.length > 0) slides.push({ kind: 'flag', src: f.file, caption: t('gallery.flag', { name: e.name }), credit: { author: 'Wikimedia Commons', license: 'Public domain', licenseUrl: null, sourceUrl: f.commons } });
+}
+
 const accentColor = facts?.data.accentColor;
 const pattern = facts?.data.pattern ?? 'zigzag';
 ---
@@ -72,6 +90,8 @@ const pattern = facts?.data.pattern ?? 'zigzag';
   </div>
 
   {isFallback && <TranslationNotice lang={lang!} />}
+
+  <Carousel lang={lang!} slides={slides} />
 
   {facts?.data.statehood && (
     <PeopleStatehood lang={lang!} statehood={facts.data.statehood} peopleFlag={facts.data.peopleFlag} />

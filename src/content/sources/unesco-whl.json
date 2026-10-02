@@ -1,0 +1,8 @@
+{
+  "type": "veb",
+  "author": "UNESCO Jahon merosi markazi",
+  "title": "World Heritage List",
+  "url": "https://whc.unesco.org/en/list/",
+  "note": "Karuseldagi obidalar va ularning ro'yxatga kiritilgan yillari. TODO: har bir obida sahifasi bilan yillar tekshirilsin.",
+  "status": "tekshirilishi-kerak"
+}

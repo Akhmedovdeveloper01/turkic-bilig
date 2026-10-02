@@ -14,4 +14,10 @@ export default defineConfig({
   },
 
   integrations: [mdx()],
+
+  // Karusel rasmlari Wikimedia Commons'dan build vaqtida olinib, siqiladi
+  // (repozitoriyda saqlanmaydi) — src/data/gallery.json.
+  image: {
+    domains: ['upload.wikimedia.org'],
+  },
 });

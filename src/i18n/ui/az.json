@@ -198,5 +198,19 @@
     "statesLead": "Hunlardan Osmanlılara — türk dövlətləri və sülalələri, xronologiyası və varisliyi.",
     "scholarsLead": "Türk dünyasının alimləri, şairləri və mütəfəkkirləri.",
     "topicsLead": "Etnogenez, dil təsnifatı, yazı və digər ümumi mövzular."
+  },
+  "gallery": {
+    "title": "Görməli yerlər və rəmzlər",
+    "unesco": "UNESCO Dünya İrsi · {year}",
+    "emblem": "{name} dövlət gerbi",
+    "flag": "{name} dövlət bayrağı",
+    "noEmblem": "Türkiyə Respublikasının qanunla təsdiqlənmiş rəsmi dövlət gerbi yoxdur.",
+    "prev": "Əvvəlki",
+    "next": "Növbəti",
+    "pause": "Dayandır",
+    "play": "Davam et",
+    "slide": "Şəkil {n} / {total}",
+    "region": "Şəkil karuseli",
+    "symbol": "Rəmz"
   }
 }

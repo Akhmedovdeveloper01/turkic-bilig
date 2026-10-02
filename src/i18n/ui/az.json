@@ -71,7 +71,16 @@
     "kindCapital": "Paytaxt",
     "kindCity": "Şəhər",
     "kindCampaign": "Hərbi yürüş",
-    "kindRegion": "Ərazi"
+    "kindRegion": "Ərazi",
+    "symbolsTitle": "Rəmzlər",
+    "symbolsNote": "Mənbədəki təsvir əsasında sxematik şəkildə yenidən çəkilib — orijinal əşyanın fotoşəkli deyil.",
+    "symbolsPending": "Bu dövlətin rəmzləri mənbələrdə qeyd olunub, lakin dəqiq formaları ekspert tərəfindən təsdiqlənənədək burada çəkilmir.",
+    "symbolsNone": "Bu dövlətin rəmzi (tuğ, damğa və ya bayraq) haqqında hələlik etibarlı mənbə tapılmayıb. İnternetdəki \"tarixi bayraq\" təsvirləri adətən müasir şərhlərdir.",
+    "symbolKindTug": "Tuğ",
+    "symbolKindTamga": "Damğa",
+    "symbolKindTugro": "Tuğra",
+    "symbolKindMuhr": "Möhür",
+    "symbolSource": "Mənbə"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

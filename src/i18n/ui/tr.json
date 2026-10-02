@@ -71,7 +71,16 @@
     "kindCapital": "Başkent",
     "kindCity": "Şehir",
     "kindCampaign": "Askeri sefer",
-    "kindRegion": "Bölge"
+    "kindRegion": "Bölge",
+    "symbolsTitle": "Semboller",
+    "symbolsNote": "Kaynaktaki tasvire dayanılarak şematik olarak yeniden çizilmiştir — özgün nesnenin fotoğrafı değildir.",
+    "symbolsPending": "Bu devletin sembolleri kaynaklarda geçmektedir, ancak kesin biçimleri bir uzman tarafından doğrulanana kadar burada çizilmemektedir.",
+    "symbolsNone": "Bu devletin sembolü (tuğ, damga veya bayrak) hakkında henüz güvenilir bir kaynak bulunamadı. İnternetteki \"tarihî bayrak\" görselleri genellikle modern yorumlardır.",
+    "symbolKindTug": "Tuğ",
+    "symbolKindTamga": "Damga",
+    "symbolKindTugro": "Tuğra",
+    "symbolKindMuhr": "Mühür",
+    "symbolSource": "Kaynak"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

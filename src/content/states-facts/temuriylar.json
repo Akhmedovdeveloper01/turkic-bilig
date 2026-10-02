@@ -23,6 +23,10 @@
   ],
   "predecessors": [],
   "successors": [],
+  "symbols": [
+    { "id": "temur-uch-halqa", "kind": "tamga", "sourceIds": ["clavijo-1406"], "confidence": "ortacha", "verified": false }
+  ],
+  "symbolsStatus": "chizilgan",
   "sources": ["golden-1992", "findley-2005"],
   "verified": false,
   "disputed": [

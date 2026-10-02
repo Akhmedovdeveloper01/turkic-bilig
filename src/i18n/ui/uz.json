@@ -71,7 +71,16 @@
     "kindCapital": "Poytaxt",
     "kindCity": "Shahar",
     "kindCampaign": "Harbiy yurish",
-    "kindRegion": "Hudud"
+    "kindRegion": "Hudud",
+    "symbolsTitle": "Ramzlar",
+    "symbolsNote": "Tasvir manbadagi ta'rif asosida sxematik qayta chizilgan — asl buyumning surati emas.",
+    "symbolsPending": "Bu davlatning ramzlari manbalarda qayd etilgan, ammo ularning aniq shaklini ekspert tasdiqlamaguncha bu yerda chizilmaydi.",
+    "symbolsNone": "Bu davlatning ramzi (tug', tamg'a yoki bayroq) haqida ishonchli manba hozircha topilmagan. Internetdagi \"tarixiy bayroq\" tasvirlari odatda zamonaviy talqin hisoblanadi.",
+    "symbolKindTug": "Tug'",
+    "symbolKindTamga": "Tamg'a",
+    "symbolKindTugro": "Tug'ro",
+    "symbolKindMuhr": "Muhr",
+    "symbolSource": "Manba"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

@@ -19,6 +19,10 @@
   ],
   "predecessors": [],
   "successors": [],
+  "symbols": [
+    { "id": "gokturk-bori-tugi", "kind": "tug", "sourceIds": ["zhoushu"], "confidence": "ortacha", "verified": false }
+  ],
+  "symbolsStatus": "chizilgan",
   "sources": ["golden-1992", "sinor-1990"],
   "verified": false,
   "disputed": [

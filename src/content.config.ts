@@ -148,6 +148,24 @@ const stateFacts = defineCollection({
         })
       )
       .default([]),
+    /** Davlat ramzlari (tug', tamg'a, tug'ro). Faqat manbada shakli
+     * tasvirlangan ramz chiziladi — internetdagi zamonaviy "tarixiy bayroq"
+     * talqinlari kiritilmaydi (ILMIY QOIDA 4). `id` tasvir komponentidagi
+     * (components/symbols/StateSymbol.astro) chizmaga mos keladi. */
+    symbols: z
+      .array(
+        z.object({
+          id: z.enum(['gokturk-bori-tugi', 'temur-uch-halqa']),
+          kind: z.enum(['tug', 'tamga', 'tugro', 'muhr']),
+          sourceIds: z.array(sourceRef).min(1, 'Har bir ramz kamida bitta manbaga bog\'lanishi shart'),
+          confidence: z.enum(['baland', 'ortacha', 'past']),
+          verified: z.boolean().default(false),
+        })
+      )
+      .default([]),
+    /** Ramz chizilmagan bo'lsa sababi: manbada bor, lekin aniq shaklini
+     * ekspert tasdiqlashi kerak, yoki ishonchli manba hali topilmagan. */
+    symbolsStatus: z.enum(['chizilgan', 'ekspert-kutilmoqda', 'manba-topilmagan']).optional(),
     predecessors: z.array(reference('stateFacts')).default([]),
     successors: z.array(reference('stateFacts')).default([]),
     sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
@@ -161,6 +179,8 @@ const states = defineCollection({
     title: z.string(),
     summary: z.string(),
     factsId: reference('stateFacts'),
+    /** Ramz nomi va izohi (tarjima qilinadi), kaliti — `symbols[].id`. */
+    symbolTexts: z.record(z.string(), z.object({ title: z.string(), caption: z.string() })).default({}),
     ...translationFields,
   }),
 });

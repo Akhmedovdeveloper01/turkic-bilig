@@ -71,7 +71,16 @@
     "kindCapital": "Capital",
     "kindCity": "City",
     "kindCampaign": "Military campaign",
-    "kindRegion": "Region"
+    "kindRegion": "Region",
+    "symbolsTitle": "Symbols",
+    "symbolsNote": "Schematic redrawing based on the description in the source — not a photograph of an original object.",
+    "symbolsPending": "Symbols of this state are recorded in sources, but they are not drawn here until an expert confirms their exact form.",
+    "symbolsNone": "No reliable source has yet been found for a symbol (standard, tamga or flag) of this state. \"Historical flag\" images found online are usually modern interpretations.",
+    "symbolKindTug": "Standard",
+    "symbolKindTamga": "Tamga",
+    "symbolKindTugro": "Tughra",
+    "symbolKindMuhr": "Seal",
+    "symbolSource": "Source"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

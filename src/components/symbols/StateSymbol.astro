@@ -1,0 +1,45 @@
+---
+/**
+ * Davlat ramzlarining sxematik SVG chizmalari. Har bir chizma faqat
+ * manbadagi ta'rifda aytilgan elementlardan iborat — ta'rifda yo'q
+ * detallar (rang, bezak, matn) qo'shilmaydi (ILMIY QOIDA 4, 6).
+ * Ranglar loyiha tokenlaridan va davlatning `mapColor` rangidan
+ * (`currentColor`, .tb-state-color orqali) olinadi.
+ */
+interface Props {
+  symbol: 'gokturk-bori-tugi' | 'temur-uch-halqa';
+  label: string;
+}
+const { symbol, label } = Astro.props;
+// Har bir chizma o'z ko'rinish maydoniga ega — kartochkada iloji boricha katta ko'rinishi uchun.
+const VIEWBOX = { 'gokturk-bori-tugi': '46 14 92 150', 'temur-uch-halqa': '18 28 124 124' };
+---
+
+<svg viewBox={VIEWBOX[symbol]} class="block h-full w-full" role="img" aria-label={label}>
+  {symbol === 'gokturk-bori-tugi' && (
+    <g>
+      {/* Tug' dastasi */}
+      <rect x="77" y="94" width="6" height="68" rx="2" fill="var(--color-ink-muted)"></rect>
+      <rect x="70" y="86" width="20" height="10" rx="2" fill="var(--color-gold)"></rect>
+      {/* Oltin bo'ri boshi (profil, o'ngga qaragan) */}
+      <path
+        d="M66 88 L56 82 L61 76 L53 70 L60 63 L58 40 L62 22 L74 46 L84 20 L91 48 L118 57 L132 64 L127 70 L106 72 L114 79 L98 84 L90 92 Z"
+        fill="var(--color-gold)"
+        stroke="color-mix(in srgb, var(--color-gold) 60%, var(--color-ink))"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      ></path>
+      <path d="M64 30 L72 46 L66 48 Z" fill="color-mix(in srgb, var(--color-gold) 55%, var(--color-ink))"></path>
+      <path d="M84 60 Q90 55 97 59 Q90 63 84 60 Z" fill="var(--color-surface)"></path>
+      <path d="M106 72 L98 76" stroke="color-mix(in srgb, var(--color-gold) 50%, var(--color-ink))" stroke-width="1.5"></path>
+    </g>
+  )}
+
+  {symbol === 'temur-uch-halqa' && (
+    <g class="tb-state-color" fill="none" stroke="currentColor" stroke-width="10">
+      <circle cx="80" cy="64" r="24"></circle>
+      <circle cx="54" cy="112" r="24"></circle>
+      <circle cx="106" cy="112" r="24"></circle>
+    </g>
+  )}
+</svg>

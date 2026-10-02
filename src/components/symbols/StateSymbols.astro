@@ -1,0 +1,77 @@
+---
+/**
+ * Davlat sahifasidagi "Ramzlar" bo'limi. Faktlar (`symbols`, manbalar)
+ * stateFacts'dan, nom va izoh tarjima qilinadigan `symbolTexts`dan keladi.
+ * Ramz chizilmagan bo'lsa, `symbolsStatus` bo'yicha sababi ko'rsatiladi.
+ */
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import StateSymbol from './StateSymbol.astro';
+import VerifiedBadge from '../VerifiedBadge.astro';
+import { createTranslator } from '../../i18n/ui';
+
+interface Props {
+  lang: string;
+  facts: CollectionEntry<'stateFacts'>['data'];
+  texts: CollectionEntry<'states'>['data']['symbolTexts'];
+  /** Tarjima faylida matn bo'lmasa — asl (uz) fayldagi matn. */
+  fallbackTexts?: CollectionEntry<'states'>['data']['symbolTexts'];
+}
+
+const { lang, facts, texts, fallbackTexts = {} } = Astro.props;
+const t = createTranslator(lang);
+
+const KIND_LABEL = {
+  tug: t('states.symbolKindTug'),
+  tamga: t('states.symbolKindTamga'),
+  tugro: t('states.symbolKindTugro'),
+  muhr: t('states.symbolKindMuhr'),
+};
+
+const items = await Promise.all(
+  facts.symbols.map(async (s) => {
+    const text = texts[s.id] ?? fallbackTexts[s.id];
+    const sources = (await Promise.all(s.sourceIds.map((ref) => getEntry(ref)))).filter((e) => e !== undefined);
+    return { ...s, title: text?.title ?? s.id, caption: text?.caption, sources };
+  })
+);
+
+const status = facts.symbolsStatus;
+---
+
+{(items.length > 0 || status) && (
+  <section class="mb-8">
+    <h2 class="mb-3 text-lg font-semibold text-ink">{t('states.symbolsTitle')}</h2>
+
+    {items.length > 0 && (
+      <ul class="grid gap-4 sm:grid-cols-2" style={`--tc-light:${facts.mapColor?.light ?? ''};--tc-dark:${facts.mapColor?.dark ?? ''}`}>
+        {items.map((s) => (
+          <li class="flex gap-4 rounded-xl border border-line bg-surface-alt p-4">
+            <div class="tb-pattern-dots relative h-32 w-26 shrink-0 overflow-hidden rounded-lg border border-line bg-surface text-line">
+              <div class="absolute inset-1.5">
+                <StateSymbol symbol={s.id} label={s.title} />
+              </div>
+            </div>
+            <div class="min-w-0 text-sm">
+              <p class="text-xs font-semibold uppercase tracking-wide text-ink-muted">{KIND_LABEL[s.kind]}</p>
+              <h3 class="mb-1 font-semibold text-ink">{s.title}</h3>
+              {s.caption && <p class="mb-2 text-ink-muted">{s.caption}</p>}
+              <p class="mb-2 text-xs text-ink-muted">
+                {t('states.symbolSource')}: {s.sources.map((src) => `${src.data.author}, ${src.data.title}`).join('; ')}
+              </p>
+              <VerifiedBadge lang={lang} verified={s.verified} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+    {items.length > 0 && <p class="mt-2 text-xs text-gold">{t('states.symbolsNote')}</p>}
+
+    {status === 'ekspert-kutilmoqda' && (
+      <p class="rounded-xl border border-dashed border-line bg-surface-alt p-4 text-sm text-ink-muted">{t('states.symbolsPending')}</p>
+    )}
+    {status === 'manba-topilmagan' && (
+      <p class="rounded-xl border border-dashed border-line bg-surface-alt p-4 text-sm text-ink-muted">{t('states.symbolsNone')}</p>
+    )}
+  </section>
+)}

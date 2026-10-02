@@ -6,6 +6,7 @@ import TranslationNotice from '../../../components/TranslationNotice.astro';
 import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
 import StateMap from '../../../components/map/StateMap.astro';
+import StateSymbols from '../../../components/symbols/StateSymbols.astro';
 import { getStateGeoJSON } from '../../../data/geo';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
@@ -28,6 +29,7 @@ if (!entry) {
 }
 
 const isFallback = !localized;
+const sourceEntry = isFallback ? entry : await getEntry('states', `uz/${slug}`);
 const facts = await getEntry(entry.data.factsId);
 const { Content } = await render(entry);
 
@@ -80,6 +82,15 @@ const stateGeoJSON =
         </div>
       )}
     </section>
+  )}
+
+  {facts && (
+    <StateSymbols
+      lang={lang!}
+      facts={facts.data}
+      texts={entry.data.symbolTexts}
+      fallbackTexts={sourceEntry?.data.symbolTexts}
+    />
   )}
 
   {stateGeoJSON && (

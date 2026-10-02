@@ -71,7 +71,16 @@
     "kindCapital": "Paýtagt",
     "kindCity": "Şäher",
     "kindCampaign": "Harby ýöriş",
-    "kindRegion": "Sebit"
+    "kindRegion": "Sebit",
+    "symbolsTitle": "Nyşanlar",
+    "symbolsNote": "Çeşmedäki beýany esasynda shematik görnüşde täzeden çekildi — asyl zadyň suraty däl.",
+    "symbolsPending": "Bu döwletiň nyşanlary çeşmelerde agzalýar, emma olaryň takyk şekili bilermen tarapyndan tassyklanýança bu ýerde çekilmeýär.",
+    "symbolsNone": "Bu döwletiň nyşany (tug, tagma ýa-da baýdak) barada häzirlikçe ygtybarly çeşme tapylmady. Internetdäki \"taryhy baýdak\" suratlary adatça häzirki zaman düşündirişleridir.",
+    "symbolKindTug": "Tug",
+    "symbolKindTamga": "Tagma",
+    "symbolKindTugro": "Tugra",
+    "symbolKindMuhr": "Möhür",
+    "symbolSource": "Çeşme"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1366,
+  "birthEra": "milodiy",
+  "deathYear": 1465,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["she'riyat"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["temuriylar"],
+  "sources": ["johanson-csato-2021"],
+  "verified": false
+}

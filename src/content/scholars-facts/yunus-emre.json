@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1238,
+  "birthEra": "milodiy",
+  "deathYear": 1320,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["she'riyat", "tasavvuf"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["rum-saljuqiylari"],
+  "sources": ["findley-2005"],
+  "verified": false
+}

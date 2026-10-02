@@ -212,5 +212,13 @@
     "slide": "{n}-nji surat, jemi {total}",
     "region": "Suratlar karuseli",
     "symbol": "Nyşan"
+  },
+  "scholars": {
+    "categoryTurkiy": "Türki alym",
+    "categoryMintaqaviy": "Türki döwletlerde işlän",
+    "categoryMunozarali": "Gelip çykyşy jedelli",
+    "sortedNote": "Alymlar doglan (ýa-da işlän) döwri boýunça tertiplenen. Belgi alymyň türki dünýäsi bilen baglanyşygyny görkezýär: türki dilde döredijilik eden ýa-da türki gelip çykyşy umumy kabul edilen; türki döwletlerde işlän; gelip çykyşy ylmy taýdan jedelli.",
+    "filterLegend": "Alymlary kategoriýa boýunça süzmek",
+    "lived": "Ýaşan döwri"
   }
 }

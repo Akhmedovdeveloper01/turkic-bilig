@@ -380,7 +380,8 @@ body {
 }
 .tb-filter:has(input[value='turkiy']:checked) [data-category]:not([data-category='turkiy']),
 .tb-filter:has(input[value='turkiy-sulola']:checked) [data-category]:not([data-category='turkiy-sulola']),
-.tb-filter:has(input[value='munozarali']:checked) [data-category]:not([data-category='munozarali']) {
+.tb-filter:has(input[value='munozarali']:checked) [data-category]:not([data-category='munozarali']),
+.tb-filter:has(input[value='mintaqaviy']:checked) [data-category]:not([data-category='mintaqaviy']) {
   display: none;
 }
 

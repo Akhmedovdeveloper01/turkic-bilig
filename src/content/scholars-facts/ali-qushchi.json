@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1403,
+  "birthEra": "milodiy",
+  "deathYear": 1474,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["astronomiya", "matematika"],
+  "relatedPeoples": [],
+  "relatedStates": ["temuriylar", "usmonli-imperiyasi"],
+  "sources": ["iranica"],
+  "verified": false
+}

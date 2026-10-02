@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "datesUncertain": true,
+  "field": ["she'riyat", "axloq"],
+  "relatedPeoples": [],
+  "relatedStates": [],
+  "sources": ["johanson-csato-2021", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "«Hibat ul-haqoyiq»ning yozilgan davri — asar sanasi va muallifning yashagan joyi haqida turli taxminlar mavjud",
+      "sourceIds": ["johanson-csato-2021"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 973,
+  "birthEra": "milodiy",
+  "deathYear": 1048,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["astronomiya", "geografiya", "tarix", "matematika"],
+  "relatedPeoples": [],
+  "relatedStates": ["gaznaviylar"],
+  "sources": ["iranica", "bosworth-1996"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Beruniyning etnik mansubligi — ilmiy adabiyotda u xorazmlik (sharqiy eroniy tilda so'zlashgan Xorazm aholisidan) deb tavsiflanadi; zamonaviy Markaziy Osiyo davlatlarida u umumiy ilmiy meros sifatida qadrlanadi",
+      "sourceIds": ["iranica"]
+    }
+  ]
+}

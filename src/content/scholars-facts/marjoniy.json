@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1818,
+  "birthEra": "milodiy",
+  "deathYear": 1889,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tarix", "ilohiyot", "ta'lim"],
+  "relatedPeoples": ["tatarlar"],
+  "relatedStates": [],
+  "sources": ["findley-2005"],
+  "verified": false
+}

@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1494,
+  "birthEra": "milodiy",
+  "deathYear": 1556,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["she'riyat"],
+  "relatedPeoples": ["ozarbayjonlar", "turklar"],
+  "relatedStates": ["safaviylar", "usmonli-imperiyasi"],
+  "sources": ["iranica", "findley-2005"],
+  "verified": false
+}

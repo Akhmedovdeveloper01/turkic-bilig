@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1851,
+  "birthEra": "milodiy",
+  "deathYear": 1914,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["ma'rifatchilik", "jurnalistika", "ta'lim"],
+  "relatedPeoples": ["qrim-tatarlari"],
+  "relatedStates": [],
+  "sources": ["findley-2005"],
+  "verified": false
+}

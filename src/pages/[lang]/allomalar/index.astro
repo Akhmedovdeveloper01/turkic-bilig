@@ -5,6 +5,8 @@ import PageHero from '../../../components/PageHero.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
+import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
+import { formatYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { lang: locale.code } }));
@@ -20,15 +22,50 @@ const items = await Promise.all(
     const slug = fact.id;
     const localized = await getEntry('scholars', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('scholars', `uz/${slug}`));
-    return { slug, entry: original, isFallback: !localized };
+    return { slug, entry: original, isFallback: !localized, facts: fact.data };
   })
 );
+
+// Tug'ilgan yil bo'yicha (bo'lmasa — vafot yilidan 60 yil oldin deb taxminlanadi, faqat tartib uchun).
+const orderYear = (f: (typeof items)[number]['facts']) => f.birthYear ?? (f.deathYear !== undefined ? f.deathYear - 60 : 9999);
+items.sort((a, b) => orderYear(a.facts) - orderYear(b.facts));
+
+const lifeSpan = (f: (typeof items)[number]['facts']) => {
+  const b = f.birthYear !== undefined ? formatYear(t, f.birthYear, f.birthEra) : '?';
+  const d = f.deathYear !== undefined ? formatYear(t, f.deathYear, f.deathEra) : '?';
+  if (b === '?' && d === '?') return null;
+  return `${f.datesUncertain ? '≈ ' : ''}${b} – ${d}`;
+};
+
+const FILTERS = [
+  { value: 'hammasi', label: t('states.filterAll'), count: items.length },
+  ...(['turkiy', 'mintaqaviy', 'munozarali'] as const).map((c) => ({
+    value: c,
+    label: t(c === 'turkiy' ? 'scholars.categoryTurkiy' : c === 'mintaqaviy' ? 'scholars.categoryMintaqaviy' : 'scholars.categoryMunozarali'),
+    count: items.filter((i) => i.facts.category === c).length,
+  })),
+].filter((f) => f.count > 0);
 ---
 
 <BaseLayout lang={lang!} title={t('nav.scholars')}>
   <PageHero lang={lang!} image="allomalar" alt={t('hero.altScholars')} title={t('nav.scholars')} lead={t('hero.scholarsLead')} fit="contain" />
+  <p class="mb-5 text-sm text-ink-muted">{t('scholars.sortedNote')}</p>
+
+  <div class="tb-filter">
+    <fieldset class="mb-6">
+      <legend class="sr-only">{t('scholars.filterLegend')}</legend>
+      <div class="flex flex-wrap gap-2">
+        {FILTERS.map((f) => (
+          <label class="tb-filter-tab">
+            <input type="radio" name="scholar-category" value={f.value} checked={f.value === 'hammasi'} class="sr-only" />
+            <span>{f.label}</span>
+            <span class="tb-filter-count tabular-nums">{f.count}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
   <ul class="grid gap-4 sm:grid-cols-2">
-    {items.map(({ slug, entry, isFallback }, index) => entry && (
+    {items.map(({ slug, entry, isFallback, facts }, index) => entry && (
       <EntryCard
         lang={lang!}
         href={`/${lang}/allomalar/${slug}`}
@@ -36,7 +73,14 @@ const items = await Promise.all(
         summary={entry.data.summary}
         isFallback={isFallback}
         index={index}
-      />
+        category={facts.category}
+      >
+        <div class="flex flex-wrap items-center gap-2">
+          {lifeSpan(facts) && <span class="text-xs font-medium tabular-nums text-ink-muted">{lifeSpan(facts)}</span>}
+          <ScholarCategoryBadge lang={lang!} category={facts.category} />
+        </div>
+      </EntryCard>
     ))}
   </ul>
+  </div>
 </BaseLayout>

@@ -1,0 +1,19 @@
+{
+  "category": "munozarali",
+  "birthYear": 870,
+  "birthEra": "milodiy",
+  "deathYear": 950,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["falsafa", "musiqa nazariyasi", "mantiq"],
+  "relatedPeoples": [],
+  "relatedStates": [],
+  "sources": ["iranica", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Forobiyning kelib chiqishi — o'rta asr manbalarida uning turkiy yoki fors (eroniy) kelib chiqishi haqida turlicha ma'lumotlar bor; zamonaviy tadqiqotlarda ham bu masala bo'yicha yagona fikr yo'q",
+      "sourceIds": ["iranica", "golden-1992"]
+    }
+  ]
+}

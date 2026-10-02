@@ -1,0 +1,19 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 980,
+  "birthEra": "milodiy",
+  "deathYear": 1037,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tibbiyot", "falsafa"],
+  "relatedPeoples": [],
+  "relatedStates": [],
+  "sources": ["iranica"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Ibn Sinoning etnik kelib chiqishi — ilmiy adabiyotda u asosan fors (eroniy) deb tavsiflanadi; ba'zi zamonaviy mualliflar boshqa qarashlarni ilgari suradi",
+      "sourceIds": ["iranica"]
+    }
+  ]
+}

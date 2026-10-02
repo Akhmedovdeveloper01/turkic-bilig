@@ -212,5 +212,13 @@
     "slide": "Slide {n} of {total}",
     "region": "Image carousel",
     "symbol": "Symbol"
+  },
+  "scholars": {
+    "categoryTurkiy": "Turkic scholar",
+    "categoryMintaqaviy": "Active in Turkic states",
+    "categoryMunozarali": "Origin disputed",
+    "sortedNote": "Scholars are ordered by when they were born (or active). The badge shows how each relates to the Turkic world: wrote in a Turkic language or of generally accepted Turkic origin; active in Turkic states; origin scholarly disputed.",
+    "filterLegend": "Filter scholars by category",
+    "lived": "Lifetime"
   }
 }

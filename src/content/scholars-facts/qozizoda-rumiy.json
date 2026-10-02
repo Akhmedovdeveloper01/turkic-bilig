@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1364,
+  "birthEra": "milodiy",
+  "deathYear": 1436,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["matematika", "astronomiya"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["temuriylar"],
+  "sources": ["iranica"],
+  "verified": false
+}

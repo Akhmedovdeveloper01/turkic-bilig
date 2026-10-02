@@ -8,6 +8,7 @@ import SourcesList from '../../../components/SourcesList.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import { formatYear } from '../../../i18n/years';
+import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('scholarFacts');
@@ -53,6 +54,7 @@ const death = facts ? yearOrNull(facts.data.deathYear, facts.data.deathEra) : nu
   <div class="mb-4 flex flex-wrap items-center gap-2">
     <h1 class="text-3xl font-bold tracking-tight text-ink">{entry.data.title}</h1>
     <VerifiedBadge lang={lang!} verified={facts?.data.verified ?? false} />
+    {facts && <ScholarCategoryBadge lang={lang!} category={facts.data.category} />}
   </div>
 
   {isFallback && <TranslationNotice lang={lang!} />}

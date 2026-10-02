@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1441,
+  "birthEra": "milodiy",
+  "deathYear": 1501,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["she'riyat", "tilshunoslik", "davlat boshqaruvi"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["temuriylar"],
+  "sources": ["iranica", "johanson-csato-2021", "findley-2005"],
+  "verified": false
+}

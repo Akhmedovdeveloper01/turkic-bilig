@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 780,
+  "birthEra": "milodiy",
+  "deathYear": 850,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["matematika", "astronomiya", "geografiya"],
+  "relatedPeoples": [],
+  "relatedStates": [],
+  "sources": ["iranica"],
+  "verified": false
+}

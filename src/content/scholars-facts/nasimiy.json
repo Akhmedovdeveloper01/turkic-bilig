@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1369,
+  "birthEra": "milodiy",
+  "deathYear": 1417,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["she'riyat", "tasavvuf"],
+  "relatedPeoples": ["ozarbayjonlar"],
+  "relatedStates": [],
+  "sources": ["iranica", "golden-1992"],
+  "verified": false
+}

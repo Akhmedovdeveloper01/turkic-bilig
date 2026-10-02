@@ -212,5 +212,13 @@
     "slide": "Görsel {n} / {total}",
     "region": "Görsel karuseli",
     "symbol": "Sembol"
+  },
+  "scholars": {
+    "categoryTurkiy": "Türk bilgin",
+    "categoryMintaqaviy": "Türk devletlerinde faaliyet göstermiş",
+    "categoryMunozarali": "Kökeni tartışmalı",
+    "sortedNote": "Bilginler doğum (veya faaliyet) dönemine göre sıralanmıştır. Etiket, bilginin Türk dünyasıyla bağını gösterir: Türkçe eser vermiş veya Türk kökeni genel kabul görmüş; Türk devletlerinde faaliyet göstermiş; kökeni bilimsel olarak tartışmalı.",
+    "filterLegend": "Bilginleri kategoriye göre süz",
+    "lived": "Yaşadığı dönem"
   }
 }

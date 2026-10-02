@@ -46,14 +46,17 @@ const stateEntries = facts
     )
   : [];
 
-const scholarEntries = facts
-  ? await Promise.all(
-      facts.data.scholars.map(async (ref) => {
-        const localizedScholar = await getEntry('scholars', `${lang}/${ref.id}`);
-        return localizedScholar ?? (await getEntry('scholars', `uz/${ref.id}`));
-      })
-    )
-  : [];
+// Allomalar: xalq faktlaridagi ro'yxat + relatedPeoples orqali teskari bog'lanish.
+const allScholarFacts = await getCollection('scholarFacts');
+const scholarIds = [
+  ...new Set([
+    ...(facts?.data.scholars.map((r) => r.id) ?? []),
+    ...allScholarFacts.filter((sf) => sf.data.relatedPeoples.some((r) => r.id === slug)).map((sf) => sf.id),
+  ]),
+];
+const scholarEntries = await Promise.all(
+  scholarIds.map(async (id) => (await getEntry('scholars', `${lang}/${id}`)) ?? (await getEntry('scholars', `uz/${id}`)))
+);
 
 // Karusel: obidalar (Commons), davlat gerbi va bayrog'i (statehood dan).
 const galleryTexts = { ...(isFallback ? {} : ((await getEntry('peoples', `uz/${slug}`))?.data.galleryTexts ?? {})), ...(entry.data.galleryTexts ?? {}) };

@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1603,
+  "birthEra": "milodiy",
+  "deathYear": 1664,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tarix", "davlat boshqaruvi"],
+  "relatedPeoples": ["ozbeklar", "turkmanlar"],
+  "relatedStates": ["xiva-xonligi"],
+  "sources": ["bosworth-1996", "johanson-csato-2021"],
+  "verified": false
+}

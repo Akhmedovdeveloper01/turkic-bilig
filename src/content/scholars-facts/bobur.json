@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1483,
+  "birthEra": "milodiy",
+  "deathYear": 1530,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tarix", "she'riyat", "davlat boshqaruvi"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["temuriylar", "boburiylar"],
+  "sources": ["findley-2005", "bosworth-1996"],
+  "verified": false
+}

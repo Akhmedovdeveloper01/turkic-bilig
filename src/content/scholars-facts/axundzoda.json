@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1812,
+  "birthEra": "milodiy",
+  "deathYear": 1878,
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["dramaturgiya", "falsafa"],
+  "relatedPeoples": ["ozarbayjonlar"],
+  "relatedStates": [],
+  "sources": ["iranica"],
+  "verified": false
+}

@@ -242,6 +242,11 @@ const states = defineCollection({
 const scholarFacts = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/scholars-facts' }),
   schema: z.object({
+    /** turkiy — turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul
+     * qilingan; mintaqaviy — turkiy davlatlarda / turkiy dunyo mintaqasida
+     * faoliyat yuritgan (o'zi turkiy deb tasniflanmaydi); munozarali — kelib
+     * chiqishi ilmiy munozarali (`disputed` da qarashlar manbasi bilan). */
+    category: z.enum(['turkiy', 'mintaqaviy', 'munozarali']).default('turkiy'),
     birthYear: z.number().int().optional(),
     birthEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
     deathYear: z.number().int().optional(),

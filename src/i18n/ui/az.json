@@ -212,5 +212,13 @@
     "slide": "Şəkil {n} / {total}",
     "region": "Şəkil karuseli",
     "symbol": "Rəmz"
+  },
+  "scholars": {
+    "categoryTurkiy": "Türk alimi",
+    "categoryMintaqaviy": "Türk dövlətlərində fəaliyyət göstərib",
+    "categoryMunozarali": "Mənşəyi mübahisəli",
+    "sortedNote": "Alimlər doğulduğu (və ya fəaliyyət göstərdiyi) dövrə görə sıralanıb. Nişan alimin türk dünyası ilə əlaqəsini göstərir: türk dilində yaradıb və ya türk mənşəyi ümumən qəbul olunub; türk dövlətlərində fəaliyyət göstərib; mənşəyi elmi mübahisəlidir.",
+    "filterLegend": "Alimləri kateqoriyaya görə süz",
+    "lived": "Yaşadığı dövr"
   }
 }

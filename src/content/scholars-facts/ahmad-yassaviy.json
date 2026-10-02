@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "deathYear": 1166,
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["tasavvuf", "she'riyat"],
+  "relatedPeoples": ["qozoqlar", "ozbeklar"],
+  "relatedStates": [],
+  "sources": ["golden-1992", "johanson-csato-2021"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "«Devoni hikmat» to'plamidagi she'rlarning qaysilari Yassaviyning o'ziga tegishli ekanligi — matn keyingi asrlarda shakllangani va unga keyingi shoirlarning she'rlari qo'shilgani haqidagi qarashlar",
+      "sourceIds": ["johanson-csato-2021"]
+    }
+  ]
+}

@@ -9,6 +9,7 @@ import StatesStats from '../../../components/states/StatesStats.astro';
 import StatesTimeline from '../../../components/states/StatesTimeline.astro';
 import CapitalsMap from '../../../components/map/CapitalsMap.astro';
 import StatesGenealogy from '../../../components/states/StatesGenealogy.astro';
+import DidYouKnow from '../../../components/states/DidYouKnow.astro';
 import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -65,6 +66,13 @@ const chartItems = items
 <BaseLayout lang={lang!} title={t('nav.states')}>
   <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
   <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
+
+  <DidYouKnow
+    lang={lang!}
+    items={items
+      .filter((i) => i.entry)
+      .map((i) => ({ href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts, cards: i.entry!.data.didYouKnow }))}
+  />
 
   <StatesStats lang={lang!} items={chartItems} />
 

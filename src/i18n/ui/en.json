@@ -142,7 +142,10 @@
     "genealogyAlso": "Also from",
     "successionTitle": "Succession",
     "predecessorsLabel": "Predecessor(s)",
-    "successorsLabel": "Successor(s)"
+    "successorsLabel": "Successor(s)",
+    "didYouKnowTitle": "Did you know?",
+    "didYouKnowNote": "{n} facts — each from a state's page, with its source. Scroll sideways →",
+    "didYouKnowRegion": "Interesting facts, scrolls horizontally"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

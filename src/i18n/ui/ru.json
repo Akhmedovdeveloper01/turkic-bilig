@@ -142,7 +142,10 @@
     "genealogyAlso": "Также от",
     "successionTitle": "Преемственность",
     "predecessorsLabel": "Предшественник(и)",
-    "successorsLabel": "Преемник(и)"
+    "successorsLabel": "Преемник(и)",
+    "didYouKnowTitle": "Знаете ли вы?",
+    "didYouKnowNote": "{n} фактов — каждый со страницы государства, с источником. Листайте вбок →",
+    "didYouKnowRegion": "Интересные факты, прокручиваются по горизонтали"
   },
   "topics": {
     "capitalsMapTitle": "Столицы на карте",

@@ -466,3 +466,14 @@ body {
   width: 0.8rem;
   border-top: 1.5px solid var(--color-line);
 }
+
+/* "Bilasizmi?" qatori: ingichka aylantirish chizig'i, fokus halqasi. */
+.tb-dyk {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+.tb-dyk:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 0.75rem;
+}

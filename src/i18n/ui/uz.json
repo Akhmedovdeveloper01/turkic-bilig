@@ -142,7 +142,10 @@
     "genealogyAlso": "Shuningdek",
     "successionTitle": "Vorislik",
     "predecessorsLabel": "Oldingi davlat(lar)",
-    "successorsLabel": "Keyingi davlat(lar)"
+    "successorsLabel": "Keyingi davlat(lar)",
+    "didYouKnowTitle": "Bilasizmi?",
+    "didYouKnowNote": "{n} ta fakt — har biri davlat sahifasidan, manbasi bilan. Yonga suring →",
+    "didYouKnowRegion": "Qiziqarli faktlar, gorizontal aylantiriladi"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

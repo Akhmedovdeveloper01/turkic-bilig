@@ -142,7 +142,10 @@
     "genealogyAlso": "Ошондой эле",
     "successionTitle": "Мураскерлик",
     "predecessorsLabel": "Мурунку мамлекет(тер)",
-    "successorsLabel": "Кийинки мамлекет(тер)"
+    "successorsLabel": "Кийинки мамлекет(тер)",
+    "didYouKnowTitle": "Билесизби?",
+    "didYouKnowNote": "{n} факт — ар бири мамлекеттин барагынан, булагы менен. Капталга сүрүңүз →",
+    "didYouKnowRegion": "Кызыктуу фактылар, туурасынан жылдырылат"
   },
   "topics": {
     "capitalsMapTitle": "Борборлор картада",

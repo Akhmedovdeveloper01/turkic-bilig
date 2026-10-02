@@ -223,6 +223,11 @@ const states = defineCollection({
     title: z.string(),
     summary: z.string(),
     factsId: reference('stateFacts'),
+    /** "Bilasizmi?" kartochkalari — faqat shu sahifa matnida manbasi bilan
+     * keltirilgan faktlar (yangi da'vo emas). Tarjima qilinadi. */
+    didYouKnow: z
+      .array(z.object({ text: z.string(), sourceIds: z.array(sourceRef).min(1, 'Har bir fakt manbaga bog\'lanishi shart') }))
+      .default([]),
     /** Ramz nomi va izohi (tarjima qilinadi), kaliti — `symbols[].id`. */
     symbolTexts: z.record(z.string(), z.object({ title: z.string(), caption: z.string() })).default({}),
     ...translationFields,

@@ -142,7 +142,10 @@
     "genealogyAlso": "Şeýle hem",
     "successionTitle": "Mirasdüşerlik",
     "predecessorsLabel": "Öňki döwlet(ler)",
-    "successorsLabel": "Soňky döwlet(ler)"
+    "successorsLabel": "Soňky döwlet(ler)",
+    "didYouKnowTitle": "Bilýärsiňizmi?",
+    "didYouKnowNote": "{n} fakt — her biri döwlet sahypasyndan, çeşmesi bilen. Gapdala süýşüriň →",
+    "didYouKnowRegion": "Gyzykly faktlar, keseligine aýlanýar"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

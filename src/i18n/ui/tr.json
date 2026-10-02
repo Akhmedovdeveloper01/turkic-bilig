@@ -142,7 +142,10 @@
     "genealogyAlso": "Ayrıca",
     "successionTitle": "Halefiyet",
     "predecessorsLabel": "Öncül devlet(ler)",
-    "successorsLabel": "Halef devlet(ler)"
+    "successorsLabel": "Halef devlet(ler)",
+    "didYouKnowTitle": "Biliyor muydunuz?",
+    "didYouKnowNote": "{n} bilgi — her biri devlet sayfasından, kaynağıyla. Yana kaydırın →",
+    "didYouKnowRegion": "İlginç bilgiler, yatay kaydırılır"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

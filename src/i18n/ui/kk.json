@@ -142,7 +142,10 @@
     "genealogyAlso": "Сондай-ақ",
     "successionTitle": "Мұрагерлік",
     "predecessorsLabel": "Алдыңғы мемлекет(тер)",
-    "successorsLabel": "Кейінгі мемлекет(тер)"
+    "successorsLabel": "Кейінгі мемлекет(тер)",
+    "didYouKnowTitle": "Білесіз бе?",
+    "didYouKnowNote": "{n} дерек — әрқайсысы мемлекет бетінен, дереккөзімен. Бүйірге сырғытыңыз →",
+    "didYouKnowRegion": "Қызықты деректер, көлденең айналдырылады"
   },
   "topics": {
     "capitalsMapTitle": "Астаналар картада",

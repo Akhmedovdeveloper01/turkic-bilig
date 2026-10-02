@@ -11,6 +11,18 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["qoraxoniylar", "temuriylar"],
   "scholars": ["ulugbek"],
+  "statehood": {
+    "status": "mustaqil-davlat",
+    "entities": [
+      {
+        "name": "O'zbekiston Respublikasi",
+        "flag": "uzbekistan"
+      }
+    ],
+    "sourceIds": [
+      "un-member-states"
+    ]
+  },
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false,
   "disputed": [

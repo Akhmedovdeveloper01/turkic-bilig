@@ -11,6 +11,18 @@
   "religion": ["Islom (sunniylik ko'pchilik, alaviylik ozchilik)"],
   "historicalStates": ["saljuqiylar", "usmonli-imperiyasi"],
   "scholars": [],
+  "statehood": {
+    "status": "mustaqil-davlat",
+    "entities": [
+      {
+        "name": "Turkiya Respublikasi",
+        "flag": "turkiya"
+      }
+    ],
+    "sourceIds": [
+      "un-member-states"
+    ]
+  },
   "sources": ["golden-1992", "findley-2005", "un-desa-2024"],
   "verified": false,
   "disputed": [

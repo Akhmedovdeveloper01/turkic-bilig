@@ -44,7 +44,16 @@
   },
   "peoples": {
     "originMapTitle": "Köken ve yayılma",
-    "originMapNote": "Kırmızı nokta, Türk halklarının varsayılan ilk anayurdunu gösterir (bilimsel bir teoridir, kesinleşmiş bir gerçek değildir). Mavi noktalar her halkın bugünkü ana konumudur. Bağlantı çizgileri şematiktir ve kesin bir tarihi göç güzergahını temsil etmez."
+    "originMapNote": "Kırmızı nokta, Türk halklarının varsayılan ilk anayurdunu gösterir (bilimsel bir teoridir, kesinleşmiş bir gerçek değildir). Mavi noktalar her halkın bugünkü ana konumudur. Bağlantı çizgileri şematiktir ve kesin bir tarihi göç güzergahını temsil etmez.",
+    "statehoodTitle": "Devletlilik",
+    "statusMustaqil": "Bağımsız devlet",
+    "statusAvtonomiya": "Özerklik (bir devlet bünyesinde)",
+    "statusYoq": "Kendi devlet yapısı yok",
+    "officialFlag": "Resmî bayrak",
+    "noFlag": "Resmî bayrağı yok",
+    "peopleFlagTitle": "Halk bayrağı (devlet bayrağı değil)",
+    "flagCredit": "Bayrak görseli: Wikimedia Commons",
+    "withinCountry": "{country} bünyesinde"
   },
   "states": {
     "territoryMapTitle": "Yaklaşık kapsam",

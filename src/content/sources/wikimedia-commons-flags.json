@@ -1,0 +1,8 @@
+{
+  "type": "veb",
+  "author": "Wikimedia Commons",
+  "title": "Davlat va hududlar bayroqlarining SVG fayllari",
+  "url": "https://commons.wikimedia.org/",
+  "note": "Har bir faylning aniq sahifasi src/data/flags.json da. Davlat bayroqlari odatda jamoat mulki; har bir fayl litsenziyasi Commons sahifasida.",
+  "status": "tayyor"
+}

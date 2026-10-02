@@ -11,6 +11,20 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Qorachoy-Cherkes Respublikasi",
+        "country": "Rossiya",
+        "flag": "qorachoy-cherkesiya"
+      }
+    ],
+    "note": "Respublika qorachoylar, cherkeslar, abazinlar va boshqa xalqlar uchun umumiy.",
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false
 }

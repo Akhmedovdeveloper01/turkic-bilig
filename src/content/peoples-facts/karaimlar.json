@@ -11,6 +11,13 @@
   "religion": ["Karaimlik (iudaizmning bir yo'nalishi)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "yoq",
+    "entities": [],
+    "sourceIds": [
+      "lithuania-census-2021"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "lithuania-census-2021"],
   "verified": false,
   "disputed": [

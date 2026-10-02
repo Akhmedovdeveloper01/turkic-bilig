@@ -11,6 +11,28 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Shinjon-Uyg'ur avtonom rayoni",
+        "country": "Xitoy",
+        "noFlagNote": "XXRdagi avtonom birliklarning alohida rasmiy bayrog'i yo'q."
+      }
+    ],
+    "sourceIds": [
+      "prc-regional-autonomy-law-1984"
+    ]
+  },
+  "peopleFlag": {
+    "flag": "kok-bayroq",
+    "name": "Ko'k bayroq",
+    "note": "Sharqiy Turkiston mustaqillik harakatlari bilan bog'liq bayroq; bugun asosan uyg'ur diasporasi tashkilotlari tomonidan qo'llanadi. Davlat bayrog'i emas. XXR hukumati \"Sharqiy Turkiston\" harakatlarini separatistik deb baholaydi. TODO: bayroqning aniq tarixi (qaysi davlat tuzilmalari qo'llagani) manba bilan tekshirilsin.",
+    "sourceIds": [
+      "findley-2005",
+      "prc-scio-xinjiang-2019"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "china-census-2020", "ohchr-xinjiang-2022", "prc-scio-xinjiang-2019"],
   "verified": false,
   "disputed": [

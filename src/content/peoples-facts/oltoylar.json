@@ -11,6 +11,19 @@
   "religion": ["Shamanlik", "Burxonizm", "Pravoslav xristianlik"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Oltoy Respublikasi",
+        "country": "Rossiya",
+        "flag": "oltoy"
+      }
+    ],
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false,
   "disputed": [

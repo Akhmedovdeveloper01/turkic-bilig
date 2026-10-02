@@ -1,0 +1,78 @@
+{
+  "uzbekistan": {
+    "file": "/flags/uzbekistan.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Uzbekistan.svg"
+  },
+  "qozogiston": {
+    "file": "/flags/qozogiston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Kazakhstan.svg"
+  },
+  "qirgiziston": {
+    "file": "/flags/qirgiziston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Kyrgyzstan.svg"
+  },
+  "turkmaniston": {
+    "file": "/flags/turkmaniston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkmenistan.svg"
+  },
+  "ozarbayjon": {
+    "file": "/flags/ozarbayjon.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Azerbaijan.svg"
+  },
+  "turkiya": {
+    "file": "/flags/turkiya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Turkey.svg"
+  },
+  "tatariston": {
+    "file": "/flags/tatariston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Tatarstan.svg"
+  },
+  "boshqirdiston": {
+    "file": "/flags/boshqirdiston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Bashkortostan.svg"
+  },
+  "chuvashiya": {
+    "file": "/flags/chuvashiya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Chuvashia.svg"
+  },
+  "saxa": {
+    "file": "/flags/saxa.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Sakha.svg"
+  },
+  "tuva": {
+    "file": "/flags/tuva.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Tuva.svg"
+  },
+  "oltoy": {
+    "file": "/flags/oltoy.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Altai_Republic.svg"
+  },
+  "xakasiya": {
+    "file": "/flags/xakasiya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Khakassia.svg"
+  },
+  "qorachoy-cherkesiya": {
+    "file": "/flags/qorachoy-cherkesiya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Karachay-Cherkessia.svg"
+  },
+  "kabardin-bolqoriya": {
+    "file": "/flags/kabardin-bolqoriya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Kabardino-Balkaria.svg"
+  },
+  "qoraqalpogiston": {
+    "file": "/flags/qoraqalpogiston.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Karakalpakstan.svg"
+  },
+  "gagauziya": {
+    "file": "/flags/gagauziya.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Gagauzia.svg"
+  },
+  "qrim-tatar-xalqi": {
+    "file": "/flags/qrim-tatar-xalqi.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_the_Crimean_Tatar_people.svg"
+  },
+  "kok-bayroq": {
+    "file": "/flags/kok-bayroq.svg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_East_Turkestan.svg"
+  }
+}

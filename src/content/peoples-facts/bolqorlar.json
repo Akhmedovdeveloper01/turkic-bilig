@@ -11,6 +11,20 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Kabardin-Bolqor Respublikasi",
+        "country": "Rossiya",
+        "flag": "kabardin-bolqoriya"
+      }
+    ],
+    "note": "Respublika bolqorlar va kabardinlar uchun umumiy.",
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false
 }

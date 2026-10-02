@@ -11,6 +11,18 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "mustaqil-davlat",
+    "entities": [
+      {
+        "name": "Qirg'iz Respublikasi",
+        "flag": "qirgiziston"
+      }
+    ],
+    "sourceIds": [
+      "un-member-states"
+    ]
+  },
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false
 }

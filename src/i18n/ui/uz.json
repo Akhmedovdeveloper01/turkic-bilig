@@ -44,7 +44,16 @@
   },
   "peoples": {
     "originMapTitle": "Kelib chiqishi va tarqalishi",
-    "originMapNote": "Qizil nuqta — turkiy xalqlarning gipotetik ilk vatani (ilmiy nazariya, aniq fakt emas). Ko'k nuqtalar — har bir xalqning bugungi asosiy joylashuvi. Ular orasidagi chiziqlar sxematik bo'lib, aniq tarixiy ko'chish yo'lini bildirmaydi."
+    "originMapNote": "Qizil nuqta — turkiy xalqlarning gipotetik ilk vatani (ilmiy nazariya, aniq fakt emas). Ko'k nuqtalar — har bir xalqning bugungi asosiy joylashuvi. Ular orasidagi chiziqlar sxematik bo'lib, aniq tarixiy ko'chish yo'lini bildirmaydi.",
+    "statehoodTitle": "Davlatchilik",
+    "statusMustaqil": "Mustaqil davlat",
+    "statusAvtonomiya": "Avtonomiya (davlat tarkibida)",
+    "statusYoq": "O'z davlat tuzilmasi yo'q",
+    "officialFlag": "Rasmiy bayrog'i",
+    "noFlag": "Rasmiy bayrog'i yo'q",
+    "peopleFlagTitle": "Xalq bayrog'i (davlat bayrog'i emas)",
+    "flagCredit": "Bayroq tasviri: Wikimedia Commons",
+    "withinCountry": "{country} tarkibida"
   },
   "states": {
     "territoryMapTitle": "Taxminiy hudud",

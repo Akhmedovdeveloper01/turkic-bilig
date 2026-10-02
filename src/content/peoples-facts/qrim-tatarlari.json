@@ -11,6 +11,22 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["oltin-orda"],
   "scholars": [],
+  "statehood": {
+    "status": "yoq",
+    "entities": [],
+    "note": "Qrim tatarlarining vakillik organlari — Qurultoy va Majlis. Qrim yarim orolining maqomi xalqaro munozarali masala (sahifadagi \"Munozarali masala\" blokiga qarang).",
+    "sourceIds": [
+      "unga-68-262"
+    ]
+  },
+  "peopleFlag": {
+    "flag": "qrim-tatar-xalqi",
+    "name": "Qrim-tatar xalqi bayrog'i",
+    "note": "1991-yilda Qrim-tatar xalqi Qurultoyi tomonidan milliy bayroq sifatida qabul qilingan. Ko'k fonda sariq \"taroq\" tamg'asi.",
+    "sourceIds": [
+      "qurultay-1991"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "ukraine-census-2001", "unga-68-262"],
   "verified": false,
   "disputed": [

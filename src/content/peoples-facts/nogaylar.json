@@ -11,6 +11,14 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["oltin-orda"],
   "scholars": [],
+  "statehood": {
+    "status": "yoq",
+    "entities": [],
+    "note": "No'g'aylar bir necha Rossiya sub'yektlarida yashaydi; alohida milliy respublikasi yo'q.",
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false
 }

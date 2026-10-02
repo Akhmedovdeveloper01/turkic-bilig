@@ -11,6 +11,13 @@
   "religion": ["Pravoslav xristianlik", "Shamanlik"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "yoq",
+    "entities": [],
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false
 }

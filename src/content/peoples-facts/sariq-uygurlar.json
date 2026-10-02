@@ -11,6 +11,20 @@
   "religion": ["Buddizm (tibet buddizmi)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Sunan-Yugur avtonom okrugi (Gansu)",
+        "country": "Xitoy",
+        "noFlagNote": "XXRdagi avtonom birliklarning alohida rasmiy bayrog'i yo'q."
+      }
+    ],
+    "note": "Okrug (tuman) darajasidagi avtonomiya.",
+    "sourceIds": [
+      "prc-regional-autonomy-law-1984"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "china-census-2020"],
   "verified": false,
   "disputed": [

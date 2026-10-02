@@ -11,6 +11,18 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["saljuqiylar"],
   "scholars": [],
+  "statehood": {
+    "status": "mustaqil-davlat",
+    "entities": [
+      {
+        "name": "Turkmaniston",
+        "flag": "turkmaniston"
+      }
+    ],
+    "sourceIds": [
+      "un-member-states"
+    ]
+  },
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false,
   "disputed": [

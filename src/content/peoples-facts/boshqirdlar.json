@@ -11,6 +11,19 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Boshqirdiston Respublikasi",
+        "country": "Rossiya",
+        "flag": "boshqirdiston"
+      }
+    ],
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false
 }

@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import OriginMap from '../../../components/OriginMap.astro';
+import StatehoodBadge from '../../../components/peoples/StatehoodBadge.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import origin from '../../../data/origin.json';
@@ -22,7 +23,7 @@ const items = await Promise.all(
     const localized = await getEntry('peoples', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('peoples', `uz/${slug}`));
     const population = fact.data.population.reduce((sum, p) => sum + p.value, 0);
-    return { slug, entry: original, isFallback: !localized, location: fact.data.location, population };
+    return { slug, entry: original, isFallback: !localized, location: fact.data.location, population, statehood: fact.data.statehood };
   })
 );
 
@@ -59,7 +60,7 @@ const homelandPoint = {
   </div>
 
   <ul class="grid gap-4 sm:grid-cols-2">
-    {items.map(({ slug, entry, isFallback }, index) => entry && (
+    {items.map(({ slug, entry, isFallback, statehood }, index) => entry && (
       <EntryCard
         lang={lang!}
         href={`/${lang}/xalqlar/${slug}`}
@@ -67,7 +68,9 @@ const homelandPoint = {
         summary={entry.data.summary}
         isFallback={isFallback}
         index={index}
-      />
+      >
+        {statehood && <StatehoodBadge lang={lang!} statehood={statehood} />}
+      </EntryCard>
     ))}
   </ul>
 </BaseLayout>

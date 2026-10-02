@@ -11,6 +11,19 @@
   "religion": ["Pravoslav xristianlik"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Gagauziya (Gagauz-Yeri) avtonom hududiy birligi",
+        "country": "Moldova",
+        "flag": "gagauziya"
+      }
+    ],
+    "sourceIds": [
+      "moldova-gagauzia-law-1994"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "moldova-census-2024"],
   "verified": false,
   "disputed": [

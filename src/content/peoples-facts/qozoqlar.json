@@ -11,6 +11,18 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": ["oltin-orda"],
   "scholars": [],
+  "statehood": {
+    "status": "mustaqil-davlat",
+    "entities": [
+      {
+        "name": "Qozog'iston Respublikasi",
+        "flag": "qozogiston"
+      }
+    ],
+    "sourceIds": [
+      "un-member-states"
+    ]
+  },
   "sources": ["golden-1992", "un-desa-2024"],
   "verified": false
 }

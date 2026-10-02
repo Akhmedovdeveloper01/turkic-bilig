@@ -11,6 +11,19 @@
   "religion": ["Islom (sunniylik)", "Pravoslav xristianlik (kryashenlar)"],
   "historicalStates": ["oltin-orda"],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Tatariston Respublikasi",
+        "country": "Rossiya",
+        "flag": "tatariston"
+      }
+    ],
+    "sourceIds": [
+      "rf-constitution-1993"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
   "verified": false,
   "disputed": [

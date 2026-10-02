@@ -1,0 +1,34 @@
+---
+/**
+ * Xalqning davlatchilik holati belgisi (xalqlar ro'yxatidagi kartochka uchun):
+ * holat nomi va — bo'lsa — birinchi davlat tuzilmasining kichik bayrog'i.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import flags from '../../data/flags.json';
+
+interface Props {
+  lang: string;
+  statehood: NonNullable<CollectionEntry<'peopleFacts'>['data']['statehood']>;
+}
+const { lang, statehood } = Astro.props;
+const t = createTranslator(lang);
+
+const LABEL = {
+  'mustaqil-davlat': t('peoples.statusMustaqil'),
+  avtonomiya: t('peoples.statusAvtonomiya'),
+  yoq: t('peoples.statusYoq'),
+};
+const STYLE = {
+  'mustaqil-davlat': 'border-brand/40 bg-brand/10 text-brand-dark dark:text-brand',
+  avtonomiya: 'border-gold/40 bg-gold-soft text-gold',
+  yoq: 'border-line bg-surface text-ink-muted',
+};
+const flagKey = statehood.entities.find((e) => e.flag)?.flag as keyof typeof flags | undefined;
+const flag = flagKey ? flags[flagKey] : undefined;
+---
+
+<span class:list={['inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium', STYLE[statehood.status]]}>
+  {flag && <img src={flag.file} alt="" class="h-3 w-[1.125rem] rounded-[2px] object-cover shadow-sm ring-1 ring-black/10" loading="lazy" />}
+  {LABEL[statehood.status]}
+</span>

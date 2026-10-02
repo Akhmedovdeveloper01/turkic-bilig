@@ -44,7 +44,16 @@
   },
   "peoples": {
     "originMapTitle": "Origins and spread",
-    "originMapNote": "The red point is the hypothesized ancient homeland of the Turkic peoples (a scholarly theory, not an established fact). Blue points are each people's main present-day location. The connecting lines are schematic and do not represent an exact historical migration route."
+    "originMapNote": "The red point is the hypothesized ancient homeland of the Turkic peoples (a scholarly theory, not an established fact). Blue points are each people's main present-day location. The connecting lines are schematic and do not represent an exact historical migration route.",
+    "statehoodTitle": "Statehood",
+    "statusMustaqil": "Independent state",
+    "statusAvtonomiya": "Autonomy (within a state)",
+    "statusYoq": "No state entity of its own",
+    "officialFlag": "Official flag",
+    "noFlag": "No official flag",
+    "peopleFlagTitle": "People's flag (not a state flag)",
+    "flagCredit": "Flag image: Wikimedia Commons",
+    "withinCountry": "within {country}"
   },
   "states": {
     "territoryMapTitle": "Approximate extent",

@@ -44,7 +44,16 @@
   },
   "peoples": {
     "originMapTitle": "Gelip çykyşy we ýaýrawy",
-    "originMapNote": "Gyzyl nokat türki halklaryň çak edilýän ilkinji watanydyr (ylmy nazaryýet, takyk fakt däl). Gök nokatlar her halkyň häzirki esasy ýerleşýän ýeridir. Birikdiriji çyzyklar şertli bolup, takyk taryhy göçüş ýoluny aňlatmaýar."
+    "originMapNote": "Gyzyl nokat türki halklaryň çak edilýän ilkinji watanydyr (ylmy nazaryýet, takyk fakt däl). Gök nokatlar her halkyň häzirki esasy ýerleşýän ýeridir. Birikdiriji çyzyklar şertli bolup, takyk taryhy göçüş ýoluny aňlatmaýar.",
+    "statehoodTitle": "Döwletlilik",
+    "statusMustaqil": "Garaşsyz döwlet",
+    "statusAvtonomiya": "Awtonomiýa (döwletiň düzüminde)",
+    "statusYoq": "Öz döwlet gurluşy ýok",
+    "officialFlag": "Resmi baýdagy",
+    "noFlag": "Resmi baýdagy ýok",
+    "peopleFlagTitle": "Halk baýdagy (döwlet baýdagy däl)",
+    "flagCredit": "Baýdak şekili: Wikimedia Commons",
+    "withinCountry": "{country} düzüminde"
   },
   "states": {
     "territoryMapTitle": "Takmyny giňişlik",

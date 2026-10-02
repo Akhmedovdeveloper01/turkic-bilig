@@ -11,6 +11,20 @@
   "religion": ["Islom (sunniylik)"],
   "historicalStates": [],
   "scholars": [],
+  "statehood": {
+    "status": "avtonomiya",
+    "entities": [
+      {
+        "name": "Qoraqalpog'iston Respublikasi",
+        "country": "O'zbekiston",
+        "flag": "qoraqalpogiston"
+      }
+    ],
+    "note": "Konstitutsiyaga ko'ra O'zbekiston tarkibidagi suveren respublika.",
+    "sourceIds": [
+      "uz-constitution-2023"
+    ]
+  },
   "sources": ["golden-1992", "johanson-csato-2021", "uzbekistan-census-2026"],
   "verified": false
 }

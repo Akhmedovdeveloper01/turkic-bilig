@@ -44,7 +44,16 @@
   },
   "peoples": {
     "originMapTitle": "Mənşəyi və yayılması",
-    "originMapNote": "Qırmızı nöqtə türk xalqlarının fərziyyə edilən ilkin vətənidir (elmi nəzəriyyədir, kəsin faktı bildirmir). Mavi nöqtələr hər bir xalqın bugünkü əsas yerləşməsidir. Birləşdirici xətlər şərtidir və dəqiq tarixi köç marşrutunu göstərmir."
+    "originMapNote": "Qırmızı nöqtə türk xalqlarının fərziyyə edilən ilkin vətənidir (elmi nəzəriyyədir, kəsin faktı bildirmir). Mavi nöqtələr hər bir xalqın bugünkü əsas yerləşməsidir. Birləşdirici xətlər şərtidir və dəqiq tarixi köç marşrutunu göstərmir.",
+    "statehoodTitle": "Dövlətçilik",
+    "statusMustaqil": "Müstəqil dövlət",
+    "statusAvtonomiya": "Muxtariyyət (dövlət tərkibində)",
+    "statusYoq": "Öz dövlət qurumu yoxdur",
+    "officialFlag": "Rəsmi bayraq",
+    "noFlag": "Rəsmi bayrağı yoxdur",
+    "peopleFlagTitle": "Xalq bayrağı (dövlət bayrağı deyil)",
+    "flagCredit": "Bayraq təsviri: Wikimedia Commons",
+    "withinCountry": "{country} tərkibində"
   },
   "states": {
     "territoryMapTitle": "Təxmini əhatə",

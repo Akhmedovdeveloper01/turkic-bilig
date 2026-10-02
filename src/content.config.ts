@@ -86,6 +86,39 @@ const peopleFacts = defineCollection({
     /** Mavhum geometrik bezak turi — hech qanday aniq xalqqa tegishli deb
      * da'vo qilinmaydi, faqat vizual farqlash uchun. */
     pattern: z.enum(['zigzag', 'diamond', 'dots', 'wave', 'key', 'cross']).optional(),
+    /** Xalqning bugungi davlatchilik holati: mustaqil davlat, davlat tarkibidagi
+     * avtonomiya yoki o'z davlat tuzilmasi yo'q. `flag` — src/data/flags.json
+     * dagi kalit (rasmiy bayroq, Wikimedia Commons SVG). */
+    statehood: z
+      .object({
+        status: z.enum(['mustaqil-davlat', 'avtonomiya', 'yoq']),
+        entities: z
+          .array(
+            z.object({
+              name: z.string(),
+              /** Avtonomiya qaysi davlat tarkibida. */
+              country: z.string().optional(),
+              flag: z.string().optional(),
+              /** Rasmiy bayroq bo'lmasa — sababi (masalan, XXR avtonom birliklarida bayroq yo'q). */
+              noFlagNote: z.string().optional(),
+            })
+          )
+          .default([]),
+        note: z.string().optional(),
+        sourceIds: z.array(sourceRef).min(1, "Davlatchilik holati manbaga bog'lanishi shart"),
+      })
+      .optional(),
+    /** Xalqning o'z vakillik organi qabul qilgan yoki tarixan qo'llangan etnik
+     * bayrog'i (davlat bayrog'i emas). Siyosiy sezgir bo'lsa `note` da
+     * tomonlarning pozitsiyasi beriladi (ILMIY QOIDA 5). */
+    peopleFlag: z
+      .object({
+        flag: z.string(),
+        name: z.string(),
+        note: z.string(),
+        sourceIds: z.array(sourceRef).min(1),
+      })
+      .optional(),
     ...verificationFields,
   }),
 });

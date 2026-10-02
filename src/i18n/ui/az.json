@@ -115,7 +115,9 @@
     "categoryTurkiy": "Türk dövləti",
     "categorySulola": "Türk sülaləsi tərəfindən idarə olunan",
     "categoryMunozarali": "Türklüklə əlaqəsi mübahisəli",
-    "sortedNote": "Dövlətlər yaranma ilinə görə sıralanıb. Kateqoriya nişanı dövlətin türk dünyası ilə əlaqəsini göstərir."
+    "sortedNote": "Dövlətlər yaranma ilinə görə sıralanıb. Kateqoriya nişanı dövlətin türk dünyası ilə əlaqəsini göstərir.",
+    "filterAll": "Hamısı",
+    "filterLegend": "Dövlətləri kateqoriyaya görə süz"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

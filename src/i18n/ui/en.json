@@ -115,7 +115,9 @@
     "categoryTurkiy": "Turkic state",
     "categorySulola": "Ruled by a Turkic dynasty",
     "categoryMunozarali": "Turkic link disputed",
-    "sortedNote": "States are ordered by founding year. The category badge shows how each state relates to the Turkic world."
+    "sortedNote": "States are ordered by founding year. The category badge shows how each state relates to the Turkic world.",
+    "filterAll": "All",
+    "filterLegend": "Filter states by category"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

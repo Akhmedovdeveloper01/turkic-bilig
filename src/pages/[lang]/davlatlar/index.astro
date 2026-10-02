@@ -24,6 +24,15 @@ const items = await Promise.all(
     return { slug, entry: original, isFallback: !localized, facts: fact.data };
   })
 );
+const FILTERS = [
+  { value: 'hammasi', label: t('states.filterAll'), count: items.length },
+  ...(['turkiy', 'turkiy-sulola', 'munozarali'] as const).map((c) => ({
+    value: c,
+    label: t(c === 'turkiy' ? 'states.categoryTurkiy' : c === 'turkiy-sulola' ? 'states.categorySulola' : 'states.categoryMunozarali'),
+    count: items.filter((i) => i.facts.category === c).length,
+  })),
+];
+
 // Tashkil topgan yili bo'yicha (miloddan avvalgilar birinchi).
 items.sort(
   (a, b) =>
@@ -34,7 +43,22 @@ items.sort(
 
 <BaseLayout lang={lang!} title={t('nav.states')}>
   <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
-  <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
+  <p class="mb-5 text-sm text-ink-muted">{t('states.sortedNote')}</p>
+
+  {/* Toifa filtri: JavaScript'siz — radio guruhi + CSS :has() (global.css, .tb-filter). */}
+  <div class="tb-filter">
+    <fieldset class="mb-6">
+      <legend class="sr-only">{t('states.filterLegend')}</legend>
+      <div class="flex flex-wrap gap-2">
+        {FILTERS.map((f) => (
+          <label class="tb-filter-tab">
+            <input type="radio" name="state-category" value={f.value} checked={f.value === 'hammasi'} class="sr-only" />
+            <span>{f.label}</span>
+            <span class="tb-filter-count tabular-nums">{f.count}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
   <ul class="grid gap-4 sm:grid-cols-2">
     {items.map(({ slug, entry, isFallback, facts }, index) => entry && (
       <EntryCard
@@ -44,6 +68,7 @@ items.sort(
         summary={entry.data.summary}
         isFallback={isFallback}
         index={index}
+        category={facts.category}
       >
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-xs font-medium tabular-nums text-ink-muted">{formatPeriod(t, facts.period)}</span>
@@ -52,4 +77,5 @@ items.sort(
       </EntryCard>
     ))}
   </ul>
+  </div>
 </BaseLayout>

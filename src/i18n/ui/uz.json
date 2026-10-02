@@ -115,7 +115,9 @@
     "categoryTurkiy": "Turkiy davlat",
     "categorySulola": "Turkiy sulola boshqargan",
     "categoryMunozarali": "Turkiyligi munozarali",
-    "sortedNote": "Davlatlar tashkil topgan yili bo'yicha tartiblangan. Toifa belgisi davlatning turkiy dunyo bilan bog'liqligi qanday ekanini bildiradi."
+    "sortedNote": "Davlatlar tashkil topgan yili bo'yicha tartiblangan. Toifa belgisi davlatning turkiy dunyo bilan bog'liqligi qanday ekanini bildiradi.",
+    "filterAll": "Hammasi",
+    "filterLegend": "Davlatlarni toifa bo'yicha saralash"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

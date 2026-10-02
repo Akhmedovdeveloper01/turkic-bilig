@@ -115,7 +115,9 @@
     "categoryTurkiy": "Türki döwlet",
     "categorySulola": "Türki neberesi tarapyndan dolandyrylan",
     "categoryMunozarali": "Türkilik bilen baglanyşygy jedelli",
-    "sortedNote": "Döwletler döredilen ýyly boýunça tertiplenen. Kategoriýa belgisi döwletiň türki dünýäsi bilen baglanyşygyny görkezýär."
+    "sortedNote": "Döwletler döredilen ýyly boýunça tertiplenen. Kategoriýa belgisi döwletiň türki dünýäsi bilen baglanyşygyny görkezýär.",
+    "filterAll": "Hemmesi",
+    "filterLegend": "Döwletleri kategoriýa boýunça süzmek"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

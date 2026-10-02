@@ -115,7 +115,9 @@
     "categoryTurkiy": "Türk devleti",
     "categorySulola": "Türk hanedanı tarafından yönetilen",
     "categoryMunozarali": "Türklükle bağı tartışmalı",
-    "sortedNote": "Devletler kuruluş yılına göre sıralanmıştır. Kategori etiketi, devletin Türk dünyasıyla bağını gösterir."
+    "sortedNote": "Devletler kuruluş yılına göre sıralanmıştır. Kategori etiketi, devletin Türk dünyasıyla bağını gösterir.",
+    "filterAll": "Tümü",
+    "filterLegend": "Devletleri kategoriye göre süz"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

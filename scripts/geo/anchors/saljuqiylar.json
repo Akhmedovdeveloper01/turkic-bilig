@@ -1,62 +1,152 @@
 {
   "stateId": "saljuqiylar",
   "year": 1092,
-  "sourceIds": ["golden-1992", "findley-2005", "peacock-2015"],
+  "sourceIds": [
+    "golden-1992",
+    "findley-2005",
+    "peacock-2015"
+  ],
   "zones": [
     {
       "zone": "markaz",
       "confidence": "ortacha",
-      "notes": "Malikshoh vafoti (1092) yilidagi eng katta yoyilish davri.",
+      "notes": "Malikshoh vafoti (1092) yilidagi Buyuk Saljuqiylar hududi: Xorazm, Xuroson, Eron, Iroq, Jazira, Suriya va Falastin, Ozarbayjon, Armaniston. Kirmon saljuqiylari markazga kiritilgan. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
       "ring": [
-        [59.15, 42.33],
-        [61.84, 37.66],
-        [62.20, 34.35],
-        [57.08, 30.28],
-        [51.67, 32.65],
-        [44.36, 33.31],
-        [36.30, 33.51],
-        [36.16, 36.20],
-        [43.13, 36.34],
-        [46.30, 38.08],
-        [51.43, 35.60]
+        [56.0, 43.8],
+        [58.5, 43.6],
+        [61.0, 42.8],
+        [62.6, 41.0],
+        [64.0, 39.4],
+        [65.6, 37.8],
+        [67.5, 37.2],
+        [68.6, 36.2],
+        [66.4, 35.0],
+        [63.6, 34.1],
+        [61.6, 32.2],
+        [60.6, 29.6],
+        [58.6, 27.0],
+        [57.4, 25.6],
+        [54.5, 26.4],
+        [51.5, 27.7],
+        [50.2, 29.4],
+        [48.6, 29.9],
+        [46.6, 31.0],
+        [45.0, 31.0],
+        [43.0, 31.8],
+        [41.0, 33.4],
+        [38.8, 33.0],
+        [37.2, 31.4],
+        [35.4, 31.0],
+        [35.2, 32.0],
+        [35.6, 33.2],
+        [36.1, 34.5],
+        [36.0, 35.4],
+        [36.2, 36.4],
+        [36.8, 37.0],
+        [38.0, 37.5],
+        [39.5, 38.4],
+        [40.4, 39.5],
+        [41.4, 40.6],
+        [43.4, 41.1],
+        [45.4, 40.9],
+        [46.6, 41.3],
+        [48.0, 41.4],
+        [49.2, 40.4],
+        [51.5, 40.8],
+        [53.6, 42.2]
       ]
     },
     {
       "zone": "vassal",
       "confidence": "past",
-      "notes": "Rum saljuqiylari (Nikeya, 1081-97) — yarim mustaqil",
-      "point": [29.72, 40.43],
-      "radiusKm": 150
+      "notes": "Rum saljuqiylari (Nikeya, 1081–97) — yarim mustaqil. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [29.4, 40.6],
+        [31.6, 40.9],
+        [34.0, 40.6],
+        [36.4, 39.6],
+        [37.4, 38.3],
+        [35.4, 37.3],
+        [33.0, 37.3],
+        [31.0, 37.9],
+        [29.4, 38.8]
+      ]
     },
     {
       "zone": "vassal",
       "confidence": "past",
-      "notes": "Movarounnahr Qoraxoniylari — nomigagina tobe, ma'muriy jihatdan mustaqil",
-      "point": [66.975, 39.627],
-      "radiusKm": 120
+      "notes": "Movarounnahr Qoraxoniylari — nomigagina tobe, ma'muriy jihatdan mustaqil. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [63.5, 40.4],
+        [65.0, 41.8],
+        [67.5, 41.8],
+        [69.6, 42.4],
+        [71.6, 41.5],
+        [72.6, 40.5],
+        [71.0, 39.5],
+        [69.0, 38.7],
+        [67.6, 37.6],
+        [65.8, 38.0],
+        [64.0, 39.0]
+      ]
     },
     {
       "zone": "vassal",
       "confidence": "past",
-      "notes": "Gruziya",
-      "point": [44.80, 41.70],
-      "radiusKm": 120
+      "notes": "Gruziya — o'lpon to'lagan. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [41.5, 41.6],
+        [41.8, 42.6],
+        [43.5, 42.9],
+        [45.2, 42.6],
+        [46.4, 41.8],
+        [45.4, 41.2],
+        [43.4, 41.2]
+      ]
     },
     {
       "zone": "ta'sir-doirasi",
       "confidence": "past",
-      "notes": "Falastin va Hijoz — faqat nomigagina, xutba o'qilgan (Artuqiylar va boshqa mahalliy sulolalar amalda boshqargan)",
+      "notes": "Hijoz — faqat nomigagina, xutba o'qilgan. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
       "ring": [
-        [35.23, 31.78],
-        [39.61, 24.47],
-        [39.83, 21.42]
+        [36.4, 28.0],
+        [38.0, 27.0],
+        [40.0, 24.4],
+        [41.1, 21.4],
+        [40.6, 19.9],
+        [39.0, 20.6],
+        [38.2, 23.0],
+        [36.6, 25.4],
+        [35.0, 27.8]
       ]
     }
   ],
   "points": [
-    { "kind": "capital", "name": "Isfahon", "lon": 51.67, "lat": 32.65, "notes": "1092-yilda asosiy poytaxt" },
-    { "kind": "city", "name": "Nishopur", "lon": 58.80, "lat": 36.20 },
-    { "kind": "city", "name": "Ray", "lon": 51.43, "lat": 35.60 },
-    { "kind": "city", "name": "Marv", "lon": 61.84, "lat": 37.66, "notes": "Sulton Sanjar davrida poytaxt" }
+    {
+      "kind": "capital",
+      "name": "Isfahon",
+      "lon": 51.67,
+      "lat": 32.65,
+      "notes": "1092-yilda asosiy poytaxt"
+    },
+    {
+      "kind": "city",
+      "name": "Nishopur",
+      "lon": 58.8,
+      "lat": 36.2
+    },
+    {
+      "kind": "city",
+      "name": "Ray",
+      "lon": 51.43,
+      "lat": 35.6
+    },
+    {
+      "kind": "city",
+      "name": "Marv",
+      "lon": 61.84,
+      "lat": 37.66,
+      "notes": "Sulton Sanjar davrida poytaxt"
+    }
   ]
 }

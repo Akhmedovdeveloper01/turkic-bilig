@@ -1,54 +1,144 @@
 {
   "stateId": "temuriylar",
   "year": 1405,
-  "sourceIds": ["bregel-2003", "manz-1989", "golden-1992", "findley-2005"],
+  "sourceIds": [
+    "bregel-2003",
+    "manz-1989",
+    "golden-1992",
+    "findley-2005"
+  ],
   "zones": [
     {
       "zone": "markaz",
       "confidence": "ortacha",
-      "notes": "Tayanch nuqtalar orasidagi chegara chizig'i sxematik ravishda tortilgan (daryo/tog' kabi tabiiy chegaralarga qat'iy mos kelmasligi mumkin) — ekspert tekshiruvi kerak.",
+      "notes": "Amir Temur vafoti (1405) arafasidagi hudud: Movarounnahr, Xorazm, Xuroson, Afg'oniston (Kobul, Qandahor), Eron, Iroq va Ozarbayjon. Sharqiy Anadolu chegarasi sxematik. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
       "ring": [
-        [59.15, 42.33],
-        [68.25, 43.30],
-        [68.30, 42.85],
-        [66.97, 39.65],
-        [69.18, 34.53],
-        [65.71, 31.61],
-        [56.27, 27.10],
-        [57.08, 30.28],
-        [52.53, 29.59],
-        [47.78, 30.51],
-        [44.36, 33.31],
-        [40.73, 37.31],
-        [39.49, 39.75],
-        [46.30, 38.08],
-        [48.80, 36.43],
-        [62.20, 34.35]
+        [55.5, 44.0],
+        [58.0, 44.2],
+        [59.5, 44.0],
+        [61.5, 43.4],
+        [64.0, 43.6],
+        [66.3, 43.5],
+        [68.4, 43.6],
+        [70.2, 43.0],
+        [71.6, 42.3],
+        [73.0, 41.3],
+        [73.8, 40.3],
+        [72.6, 39.3],
+        [71.2, 38.1],
+        [71.6, 36.6],
+        [70.8, 34.8],
+        [69.6, 33.1],
+        [68.1, 31.1],
+        [66.4, 29.8],
+        [64.0, 29.4],
+        [61.6, 28.0],
+        [59.2, 26.1],
+        [57.0, 25.4],
+        [54.5, 26.4],
+        [51.5, 27.7],
+        [50.2, 29.3],
+        [48.6, 29.9],
+        [47.6, 30.5],
+        [46.0, 31.4],
+        [44.5, 31.5],
+        [43.0, 32.5],
+        [41.6, 34.4],
+        [40.6, 35.9],
+        [39.6, 37.0],
+        [40.0, 37.9],
+        [39.0, 39.0],
+        [40.4, 40.7],
+        [42.5, 41.0],
+        [45.0, 40.7],
+        [46.8, 40.1],
+        [48.8, 39.6],
+        [51.0, 40.4],
+        [53.4, 42.0]
       ]
     },
     {
       "zone": "vassal",
       "confidence": "past",
-      "notes": "Gruziya (Tbilisi)",
-      "point": [44.80, 41.70],
-      "radiusKm": 120
+      "notes": "Gruziya podsholigi — bir necha yurishlardan keyin o'lpon to'lagan. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [41.5, 41.6],
+        [41.8, 42.6],
+        [43.5, 42.9],
+        [45.2, 42.6],
+        [46.5, 41.9],
+        [45.6, 41.1],
+        [43.6, 41.1]
+      ]
     },
     {
       "zone": "vassal",
       "confidence": "past",
-      "notes": "Shirvon (Darband)",
-      "point": [48.29, 42.06],
-      "radiusKm": 100
+      "notes": "Shirvon (Darband) — Shirvonshohlar Temurga tobe bo'lgan. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [46.6, 41.9],
+        [48.0, 42.2],
+        [49.4, 40.6],
+        [48.9, 39.7],
+        [47.3, 40.3]
+      ]
     }
   ],
   "points": [
-    { "kind": "capital", "name": "Samarqand", "lon": 66.97, "lat": 39.65 },
-    { "kind": "city", "name": "Hirot", "lon": 62.20, "lat": 34.35, "notes": "Shohruh Mirzo davrida poytaxt" },
-    { "kind": "campaign", "name": "Dehli yurishi (1398-99)", "lon": 77.20, "lat": 28.60, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
-    { "kind": "campaign", "name": "Multon (1398-99 yurishi)", "lon": 71.47, "lat": 30.20, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
-    { "kind": "campaign", "name": "Damashq yurishi (1400-01)", "lon": 36.30, "lat": 33.51, "notes": "Bir martalik harbiy yurish, doimiy hudud emas" },
-    { "kind": "campaign", "name": "Anqara jangi (1402)", "lon": 32.85, "lat": 39.93, "notes": "Bir martalik jang, doimiy hudud emas" },
-    { "kind": "campaign", "name": "Dashti Qipchoq yurishlari (1391/1395)", "lon": 46.90, "lat": 47.86, "notes": "Oltin O'rdaga qarshi yurishlar, doimiy hudud emas" },
-    { "kind": "campaign", "name": "Qashqar/Mo'g'uliston", "lon": 75.99, "lat": 39.47, "notes": "Chegaraviy yurishlar, doimiy hudud emas" }
+    {
+      "kind": "capital",
+      "name": "Samarqand",
+      "lon": 66.97,
+      "lat": 39.65
+    },
+    {
+      "kind": "city",
+      "name": "Hirot",
+      "lon": 62.2,
+      "lat": 34.35,
+      "notes": "Shohruh Mirzo davrida poytaxt"
+    },
+    {
+      "kind": "campaign",
+      "name": "Dehli yurishi (1398-99)",
+      "lon": 77.2,
+      "lat": 28.6,
+      "notes": "Bir martalik harbiy yurish, doimiy hudud emas"
+    },
+    {
+      "kind": "campaign",
+      "name": "Multon (1398-99 yurishi)",
+      "lon": 71.47,
+      "lat": 30.2,
+      "notes": "Bir martalik harbiy yurish, doimiy hudud emas"
+    },
+    {
+      "kind": "campaign",
+      "name": "Damashq yurishi (1400-01)",
+      "lon": 36.3,
+      "lat": 33.51,
+      "notes": "Bir martalik harbiy yurish, doimiy hudud emas"
+    },
+    {
+      "kind": "campaign",
+      "name": "Anqara jangi (1402)",
+      "lon": 32.85,
+      "lat": 39.93,
+      "notes": "Bir martalik jang, doimiy hudud emas"
+    },
+    {
+      "kind": "campaign",
+      "name": "Dashti Qipchoq yurishlari (1391/1395)",
+      "lon": 46.9,
+      "lat": 47.86,
+      "notes": "Oltin O'rdaga qarshi yurishlar, doimiy hudud emas"
+    },
+    {
+      "kind": "campaign",
+      "name": "Qashqar/Mo'g'uliston",
+      "lon": 75.99,
+      "lat": 39.47,
+      "notes": "Chegaraviy yurishlar, doimiy hudud emas"
+    }
   ]
 }

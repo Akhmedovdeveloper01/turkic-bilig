@@ -1,47 +1,123 @@
 {
   "stateId": "oltin-orda",
   "year": 1350,
-  "sourceIds": ["golden-1992", "favereau-2021"],
+  "sourceIds": [
+    "golden-1992",
+    "favereau-2021"
+  ],
   "zones": [
     {
       "zone": "markaz",
       "confidence": "ortacha",
-      "notes": "Dasht mintaqasidagi ko'chmanchi davlat chegarasi sxematik.",
+      "notes": "1350-yil atrofidagi Jo'chi ulusi: Dashti Qipchoq (Dunay deltasidan Uralgacha), Volga Bulg'oriyasi, Qrim, Shimoliy Kavkaz va Xorazmning shimoli. Dasht mintaqasidagi ko'chmanchi davlat chegarasi sxematik. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
       "ring": [
-        [30.3, 46.2],
-        [49.07, 54.98],
-        [80.3, 50.4],
-        [68.36, 44.0],
-        [59.15, 42.33],
-        [48.29, 42.06],
-        [33.86, 44.75]
+        [28.6, 45.2],
+        [28.8, 47.5],
+        [30.5, 48.6],
+        [33.0, 49.6],
+        [36.0, 50.6],
+        [39.0, 51.6],
+        [42.0, 52.6],
+        [45.0, 54.0],
+        [48.0, 55.8],
+        [51.0, 56.6],
+        [54.5, 56.0],
+        [57.5, 55.0],
+        [60.5, 53.6],
+        [64.0, 52.5],
+        [66.0, 51.0],
+        [66.4, 46.6],
+        [66.0, 44.6],
+        [63.0, 44.0],
+        [61.5, 42.4],
+        [60.4, 41.0],
+        [58.5, 41.0],
+        [56.0, 42.0],
+        [54.0, 44.4],
+        [51.4, 44.4],
+        [50.4, 44.0],
+        [49.0, 41.9],
+        [47.0, 42.4],
+        [46.0, 43.0],
+        [43.0, 43.5],
+        [40.0, 44.0],
+        [37.4, 44.6],
+        [36.6, 45.3],
+        [34.5, 44.3],
+        [33.4, 44.4],
+        [32.4, 45.4],
+        [31.0, 46.5],
+        [29.8, 45.8]
       ]
     },
     {
       "zone": "vassal",
       "confidence": "ortacha",
-      "notes": "Rus knyazliklari (Vladimir, Moskva, Tver, Ryazan, Nijniy Novgorod)",
+      "notes": "Shimoli-sharqiy Rus knyazliklari (Vladimir, Moskva, Tver, Ryazan, Nijniy Novgorod) — yorliq va o'lpon tizimi orqali tobe. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
       "ring": [
-        [35.9, 56.86],
-        [44.0, 56.30],
-        [40.4, 56.13],
-        [39.7, 54.63],
-        [37.62, 55.75]
+        [34.5, 57.5],
+        [36.5, 58.5],
+        [40.0, 58.8],
+        [44.0, 58.0],
+        [46.0, 56.5],
+        [44.0, 55.0],
+        [41.0, 54.0],
+        [38.5, 53.4],
+        [36.0, 54.4],
+        [34.4, 55.8]
       ]
     },
     {
       "zone": "ta'sir-doirasi",
       "confidence": "past",
-      "notes": "Sharqiy Qipchoq (Ko'k O'rda/Oq O'rda) chegarasi Zaysan ko'li tomon",
-      "point": [84.0, 48.0],
-      "radiusKm": 200
+      "notes": "Sharqiy Qipchoq (Ko'k O'rda / Oq O'rda) — Irtish va Zaysan ko'li tomon. Halqa 2026-10-02 da qayta chizildi: nuqtalar tartiblandi, zichlashtirildi va quruqlik chizig'iga kesiladi; sahifa darajasida manbaga solishtirilmagan — ekspert tekshiruvi kerak.",
+      "ring": [
+        [66.0, 51.0],
+        [71.0, 53.0],
+        [76.0, 52.5],
+        [81.0, 50.5],
+        [84.6, 48.0],
+        [80.0, 46.0],
+        [74.0, 45.0],
+        [68.0, 45.0],
+        [66.2, 46.6]
+      ]
     }
   ],
   "points": [
-    { "kind": "capital", "name": "Saroy (Saroy-Botu)", "lon": 47.40, "lat": 46.60 },
-    { "kind": "city", "name": "Saroy al-Jadid (Saroy-Berke)", "lon": 48.60, "lat": 45.30, "notes": "XIV asr o'rtasidan — aniq joylashuvi tarixchilar orasida munozarali" },
-    { "kind": "city", "name": "Kaffa", "lon": 35.38, "lat": 45.03, "notes": "Genuya savdo koloniyasi — Oltin O'rda hududida, lekin alohida maqomda" },
-    { "kind": "city", "name": "Tana", "lon": 39.42, "lat": 47.10, "notes": "Venetsiya savdo koloniyasi — alohida maqomda" },
-    { "kind": "city", "name": "Novgorod", "lon": 31.28, "lat": 58.52, "notes": "Faqat o'lpon to'lagan, bevosita boshqarilmagan" }
+    {
+      "kind": "capital",
+      "name": "Saroy (Saroy-Botu)",
+      "lon": 47.4,
+      "lat": 46.6
+    },
+    {
+      "kind": "city",
+      "name": "Saroy al-Jadid (Saroy-Berke)",
+      "lon": 48.6,
+      "lat": 45.3,
+      "notes": "XIV asr o'rtasidan — aniq joylashuvi tarixchilar orasida munozarali"
+    },
+    {
+      "kind": "city",
+      "name": "Kaffa",
+      "lon": 35.38,
+      "lat": 45.03,
+      "notes": "Genuya savdo koloniyasi — Oltin O'rda hududida, lekin alohida maqomda"
+    },
+    {
+      "kind": "city",
+      "name": "Tana",
+      "lon": 39.42,
+      "lat": 47.1,
+      "notes": "Venetsiya savdo koloniyasi — alohida maqomda"
+    },
+    {
+      "kind": "city",
+      "name": "Novgorod",
+      "lon": 31.28,
+      "lat": 58.52,
+      "notes": "Faqat o'lpon to'lagan, bevosita boshqarilmagan"
+    }
   ]
 }

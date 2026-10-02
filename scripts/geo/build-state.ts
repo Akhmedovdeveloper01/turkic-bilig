@@ -7,13 +7,17 @@
  * sxematik shakl (ILMIY QOIDA 6). Har bir Feature `verified: false` va
  * `confidence` bilan belgilanadi — ekspert tekshiruvini kutadi.
  *
+ * Har bir zona Natural Earth quruqlik konturiga kesiladi (dengizga chiqmaydi).
+ *
  * Qayta ishga tushirish: npx tsx scripts/geo/build-state.ts
  * Ekspert anchor faylni tahrirlab, shu skriptni qayta ishga tushirishi mumkin.
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import * as turf from '@turf/turf';
-import type { Feature, Polygon, MultiPolygon } from 'geojson';
+import { feature } from 'topojson-client';
+import type { Feature, FeatureCollection, Polygon, MultiPolygon } from 'geojson';
+import type { Topology } from 'topojson-specification';
 
 interface ZoneSpec {
   zone: 'markaz' | 'vassal' | "ta'sir-doirasi";
@@ -45,6 +49,33 @@ const ROOT = process.cwd();
 const ANCHORS_DIR = path.join(ROOT, 'scripts/geo/anchors');
 const OUT_DIR = path.join(ROOT, 'src/data/geo/states');
 
+// Natural Earth 1:50m quruqlik poligonlari — zonalar shu bilan kesiladi, shunda
+// sxematik halqa dengizga chiqib ketmaydi va qirg'oq real chiziq bo'ylab o'tadi.
+const LAND_POLYGONS: Feature<Polygon>[] = (() => {
+  const topology = JSON.parse(
+    readFileSync(path.join(ROOT, 'node_modules/world-atlas/land-50m.json'), 'utf-8')
+  ) as Topology;
+  const land = (feature(topology, topology.objects.land) as unknown as FeatureCollection<MultiPolygon>).features[0];
+  return land.geometry.coordinates.map((c) => turf.polygon(c));
+})();
+
+function clipToLand(zone: Feature<Polygon | MultiPolygon>): Feature<Polygon | MultiPolygon> {
+  const [a, b, c, d] = turf.bbox(zone);
+  const parts: Feature<Polygon | MultiPolygon>[] = [];
+  for (const landPoly of LAND_POLYGONS) {
+    const [la, lb, lc, ld] = turf.bbox(landPoly);
+    if (la > c || lc < a || lb > d || ld < b) continue;
+    const part = turf.intersect(turf.featureCollection([zone, landPoly]));
+    if (part) parts.push(part);
+  }
+  if (parts.length === 0) return zone;
+  if (parts.length === 1) return parts[0];
+  const coords = parts.flatMap((p) =>
+    p.geometry.type === 'Polygon' ? [p.geometry.coordinates] : p.geometry.coordinates
+  );
+  return turf.multiPolygon(coords);
+}
+
 function closeRing(ring: [number, number][]): [number, number][] {
   const [fx, fy] = ring[0];
   const [lx, ly] = ring[ring.length - 1];
@@ -53,7 +84,7 @@ function closeRing(ring: [number, number][]): [number, number][] {
 }
 
 function smooth(poly: Feature<Polygon | MultiPolygon>): Feature<Polygon | MultiPolygon> {
-  const result = turf.polygonSmooth(poly as Feature<Polygon | MultiPolygon>, { iterations: 2 });
+  const result = turf.polygonSmooth(poly as Feature<Polygon | MultiPolygon>, { iterations: 1 });
   return result.features[0];
 }
 
@@ -79,7 +110,8 @@ function buildCircleZone(z: ZoneSpec): Feature<Polygon> {
 }
 
 function buildZoneFeature(z: ZoneSpec, stateId: string, year: number, defaultSourceIds: string[]) {
-  const geometry = z.ring ? buildRingZone(z, stateId).geometry : buildCircleZone(z).geometry;
+  const shape = z.ring ? buildRingZone(z, stateId) : buildCircleZone(z);
+  const geometry = clipToLand(shape).geometry;
   return {
     type: 'Feature' as const,
     geometry,

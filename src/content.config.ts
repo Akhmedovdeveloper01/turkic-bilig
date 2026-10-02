@@ -141,6 +141,11 @@ const peoples = defineCollection({
 const stateFacts = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/states-facts' }),
   schema: z.object({
+    /** turkiy — turkiy davlat (ilmiy konsensus); turkiy-sulola — turkiy sulola
+     * boshqargan, aholisining ko'pchiligi turkiy bo'lmagan davlat; munozarali —
+     * turkiy bilan bog'liqligi ilmiy munozarali (ILMIY QOIDA 3: `disputed` da
+     * har bir qarash manbasi bilan beriladi). */
+    category: z.enum(['turkiy', 'turkiy-sulola', 'munozarali']).default('turkiy'),
     endonym: z.string().optional(),
     period: z.object({
       startYear: z.number().int(),

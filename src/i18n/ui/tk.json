@@ -26,7 +26,9 @@
     "period": "Döwri",
     "capital": "Paýtagty",
     "field": "Ugur",
-    "approximate": "takmynan"
+    "approximate": "takmynan",
+    "yearBC": "b.e.öň {year}",
+    "yearAD": "b.e. {year}"
   },
   "translation": {
     "notTranslated": "Bu sahypa entek {lang} diline terjime edilmedi. Aşakda asyl tekst görkezilýär.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Tagma",
     "symbolKindTugro": "Tugra",
     "symbolKindMuhr": "Möhür",
-    "symbolSource": "Çeşme"
+    "symbolSource": "Çeşme",
+    "categoryTurkiy": "Türki döwlet",
+    "categorySulola": "Türki neberesi tarapyndan dolandyrylan",
+    "categoryMunozarali": "Türkilik bilen baglanyşygy jedelli",
+    "sortedNote": "Döwletler döredilen ýyly boýunça tertiplenen. Kategoriýa belgisi döwletiň türki dünýäsi bilen baglanyşygyny görkezýär."
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

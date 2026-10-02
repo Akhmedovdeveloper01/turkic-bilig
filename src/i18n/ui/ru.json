@@ -26,7 +26,9 @@
     "period": "Период",
     "capital": "Столица",
     "field": "Область",
-    "approximate": "приблизительно"
+    "approximate": "приблизительно",
+    "yearBC": "{year} до н. э.",
+    "yearAD": "{year} н. э."
   },
   "translation": {
     "notTranslated": "Эта страница ещё не переведена на {lang}. Ниже показан оригинальный текст.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Тамга",
     "symbolKindTugro": "Тугра",
     "symbolKindMuhr": "Печать",
-    "symbolSource": "Источник"
+    "symbolSource": "Источник",
+    "categoryTurkiy": "Тюркское государство",
+    "categorySulola": "Под властью тюркской династии",
+    "categoryMunozarali": "Тюркская принадлежность спорна",
+    "sortedNote": "Государства упорядочены по году основания. Значок категории показывает связь государства с тюркским миром."
   },
   "topics": {
     "capitalsMapTitle": "Столицы на карте",

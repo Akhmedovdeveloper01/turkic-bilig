@@ -26,7 +26,9 @@
     "period": "Dönem",
     "capital": "Başkent",
     "field": "Alan",
-    "approximate": "yaklaşık"
+    "approximate": "yaklaşık",
+    "yearBC": "MÖ {year}",
+    "yearAD": "MS {year}"
   },
   "translation": {
     "notTranslated": "Bu sayfa henüz {lang} diline çevrilmedi. Aşağıda orijinal metin gösterilmektedir.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Damga",
     "symbolKindTugro": "Tuğra",
     "symbolKindMuhr": "Mühür",
-    "symbolSource": "Kaynak"
+    "symbolSource": "Kaynak",
+    "categoryTurkiy": "Türk devleti",
+    "categorySulola": "Türk hanedanı tarafından yönetilen",
+    "categoryMunozarali": "Türklükle bağı tartışmalı",
+    "sortedNote": "Devletler kuruluş yılına göre sıralanmıştır. Kategori etiketi, devletin Türk dünyasıyla bağını gösterir."
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

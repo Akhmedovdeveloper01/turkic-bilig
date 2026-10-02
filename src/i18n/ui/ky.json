@@ -26,7 +26,9 @@
     "period": "Мезгили",
     "capital": "Борбору",
     "field": "Тармагы",
-    "approximate": "болжол менен"
+    "approximate": "болжол менен",
+    "yearBC": "б.з.ч. {year}",
+    "yearAD": "б.з. {year}"
   },
   "translation": {
     "notTranslated": "Бул бет азырынча {lang} тилине которулган эмес. Төмөндө оригинал текст көрсөтүлгөн.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Тамга",
     "symbolKindTugro": "Тугра",
     "symbolKindMuhr": "Мөөр",
-    "symbolSource": "Булак"
+    "symbolSource": "Булак",
+    "categoryTurkiy": "Түрк мамлекети",
+    "categorySulola": "Түрк династиясы башкарган",
+    "categoryMunozarali": "Түрктүк менен байланышы талаштуу",
+    "sortedNote": "Мамлекеттер түзүлгөн жылы боюнча иреттелген. Категория белгиси мамлекеттин түрк дүйнөсү менен байланышын көрсөтөт."
   },
   "topics": {
     "capitalsMapTitle": "Борборлор картада",

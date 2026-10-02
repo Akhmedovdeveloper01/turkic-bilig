@@ -10,6 +10,8 @@ import StateSymbols from '../../../components/symbols/StateSymbols.astro';
 import { getStateGeoJSON } from '../../../data/geo';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
+import { formatPeriod } from '../../../i18n/years';
+import StateCategoryBadge from '../../../components/states/StateCategoryBadge.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('stateFacts');
@@ -48,9 +50,6 @@ const scholarEntries = await Promise.all(
   })
 );
 
-function formatYear(year: number, era: 'm.av' | 'milodiy') {
-  return era === 'm.av' ? `mil. av. ${year}` : `${year}`;
-}
 
 const stateGeoJSON =
   facts?.data.mapYear !== undefined ? getStateGeoJSON(slug!, facts.data.mapYear) : undefined;
@@ -60,6 +59,7 @@ const stateGeoJSON =
   <div class="mb-4 flex flex-wrap items-center gap-2">
     <h1 class="text-3xl font-bold tracking-tight text-ink">{entry.data.title}</h1>
     <VerifiedBadge lang={lang!} verified={facts?.data.verified ?? false} />
+    {facts && <StateCategoryBadge lang={lang!} category={facts.data.category} />}
   </div>
 
   {isFallback && <TranslationNotice lang={lang!} />}
@@ -71,8 +71,7 @@ const stateGeoJSON =
       <div>
         <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.period')}</p>
         <p class="text-ink">
-          {formatYear(facts.data.period.startYear, facts.data.period.startEra)} —{' '}
-          {formatYear(facts.data.period.endYear, facts.data.period.endEra)}
+          {formatPeriod(t, facts.data.period)}
         </p>
       </div>
       {facts.data.capital && (

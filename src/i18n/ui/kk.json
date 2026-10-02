@@ -26,7 +26,9 @@
     "period": "Кезеңі",
     "capital": "Астанасы",
     "field": "Саласы",
-    "approximate": "шамамен"
+    "approximate": "шамамен",
+    "yearBC": "б.з.д. {year}",
+    "yearAD": "б.з. {year}"
   },
   "translation": {
     "notTranslated": "Бұл бет әлі {lang} тіліне аударылмаған. Төменде түпнұсқа мәтін көрсетілген.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Таңба",
     "symbolKindTugro": "Тұғыра",
     "symbolKindMuhr": "Мөр",
-    "symbolSource": "Дереккөз"
+    "symbolSource": "Дереккөз",
+    "categoryTurkiy": "Түркі мемлекеті",
+    "categorySulola": "Түркі әулеті басқарған",
+    "categoryMunozarali": "Түркілікпен байланысы даулы",
+    "sortedNote": "Мемлекеттер құрылған жылы бойынша реттелген. Санат белгісі мемлекеттің түркі әлемімен байланысын көрсетеді."
   },
   "topics": {
     "capitalsMapTitle": "Астаналар картада",

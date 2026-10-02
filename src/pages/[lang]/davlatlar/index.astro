@@ -4,6 +4,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
+import StateCategoryBadge from '../../../components/states/StateCategoryBadge.astro';
+import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { lang: locale.code } }));
@@ -19,15 +21,22 @@ const items = await Promise.all(
     const slug = fact.id;
     const localized = await getEntry('states', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('states', `uz/${slug}`));
-    return { slug, entry: original, isFallback: !localized };
+    return { slug, entry: original, isFallback: !localized, facts: fact.data };
   })
+);
+// Tashkil topgan yili bo'yicha (miloddan avvalgilar birinchi).
+items.sort(
+  (a, b) =>
+    sortableYear(a.facts.period.startYear, a.facts.period.startEra) -
+    sortableYear(b.facts.period.startYear, b.facts.period.startEra)
 );
 ---
 
 <BaseLayout lang={lang!} title={t('nav.states')}>
-  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
+  <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
+  <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
   <ul class="grid gap-4 sm:grid-cols-2">
-    {items.map(({ slug, entry, isFallback }, index) => entry && (
+    {items.map(({ slug, entry, isFallback, facts }, index) => entry && (
       <EntryCard
         lang={lang!}
         href={`/${lang}/davlatlar/${slug}`}
@@ -35,7 +44,12 @@ const items = await Promise.all(
         summary={entry.data.summary}
         isFallback={isFallback}
         index={index}
-      />
+      >
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-medium tabular-nums text-ink-muted">{formatPeriod(t, facts.period)}</span>
+          <StateCategoryBadge lang={lang!} category={facts.category} />
+        </div>
+      </EntryCard>
     ))}
   </ul>
 </BaseLayout>

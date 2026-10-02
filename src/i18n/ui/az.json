@@ -26,7 +26,9 @@
     "period": "Dövrü",
     "capital": "Paytaxtı",
     "field": "Sahə",
-    "approximate": "təxminən"
+    "approximate": "təxminən",
+    "yearBC": "e.ə. {year}",
+    "yearAD": "b.e. {year}"
   },
   "translation": {
     "notTranslated": "Bu səhifə hələ {lang} dilinə tərcümə edilməyib. Aşağıda orijinal mətn göstərilir.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Damğa",
     "symbolKindTugro": "Tuğra",
     "symbolKindMuhr": "Möhür",
-    "symbolSource": "Mənbə"
+    "symbolSource": "Mənbə",
+    "categoryTurkiy": "Türk dövləti",
+    "categorySulola": "Türk sülaləsi tərəfindən idarə olunan",
+    "categoryMunozarali": "Türklüklə əlaqəsi mübahisəli",
+    "sortedNote": "Dövlətlər yaranma ilinə görə sıralanıb. Kateqoriya nişanı dövlətin türk dünyası ilə əlaqəsini göstərir."
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

@@ -7,6 +7,7 @@ import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
+import { formatYear } from '../../../i18n/years';
 
 export async function getStaticPaths() {
   const facts = await getCollection('scholarFacts');
@@ -42,12 +43,10 @@ const stateEntries = facts
     )
   : [];
 
-function formatYear(year: number | undefined, era: 'm.av' | 'milodiy') {
-  if (year === undefined) return null;
-  return era === 'm.av' ? `mil. av. ${year}` : `${year}`;
-}
-const birth = facts ? formatYear(facts.data.birthYear, facts.data.birthEra) : null;
-const death = facts ? formatYear(facts.data.deathYear, facts.data.deathEra) : null;
+const yearOrNull = (year: number | undefined, era: 'm.av' | 'milodiy') =>
+  year === undefined ? null : formatYear(t, year, era);
+const birth = facts ? yearOrNull(facts.data.birthYear, facts.data.birthEra) : null;
+const death = facts ? yearOrNull(facts.data.deathYear, facts.data.deathEra) : null;
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>

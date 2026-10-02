@@ -1,0 +1,29 @@
+---
+/**
+ * Tarixiy davlatning turkiy dunyo bilan bog'liqlik toifasi belgisi.
+ * Rang bilan birga matn ham bor — faqat rangga tayanilmaydi.
+ */
+import { createTranslator } from '../../i18n/ui';
+
+interface Props {
+  lang: string;
+  category: 'turkiy' | 'turkiy-sulola' | 'munozarali';
+}
+const { lang, category } = Astro.props;
+const t = createTranslator(lang);
+
+const LABEL = {
+  turkiy: t('states.categoryTurkiy'),
+  'turkiy-sulola': t('states.categorySulola'),
+  munozarali: t('states.categoryMunozarali'),
+};
+const STYLE = {
+  turkiy: 'border-brand/40 bg-brand/10 text-brand-dark dark:text-brand',
+  'turkiy-sulola': 'border-gold/40 bg-gold-soft text-gold',
+  munozarali: 'border-accent/40 bg-accent-soft text-accent border-dashed',
+};
+---
+
+<span class:list={['inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium', STYLE[category]]}>
+  {LABEL[category]}
+</span>

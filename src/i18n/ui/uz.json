@@ -26,7 +26,9 @@
     "period": "Davri",
     "capital": "Poytaxti",
     "field": "Soha",
-    "approximate": "taxminiy"
+    "approximate": "taxminiy",
+    "yearBC": "mil. av. {year}",
+    "yearAD": "milodiy {year}"
   },
   "translation": {
     "notTranslated": "Bu sahifa hali {lang} tiliga tarjima qilinmagan. Quyida asl matn ko'rsatilmoqda.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Tamg'a",
     "symbolKindTugro": "Tug'ro",
     "symbolKindMuhr": "Muhr",
-    "symbolSource": "Manba"
+    "symbolSource": "Manba",
+    "categoryTurkiy": "Turkiy davlat",
+    "categorySulola": "Turkiy sulola boshqargan",
+    "categoryMunozarali": "Turkiyligi munozarali",
+    "sortedNote": "Davlatlar tashkil topgan yili bo'yicha tartiblangan. Toifa belgisi davlatning turkiy dunyo bilan bog'liqligi qanday ekanini bildiradi."
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

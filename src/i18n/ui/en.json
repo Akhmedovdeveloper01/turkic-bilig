@@ -26,7 +26,9 @@
     "period": "Period",
     "capital": "Capital",
     "field": "Field",
-    "approximate": "approximate"
+    "approximate": "approximate",
+    "yearBC": "{year} BC",
+    "yearAD": "AD {year}"
   },
   "translation": {
     "notTranslated": "This page has not yet been translated into {lang}. The original text is shown below.",
@@ -109,7 +111,11 @@
     "symbolKindTamga": "Tamga",
     "symbolKindTugro": "Tughra",
     "symbolKindMuhr": "Seal",
-    "symbolSource": "Source"
+    "symbolSource": "Source",
+    "categoryTurkiy": "Turkic state",
+    "categorySulola": "Ruled by a Turkic dynasty",
+    "categoryMunozarali": "Turkic link disputed",
+    "sortedNote": "States are ordered by founding year. The category badge shows how each state relates to the Turkic world."
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

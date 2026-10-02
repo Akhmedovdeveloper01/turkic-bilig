@@ -18,7 +18,7 @@ interface Props {
   fallbackTexts?: CollectionEntry<'states'>['data']['symbolTexts'];
 }
 
-const { lang, facts, texts, fallbackTexts = {} } = Astro.props;
+const { lang, facts, texts = {}, fallbackTexts = {} } = Astro.props;
 const t = createTranslator(lang);
 
 const KIND_LABEL = {
@@ -28,8 +28,10 @@ const KIND_LABEL = {
   muhr: t('states.symbolKindMuhr'),
 };
 
+// `?? []` — dev server eski kontent keshi bilan ishlaganda (sxemaga yangi
+// maydon qo'shilgandan keyin) maydon hali bo'lmasligi mumkin.
 const items = await Promise.all(
-  facts.symbols.map(async (s) => {
+  (facts.symbols ?? []).map(async (s) => {
     const text = texts[s.id] ?? fallbackTexts[s.id];
     const sources = (await Promise.all(s.sourceIds.map((ref) => getEntry(ref)))).filter((e) => e !== undefined);
     return { ...s, title: text?.title ?? s.id, caption: text?.caption, sources };

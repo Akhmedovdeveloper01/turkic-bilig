@@ -28,7 +28,9 @@
     "field": "Ugur",
     "approximate": "takmynan",
     "yearBC": "b.e.öň {year}",
-    "yearAD": "b.e. {year}"
+    "yearAD": "b.e. {year}",
+    "photoCredit": "Surat",
+    "photoCropped": "kesilen"
   },
   "translation": {
     "notTranslated": "Bu sahypa entek {lang} diline terjime edilmedi. Aşakda asyl tekst görkezilýär.",
@@ -184,5 +186,17 @@
     "topicsCardDesc": "Etnogenez, dil klassifikasiýasy, döwletleriň hronologiýasy",
     "statesCardTitle": "Döwletler",
     "statesCardDesc": "Taryhy hakanlyklar we imperiýalar"
+  },
+  "hero": {
+    "altHome": "Içerigalanyň günbatar derwezesi (Ata derweze), Hywa, gije",
+    "altPeoples": "Gyrgyzystanyň Alaý etrabyndaky ak öý we dag görnüşi",
+    "altStates": "Samarkantdaky Registan toplumynyň panoramasy",
+    "altScholars": "«Kutadgu biligiň» Wena nusgasynyň sözbaşy sahypasy (uýgur ýazuwynda)",
+    "altTopics": "Mahmyt Kaşgarlynyň «Diwanu lugat at-türk» eserindäki dünýä kartasy",
+    "altOrxun": "Kültegin ýadygärligi, Orhon ýazgylary muzeýi",
+    "peoplesLead": "Altaýdan Balkanlara çenli — türki halklaryň dili, mekany we döwletliligi.",
+    "statesLead": "Hunlardan Osmanlylara çenli — türki döwletler we nebereler, olaryň hronologiýasy we mirasdüşerligi.",
+    "scholarsLead": "Türki dünýäsiniň alymlary, şahyrlary we akyldarlary.",
+    "topicsLead": "Etnogenez, dil toparlary, ýazuw we beýleki umumy mowzuklar."
   }
 }

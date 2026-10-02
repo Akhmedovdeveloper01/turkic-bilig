@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import heroBg from '../../assets/heroes/bosh.jpg';
+import heroImages from '../../data/hero-images.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import OrnamentDivider from '../../components/OrnamentDivider.astro';
 import Logo from '../../components/Logo.astro';
@@ -15,9 +18,22 @@ const t = createTranslator(lang!);
 
 <BaseLayout lang={lang!}>
   <section
-    class="tb-animate-gradient relative -mx-4 overflow-hidden px-6 py-24 text-center shadow-2xl shadow-brand/30 sm:py-32"
-    style="background-image: var(--gradient-hero); border-radius: 1.75rem;"
+    class="relative -mx-4 overflow-hidden bg-[#0d1b1e] px-6 py-24 text-center shadow-2xl shadow-brand/30 sm:py-32"
+    style="border-radius: 1.75rem;"
   >
+    <Image
+      src={heroBg}
+      alt={t('hero.altHome')}
+      widths={[640, 1024, 1600, 2200]}
+      sizes="(min-width: 1152px) 1152px, 100vw"
+      loading="eager"
+      class="absolute inset-0 h-full w-full object-cover"
+      style="object-position: 50% 45%"
+    />
+    <div class="tb-animate-gradient absolute inset-0 opacity-[0.78]" style="background-image: var(--gradient-hero);" aria-hidden="true"></div>
+    <p class="absolute bottom-2 end-4 text-[0.65rem] text-white/70">
+      {t('common.photoCredit')}: <a href={heroImages.bosh.sourceUrl} class="underline decoration-white/40 hover:text-white">{heroImages.bosh.author}</a>, {heroImages.bosh.license}
+    </p>
     <div class="pointer-events-none absolute -left-8 top-4 tb-animate-float" style="animation-duration: 8s;">
       <Logo class="h-28 w-28 text-white/20" />
     </div>

@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import OriginMap from '../../../components/OriginMap.astro';
 import StatehoodBadge from '../../../components/peoples/StatehoodBadge.astro';
@@ -49,7 +50,7 @@ const homelandPoint = {
 ---
 
 <BaseLayout lang={lang!} title={t('nav.peoples')}>
-  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.peoples')}</h1>
+  <PageHero lang={lang!} image="xalqlar" alt={t('hero.altPeoples')} title={t('nav.peoples')} lead={t('hero.peoplesLead')} focus="50% 60%" />
 
   <PeoplesOverview
     lang={lang!}

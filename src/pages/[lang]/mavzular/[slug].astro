@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
 import VerifiedBadge from '../../../components/VerifiedBadge.astro';
 import TranslationNotice from '../../../components/TranslationNotice.astro';
 import DisputedList from '../../../components/DisputedList.astro';
@@ -65,14 +66,26 @@ if (showStatesMap) {
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
+  {showRunic ? (
+    <>
+      <PageHero lang={lang!} image="orxun" alt={t('hero.altOrxun')} title={entry.data.title} lead={entry.data.summary} focus="50% 35%" />
+      <div class="mb-6 flex flex-wrap items-center gap-2">
+        <VerifiedBadge lang={lang!} verified={facts?.data.verified ?? false} />
+      </div>
+      {isFallback && <TranslationNotice lang={lang!} />}
+    </>
+  ) : (
+    <>
   <div class="mb-4 flex flex-wrap items-center gap-2">
-    <h1 class="text-3xl font-bold tracking-tight text-ink">{entry.data.title}</h1>
-    <VerifiedBadge lang={lang!} verified={facts?.data.verified ?? false} />
-  </div>
-
-  {isFallback && <TranslationNotice lang={lang!} />}
-
-  <p class="mb-6 text-lg text-ink-muted">{entry.data.summary}</p>
+      <h1 class="text-3xl font-bold tracking-tight text-ink">{entry.data.title}</h1>
+      <VerifiedBadge lang={lang!} verified={facts?.data.verified ?? false} />
+    </div>
+  
+    {isFallback && <TranslationNotice lang={lang!} />}
+  
+    <p class="mb-6 text-lg text-ink-muted">{entry.data.summary}</p>
+    </>
+  )}
 
   {showRunic && <RunicTransliterator lang={lang!} />}
 

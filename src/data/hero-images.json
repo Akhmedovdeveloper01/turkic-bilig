@@ -1,0 +1,50 @@
+{
+  "bosh": {
+    "file": "bosh.jpg",
+    "commonsTitle": "File:Itchan Kala west gate.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Itchan_Kala_west_gate.jpg",
+    "author": "Bgag",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "xalqlar": {
+    "file": "xalqlar.jpg",
+    "commonsTitle": "File:Alay District landscape Kyrgyzstan - yurt.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alay_District_landscape_Kyrgyzstan_-_yurt.jpg",
+    "author": "Radosław Botev",
+    "license": "CC BY 3.0 pl",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en"
+  },
+  "davlatlar": {
+    "file": "davlatlar.jpg",
+    "commonsTitle": "File:Panorama of Registan Complex - Samarkand - Uzbekistan (7480216380).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_of_Registan_Complex_-_Samarkand_-_Uzbekistan_(7480216380).jpg",
+    "author": "Adam Jones from Kelowna, BC, Canada",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "allomalar": {
+    "file": "allomalar.jpg",
+    "commonsTitle": "File:Kutadğu Bilig.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kutad%C4%9Fu_Bilig.jpg",
+    "author": "«Qutadg'u bilig», Vena nusxasi (Wikimedia Commons)",
+    "license": "Public domain",
+    "licenseUrl": null
+  },
+  "mavzular": {
+    "file": "mavzular.jpg",
+    "commonsTitle": "File:Kashgari map.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kashgari_map.jpg",
+    "author": "Mahmud al-Kashgari",
+    "license": "Public domain",
+    "licenseUrl": null
+  },
+  "orxun": {
+    "file": "orxun.jpg",
+    "commonsTitle": "File:Kultigin Monument of Orkhon Inscriptions.jpeg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kultigin_Monument_of_Orkhon_Inscriptions.jpeg",
+    "author": "Vezirtonyukuk",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+}

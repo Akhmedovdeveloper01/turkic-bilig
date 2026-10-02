@@ -28,7 +28,9 @@
     "field": "Soha",
     "approximate": "taxminiy",
     "yearBC": "mil. av. {year}",
-    "yearAD": "milodiy {year}"
+    "yearAD": "milodiy {year}",
+    "photoCredit": "Rasm",
+    "photoCropped": "kesib olingan"
   },
   "translation": {
     "notTranslated": "Bu sahifa hali {lang} tiliga tarjima qilinmagan. Quyida asl matn ko'rsatilmoqda.",
@@ -184,5 +186,17 @@
     "topicsCardDesc": "Etnogenez, til tasnifi, davlatlar xronologiyasi",
     "statesCardTitle": "Davlatlar",
     "statesCardDesc": "Tarixiy xoqonlik va imperiyalar"
+  },
+  "hero": {
+    "altHome": "Xiva, Ichan qal'aning G'arbiy darvozasi (Ota darvoza), kechki payt",
+    "altPeoples": "Qirg'izistonning Olay tumanidagi o'tov va tog' manzarasi",
+    "altStates": "Samarqanddagi Registon ansambli panoramasi",
+    "altScholars": "«Qutadg'u bilig» Vena nusxasining sarlavha sahifasi (uyg'ur yozuvida)",
+    "altTopics": "Mahmud Koshg'ariyning «Devonu lug'otit turk» asaridagi dunyo xaritasi",
+    "altOrxun": "Kul tigin bitiktoshi, O'rxun yozuvlari muzeyi",
+    "peoplesLead": "Altoydan Bolqongacha — turkiy xalqlarning tili, joylashuvi va davlatchiligi.",
+    "statesLead": "Xunnudan Usmonlilargacha — turkiy davlatlar va sulolalar, ularning xronologiyasi va vorisligi.",
+    "scholarsLead": "Turkiy dunyo olimlari, shoirlari va mutafakkirlari.",
+    "topicsLead": "Etnogenez, til tasnifi, yozuv va boshqa umumiy mavzular."
   }
 }

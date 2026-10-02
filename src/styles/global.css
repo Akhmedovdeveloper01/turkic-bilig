@@ -496,3 +496,18 @@ body {
 .tb-runic-hero {
   background-image: radial-gradient(circle at 100% 0, color-mix(in srgb, var(--color-gold) 14%, transparent), transparent 55%);
 }
+
+/* ---- PageHero: rasm ustidagi o'qilishni ta'minlovchi qatlam ---- */
+.tb-hero {
+  background-color: #0d1b1e;
+}
+.tb-hero-overlay {
+  background-image:
+    linear-gradient(to top, rgb(8 18 20 / 0.85) 0%, rgb(8 18 20 / 0.15) 60%),
+    linear-gradient(to right, rgb(8 18 20 / 0.55), transparent 70%);
+}
+[dir='rtl'] .tb-hero-overlay {
+  background-image:
+    linear-gradient(to top, rgb(8 18 20 / 0.85) 0%, rgb(8 18 20 / 0.15) 60%),
+    linear-gradient(to left, rgb(8 18 20 / 0.55), transparent 70%);
+}

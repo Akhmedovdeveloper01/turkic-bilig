@@ -28,7 +28,9 @@
     "field": "Field",
     "approximate": "approximate",
     "yearBC": "{year} BC",
-    "yearAD": "AD {year}"
+    "yearAD": "AD {year}",
+    "photoCredit": "Photo",
+    "photoCropped": "cropped"
   },
   "translation": {
     "notTranslated": "This page has not yet been translated into {lang}. The original text is shown below.",
@@ -184,5 +186,17 @@
     "topicsCardDesc": "Ethnogenesis, language classification, chronology of states",
     "statesCardTitle": "States",
     "statesCardDesc": "Historical khaganates and empires"
+  },
+  "hero": {
+    "altHome": "The western gate (Ota Darvoza) of Itchan Kala, Khiva, at night",
+    "altPeoples": "A yurt and mountain landscape in Alay District, Kyrgyzstan",
+    "altStates": "Panorama of the Registan ensemble in Samarkand",
+    "altScholars": "Title page of the Vienna copy of Kutadgu Bilig (in Uyghur script)",
+    "altTopics": "The world map from Mahmud al-Kashgari's Dīwān Lughāt al-Turk",
+    "altOrxun": "The Kül Tigin stele, Museum of the Orkhon Inscriptions",
+    "peoplesLead": "From the Altai to the Balkans — the languages, homelands and statehood of the Turkic peoples.",
+    "statesLead": "From the Xiongnu to the Ottomans — Turkic states and dynasties, their chronology and succession.",
+    "scholarsLead": "Scholars, poets and thinkers of the Turkic world.",
+    "topicsLead": "Ethnogenesis, language classification, script and other general topics."
   }
 }

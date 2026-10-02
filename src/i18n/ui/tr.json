@@ -28,7 +28,9 @@
     "field": "Alan",
     "approximate": "yaklaşık",
     "yearBC": "MÖ {year}",
-    "yearAD": "MS {year}"
+    "yearAD": "MS {year}",
+    "photoCredit": "Fotoğraf",
+    "photoCropped": "kırpılmış"
   },
   "translation": {
     "notTranslated": "Bu sayfa henüz {lang} diline çevrilmedi. Aşağıda orijinal metin gösterilmektedir.",
@@ -184,5 +186,17 @@
     "topicsCardDesc": "Etnogenez, dil sınıflandırması, devletler kronolojisi",
     "statesCardTitle": "Devletler",
     "statesCardDesc": "Tarihi hakanlıklar ve imparatorluklar"
+  },
+  "hero": {
+    "altHome": "İçan Kale'nin batı kapısı (Ata Derveze), Hive, gece",
+    "altPeoples": "Kırgızistan'ın Alay ilçesinde bir yurt ve dağ manzarası",
+    "altStates": "Semerkant'taki Registan külliyesinin panoraması",
+    "altScholars": "Kutadgu Bilig'in Viyana nüshasının başlık sayfası (Uygur yazısıyla)",
+    "altTopics": "Kaşgarlı Mahmud'un Divanü Lügati't-Türk'ündeki dünya haritası",
+    "altOrxun": "Kül Tigin yazıtı, Orhun Yazıtları Müzesi",
+    "peoplesLead": "Altay'dan Balkanlar'a — Türk halklarının dili, yurdu ve devletliliği.",
+    "statesLead": "Hunlardan Osmanlılara — Türk devletleri ve hanedanları, kronolojileri ve halefiyetleri.",
+    "scholarsLead": "Türk dünyasının bilginleri, şairleri ve düşünürleri.",
+    "topicsLead": "Etnogenez, dil sınıflandırması, yazı ve diğer genel konular."
   }
 }

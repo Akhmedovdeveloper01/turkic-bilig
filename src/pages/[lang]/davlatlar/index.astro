@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
@@ -64,7 +65,7 @@ const chartItems = items
 ---
 
 <BaseLayout lang={lang!} title={t('nav.states')}>
-  <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
+  <PageHero lang={lang!} image="davlatlar" alt={t('hero.altStates')} title={t('nav.states')} lead={t('hero.statesLead')} focus="50% 45%" />
   <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
 
   <DidYouKnow

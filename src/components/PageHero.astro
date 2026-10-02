@@ -1,0 +1,68 @@
+---
+/**
+ * Bo'lim sahifalari uchun rasmli banner. Rasmlar — Wikimedia Commons'dagi
+ * haqiqiy fotosuratlar (src/data/hero-images.json: muallif, litsenziya,
+ * manba). CC BY / BY-SA talabiga ko'ra muallif, litsenziya va "kesib olingan"
+ * izohi har bir bannerda ko'rsatiladi. Matn o'qilishi uchun rasm ustida
+ * to'q gradient qatlam bor (mantiqiy yo'nalishda — RTL'da teskari).
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import heroImages from '../data/hero-images.json';
+import { createTranslator } from '../i18n/ui';
+
+type HeroKey = keyof typeof heroImages;
+interface Props {
+  lang: string;
+  image: HeroKey;
+  alt: string;
+  title: string;
+  lead?: string;
+  /** CSS object-position, masalan "60% 40%". */
+  focus?: string;
+  /** contain — kichik yoki qo'lyozma tasvirlar uchun (kesilmaydi, yonda ko'rsatiladi). */
+  fit?: 'cover' | 'contain';
+}
+const { lang, image, alt, title, lead, focus = '50% 50%', fit = 'cover' } = Astro.props;
+const t = createTranslator(lang);
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/heroes/*.jpg', { eager: true });
+const meta = heroImages[image];
+const src = files[`../assets/heroes/${meta.file}`].default;
+const isPd = /public domain|cc0/i.test(meta.license);
+---
+
+<header
+  class="tb-hero relative -mx-4 mb-8 overflow-hidden sm:mx-0 sm:rounded-3xl"
+  style={fit === 'contain' ? 'background-image: var(--gradient-hero)' : undefined}
+>
+  {fit === 'cover' ? (
+    <Image
+      src={src}
+      alt={alt}
+      widths={[640, 1024, 1600, 2200]}
+      sizes="(min-width: 1152px) 1120px, 100vw"
+      loading="eager"
+      class="absolute inset-0 h-full w-full object-cover"
+      style={`object-position:${focus}`}
+    />
+  ) : (
+    <div class="absolute inset-y-0 end-0 hidden w-1/2 items-center justify-center p-6 sm:flex">
+      <Image src={src} alt={alt} widths={[400, 750]} sizes="40vw" loading="eager" class="max-h-full w-auto rounded-xl shadow-2xl ring-1 ring-white/20" />
+    </div>
+  )}
+  {fit === 'cover' && <div class="tb-hero-overlay absolute inset-0" aria-hidden="true"></div>}
+
+  <div class="relative flex min-h-[15rem] flex-col justify-end px-6 pb-10 pt-16 sm:min-h-[19rem] sm:px-10 sm:pb-12">
+    <h1 class="max-w-2xl text-3xl font-extrabold tracking-tight text-white drop-shadow sm:text-5xl">{title}</h1>
+    {lead && <p class="mt-3 max-w-xl text-base text-white/85 sm:text-lg">{lead}</p>}
+  </div>
+
+  <p class="absolute bottom-2 end-3 max-w-[90%] truncate text-[0.65rem] text-white/70">
+    {t('common.photoCredit')}:{' '}
+    <a href={meta.sourceUrl} class="underline decoration-white/40 hover:text-white">{meta.author}</a>
+    {', '}
+    {meta.licenseUrl ? <a href={meta.licenseUrl} class="underline decoration-white/40 hover:text-white">{meta.license}</a> : meta.license}
+    {!isPd && fit === 'cover' && <> · {t('common.photoCropped')}</>}
+  </p>
+</header>

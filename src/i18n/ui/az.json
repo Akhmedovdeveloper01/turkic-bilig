@@ -28,7 +28,9 @@
     "field": "Sahə",
     "approximate": "təxminən",
     "yearBC": "e.ə. {year}",
-    "yearAD": "b.e. {year}"
+    "yearAD": "b.e. {year}",
+    "photoCredit": "Foto",
+    "photoCropped": "kəsilib"
   },
   "translation": {
     "notTranslated": "Bu səhifə hələ {lang} dilinə tərcümə edilməyib. Aşağıda orijinal mətn göstərilir.",
@@ -184,5 +186,17 @@
     "topicsCardDesc": "Etnogenez, dil təsnifatı, dövlətlərin xronologiyası",
     "statesCardTitle": "Dövlətlər",
     "statesCardDesc": "Tarixi xaqanlıqlar və imperiyalar"
+  },
+  "hero": {
+    "altHome": "İçərişəhərin qərb darvazası (Ata darvaza), Xivə, gecə",
+    "altPeoples": "Qırğızıstanın Alay rayonunda alaçıq və dağ mənzərəsi",
+    "altStates": "Səmərqənddəki Registan ansamblının panoraması",
+    "altScholars": "«Qutadqu bilik» Vyana nüsxəsinin başlıq səhifəsi (uyğur yazısı ilə)",
+    "altTopics": "Mahmud Kaşğarinin «Divani-lüğət-it-türk» əsərindəki dünya xəritəsi",
+    "altOrxun": "Kültigin abidəsi, Orxon Yazıları Muzeyi",
+    "peoplesLead": "Altaydan Balkanlara — türk xalqlarının dili, məskəni və dövlətçiliyi.",
+    "statesLead": "Hunlardan Osmanlılara — türk dövlətləri və sülalələri, xronologiyası və varisliyi.",
+    "scholarsLead": "Türk dünyasının alimləri, şairləri və mütəfəkkirləri.",
+    "topicsLead": "Etnogenez, dil təsnifatı, yazı və digər ümumi mövzular."
   }
 }

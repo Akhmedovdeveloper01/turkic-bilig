@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
@@ -25,7 +26,7 @@ const items = await Promise.all(
 ---
 
 <BaseLayout lang={lang!} title={t('nav.topics')}>
-  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.topics')}</h1>
+  <PageHero lang={lang!} image="mavzular" alt={t('hero.altTopics')} title={t('nav.topics')} lead={t('hero.topicsLead')} fit="contain" />
   <ul class="grid gap-4 sm:grid-cols-2">
     {items.map(({ slug, entry, isFallback }, index) => entry && (
       <EntryCard

@@ -21,9 +21,11 @@ interface Props {
 const { lang, items } = Astro.props;
 const t = createTranslator(lang);
 
+// `?? []` — dev server eski kontent keshi bilan ishlaganda (sxemaga yangi
+// maydon qo'shilgandan keyin) maydon hali bo'lmasligi mumkin.
 const cards = await Promise.all(
   items.flatMap((i) =>
-    i.cards.map(async (c) => {
+    (i.cards ?? []).map(async (c) => {
       const sources = (await Promise.all(c.sourceIds.map((r) => getEntry(r)))).filter((s) => s !== undefined);
       return {
         text: c.text,

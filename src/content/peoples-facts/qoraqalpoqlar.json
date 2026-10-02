@@ -1,0 +1,16 @@
+{
+  "endonym": "qaraqalpaqlar",
+  "accentColor": { "light": "#b0452a", "dark": "#e88466" },
+  "pattern": "zigzag",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 772340, "year": 2026, "country": "O'zbekiston", "sourceId": "uzbekistan-census-2026" }
+  ],
+  "regions": ["Qoraqalpog'iston Respublikasi (O'zbekiston)", "Qozog'iston"],
+  "location": { "name": "Nukus", "lat": 42.46, "lng": 59.6 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "uzbekistan-census-2026"],
+  "verified": false
+}

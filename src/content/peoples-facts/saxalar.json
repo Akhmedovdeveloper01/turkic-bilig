@@ -1,0 +1,16 @@
+{
+  "endonym": "саха",
+  "accentColor": { "light": "#3b6ea8", "dark": "#7ea9dc" },
+  "pattern": "key",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 478409, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Saxa (Yoqutiston) Respublikasi (Rossiya)", "Sharqiy Sibir"],
+  "location": { "name": "Yakutsk", "lat": 62.0355, "lng": 129.6755 },
+  "religion": ["Pravoslav xristianlik", "An'anaviy e'tiqodlar"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

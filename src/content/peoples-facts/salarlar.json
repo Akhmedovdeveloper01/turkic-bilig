@@ -1,0 +1,16 @@
+{
+  "endonym": "Salır",
+  "accentColor": { "light": "#7a5f2b", "dark": "#c4a466" },
+  "pattern": "wave",
+  "languageBranch": "o'g'uz",
+  "population": [
+    { "value": 165159, "year": 2020, "country": "Xitoy", "sourceId": "china-census-2020" }
+  ],
+  "regions": ["Chinxay (Xitoy)", "Gansu (Xitoy)"],
+  "location": { "name": "Xunxua", "lat": 35.85, "lng": 102.48 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "china-census-2020"],
+  "verified": false
+}

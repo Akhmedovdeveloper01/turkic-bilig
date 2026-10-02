@@ -1,0 +1,22 @@
+{
+  "endonym": "татарлар / tatarlar",
+  "accentColor": { "light": "#2f6f9c", "dark": "#6aa8d6" },
+  "pattern": "diamond",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 4713669, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Tatariston (Rossiya)", "Volga-Ural mintaqasi", "Boshqirdiston", "Sibir"],
+  "location": { "name": "Qozon", "lat": 55.7963, "lng": 49.1088 },
+  "religion": ["Islom (sunniylik)", "Pravoslav xristianlik (kryashenlar)"],
+  "historicalStates": ["oltin-orda"],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Volga tatarlarining etnogenezi — Volga Bulg'oriyasi aholisidan kelib chiqish nazariyasi va Oltin O'rda davridagi qipchoq-tatar guruhlari roli haqidagi nazariyalar",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

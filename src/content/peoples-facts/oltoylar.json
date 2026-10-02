@@ -1,0 +1,22 @@
+{
+  "endonym": "алтай кижи",
+  "accentColor": { "light": "#2f7f8f", "dark": "#62bccb" },
+  "pattern": "wave",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 83125, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Oltoy Respublikasi (Rossiya)", "Oltoy o'lkasi"],
+  "location": { "name": "Gorno-Altaysk", "lat": 51.9581, "lng": 85.9603 },
+  "religion": ["Shamanlik", "Burxonizm", "Pravoslav xristianlik"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Oltoy tilining tasnifi — janubiy oltoy shevalarining qipchoq guruhiga yaqinligi va shimoliy shevalarning alohidaligi",
+      "sourceIds": ["johanson-csato-2021"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "endonym": "къумукълар",
+  "accentColor": { "light": "#a0521f", "dark": "#e08b55" },
+  "pattern": "wave",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 565830, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Dog'iston (Rossiya)", "Shimoliy Kavkaz"],
+  "location": { "name": "Maxachqal'a", "lat": 42.9849, "lng": 47.5047 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

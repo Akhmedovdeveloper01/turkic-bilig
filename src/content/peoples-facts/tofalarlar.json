@@ -1,0 +1,16 @@
+{
+  "endonym": "тоъфа",
+  "accentColor": { "light": "#6b5a8c", "dark": "#a593c7" },
+  "pattern": "dots",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 719, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Irkutsk viloyati (Tofalariya, Rossiya)"],
+  "location": { "name": "Tofalariya (taxminiy)", "lat": 54.6, "lng": 98.0 },
+  "religion": ["Pravoslav xristianlik", "Shamanlik"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

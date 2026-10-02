@@ -1,0 +1,16 @@
+{
+  "endonym": "таулула / малкъарлыла",
+  "accentColor": { "light": "#2b5f7a", "dark": "#62a3c4" },
+  "pattern": "diamond",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 125044, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Kabardin-Bolqoriya (Rossiya)", "Shimoliy Kavkaz"],
+  "location": { "name": "Nalchik", "lat": 43.4853, "lng": 43.6071 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

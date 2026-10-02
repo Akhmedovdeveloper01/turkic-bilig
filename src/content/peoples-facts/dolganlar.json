@@ -1,0 +1,16 @@
+{
+  "endonym": "долган",
+  "accentColor": { "light": "#4a6b8c", "dark": "#86a6c7" },
+  "pattern": "key",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 8157, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Taymir (Krasnoyarsk o'lkasi, Rossiya)", "Saxa (Yoqutiston) Respublikasi"],
+  "location": { "name": "Xatanga", "lat": 71.98, "lng": 102.47 },
+  "religion": ["Pravoslav xristianlik", "An'anaviy e'tiqodlar"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

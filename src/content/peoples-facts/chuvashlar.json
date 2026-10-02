@@ -1,0 +1,16 @@
+{
+  "endonym": "чӑвашсем",
+  "accentColor": { "light": "#8c5a2b", "dark": "#cf9a63" },
+  "pattern": "cross",
+  "languageBranch": "o'g'ur",
+  "population": [
+    { "value": 1067139, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Chuvashiya (Rossiya)", "Volga bo'yi"],
+  "location": { "name": "Cheboksari", "lat": 56.1439, "lng": 47.2489 },
+  "religion": ["Pravoslav xristianlik", "An'anaviy e'tiqodlar"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

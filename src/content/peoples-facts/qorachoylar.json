@@ -1,0 +1,16 @@
+{
+  "endonym": "къарачайлыла",
+  "accentColor": { "light": "#2b7a5a", "dark": "#5fbf94" },
+  "pattern": "zigzag",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 226271, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Qorachoy-Cherkesiya (Rossiya)", "Shimoliy Kavkaz", "Turkiya"],
+  "location": { "name": "Qorachoyevsk", "lat": 43.7731, "lng": 41.9143 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

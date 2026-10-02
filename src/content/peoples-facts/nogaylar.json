@@ -1,0 +1,16 @@
+{
+  "endonym": "ногайлар",
+  "accentColor": { "light": "#8a6d1f", "dark": "#d0ad55" },
+  "pattern": "zigzag",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 109042, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Dog'iston (Rossiya)", "Stavropol o'lkasi", "Qorachoy-Cherkesiya", "Chechenistan"],
+  "location": { "name": "Terekli-Mekteb", "lat": 44.17, "lng": 45.87 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": ["oltin-orda"],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

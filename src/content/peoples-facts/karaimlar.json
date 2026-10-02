@@ -1,0 +1,22 @@
+{
+  "endonym": "karajlar",
+  "accentColor": { "light": "#5f6b2b", "dark": "#a3b066" },
+  "pattern": "key",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 192, "year": 2021, "country": "Litva", "sourceId": "lithuania-census-2021" }
+  ],
+  "regions": ["Litva (Trakay)", "Qrim", "Ukraina", "Polsha"],
+  "location": { "name": "Trakay", "lat": 54.6378, "lng": 24.9343 },
+  "religion": ["Karaimlik (iudaizmning bir yo'nalishi)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "lithuania-census-2021"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Karaimlarning etnik kelib chiqishi — xazar nazariyasi va boshqa qarashlar",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

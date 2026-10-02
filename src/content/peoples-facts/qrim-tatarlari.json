@@ -1,0 +1,22 @@
+{
+  "endonym": "qırımtatarlar",
+  "accentColor": { "light": "#1f6f8b", "dark": "#4fa9c9" },
+  "pattern": "key",
+  "languageBranch": "qipchoq",
+  "population": [
+    { "value": 248193, "year": 2001, "country": "Ukraina", "sourceId": "ukraine-census-2001" }
+  ],
+  "regions": ["Qrim yarim oroli", "O'zbekiston", "Turkiya", "Ruminiya"],
+  "location": { "name": "Oqmasjid (Simferopol)", "lat": 44.9521, "lng": 34.1024 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": ["oltin-orda"],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "ukraine-census-2001", "unga-68-262"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Qrimning 2014-yildan keyingi hududiy maqomi — BMT Bosh Assambleyasining 68/262-rezolyutsiyasi Ukrainaning hududiy yaxlitligini qo'llab-quvvatlagan; Rossiya yarim orolni o'z hududi deb hisoblaydi",
+      "sourceIds": ["unga-68-262"]
+    }
+  ]
+}

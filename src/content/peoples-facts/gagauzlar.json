@@ -1,0 +1,22 @@
+{
+  "endonym": "gagauzlar",
+  "accentColor": { "light": "#2b4f9c", "dark": "#6f8fd6" },
+  "pattern": "cross",
+  "languageBranch": "o'g'uz",
+  "population": [
+    { "value": 98200, "year": 2024, "country": "Moldova", "sourceId": "moldova-census-2024" }
+  ],
+  "regions": ["Gagauziya (Moldova)", "Ukraina (Bujak)", "Bolgariya"],
+  "location": { "name": "Komrat", "lat": 46.3, "lng": 28.65 },
+  "religion": ["Pravoslav xristianlik"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "moldova-census-2024"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Gagauzlarning kelib chiqishi — o'g'uz, pecheneg yoki saljuqiy guruhlardan kelib chiqish nazariyalari va turklashgan bolqon aholisi nazariyasi",
+      "sourceIds": ["golden-1992"]
+    }
+  ]
+}

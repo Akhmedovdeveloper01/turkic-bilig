@@ -1,0 +1,22 @@
+{
+  "endonym": "Sarïg Yogïr",
+  "accentColor": { "light": "#b08a1f", "dark": "#e6c25a" },
+  "pattern": "dots",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 14706, "year": 2020, "country": "Xitoy", "sourceId": "china-census-2020" }
+  ],
+  "regions": ["Gansu (Xitoy)"],
+  "location": { "name": "Sunan", "lat": 38.837, "lng": 99.616 },
+  "religion": ["Buddizm (tibet buddizmi)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "china-census-2020"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "G'arbiy yugur tilining tasnifi — Sibir turkiy tillariga yoki qadimgi uyg'ur tiliga yaqinligi",
+      "sourceIds": ["johanson-csato-2021"]
+    }
+  ]
+}

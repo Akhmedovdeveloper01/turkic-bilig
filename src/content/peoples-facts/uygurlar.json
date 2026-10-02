@@ -1,0 +1,26 @@
+{
+  "endonym": "ئۇيغۇرلار",
+  "accentColor": { "light": "#1f7a8c", "dark": "#56b8c9" },
+  "pattern": "diamond",
+  "languageBranch": "qarluq",
+  "population": [
+    { "value": 11774538, "year": 2020, "country": "Xitoy", "sourceId": "china-census-2020" }
+  ],
+  "regions": ["Shinjon-Uyg'ur avtonom rayoni (Xitoy)", "Qozog'iston", "Qirg'iziston", "O'zbekiston"],
+  "location": { "name": "Urumchi", "lat": 43.8256, "lng": 87.6168 },
+  "religion": ["Islom (sunniylik)"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "china-census-2020", "ohchr-xinjiang-2022", "prc-scio-xinjiang-2019"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Bugungi uyg'urlar bilan VIII–IX asrlardagi Uyg'ur xoqonligi aholisi o'rtasidagi bog'liqlik darajasi — etnonim XX asrda qayta qo'llanilgan",
+      "sourceIds": ["golden-1992"]
+    },
+    {
+      "topic": "Shinjondagi siyosat va inson huquqlari — BMT OHCHR 2022-yilgi hisobotida jiddiy inson huquqlari buzilishlari haqida xulosa berilgan; Xitoy hukumati o'z siyosatini terrorizm va ekstremizmga qarshi kurash sifatida baholaydi va bu xulosalarni rad etadi",
+      "sourceIds": ["ohchr-xinjiang-2022", "prc-scio-xinjiang-2019"]
+    }
+  ]
+}

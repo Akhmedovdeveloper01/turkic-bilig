@@ -1,0 +1,16 @@
+{
+  "endonym": "тадарлар",
+  "accentColor": { "light": "#9a3f5c", "dark": "#d97f9b" },
+  "pattern": "diamond",
+  "languageBranch": "sibir",
+  "population": [
+    { "value": 61365, "year": 2021, "country": "Rossiya", "sourceId": "rosstat-2021" }
+  ],
+  "regions": ["Xakasiya Respublikasi (Rossiya)", "Janubiy Sibir"],
+  "location": { "name": "Abakan", "lat": 53.7213, "lng": 91.4425 },
+  "religion": ["Pravoslav xristianlik", "Shamanlik"],
+  "historicalStates": [],
+  "scholars": [],
+  "sources": ["golden-1992", "johanson-csato-2021", "rosstat-2021"],
+  "verified": false
+}

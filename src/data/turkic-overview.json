@@ -1,0 +1,16 @@
+{
+  "note": "Turkiy xalqlarning umumiy soni bo'yicha ilmiy jihatdan tasdiqlangan yagona baho yo'q. Bu oraliq ommabop ma'lumotnomadan olingan va tekshirilishi kerak.",
+  "estimate": {
+    "min": 150000000,
+    "max": 200000000,
+    "sourceIds": [
+      "wikipedia-turkic-languages"
+    ],
+    "verified": false
+  },
+  "world": {
+    "value": 8200000000,
+    "year": 2024,
+    "sourceId": "wpp-2024-summary"
+  }
+}

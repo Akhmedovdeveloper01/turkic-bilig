@@ -4,6 +4,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import EntryCard from '../../../components/EntryCard.astro';
 import OriginMap from '../../../components/OriginMap.astro';
 import StatehoodBadge from '../../../components/peoples/StatehoodBadge.astro';
+import PeoplesOverview from '../../../components/peoples/PeoplesOverview.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import origin from '../../../data/origin.json';
@@ -23,7 +24,7 @@ const items = await Promise.all(
     const localized = await getEntry('peoples', `${lang}/${slug}`);
     const original = localized ?? (await getEntry('peoples', `uz/${slug}`));
     const population = fact.data.population.reduce((sum, p) => sum + p.value, 0);
-    return { slug, entry: original, isFallback: !localized, location: fact.data.location, population, statehood: fact.data.statehood };
+    return { slug, entry: original, isFallback: !localized, location: fact.data.location, population, statehood: fact.data.statehood, facts: fact.data };
   })
 );
 
@@ -48,7 +49,14 @@ const homelandPoint = {
 ---
 
 <BaseLayout lang={lang!} title={t('nav.peoples')}>
-  <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.peoples')}</h1>
+  <h1 class="mb-6 text-3xl font-bold tracking-tight text-ink">{t('nav.peoples')}</h1>
+
+  <PeoplesOverview
+    lang={lang!}
+    items={items
+      .filter((i) => i.entry)
+      .map((i) => ({ href: `/${lang}/xalqlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts }))}
+  />
 
   <div class="mb-8">
     <h2 class="mb-1 text-lg font-semibold text-ink">{t('peoples.originMapTitle')}</h2>

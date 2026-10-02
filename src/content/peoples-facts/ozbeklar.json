@@ -4,7 +4,7 @@
   "pattern": "key",
   "languageBranch": "qarluq",
   "population": [
-    { "value": 30300000, "year": 2024, "country": "O'zbekiston", "sourceId": "un-desa-2024" }
+    { "value": 30300000, "year": 2024, "country": "O'zbekiston", "sourceId": "un-desa-2024", "scope": "taxminiy" }
   ],
   "regions": ["Markaziy Osiyo", "Afg'oniston (shimoliy)", "Tojikiston", "Qirg'iziston", "Turkmaniston"],
   "location": { "name": "Toshkent", "lat": 41.2995, "lng": 69.2401 },

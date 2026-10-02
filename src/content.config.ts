@@ -58,6 +58,10 @@ const peopleFacts = defineCollection({
           year: z.number().int(),
           country: z.string(),
           sourceId: sourceRef,
+          /** etnik — xalqning o'zi; mamlakat-aholisi — butun mamlakat aholisi
+           * (etnik ro'yxat bo'lmagani uchun); taxminiy — manbasi qayta
+           * tekshirilishi kerak bo'lgan baho. */
+          scope: z.enum(['etnik', 'mamlakat-aholisi', 'taxminiy']).default('etnik'),
         })
       )
       .min(1, "Kamida bitta aholi statistikasi va uning manbasi shart"),

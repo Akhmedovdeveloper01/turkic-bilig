@@ -4,7 +4,7 @@
   "pattern": "diamond",
   "languageBranch": "qipchoq",
   "population": [
-    { "value": 13400000, "year": 2024, "country": "Qozog'iston", "sourceId": "un-desa-2024" }
+    { "value": 13400000, "year": 2024, "country": "Qozog'iston", "sourceId": "un-desa-2024", "scope": "taxminiy" }
   ],
   "regions": ["Markaziy Osiyo", "Xitoy (Shinjon)", "Rossiya", "Mo'g'uliston", "O'zbekiston"],
   "location": { "name": "Astana", "lat": 51.1694, "lng": 71.4491 },

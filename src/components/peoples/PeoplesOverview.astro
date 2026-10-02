@@ -1,0 +1,186 @@
+---
+/**
+ * Xalqlar sahifasidagi "Umumiy ma'lumot" bloki: davlatchilik holati bo'yicha
+ * sonlar, umumiy sonning taxminiy bahosi va dunyo aholisidagi ulushi, til
+ * guruhlari bo'yicha taqsimot, rasmiy statistikadagi sonlar diagrammasi.
+ *
+ * ILMIY QOIDA: har bir xalq uchun raqamlar turli yil, mamlakat va
+ * manbalardan — ular ataylab QO'SHILMAYDI (yig'indi "umumiy son" bo'lib
+ * ko'rinib, noto'g'ri tasavvur beradi). Umumiy son faqat manbali taxminiy
+ * oraliq sifatida, `src/data/turkic-overview.json` dan olinadi.
+ */
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import overview from '../../data/turkic-overview.json';
+
+type Facts = CollectionEntry<'peopleFacts'>['data'];
+interface Item {
+  href: string;
+  title: string;
+  facts: Facts;
+}
+interface Props {
+  lang: string;
+  items: Item[];
+}
+const { lang, items } = Astro.props;
+const t = createTranslator(lang);
+
+const compact = new Intl.NumberFormat(lang, { notation: 'compact', maximumFractionDigits: 1 });
+const full = new Intl.NumberFormat(lang);
+const pct = new Intl.NumberFormat(lang, { style: 'percent', maximumFractionDigits: 1 });
+
+// ---- Davlatchilik bo'yicha sonlar ----
+const countStatus = (s: string) => items.filter((i) => i.facts.statehood?.status === s).length;
+const tiles = [
+  { value: items.length, label: t('peoples.statPeoples'), dot: 'bg-ink-muted' },
+  { value: countStatus('mustaqil-davlat'), label: t('peoples.statIndependent'), dot: 'bg-brand' },
+  { value: countStatus('avtonomiya'), label: t('peoples.statAutonomy'), dot: 'bg-gold' },
+  { value: countStatus('yoq'), label: t('peoples.statNone'), dot: 'bg-line' },
+];
+
+// ---- Umumiy son va dunyo ulushi (taxminiy) ----
+const { estimate, world } = overview;
+const estimateSources = (await Promise.all(estimate.sourceIds.map((id) => getEntry('sources', id))))
+  .filter((s) => s !== undefined);
+const worldSource = await getEntry('sources', world.sourceId);
+const shareMin = estimate.min / world.value;
+const shareMax = estimate.max / world.value;
+
+// ---- Til guruhlari ----
+const BRANCH_KEY: Record<string, string> = {
+  "o'g'uz": 'peoples.branchOguz',
+  qipchoq: 'peoples.branchQipchoq',
+  qarluq: 'peoples.branchQarluq',
+  sibir: 'peoples.branchSibir',
+  "o'g'ur": 'peoples.branchOgur',
+  "arg'u": 'peoples.branchArgu',
+};
+const branchCounts = Object.keys(BRANCH_KEY)
+  .map((b) => ({
+    label: t(BRANCH_KEY[b]),
+    count: items.filter((i) => i.facts.languageBranch === b).length,
+    peoples: items.filter((i) => i.facts.languageBranch === b).map((i) => i.title),
+  }))
+  .filter((b) => b.count > 0)
+  .sort((a, b) => b.count - a.count);
+const maxBranch = Math.max(...branchCounts.map((b) => b.count));
+
+// ---- Rasmiy statistikadagi sonlar (har xalq uchun asosiy raqam) ----
+const rows = items
+  .map((i) => {
+    const p = [...i.facts.population].sort((a, b) => b.value - a.value)[0];
+    return { href: i.href, title: i.title, ...p };
+  })
+  .sort((a, b) => b.value - a.value);
+const maxValue = rows[0]?.value ?? 1;
+const hasCountryTotal = rows.some((r) => r.scope === 'mamlakat-aholisi');
+const hasEstimate = rows.some((r) => r.scope === 'taxminiy');
+---
+
+<section class="mb-10" aria-labelledby="peoples-overview-title">
+  <h2 id="peoples-overview-title" class="mb-4 text-lg font-semibold text-ink">{t('peoples.overviewTitle')}</h2>
+
+  <ul class="mb-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+    {tiles.map((tile) => (
+      <li class="rounded-xl border border-line bg-surface-alt p-4">
+        <p class="text-3xl font-bold tabular-nums tracking-tight text-ink">{full.format(tile.value)}</p>
+        <p class="mt-1 flex items-center gap-1.5 text-sm text-ink-muted">
+          <span class:list={['inline-block h-2.5 w-2.5 shrink-0 rounded-full', tile.dot]} aria-hidden="true"></span>
+          {tile.label}
+        </p>
+      </li>
+    ))}
+  </ul>
+
+  <div class="mb-4 grid gap-3 md:grid-cols-2">
+    <div class="rounded-xl border border-line bg-surface-alt p-4">
+      <p class="text-sm font-medium text-ink-muted">{t('peoples.estimateTitle')}</p>
+      <p class="mt-1 text-3xl font-bold tabular-nums tracking-tight text-ink">
+        ≈ {compact.format(estimate.min)} – {compact.format(estimate.max)}
+      </p>
+      <p class="mt-2 text-xs text-gold">{t('peoples.estimateNote')}</p>
+      <p class="mt-1 text-xs text-ink-muted">
+        {t('states.symbolSource')}:{' '}
+        {estimateSources.map((s) => (s.data.url ? <a href={s.data.url} class="underline hover:text-brand">{s.data.title}</a> : s.data.title))}
+      </p>
+    </div>
+    <div class="rounded-xl border border-line bg-surface-alt p-4">
+      <p class="text-sm font-medium text-ink-muted">{t('peoples.worldShareTitle')}</p>
+      <p class="mt-1 text-3xl font-bold tabular-nums tracking-tight text-ink">
+        ≈ {pct.format(shareMin)} – {pct.format(shareMax)}
+      </p>
+      <p class="mt-2 text-xs text-ink-muted">
+        {t('peoples.worldShareNote', { world: compact.format(world.value), year: String(world.year) })}
+      </p>
+      {worldSource && (
+        <p class="mt-1 text-xs text-ink-muted">
+          {t('states.symbolSource')}:{' '}
+          {worldSource.data.url ? <a href={worldSource.data.url} class="underline hover:text-brand">{worldSource.data.title}</a> : worldSource.data.title}
+        </p>
+      )}
+    </div>
+  </div>
+
+  <div class="mb-4 rounded-xl border border-line bg-surface-alt p-4">
+    <h3 class="mb-3 text-sm font-medium text-ink-muted">{t('peoples.branchesTitle')}</h3>
+    <ul class="space-y-2">
+      {branchCounts.map((b) => (
+        <li class="grid grid-cols-[7.5rem_1fr_2rem] items-center gap-3 text-sm" title={b.peoples.join(', ')}>
+          <span class="truncate text-ink">{b.label}</span>
+          <span class="h-3 rounded-e-[4px] bg-brand" style={`width:${(b.count / maxBranch) * 100}%`} aria-hidden="true"></span>
+          <span class="text-end tabular-nums text-ink">{b.count}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="rounded-xl border border-line bg-surface-alt p-4">
+    <h3 class="text-sm font-medium text-ink-muted">{t('peoples.populationChartTitle')}</h3>
+    <p class="mb-3 mt-1 text-xs text-gold">{t('peoples.populationChartNote')}</p>
+    <ol class="space-y-1.5">
+      {rows.map((r) => (
+        <li
+          class="grid grid-cols-[minmax(6.5rem,9rem)_1fr] items-center gap-3 text-sm sm:grid-cols-[10rem_1fr]"
+          title={`${r.title}: ${full.format(r.value)} — ${r.country}, ${r.year}`}
+        >
+          <a href={r.href} class="truncate text-ink hover:text-brand hover:underline">{r.title}</a>
+          <span class="flex min-w-0 items-center gap-2">
+            <span
+              class:list={[
+                'tb-pop-bar h-3 shrink-0 rounded-e-[4px]',
+                r.scope === 'mamlakat-aholisi' && 'tb-pop-bar-country',
+                r.scope === 'taxminiy' && 'tb-pop-bar-estimate',
+              ]}
+              style={`width:max(2px, calc((100% - 6.5rem) * ${(r.value / maxValue).toFixed(4)}))`}
+              aria-hidden="true"
+            ></span>
+            <span class="shrink-0 whitespace-nowrap text-xs tabular-nums text-ink-muted">
+              {compact.format(r.value)}
+              {r.scope === 'mamlakat-aholisi' && <sup class="text-ink">†</sup>}
+              {r.scope === 'taxminiy' && <sup class="text-ink">*</sup>}
+              <span class="hidden sm:inline"> · {r.year}</span>
+            </span>
+          </span>
+        </li>
+      ))}
+    </ol>
+    {(hasCountryTotal || hasEstimate) && (
+      <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs text-ink-muted">
+        {hasCountryTotal && (
+          <li class="flex items-center gap-1.5">
+            <span class="tb-pop-bar tb-pop-bar-country inline-block h-2.5 w-5 rounded-e-[3px]" aria-hidden="true"></span>
+            <sup class="text-ink">†</sup> {t('peoples.legendCountryTotal')}
+          </li>
+        )}
+        {hasEstimate && (
+          <li class="flex items-center gap-1.5">
+            <span class="tb-pop-bar tb-pop-bar-estimate inline-block h-2.5 w-5 rounded-e-[3px]" aria-hidden="true"></span>
+            <sup class="text-ink">*</sup> {t('peoples.legendEstimate')}
+          </li>
+        )}
+      </ul>
+    )}
+  </div>
+</section>

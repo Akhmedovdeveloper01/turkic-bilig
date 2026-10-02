@@ -1,0 +1,23 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1206,
+    "startEra": "milodiy",
+    "endYear": 1526,
+    "endEra": "milodiy"
+  },
+  "capital": "Dehli",
+  "capitals": [
+    { "name": "Dehli", "lat": 28.65, "lng": 77.23 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Sultonlikning barcha sulolalarini turkiy deb hisoblash — Mamluk, Xalji va Tug'luq sulolalari turkiy kelib chiqishli deb qaraladi, Sayyidlar va Lodiylar esa turkiy emas; Xaljilarning kelib chiqishi ham munozarali",
+      "sourceIds": ["bosworth-1996"]
+    }
+  ]
+}

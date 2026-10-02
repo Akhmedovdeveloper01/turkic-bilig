@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 650,
+    "startEra": "milodiy",
+    "endYear": 969,
+    "endEra": "milodiy"
+  },
+  "capital": "Itil",
+  "capitals": [],
+  "predecessors": ["garbiy-turk-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false
+}

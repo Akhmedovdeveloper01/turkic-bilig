@@ -1,0 +1,17 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1789,
+    "startEra": "milodiy",
+    "endYear": 1925,
+    "endEra": "milodiy"
+  },
+  "capital": "Tehron",
+  "capitals": [
+    { "name": "Tehron", "lat": 35.69, "lng": 51.39 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

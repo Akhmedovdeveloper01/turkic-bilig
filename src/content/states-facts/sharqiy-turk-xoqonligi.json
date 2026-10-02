@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 582,
+    "startEra": "milodiy",
+    "endYear": 630,
+    "endEra": "milodiy"
+  },
+  "capital": "Ötüken",
+  "capitals": [],
+  "predecessors": ["gokturk-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false
+}

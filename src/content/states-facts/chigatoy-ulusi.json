@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1225,
+    "startEra": "milodiy",
+    "endYear": 1680,
+    "endEra": "milodiy"
+  },
+  "capital": "Olmaliq / Qarshi",
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

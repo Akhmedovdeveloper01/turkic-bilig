@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1441,
+    "startEra": "milodiy",
+    "endYear": 1783,
+    "endEra": "milodiy"
+  },
+  "capital": "Bog'chasaroy",
+  "capitals": [
+    { "name": "Bog'chasaroy", "lat": 44.75, "lng": 33.86 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["bosworth-1996", "findley-2005"],
+  "verified": false
+}

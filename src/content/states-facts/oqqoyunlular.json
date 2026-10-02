@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1378,
+    "startEra": "milodiy",
+    "endYear": 1508,
+    "endEra": "milodiy"
+  },
+  "capital": "Diyorbakr, keyinroq Tabriz",
+  "capitals": [
+    { "name": "Diyorbakr", "lat": 37.91, "lng": 40.24 },
+    { "name": "Tabriz", "lat": 38.08, "lng": 46.29 }
+  ],
+  "predecessors": ["qoraqoyunlular"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

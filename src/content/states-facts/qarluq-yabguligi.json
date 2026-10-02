@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 766,
+    "startEra": "milodiy",
+    "endYear": 940,
+    "endEra": "milodiy"
+  },
+  "capital": "Suyob / Yettisuv",
+  "capitals": [],
+  "predecessors": ["turgash-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

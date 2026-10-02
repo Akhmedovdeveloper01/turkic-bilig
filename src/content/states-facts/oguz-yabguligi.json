@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 750,
+    "startEra": "milodiy",
+    "endYear": 1055,
+    "endEra": "milodiy"
+  },
+  "capital": "Yangikent",
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

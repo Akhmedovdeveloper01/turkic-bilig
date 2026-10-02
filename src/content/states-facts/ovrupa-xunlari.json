@@ -1,0 +1,20 @@
+{
+  "category": "munozarali",
+  "period": {
+    "startYear": 370,
+    "startEra": "milodiy",
+    "endYear": 469,
+    "endEra": "milodiy"
+  },
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["sinor-1990", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Ovrupa xunlarining Xunnu (Xiongnu) bilan bog'liqligi va tili — ba'zi olimlar turkiy yoki boshqa til bilan bog'laydi; manbalar kamligi sababli masala ochiq qolmoqda",
+      "sourceIds": ["sinor-1990", "golden-1992"]
+    }
+  ]
+}

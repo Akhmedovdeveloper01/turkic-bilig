@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1490,
+    "startEra": "milodiy",
+    "endYear": 1598,
+    "endEra": "milodiy"
+  },
+  "capital": "Qashliq (Isker)",
+  "capitals": [
+    { "name": "Qashliq", "lat": 58.1, "lng": 68.4 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

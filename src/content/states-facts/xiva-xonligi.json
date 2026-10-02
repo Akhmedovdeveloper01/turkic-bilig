@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1511,
+    "startEra": "milodiy",
+    "endYear": 1920,
+    "endEra": "milodiy"
+  },
+  "capital": "Xiva",
+  "capitals": [
+    { "name": "Xiva", "lat": 41.38, "lng": 60.36 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

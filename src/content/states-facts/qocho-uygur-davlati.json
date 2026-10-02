@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 850,
+    "startEra": "milodiy",
+    "endYear": 1335,
+    "endEra": "milodiy"
+  },
+  "capital": "Qocho / Beshbaliq",
+  "capitals": [
+    { "name": "Qocho", "lat": 42.85, "lng": 89.53 }
+  ],
+  "predecessors": ["uygur-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

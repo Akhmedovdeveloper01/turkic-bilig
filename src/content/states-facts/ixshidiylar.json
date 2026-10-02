@@ -1,0 +1,17 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 935,
+    "startEra": "milodiy",
+    "endYear": 969,
+    "endEra": "milodiy"
+  },
+  "capital": "Fustot",
+  "capitals": [
+    { "name": "Fustot", "lat": 30.01, "lng": 31.23 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

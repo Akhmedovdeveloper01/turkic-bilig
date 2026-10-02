@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 582,
+    "startEra": "milodiy",
+    "endYear": 659,
+    "endEra": "milodiy"
+  },
+  "capital": "Suyob (Yettisuv)",
+  "capitals": [
+    { "name": "Suyob", "lat": 42.8, "lng": 75.2 }
+  ],
+  "predecessors": ["gokturk-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false
+}

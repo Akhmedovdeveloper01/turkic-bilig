@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1514,
+    "startEra": "milodiy",
+    "endYear": 1705,
+    "endEra": "milodiy"
+  },
+  "capital": "Yorkent",
+  "capitals": [
+    { "name": "Yorkent", "lat": 38.42, "lng": 77.24 }
+  ],
+  "predecessors": ["chigatoy-ulusi"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

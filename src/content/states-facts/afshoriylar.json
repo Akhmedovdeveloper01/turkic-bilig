@@ -1,0 +1,17 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1736,
+    "startEra": "milodiy",
+    "endYear": 1796,
+    "endEra": "milodiy"
+  },
+  "capital": "Mashhad",
+  "capitals": [
+    { "name": "Mashhad", "lat": 36.3, "lng": 59.6 }
+  ],
+  "predecessors": ["safaviylar"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

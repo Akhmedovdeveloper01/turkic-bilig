@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1756,
+    "startEra": "milodiy",
+    "endYear": 1920,
+    "endEra": "milodiy"
+  },
+  "capital": "Buxoro",
+  "capitals": [
+    { "name": "Buxoro", "lat": 39.77, "lng": 64.42 }
+  ],
+  "predecessors": ["ashtarxoniylar"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

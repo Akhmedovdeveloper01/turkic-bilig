@@ -1,0 +1,18 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1526,
+    "startEra": "milodiy",
+    "endYear": 1857,
+    "endEra": "milodiy"
+  },
+  "capital": "Agra, Dehli",
+  "capitals": [
+    { "name": "Agra", "lat": 27.18, "lng": 78.02 },
+    { "name": "Dehli", "lat": 28.65, "lng": 77.23 }
+  ],
+  "predecessors": ["temuriylar"],
+  "successors": [],
+  "sources": ["bosworth-1996", "findley-2005"],
+  "verified": false
+}

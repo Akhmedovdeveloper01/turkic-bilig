@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1438,
+    "startEra": "milodiy",
+    "endYear": 1552,
+    "endEra": "milodiy"
+  },
+  "capital": "Qozon",
+  "capitals": [
+    { "name": "Qozon", "lat": 55.79, "lng": 49.11 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

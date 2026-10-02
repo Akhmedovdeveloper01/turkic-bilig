@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 699,
+    "startEra": "milodiy",
+    "endYear": 766,
+    "endEra": "milodiy"
+  },
+  "capital": "Suyob",
+  "capitals": [
+    { "name": "Suyob", "lat": 42.8, "lng": 75.2 }
+  ],
+  "predecessors": ["garbiy-turk-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

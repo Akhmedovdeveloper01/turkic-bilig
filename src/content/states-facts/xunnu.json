@@ -1,0 +1,20 @@
+{
+  "category": "munozarali",
+  "period": {
+    "startYear": 209,
+    "startEra": "m.av",
+    "endYear": 93,
+    "endEra": "milodiy"
+  },
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["sinor-1990", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Xunnularning tili va etnik mansubligi — turkiy, mo'g'ul, yenisey (ket) va boshqa tillar bilan bog'lovchi qarashlar mavjud; yagona ilmiy konsensus yo'q",
+      "sourceIds": ["sinor-1990", "golden-1992"]
+    }
+  ]
+}

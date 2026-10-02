@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1709,
+    "startEra": "milodiy",
+    "endYear": 1876,
+    "endEra": "milodiy"
+  },
+  "capital": "Qo'qon",
+  "capitals": [
+    { "name": "Qo'qon", "lat": 40.53, "lng": 70.94 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

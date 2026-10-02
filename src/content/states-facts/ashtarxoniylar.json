@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1599,
+    "startEra": "milodiy",
+    "endYear": 1747,
+    "endEra": "milodiy"
+  },
+  "capital": "Buxoro",
+  "capitals": [
+    { "name": "Buxoro", "lat": 39.77, "lng": 64.42 }
+  ],
+  "predecessors": ["shayboniylar"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

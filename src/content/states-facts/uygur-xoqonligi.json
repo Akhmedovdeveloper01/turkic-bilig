@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 744,
+    "startEra": "milodiy",
+    "endYear": 840,
+    "endEra": "milodiy"
+  },
+  "capital": "O'rdu-Baliq",
+  "capitals": [
+    { "name": "O'rdu-Baliq", "lat": 47.43, "lng": 102.66 }
+  ],
+  "predecessors": ["ikkinchi-turk-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false
+}

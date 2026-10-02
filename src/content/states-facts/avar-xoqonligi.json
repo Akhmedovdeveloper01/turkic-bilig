@@ -1,0 +1,20 @@
+{
+  "category": "munozarali",
+  "period": {
+    "startYear": 567,
+    "startEra": "milodiy",
+    "endYear": 822,
+    "endEra": "milodiy"
+  },
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["sinor-1990", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Yevropa avarlarining kelib chiqishi (Jujan/Rouran yoki boshqa ittifoqlar bilan bog'liqligi) va tili — turkiy, mo'g'ul va boshqa qarashlar mavjud",
+      "sourceIds": ["sinor-1990", "golden-1992"]
+    }
+  ]
+}

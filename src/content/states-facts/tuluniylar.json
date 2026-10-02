@@ -1,0 +1,17 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 868,
+    "startEra": "milodiy",
+    "endYear": 905,
+    "endEra": "milodiy"
+  },
+  "capital": "Fustot (al-Qatoi')",
+  "capitals": [
+    { "name": "al-Qatoi'", "lat": 30.03, "lng": 31.25 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

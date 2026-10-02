@@ -1,0 +1,14 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 850,
+    "startEra": "milodiy",
+    "endYear": 1050,
+    "endEra": "milodiy"
+  },
+  "capitals": [],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1440,
+    "startEra": "milodiy",
+    "endYear": 1634,
+    "endEra": "milodiy"
+  },
+  "capital": "Saroychiq",
+  "capitals": [
+    { "name": "Saroychiq", "lat": 47.5, "lng": 51.7 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

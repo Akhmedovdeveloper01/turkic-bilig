@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1077,
+    "startEra": "milodiy",
+    "endYear": 1308,
+    "endEra": "milodiy"
+  },
+  "capital": "Iznik, keyinroq Ko'nya",
+  "capitals": [
+    { "name": "Iznik", "lat": 40.43, "lng": 29.72 },
+    { "name": "Ko'nya", "lat": 37.87, "lng": 32.48 }
+  ],
+  "predecessors": ["saljuqiylar"],
+  "successors": [],
+  "sources": ["bosworth-1996", "peacock-2015", "findley-2005"],
+  "verified": false
+}

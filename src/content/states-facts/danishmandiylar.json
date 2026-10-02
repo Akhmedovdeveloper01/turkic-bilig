@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1071,
+    "startEra": "milodiy",
+    "endYear": 1178,
+    "endEra": "milodiy"
+  },
+  "capital": "Sivas",
+  "capitals": [
+    { "name": "Sivas", "lat": 39.75, "lng": 37.02 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

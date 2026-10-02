@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1077,
+    "startEra": "milodiy",
+    "endYear": 1231,
+    "endEra": "milodiy"
+  },
+  "capital": "Gurganj (Urganch)",
+  "capitals": [
+    { "name": "Gurganj", "lat": 42.33, "lng": 59.15 }
+  ],
+  "predecessors": ["saljuqiylar"],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

@@ -1,0 +1,24 @@
+{
+  "category": "munozarali",
+  "period": {
+    "startYear": 1501,
+    "startEra": "milodiy",
+    "endYear": 1736,
+    "endEra": "milodiy"
+  },
+  "capital": "Tabriz, Qazvin, Isfahon",
+  "capitals": [
+    { "name": "Tabriz", "lat": 38.08, "lng": 46.29 },
+    { "name": "Isfahon", "lat": 32.65, "lng": 51.67 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996", "findley-2005"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Safaviylar sulolasining kelib chiqishi — kurd, turkiy yoki eroniy ildizlar haqidagi qarashlar; shu bilan birga, sulolaning harbiy tayanchi turkman qizilbosh qabilalari bo'lgani va saroyda turkiy til keng qo'llangani qayd etiladi",
+      "sourceIds": ["bosworth-1996", "findley-2005"]
+    }
+  ]
+}

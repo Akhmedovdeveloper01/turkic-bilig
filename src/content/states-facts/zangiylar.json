@@ -1,0 +1,18 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1127,
+    "startEra": "milodiy",
+    "endYear": 1250,
+    "endEra": "milodiy"
+  },
+  "capital": "Mosul, Halab",
+  "capitals": [
+    { "name": "Mosul", "lat": 36.34, "lng": 43.13 },
+    { "name": "Halab", "lat": 36.2, "lng": 37.16 }
+  ],
+  "predecessors": ["saljuqiylar"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

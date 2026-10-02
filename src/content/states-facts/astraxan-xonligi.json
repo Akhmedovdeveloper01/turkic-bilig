@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1466,
+    "startEra": "milodiy",
+    "endYear": 1556,
+    "endEra": "milodiy"
+  },
+  "capital": "Hojitarxon",
+  "capitals": [
+    { "name": "Hojitarxon", "lat": 46.35, "lng": 48.05 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 900,
+    "startEra": "milodiy",
+    "endYear": 1236,
+    "endEra": "milodiy"
+  },
+  "capital": "Bulg'or",
+  "capitals": [
+    { "name": "Bulg'or", "lat": 54.98, "lng": 49.07 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["golden-1992"],
+  "verified": false
+}

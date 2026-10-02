@@ -1,0 +1,23 @@
+{
+  "category": "turkiy-sulola",
+  "period": {
+    "startYear": 1250,
+    "startEra": "milodiy",
+    "endYear": 1517,
+    "endEra": "milodiy"
+  },
+  "capital": "Qohira",
+  "capitals": [
+    { "name": "Qohira", "lat": 30.04, "lng": 31.24 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Mamluklar sultonligini \"turkiy\" deb tasniflash — Bahriy davrda hukmron qatlam asosan qipchoq bo'lgan, Burjiy davrda (1382-yildan) esa cherkes kelib chiqishli mamluklar ustun bo'lgan",
+      "sourceIds": ["bosworth-1996", "golden-1992"]
+    }
+  ]
+}

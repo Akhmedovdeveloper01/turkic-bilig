@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 977,
+    "startEra": "milodiy",
+    "endYear": 1186,
+    "endEra": "milodiy"
+  },
+  "capital": "G'azna, keyinroq Lohur",
+  "capitals": [
+    { "name": "G'azna", "lat": 33.55, "lng": 68.42 },
+    { "name": "Lohur", "lat": 31.55, "lng": 74.34 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

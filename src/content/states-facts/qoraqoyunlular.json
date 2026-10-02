@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1375,
+    "startEra": "milodiy",
+    "endYear": 1468,
+    "endEra": "milodiy"
+  },
+  "capital": "Tabriz",
+  "capitals": [
+    { "name": "Tabriz", "lat": 38.08, "lng": 46.29 }
+  ],
+  "predecessors": [],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

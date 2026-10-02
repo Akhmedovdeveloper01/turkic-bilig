@@ -1,0 +1,14 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 840,
+    "startEra": "milodiy",
+    "endYear": 924,
+    "endEra": "milodiy"
+  },
+  "capitals": [],
+  "predecessors": ["uygur-xoqonligi"],
+  "successors": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false
+}

@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1465,
+    "startEra": "milodiy",
+    "endYear": 1847,
+    "endEra": "milodiy"
+  },
+  "capital": "Turkiston",
+  "capitals": [
+    { "name": "Turkiston", "lat": 43.3, "lng": 68.25 }
+  ],
+  "predecessors": ["oltin-orda"],
+  "successors": [],
+  "sources": ["bosworth-1996", "golden-1992"],
+  "verified": false
+}

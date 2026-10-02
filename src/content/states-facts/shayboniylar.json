@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "period": {
+    "startYear": 1500,
+    "startEra": "milodiy",
+    "endYear": 1599,
+    "endEra": "milodiy"
+  },
+  "capital": "Samarqand, keyinroq Buxoro",
+  "capitals": [
+    { "name": "Samarqand", "lat": 39.63, "lng": 66.97 },
+    { "name": "Buxoro", "lat": 39.77, "lng": 64.42 }
+  ],
+  "predecessors": ["temuriylar"],
+  "successors": [],
+  "sources": ["bosworth-1996"],
+  "verified": false
+}

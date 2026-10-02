@@ -4,7 +4,8 @@
     "startYear": 850,
     "startEra": "milodiy",
     "endYear": 1335,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Qocho / Beshbaliq",
   "capitals": [

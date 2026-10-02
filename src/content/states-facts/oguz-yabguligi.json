@@ -4,7 +4,8 @@
     "startYear": 750,
     "startEra": "milodiy",
     "endYear": 1055,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Yangikent",
   "capitals": [],

@@ -4,7 +4,8 @@
     "startYear": 1071,
     "startEra": "milodiy",
     "endYear": 1178,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Sivas",
   "capitals": [

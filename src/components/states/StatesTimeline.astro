@@ -1,0 +1,119 @@
+---
+/**
+ * Davlatlar xronologiyasi (Gantt ko'rinishi) — build vaqtida HTML/CSS bilan,
+ * JavaScript'siz. Har bir qator `data-category` ga ega, shuning uchun sahifadagi
+ * toifa filtri (.tb-filter) xronologiyaga ham ta'sir qiladi.
+ *
+ * Vaqt o'qi mantiqiy xossalar (inset-inline-start) bilan quriladi — RTL
+ * tillarda vaqt o'ngdan chapga oqadi (CLAUDE.md, RTL 3-band).
+ * Toifa ranglari rang bilan birga naqsh orqali ham farqlanadi (sulola —
+ * shtrix, munozarali — uzuq chegara), sana taxminiy bo'lsa uchlari xira.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import { formatPeriod, formatYear, sortableYear } from '../../i18n/years';
+
+interface Item {
+  href: string;
+  title: string;
+  facts: CollectionEntry<'stateFacts'>['data'];
+}
+interface Props {
+  lang: string;
+  items: Item[];
+}
+const { lang, items } = Astro.props;
+const t = createTranslator(lang);
+
+const rows = items.map((i) => ({
+  ...i,
+  start: sortableYear(i.facts.period.startYear, i.facts.period.startEra),
+  end: sortableYear(i.facts.period.endYear, i.facts.period.endEra),
+}));
+
+const STEP = 200;
+const min = Math.floor(Math.min(...rows.map((r) => r.start)) / STEP) * STEP;
+const max = Math.ceil(Math.max(...rows.map((r) => r.end)) / STEP) * STEP;
+const pos = (y: number) => ((y - min) / (max - min)) * 100;
+
+const ticks: number[] = [];
+for (let y = min; y <= max; y += STEP) ticks.push(y);
+const tickLabel = (y: number) => (y < 0 ? formatYear(t, -y, 'm.av') : y === 0 ? '' : String(y));
+
+const LEGEND = [
+  { cls: 'tb-tl-turkiy', label: t('states.categoryTurkiy') },
+  { cls: 'tb-tl-sulola', label: t('states.categorySulola') },
+  { cls: 'tb-tl-munozarali', label: t('states.categoryMunozarali') },
+  { cls: 'tb-tl-turkiy tb-tl-approx', label: t('states.legendApprox') },
+];
+---
+
+<section class="mb-8" aria-labelledby="states-timeline-title">
+  <h2 id="states-timeline-title" class="mb-1 text-lg font-semibold text-ink">{t('states.timelineTitle')}</h2>
+  <p class="mb-3 text-xs text-ink-muted">{t('states.timelineNote')}</p>
+
+  <ul class="mb-3 flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-ink-muted">
+    {LEGEND.map((l) => (
+      <li class="flex items-center gap-1.5">
+        <span class:list={['inline-block h-2.5 w-7 rounded-[3px]', l.cls]} aria-hidden="true"></span>
+        {l.label}
+      </li>
+    ))}
+  </ul>
+
+  <div class="overflow-x-auto rounded-xl border border-line bg-surface-alt p-3 sm:p-4">
+    <div class="min-w-[40rem]">
+      {/* Yil o'qi */}
+      <div class="grid grid-cols-[9rem_1fr] gap-3 sm:grid-cols-[11rem_1fr]" aria-hidden="true">
+        <span></span>
+        <div class="relative h-5">
+          {ticks.map((y) => (
+            <span
+              class="absolute top-0 -translate-x-1/2 whitespace-nowrap text-[0.65rem] tabular-nums text-ink-muted rtl:translate-x-1/2"
+              style={`inset-inline-start:${pos(y)}%`}
+            >
+              {tickLabel(y)}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="relative">
+        {/* Vertikal yo'riqnoma chiziqlari — faqat vaqt ustuni ustida */}
+        <div class="pointer-events-none absolute inset-y-0 end-0 start-[calc(9rem+0.75rem)] sm:start-[calc(11rem+0.75rem)]" aria-hidden="true">
+          {ticks.map((y) => (
+            <span
+              class:list={['absolute inset-y-0 border-s', y === 0 ? 'border-ink-muted/50' : 'border-line']}
+              style={`inset-inline-start:${pos(y)}%`}
+            ></span>
+          ))}
+        </div>
+
+        <ol class="relative" aria-label={t('states.timelineAria')}>
+        {rows.map((r) => (
+          <li data-category={r.facts.category}>
+          <a
+            href={r.href}
+            class="group grid grid-cols-[9rem_1fr] items-center gap-3 rounded py-[3px] hover:bg-surface sm:grid-cols-[11rem_1fr]"
+            title={`${r.title}: ${formatPeriod(t, r.facts.period)}`}
+          >
+            <span class="truncate text-xs text-ink group-hover:text-brand group-hover:underline">{r.title}</span>
+            <span class="relative block h-3.5">
+              <span
+                class:list={[
+                  'absolute inset-y-0 rounded-[4px]',
+                  `tb-tl-${r.facts.category === 'turkiy-sulola' ? 'sulola' : r.facts.category}`,
+                  r.facts.period.approximate && 'tb-tl-approx',
+                ]}
+                style={`inset-inline-start:${pos(r.start)}%;width:max(4px, ${(pos(r.end) - pos(r.start)).toFixed(3)}%)`}
+              ></span>
+              <span class="sr-only">{formatPeriod(t, r.facts.period)}</span>
+            </span>
+          </a>
+          </li>
+        ))}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

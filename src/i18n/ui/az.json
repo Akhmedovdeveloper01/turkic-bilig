@@ -117,7 +117,22 @@
     "categoryMunozarali": "Türklüklə əlaqəsi mübahisəli",
     "sortedNote": "Dövlətlər yaranma ilinə görə sıralanıb. Kateqoriya nişanı dövlətin türk dünyası ilə əlaqəsini göstərir.",
     "filterAll": "Hamısı",
-    "filterLegend": "Dövlətləri kateqoriyaya görə süz"
+    "filterLegend": "Dövlətləri kateqoriyaya görə süz",
+    "statsTitle": "Rəqəmlərlə",
+    "statTotal": "Saytdakı dövlətlər",
+    "statLongest": "Ən uzunömürlü",
+    "statAverage": "Orta ömür",
+    "statOldest": "Ən qədimi",
+    "statLatest": "Ən son süqut edən",
+    "yearsCount": "{n} il",
+    "centuryChartTitle": "Hər əsrdə mövcud olmuş dövlətlər",
+    "centuryChartNote": "Əsrin ən azı bir hissəsində mövcud olmuş dövlətlər sayılıb. Tarixlərin bir qismi təxminidir, buna görə rəqəmlər ümumi mənzərəni göstərir.",
+    "centuryPeak": "Ən çox: {century} ({n})",
+    "centuryLabel": "{c} əsr",
+    "timelineTitle": "Xronologiya",
+    "timelineNote": "Hər zolaq dövlətin mövcud olduğu dövrü göstərir. Ucları solğun zolaqlar — tarix təxminidir. Dövlət səhifəsini açmaq üçün zolağa klikləyin.",
+    "legendApprox": "Təxmini tarix",
+    "timelineAria": "Türk dövlətlərinin xronologiyası"
   },
   "topics": {
     "capitalsMapTitle": "Paytaxtlar xəritədə",

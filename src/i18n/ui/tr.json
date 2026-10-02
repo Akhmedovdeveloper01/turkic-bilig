@@ -117,7 +117,22 @@
     "categoryMunozarali": "Türklükle bağı tartışmalı",
     "sortedNote": "Devletler kuruluş yılına göre sıralanmıştır. Kategori etiketi, devletin Türk dünyasıyla bağını gösterir.",
     "filterAll": "Tümü",
-    "filterLegend": "Devletleri kategoriye göre süz"
+    "filterLegend": "Devletleri kategoriye göre süz",
+    "statsTitle": "Rakamlarla",
+    "statTotal": "Sitedeki devletler",
+    "statLongest": "En uzun ömürlü",
+    "statAverage": "Ortalama ömür",
+    "statOldest": "En eski",
+    "statLatest": "En son yıkılan",
+    "yearsCount": "{n} yıl",
+    "centuryChartTitle": "Her yüzyılda var olan devletler",
+    "centuryChartNote": "Yüzyılın en az bir bölümünde var olan devletler sayılmıştır. Tarihlerin bir kısmı yaklaşık olduğundan rakamlar genel tabloyu gösterir.",
+    "centuryPeak": "En çok: {century} ({n})",
+    "centuryLabel": "{c}. yy.",
+    "timelineTitle": "Kronoloji",
+    "timelineNote": "Her çubuk bir devletin var olduğu dönemi gösterir. Uçları soluk çubuklar — tarih yaklaşıktır. Devlet sayfasını açmak için çubuğa tıklayın.",
+    "legendApprox": "Yaklaşık tarih",
+    "timelineAria": "Türk devletleri kronolojisi"
   },
   "topics": {
     "capitalsMapTitle": "Haritada başkentler",

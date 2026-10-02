@@ -4,7 +4,8 @@
     "startYear": 1440,
     "startEra": "milodiy",
     "endYear": 1634,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Saroychiq",
   "capitals": [

@@ -152,6 +152,8 @@ const stateFacts = defineCollection({
       startEra: z.enum(['m.av', 'milodiy']),
       endYear: z.number().int(),
       endEra: z.enum(['m.av', 'milodiy']),
+      /** Boshlanish yoki tugash sanasi manbalarda turlicha / taxminiy. */
+      approximate: z.boolean().default(false),
     }),
     capital: z.string().optional(),
     /** Xaritada shu davlatga doimiy ajratilgan rang — sof dizayn tanlovi,

@@ -117,7 +117,22 @@
     "categoryMunozarali": "Türkilik bilen baglanyşygy jedelli",
     "sortedNote": "Döwletler döredilen ýyly boýunça tertiplenen. Kategoriýa belgisi döwletiň türki dünýäsi bilen baglanyşygyny görkezýär.",
     "filterAll": "Hemmesi",
-    "filterLegend": "Döwletleri kategoriýa boýunça süzmek"
+    "filterLegend": "Döwletleri kategoriýa boýunça süzmek",
+    "statsTitle": "Sanlarda",
+    "statTotal": "Saýtdaky döwletler",
+    "statLongest": "Iň uzak ýaşany",
+    "statAverage": "Ortaça ömri",
+    "statOldest": "Iň gadymysy",
+    "statLatest": "Iň soňky ýykylany",
+    "yearsCount": "{n} ýyl",
+    "centuryChartTitle": "Her asyrda bar bolan döwletler",
+    "centuryChartNote": "Asyryň iň bolmanda bir böleginde bar bolan döwletler hasaplandy. Senäleriň bir bölegi takmyny, şonuň üçin sanlar umumy keşbi görkezýär.",
+    "centuryPeak": "Iň köp: {century} ({n})",
+    "centuryLabel": "{c} asyr",
+    "timelineTitle": "Hronologiýa",
+    "timelineNote": "Her zolak döwletiň bar bolan döwrüni görkezýär. Uçlary solgun zolaklar — senesi takmyny. Döwlet sahypasyny açmak üçin zolaga basyň.",
+    "legendApprox": "Takmyny sene",
+    "timelineAria": "Türki döwletleriň hronologiýasy"
   },
   "topics": {
     "capitalsMapTitle": "Paýtagtlar kartada",

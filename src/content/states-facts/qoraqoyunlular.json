@@ -4,7 +4,8 @@
     "startYear": 1375,
     "startEra": "milodiy",
     "endYear": 1468,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Tabriz",
   "capitals": [

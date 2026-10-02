@@ -5,6 +5,8 @@ import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import StateCategoryBadge from '../../../components/states/StateCategoryBadge.astro';
+import StatesStats from '../../../components/states/StatesStats.astro';
+import StatesTimeline from '../../../components/states/StatesTimeline.astro';
 import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -39,11 +41,17 @@ items.sort(
     sortableYear(a.facts.period.startYear, a.facts.period.startEra) -
     sortableYear(b.facts.period.startYear, b.facts.period.startEra)
 );
+
+const chartItems = items
+  .filter((i) => i.entry)
+  .map((i) => ({ href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts }));
 ---
 
 <BaseLayout lang={lang!} title={t('nav.states')}>
   <h1 class="mb-2 text-3xl font-bold tracking-tight text-ink">{t('nav.states')}</h1>
-  <p class="mb-5 text-sm text-ink-muted">{t('states.sortedNote')}</p>
+  <p class="mb-6 text-sm text-ink-muted">{t('states.sortedNote')}</p>
+
+  <StatesStats lang={lang!} items={chartItems} />
 
   {/* Toifa filtri: JavaScript'siz — radio guruhi + CSS :has() (global.css, .tb-filter). */}
   <div class="tb-filter">
@@ -59,6 +67,9 @@ items.sort(
         ))}
       </div>
     </fieldset>
+
+    <StatesTimeline lang={lang!} items={chartItems} />
+
   <ul class="grid gap-4 sm:grid-cols-2">
     {items.map(({ slug, entry, isFallback, facts }, index) => entry && (
       <EntryCard

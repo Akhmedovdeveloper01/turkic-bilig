@@ -4,7 +4,8 @@
     "startYear": 650,
     "startEra": "milodiy",
     "endYear": 969,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Itil",
   "capitals": [],

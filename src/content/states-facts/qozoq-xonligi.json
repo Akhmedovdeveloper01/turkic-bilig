@@ -4,7 +4,8 @@
     "startYear": 1465,
     "startEra": "milodiy",
     "endYear": 1847,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Turkiston",
   "capitals": [

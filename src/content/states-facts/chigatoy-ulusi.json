@@ -4,7 +4,8 @@
     "startYear": 1225,
     "startEra": "milodiy",
     "endYear": 1680,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Olmaliq / Qarshi",
   "capitals": [],

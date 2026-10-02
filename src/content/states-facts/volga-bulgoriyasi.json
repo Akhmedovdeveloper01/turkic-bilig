@@ -4,7 +4,8 @@
     "startYear": 900,
     "startEra": "milodiy",
     "endYear": 1236,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Bulg'or",
   "capitals": [

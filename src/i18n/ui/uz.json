@@ -117,7 +117,22 @@
     "categoryMunozarali": "Turkiyligi munozarali",
     "sortedNote": "Davlatlar tashkil topgan yili bo'yicha tartiblangan. Toifa belgisi davlatning turkiy dunyo bilan bog'liqligi qanday ekanini bildiradi.",
     "filterAll": "Hammasi",
-    "filterLegend": "Davlatlarni toifa bo'yicha saralash"
+    "filterLegend": "Davlatlarni toifa bo'yicha saralash",
+    "statsTitle": "Raqamlarda",
+    "statTotal": "Saytdagi davlatlar",
+    "statLongest": "Eng uzoq yashagan",
+    "statAverage": "O'rtacha umri",
+    "statOldest": "Eng qadimgisi",
+    "statLatest": "Eng so'nggi tugagani",
+    "yearsCount": "{n} yil",
+    "centuryChartTitle": "Har asrda mavjud bo'lgan davlatlar",
+    "centuryChartNote": "Shu asrning kamida bir qismida mavjud bo'lgan davlatlar sanalgan. Sanalarning bir qismi taxminiy, shuning uchun raqamlar umumiy manzarani ko'rsatadi.",
+    "centuryPeak": "Eng ko'p: {century} ({n} ta)",
+    "centuryLabel": "{c} asr",
+    "timelineTitle": "Xronologiya",
+    "timelineNote": "Har bir chiziq davlat mavjud bo'lgan davrni ko'rsatadi. Xira uchli chiziqlar — sanasi taxminiy. Chiziqni bosing — davlat sahifasi ochiladi.",
+    "legendApprox": "Sana taxminiy",
+    "timelineAria": "Turkiy davlatlar xronologiyasi"
   },
   "topics": {
     "capitalsMapTitle": "Poytaxtlar xaritada",

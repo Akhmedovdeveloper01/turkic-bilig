@@ -117,7 +117,22 @@
     "categoryMunozarali": "Turkic link disputed",
     "sortedNote": "States are ordered by founding year. The category badge shows how each state relates to the Turkic world.",
     "filterAll": "All",
-    "filterLegend": "Filter states by category"
+    "filterLegend": "Filter states by category",
+    "statsTitle": "In numbers",
+    "statTotal": "States on this site",
+    "statLongest": "Longest-lived",
+    "statAverage": "Average lifespan",
+    "statOldest": "Oldest",
+    "statLatest": "Most recently ended",
+    "yearsCount": "{n} years",
+    "centuryChartTitle": "States existing in each century",
+    "centuryChartNote": "States that existed for at least part of the century are counted. Some dates are approximate, so the figures show the general picture.",
+    "centuryPeak": "Peak: {century} ({n})",
+    "centuryLabel": "{c} c.",
+    "timelineTitle": "Timeline",
+    "timelineNote": "Each bar shows the period a state existed. Bars with faded ends have approximate dates. Click a bar to open the state's page.",
+    "legendApprox": "Approximate date",
+    "timelineAria": "Timeline of Turkic states"
   },
   "topics": {
     "capitalsMapTitle": "Capitals on the map",

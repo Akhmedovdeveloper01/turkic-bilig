@@ -4,7 +4,8 @@
     "startYear": 1490,
     "startEra": "milodiy",
     "endYear": 1598,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Qashliq (Isker)",
   "capitals": [

@@ -1,0 +1,144 @@
+---
+/**
+ * Davlatlar sahifasidagi "Raqamlarda" bloki. Barcha raqamlar stateFacts
+ * dagi sanalardan build vaqtida hisoblanadi — yangi davlat qo'shilsa,
+ * o'zi yangilanadi. Yangi (manbasiz) da'vo yo'q.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { createTranslator } from '../../i18n/ui';
+import { centuryRange, formatCentury, formatPeriod, lifespan, sortableYear, toRoman } from '../../i18n/years';
+
+interface Item {
+  href: string;
+  title: string;
+  facts: CollectionEntry<'stateFacts'>['data'];
+}
+interface Props {
+  lang: string;
+  items: Item[];
+}
+const { lang, items } = Astro.props;
+const t = createTranslator(lang);
+const num = new Intl.NumberFormat(lang, { maximumFractionDigits: 0 });
+
+const withSpan = items.map((i) => ({
+  ...i,
+  start: sortableYear(i.facts.period.startYear, i.facts.period.startEra),
+  end: sortableYear(i.facts.period.endYear, i.facts.period.endEra),
+  span: lifespan(i.facts.period),
+}));
+
+const longest = [...withSpan].sort((a, b) => b.span - a.span)[0];
+const average = withSpan.reduce((s, i) => s + i.span, 0) / withSpan.length;
+const oldest = [...withSpan].sort((a, b) => a.start - b.start)[0];
+const latest = [...withSpan].sort((a, b) => b.end - a.end)[0];
+
+const tiles = [
+  { label: t('states.statTotal'), value: num.format(items.length), sub: null, href: null },
+  {
+    label: t('states.statLongest'),
+    value: t('states.yearsCount', { n: num.format(longest.span) }),
+    sub: `${longest.title} · ${formatPeriod(t, longest.facts.period)}`,
+    href: longest.href,
+  },
+  { label: t('states.statAverage'), value: t('states.yearsCount', { n: num.format(average) }), sub: null, href: null },
+  { label: t('states.statOldest'), value: formatPeriod(t, oldest.facts.period), sub: oldest.title, href: oldest.href },
+];
+
+// ---- Asrlar bo'yicha ----
+const earliest = Math.min(...withSpan.map((i) => i.start));
+const firstCentury = earliest < 0 ? Math.floor(earliest / 100) : 1;
+const lastCentury = Math.ceil(Math.max(...withSpan.map((i) => i.end)) / 100);
+const centuries: number[] = [];
+for (let c = firstCentury; c <= lastCentury; c++) if (c !== 0) centuries.push(c);
+const bcCount = centuries.filter((c) => c < 0).length;
+const bcLabel = t('common.yearBC', { year: '' }).trim();
+
+const columns = centuries.map((c) => {
+  const [a, b] = centuryRange(c);
+  const present = withSpan.filter((i) => i.start <= b && i.end >= a);
+  return { c, label: formatCentury(t, c), count: present.length, names: present.map((i) => i.title) };
+});
+const maxCount = Math.max(...columns.map((c) => c.count));
+const peak = columns.find((c) => c.count === maxCount)!;
+const gridSteps = [0, 5, 10, 15, 20, 25, 30].filter((v) => v <= maxCount + 2);
+const top = Math.max(maxCount, gridSteps[gridSteps.length - 1]);
+---
+
+<section class="mb-8" aria-labelledby="states-stats-title">
+  <h2 id="states-stats-title" class="mb-4 text-lg font-semibold text-ink">{t('states.statsTitle')}</h2>
+
+  <ul class="mb-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
+    {tiles.map((tile) => (
+      <li class="rounded-xl border border-line bg-surface-alt p-4">
+        <p class="text-sm text-ink-muted">{tile.label}</p>
+        <p class="mt-1 text-2xl font-bold tabular-nums tracking-tight text-ink sm:text-3xl">{tile.value}</p>
+        {tile.sub && (
+          tile.href ? (
+            <a href={tile.href} class="mt-1 block text-xs text-ink-muted hover:text-brand hover:underline">{tile.sub}</a>
+          ) : (
+            <p class="mt-1 text-xs text-ink-muted">{tile.sub}</p>
+          )
+        )}
+      </li>
+    ))}
+  </ul>
+
+  <div class="rounded-xl border border-line bg-surface-alt p-4">
+    <div class="mb-1 flex flex-wrap items-baseline justify-between gap-x-4">
+      <h3 class="text-sm font-medium text-ink-muted">{t('states.centuryChartTitle')}</h3>
+      <p class="text-sm font-semibold text-ink">{t('states.centuryPeak', { century: peak.label, n: String(peak.count) })}</p>
+    </div>
+    <p class="mb-4 text-xs text-ink-muted">{t('states.centuryChartNote')}</p>
+
+    <div class="overflow-x-auto">
+      <div class="relative pt-3">
+        {/* Gorizontal yo'riqnoma chiziqlari (qiymat o'qi) */}
+        <div class="pointer-events-none absolute inset-x-0 top-3 h-40" aria-hidden="true">
+          {gridSteps.map((v) => (
+            <div class="absolute inset-x-0 border-t border-line" style={`bottom:${(v / top) * 100}%`}>
+              <span class="absolute -top-2 end-0 bg-surface-alt ps-1 text-[0.65rem] tabular-nums text-ink-muted">{v}</span>
+            </div>
+          ))}
+        </div>
+        <ol class="relative flex h-40 items-end gap-[2px] pe-6">
+          {columns.map((col) => (
+            <li
+              class="group flex h-full flex-1 flex-col justify-end"
+              title={`${col.label}: ${col.count}\n${col.names.join(', ')}`}
+            >
+              <span class="sr-only">{col.label}: {col.count}</span>
+              <span
+                class:list={[
+                  'block w-full rounded-t-[4px] transition-opacity group-hover:opacity-80',
+                  col.c === peak.c ? 'bg-cat-turkiy' : 'bg-cat-turkiy/55',
+                ]}
+                style={`height:${(col.count / top) * 100}%`}
+                aria-hidden="true"
+              ></span>
+            </li>
+          ))}
+        </ol>
+        <ol class="mt-1.5 flex gap-[2px] pe-6" aria-hidden="true">
+          {columns.map((col, i) => (
+            <li class="flex-1 text-center text-[0.6rem] leading-tight text-ink-muted">
+              <span class:list={[i % 2 === 1 && col.c !== peak.c && 'max-sm:invisible', col.c === peak.c && 'font-bold text-ink']}>
+                {toRoman(Math.abs(col.c))}
+              </span>
+            </li>
+          ))}
+        </ol>
+        {bcCount > 0 && (
+          <div class="pe-6" aria-hidden="true">
+            <p
+              class="mt-1 border-t border-ink-muted/40 pt-0.5 text-center text-[0.6rem] text-ink-muted"
+              style={`width:${(bcCount / columns.length) * 100}%`}
+            >
+              {bcLabel}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

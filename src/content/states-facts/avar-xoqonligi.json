@@ -4,7 +4,8 @@
     "startYear": 567,
     "startEra": "milodiy",
     "endYear": 822,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capitals": [],
   "predecessors": [],

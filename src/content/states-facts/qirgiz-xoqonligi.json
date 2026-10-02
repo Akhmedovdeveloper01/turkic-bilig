@@ -4,7 +4,8 @@
     "startYear": 840,
     "startEra": "milodiy",
     "endYear": 924,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capitals": [],
   "predecessors": ["uygur-xoqonligi"],

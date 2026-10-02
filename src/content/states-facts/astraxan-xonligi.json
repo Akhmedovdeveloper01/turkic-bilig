@@ -4,7 +4,8 @@
     "startYear": 1466,
     "startEra": "milodiy",
     "endYear": 1556,
-    "endEra": "milodiy"
+    "endEra": "milodiy",
+    "approximate": true
   },
   "capital": "Hojitarxon",
   "capitals": [

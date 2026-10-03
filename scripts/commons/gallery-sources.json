@@ -187,5 +187,102 @@
       "commons": "File:Exterior of Sultan Ahmed I Mosque in Istanbul, Turkey 002.jpg",
       "unescoYear": 1985
     }
+  ],
+  "states/boburiylar": [
+    {
+      "id": "humoyun",
+      "commons": "File:20191205 Grobowiec Humajuna w Delhi 1055 6794.jpg",
+      "unescoYear": 1993
+    },
+    {
+      "id": "toj-mahal",
+      "commons": "File:Taj Mahal, Agra, India edit2.jpg",
+      "unescoYear": 1983
+    },
+    {
+      "id": "qizil-qala",
+      "commons": "File:Lahori Gate, Red Fort, Delhi, India - September 2014.jpg",
+      "unescoYear": 2007
+    }
+  ],
+  "states/dehli-sultonligi": [
+    {
+      "id": "qutb-minor",
+      "commons": "File:Panorama of qutub complex.jpg",
+      "unescoYear": 1993
+    }
+  ],
+  "states/misr-mamluklari": [
+    {
+      "id": "sulton-hasan",
+      "commons": "File:Madrassa of Sultan Hassan.jpg",
+      "unescoYear": 1979
+    },
+    {
+      "id": "nosir-muhammad",
+      "commons": "File:Mosque of Sultan al-Nasir Muhammad in the Citadel, Cairo, 1318-35 (6).jpg",
+      "unescoYear": 1979
+    }
+  ],
+  "states/tuluniylar": [
+    {
+      "id": "ibn-tulun",
+      "commons": "File:Kairo Ibn Tulun Moschee BW 4.jpg",
+      "unescoYear": 1979
+    }
+  ],
+  "states/zangiylar": [
+    {
+      "id": "nuriddin-madrasa",
+      "commons": "File:Kuppel Nur ad-Din Madrasa.JPG",
+      "unescoYear": 1979
+    }
+  ],
+  "states/rum-saljuqiylari": [
+    {
+      "id": "qoratoy",
+      "commons": "File:Konya Karatay Ceramics Museum 2829.jpg"
+    },
+    {
+      "id": "sultonxon",
+      "commons": "File:Sultanhani Caravanserai, Turkey (23944555856).jpg"
+    }
+  ],
+  "states/safaviylar": [
+    {
+      "id": "naqshi-jahon",
+      "commons": "File:Naghsh-e Jahan Square.jpg",
+      "unescoYear": 1979
+    },
+    {
+      "id": "shayx-safi",
+      "commons": "File:Sheikh Safi Al Din Tomb.jpg",
+      "unescoYear": 2010
+    }
+  ],
+  "states/qojorlar": [
+    {
+      "id": "guliston",
+      "commons": "File:Shams ol Emareh Building01.jpg",
+      "unescoYear": 2013
+    }
+  ],
+  "states/afshoriylar": [
+    {
+      "id": "xurshid-saroyi",
+      "commons": "File:کاخ کلات یا عمارت خورشید در منطقه کلات نادر 02.jpg"
+    }
+  ],
+  "states/qoraqoyunlular": [
+    {
+      "id": "kok-masjid",
+      "commons": "File:Tabriz Blue Mosque, northern view (entrance, in 2023).jpg"
+    }
+  ],
+  "states/oqqoyunlular": [
+    {
+      "id": "zaynal-bek",
+      "commons": "File:Hasankeyf Zeynel Bey Türbesi 1942.jpg"
+    }
   ]
 }

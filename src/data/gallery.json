@@ -442,5 +442,235 @@
       "width": 1600,
       "height": 1044
     }
+  ],
+  "states/boburiylar": [
+    {
+      "id": "humoyun",
+      "kind": "obida",
+      "unescoYear": 1993,
+      "commons": "File:20191205 Grobowiec Humajuna w Delhi 1055 6794.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:20191205_Grobowiec_Humajuna_w_Delhi_1055_6794.jpg",
+      "author": "Jakub Hałun",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/20191205_Grobowiec_Humajuna_w_Delhi_1055_6794.jpg/1920px-20191205_Grobowiec_Humajuna_w_Delhi_1055_6794.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1064
+    },
+    {
+      "id": "toj-mahal",
+      "kind": "obida",
+      "unescoYear": 1983,
+      "commons": "File:Taj Mahal, Agra, India edit2.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India_edit2.jpg",
+      "author": "Yann; edited by King of Hearts",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Taj_Mahal%2C_Agra%2C_India_edit2.jpg/1920px-Taj_Mahal%2C_Agra%2C_India_edit2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1052
+    },
+    {
+      "id": "qizil-qala",
+      "kind": "obida",
+      "unescoYear": 2007,
+      "commons": "File:Lahori Gate, Red Fort, Delhi, India - September 2014.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lahori_Gate,_Red_Fort,_Delhi,_India_-_September_2014.jpg",
+      "author": "Rickard Törnblad",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Lahori_Gate%2C_Red_Fort%2C_Delhi%2C_India_-_September_2014.jpg/1920px-Lahori_Gate%2C_Red_Fort%2C_Delhi%2C_India_-_September_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "states/dehli-sultonligi": [
+    {
+      "id": "qutb-minor",
+      "kind": "obida",
+      "unescoYear": 1993,
+      "commons": "File:Panorama of qutub complex.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panorama_of_qutub_complex.jpg",
+      "author": "Sabaaya",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Panorama_of_qutub_complex.jpg/1920px-Panorama_of_qutub_complex.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 655
+    }
+  ],
+  "states/misr-mamluklari": [
+    {
+      "id": "sulton-hasan",
+      "kind": "obida",
+      "unescoYear": 1979,
+      "commons": "File:Madrassa of Sultan Hassan.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madrassa_of_Sultan_Hassan.jpg",
+      "author": "Mohammed Moussa",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Madrassa_of_Sultan_Hassan.jpg/1920px-Madrassa_of_Sultan_Hassan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1091
+    },
+    {
+      "id": "nosir-muhammad",
+      "kind": "obida",
+      "unescoYear": 1979,
+      "commons": "File:Mosque of Sultan al-Nasir Muhammad in the Citadel, Cairo, 1318-35 (6).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mosque_of_Sultan_al-Nasir_Muhammad_in_the_Citadel,_Cairo,_1318-35_(6).jpg",
+      "author": "Prof. Mortel",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Mosque_of_Sultan_al-Nasir_Muhammad_in_the_Citadel%2C_Cairo%2C_1318-35_%286%29.jpg/1920px-Mosque_of_Sultan_al-Nasir_Muhammad_in_the_Citadel%2C_Cairo%2C_1318-35_%286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "states/tuluniylar": [
+    {
+      "id": "ibn-tulun",
+      "kind": "obida",
+      "unescoYear": 1979,
+      "commons": "File:Kairo Ibn Tulun Moschee BW 4.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kairo_Ibn_Tulun_Moschee_BW_4.jpg",
+      "author": "User:Berthold Werner",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Kairo_Ibn_Tulun_Moschee_BW_4.jpg/1920px-Kairo_Ibn_Tulun_Moschee_BW_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 874
+    }
+  ],
+  "states/zangiylar": [
+    {
+      "id": "nuriddin-madrasa",
+      "kind": "obida",
+      "unescoYear": 1979,
+      "commons": "File:Kuppel Nur ad-Din Madrasa.JPG",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kuppel_Nur_ad-Din_Madrasa.JPG",
+      "author": "Tekisch",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kuppel_Nur_ad-Din_Madrasa.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "states/rum-saljuqiylari": [
+    {
+      "id": "qoratoy",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Konya Karatay Ceramics Museum 2829.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Konya_Karatay_Ceramics_Museum_2829.jpg",
+      "author": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Konya_Karatay_Ceramics_Museum_2829.jpg/1920px-Konya_Karatay_Ceramics_Museum_2829.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1065
+    },
+    {
+      "id": "sultonxon",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Sultanhani Caravanserai, Turkey (23944555856).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sultanhani_Caravanserai,_Turkey_(23944555856).jpg",
+      "author": "Robert Cutts from Bristol, England, UK",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Sultanhani_Caravanserai%2C_Turkey_%2823944555856%29.jpg/1920px-Sultanhani_Caravanserai%2C_Turkey_%2823944555856%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1063
+    }
+  ],
+  "states/safaviylar": [
+    {
+      "id": "naqshi-jahon",
+      "kind": "obida",
+      "unescoYear": 1979,
+      "commons": "File:Naghsh-e Jahan Square.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Naghsh-e_Jahan_Square.jpg",
+      "author": "Arosha-photo(Reza Sobhani)",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Naghsh-e_Jahan_Square.jpg/1920px-Naghsh-e_Jahan_Square.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 457
+    },
+    {
+      "id": "shayx-safi",
+      "kind": "obida",
+      "unescoYear": 2010,
+      "commons": "File:Sheikh Safi Al Din Tomb.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheikh_Safi_Al_Din_Tomb.jpg",
+      "author": "AmirForoozan7030",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Sheikh_Safi_Al_Din_Tomb.jpg/1920px-Sheikh_Safi_Al_Din_Tomb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "states/qojorlar": [
+    {
+      "id": "guliston",
+      "kind": "obida",
+      "unescoYear": 2013,
+      "commons": "File:Shams ol Emareh Building01.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shams_ol_Emareh_Building01.jpg",
+      "author": "Maziar Abidian",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Shams_ol_Emareh_Building01.jpg/1920px-Shams_ol_Emareh_Building01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "states/afshoriylar": [
+    {
+      "id": "xurshid-saroyi",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:کاخ کلات یا عمارت خورشید در منطقه کلات نادر 02.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%DA%A9%D8%A7%D8%AE_%DA%A9%D9%84%D8%A7%D8%AA_%DB%8C%D8%A7_%D8%B9%D9%85%D8%A7%D8%B1%D8%AA_%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF_%D8%AF%D8%B1_%D9%85%D9%86%D8%B7%D9%82%D9%87_%DA%A9%D9%84%D8%A7%D8%AA_%D9%86%D8%A7%D8%AF%D8%B1_02.jpg",
+      "author": "Mostafameraji",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/%DA%A9%D8%A7%D8%AE_%DA%A9%D9%84%D8%A7%D8%AA_%DB%8C%D8%A7_%D8%B9%D9%85%D8%A7%D8%B1%D8%AA_%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF_%D8%AF%D8%B1_%D9%85%D9%86%D8%B7%D9%82%D9%87_%DA%A9%D9%84%D8%A7%D8%AA_%D9%86%D8%A7%D8%AF%D8%B1_02.jpg/1920px-%DA%A9%D8%A7%D8%AE_%DA%A9%D9%84%D8%A7%D8%AA_%DB%8C%D8%A7_%D8%B9%D9%85%D8%A7%D8%B1%D8%AA_%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF_%D8%AF%D8%B1_%D9%85%D9%86%D8%B7%D9%82%D9%87_%DA%A9%D9%84%D8%A7%D8%AA_%D9%86%D8%A7%D8%AF%D8%B1_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "states/qoraqoyunlular": [
+    {
+      "id": "kok-masjid",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Tabriz Blue Mosque, northern view (entrance, in 2023).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tabriz_Blue_Mosque,_northern_view_(entrance,_in_2023).jpg",
+      "author": "Ahad Nejad Ebrahimi, Aylar Javadpour",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Tabriz_Blue_Mosque%2C_northern_view_%28entrance%2C_in_2023%29.jpg/1920px-Tabriz_Blue_Mosque%2C_northern_view_%28entrance%2C_in_2023%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 865
+    }
+  ],
+  "states/oqqoyunlular": [
+    {
+      "id": "zaynal-bek",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Hasankeyf Zeynel Bey Türbesi 1942.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hasankeyf_Zeynel_Bey_T%C3%BCrbesi_1942.jpg",
+      "author": "Dosseman",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Hasankeyf_Zeynel_Bey_T%C3%BCrbesi_1942.jpg/1920px-Hasankeyf_Zeynel_Bey_T%C3%BCrbesi_1942.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1064
+    }
   ]
 }

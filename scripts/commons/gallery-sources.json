@@ -284,5 +284,94 @@
       "id": "zaynal-bek",
       "commons": "File:Hasankeyf Zeynel Bey Türbesi 1942.jpg"
     }
+  ],
+  "states/xorazmshohlar": [
+    {
+      "id": "takash",
+      "commons": "File:Tekesh Mausoleum.JPG",
+      "unescoYear": 2005
+    },
+    {
+      "id": "il-arslon",
+      "commons": "File:KonyeUrgenchIlArslanMausoleum.jpg",
+      "unescoYear": 2005
+    }
+  ],
+  "states/gaznaviylar": [
+    {
+      "id": "gazna-minorasi",
+      "commons": "File:Robert Sale - Citadel and Fortress of Ghuznee with the Minarets - GAC 11421.jpg"
+    }
+  ],
+  "states/shayboniylar": [
+    {
+      "id": "mir-arab",
+      "commons": "File:Bukhara Mir-i-Arab madrasa 2.jpg",
+      "unescoYear": 1993
+    }
+  ],
+  "states/ashtarxoniylar": [
+    {
+      "id": "sherdor",
+      "commons": "File:Sher-Dor Madrasa 02.jpg",
+      "unescoYear": 2001
+    },
+    {
+      "id": "tillakori",
+      "commons": "File:Tilya-Kori Madrasa 01.jpg",
+      "unescoYear": 2001
+    }
+  ],
+  "states/buxoro-amirligi": [
+    {
+      "id": "sitorai-mohi-xosa",
+      "commons": "File:Harem of Sitorai Mokhi-Khosa Palace 02.jpg"
+    },
+    {
+      "id": "chor-minor",
+      "commons": "File:Chor Minor, Bukhara.jpg",
+      "unescoYear": 1993
+    }
+  ],
+  "states/xiva-xonligi": [
+    {
+      "id": "toshhovli",
+      "commons": "File:Tash Hauli Palace, Khiva (481385).jpg",
+      "unescoYear": 1990
+    },
+    {
+      "id": "islomxoja",
+      "commons": "File:Islam Khodja Madrasa 02.jpg",
+      "unescoYear": 1990
+    }
+  ],
+  "states/qoqon-xonligi": [
+    {
+      "id": "xudoyorxon-ordasi",
+      "commons": "File:Khudayar Khan Palace, Kokand, Uzbekistan (Дворец Худояр-хана, Коканд, Узбекистан).jpg"
+    }
+  ],
+  "states/qrim-xonligi": [
+    {
+      "id": "xon-saroyi",
+      "commons": "File:The Khan S Palace In Bakhchysarai (164513925).jpeg"
+    }
+  ],
+  "states/qocho-uygur-davlati": [
+    {
+      "id": "qocho",
+      "commons": "File:高昌故城 可汗堡 the Khan Relic in Gaochang ruins.jpg",
+      "unescoYear": 2014
+    },
+    {
+      "id": "bezeklik",
+      "commons": "File:柏孜克里克千佛洞（自南向北）Bezeklik Caves, from south to north. In 2023.jpg"
+    }
+  ],
+  "states/ikkinchi-turk-xoqonligi": [
+    {
+      "id": "tunyuquq",
+      "commons": "File:Bilge Tonyukuk - Orkhon Inscriptions.jpeg"
+    }
   ]
 }

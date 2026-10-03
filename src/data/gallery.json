@@ -672,5 +672,220 @@
       "width": 1600,
       "height": 1064
     }
+  ],
+  "states/xorazmshohlar": [
+    {
+      "id": "takash",
+      "kind": "obida",
+      "unescoYear": 2005,
+      "commons": "File:Tekesh Mausoleum.JPG",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tekesh_Mausoleum.JPG",
+      "author": "Tim Williams",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Tekesh_Mausoleum.JPG/1920px-Tekesh_Mausoleum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "id": "il-arslon",
+      "kind": "obida",
+      "unescoYear": 2005,
+      "commons": "File:KonyeUrgenchIlArslanMausoleum.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:KonyeUrgenchIlArslanMausoleum.jpg",
+      "author": "Hergit",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/KonyeUrgenchIlArslanMausoleum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 1600,
+      "height": 954
+    }
+  ],
+  "states/gaznaviylar": [
+    {
+      "id": "gazna-minorasi",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Robert Sale - Citadel and Fortress of Ghuznee with the Minarets - GAC 11421.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robert_Sale_-_Citadel_and_Fortress_of_Ghuznee_with_the_Minarets_-_GAC_11421.jpg",
+      "author": "William Louis Walton",
+      "license": "Public domain",
+      "licenseUrl": null,
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Robert_Sale_-_Citadel_and_Fortress_of_Ghuznee_with_the_Minarets_-_GAC_11421.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 1600,
+      "height": 1120
+    }
+  ],
+  "states/shayboniylar": [
+    {
+      "id": "mir-arab",
+      "kind": "obida",
+      "unescoYear": 1993,
+      "commons": "File:Bukhara Mir-i-Arab madrasa 2.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bukhara_Mir-i-Arab_madrasa_2.jpg",
+      "author": "Ymblanter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Bukhara_Mir-i-Arab_madrasa_2.jpg/1920px-Bukhara_Mir-i-Arab_madrasa_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "states/ashtarxoniylar": [
+    {
+      "id": "sherdor",
+      "kind": "obida",
+      "unescoYear": 2001,
+      "commons": "File:Sher-Dor Madrasa 02.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sher-Dor_Madrasa_02.jpg",
+      "author": "Bgag",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Sher-Dor_Madrasa_02.jpg/1920px-Sher-Dor_Madrasa_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1143
+    },
+    {
+      "id": "tillakori",
+      "kind": "obida",
+      "unescoYear": 2001,
+      "commons": "File:Tilya-Kori Madrasa 01.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tilya-Kori_Madrasa_01.jpg",
+      "author": "Bernard Gagnon",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Tilya-Kori_Madrasa_01.jpg/1920px-Tilya-Kori_Madrasa_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1035
+    }
+  ],
+  "states/buxoro-amirligi": [
+    {
+      "id": "sitorai-mohi-xosa",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Harem of Sitorai Mokhi-Khosa Palace 02.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harem_of_Sitorai_Mokhi-Khosa_Palace_02.jpg",
+      "author": "Bgag",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Harem_of_Sitorai_Mokhi-Khosa_Palace_02.jpg/1920px-Harem_of_Sitorai_Mokhi-Khosa_Palace_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1076
+    },
+    {
+      "id": "chor-minor",
+      "kind": "obida",
+      "unescoYear": 1993,
+      "commons": "File:Chor Minor, Bukhara.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chor_Minor,_Bukhara.jpg",
+      "author": "Bernard Gagnon",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Chor_Minor%2C_Bukhara.jpg/1920px-Chor_Minor%2C_Bukhara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1103
+    }
+  ],
+  "states/xiva-xonligi": [
+    {
+      "id": "toshhovli",
+      "kind": "obida",
+      "unescoYear": 1990,
+      "commons": "File:Tash Hauli Palace, Khiva (481385).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tash_Hauli_Palace,_Khiva_(481385).jpg",
+      "author": "upyernoz from Haverford, USA",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Tash_Hauli_Palace%2C_Khiva_%28481385%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "islomxoja",
+      "kind": "obida",
+      "unescoYear": 1990,
+      "commons": "File:Islam Khodja Madrasa 02.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Islam_Khodja_Madrasa_02.jpg",
+      "author": "Bgag",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Islam_Khodja_Madrasa_02.jpg/1920px-Islam_Khodja_Madrasa_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1067
+    }
+  ],
+  "states/qoqon-xonligi": [
+    {
+      "id": "xudoyorxon-ordasi",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Khudayar Khan Palace, Kokand, Uzbekistan (Дворец Худояр-хана, Коканд, Узбекистан).jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khudayar_Khan_Palace,_Kokand,_Uzbekistan_(%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%A5%D1%83%D0%B4%D0%BE%D1%8F%D1%80-%D1%85%D0%B0%D0%BD%D0%B0,_%D0%9A%D0%BE%D0%BA%D0%B0%D0%BD%D0%B4,_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD).jpg",
+      "author": "Petar Milošević",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Khudayar_Khan_Palace%2C_Kokand%2C_Uzbekistan_%28%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%A5%D1%83%D0%B4%D0%BE%D1%8F%D1%80-%D1%85%D0%B0%D0%BD%D0%B0%2C_%D0%9A%D0%BE%D0%BA%D0%B0%D0%BD%D0%B4%2C_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD%29.jpg/1920px-Khudayar_Khan_Palace%2C_Kokand%2C_Uzbekistan_%28%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%A5%D1%83%D0%B4%D0%BE%D1%8F%D1%80-%D1%85%D0%B0%D0%BD%D0%B0%2C_%D0%9A%D0%BE%D0%BA%D0%B0%D0%BD%D0%B4%2C_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 691
+    }
+  ],
+  "states/qrim-xonligi": [
+    {
+      "id": "xon-saroyi",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:The Khan S Palace In Bakhchysarai (164513925).jpeg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Khan_S_Palace_In_Bakhchysarai_(164513925).jpeg",
+      "author": "Alicia Gonzo",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/The_Khan_S_Palace_In_Bakhchysarai_%28164513925%29.jpeg/1920px-The_Khan_S_Palace_In_Bakhchysarai_%28164513925%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1059
+    }
+  ],
+  "states/qocho-uygur-davlati": [
+    {
+      "id": "qocho",
+      "kind": "obida",
+      "unescoYear": 2014,
+      "commons": "File:高昌故城 可汗堡 the Khan Relic in Gaochang ruins.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E9%AB%98%E6%98%8C%E6%95%85%E5%9F%8E_%E5%8F%AF%E6%B1%97%E5%A0%A1_the_Khan_Relic_in_Gaochang_ruins.jpg",
+      "author": "HaziiDozen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/%E9%AB%98%E6%98%8C%E6%95%85%E5%9F%8E_%E5%8F%AF%E6%B1%97%E5%A0%A1_the_Khan_Relic_in_Gaochang_ruins.jpg/1920px-%E9%AB%98%E6%98%8C%E6%95%85%E5%9F%8E_%E5%8F%AF%E6%B1%97%E5%A0%A1_the_Khan_Relic_in_Gaochang_ruins.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "id": "bezeklik",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:柏孜克里克千佛洞（自南向北）Bezeklik Caves, from south to north. In 2023.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%E6%9F%8F%E5%AD%9C%E5%85%8B%E9%87%8C%E5%85%8B%E5%8D%83%E4%BD%9B%E6%B4%9E%EF%BC%88%E8%87%AA%E5%8D%97%E5%90%91%E5%8C%97%EF%BC%89Bezeklik_Caves,_from_south_to_north._In_2023.jpg",
+      "author": "HaziiDozen",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/%E6%9F%8F%E5%AD%9C%E5%85%8B%E9%87%8C%E5%85%8B%E5%8D%83%E4%BD%9B%E6%B4%9E%EF%BC%88%E8%87%AA%E5%8D%97%E5%90%91%E5%8C%97%EF%BC%89Bezeklik_Caves%2C_from_south_to_north._In_2023.jpg/1920px-%E6%9F%8F%E5%AD%9C%E5%85%8B%E9%87%8C%E5%85%8B%E5%8D%83%E4%BD%9B%E6%B4%9E%EF%BC%88%E8%87%AA%E5%8D%97%E5%90%91%E5%8C%97%EF%BC%89Bezeklik_Caves%2C_from_south_to_north._In_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1200
+    }
+  ],
+  "states/ikkinchi-turk-xoqonligi": [
+    {
+      "id": "tunyuquq",
+      "kind": "obida",
+      "unescoYear": null,
+      "commons": "File:Bilge Tonyukuk - Orkhon Inscriptions.jpeg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bilge_Tonyukuk_-_Orkhon_Inscriptions.jpeg",
+      "author": "Vezirtonyukuk",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Bilge_Tonyukuk_-_Orkhon_Inscriptions.jpeg/1920px-Bilge_Tonyukuk_-_Orkhon_Inscriptions.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "width": 1600,
+      "height": 1067
+    }
   ]
 }

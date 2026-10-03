@@ -8,6 +8,13 @@
   "field": ["she'riyat", "tilshunoslik", "davlat boshqaruvi"],
   "relatedPeoples": ["ozbeklar"],
   "relatedStates": ["temuriylar"],
+  "portrait": {
+    "kind": "tarixiy-tasvir",
+    "src": "../../assets/scholars/alisher-navoiy.jpg",
+    "author": "Mahmud Muzahhib (attr.), 15th c.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:File-0111Navoii.jpeg"
+  },
   "sources": ["iranica", "johanson-csato-2021", "findley-2005"],
   "verified": false
 }

@@ -8,6 +8,13 @@
   "field": ["tarix", "she'riyat", "davlat boshqaruvi"],
   "relatedPeoples": ["ozbeklar"],
   "relatedStates": ["temuriylar", "boburiylar"],
+  "portrait": {
+    "kind": "tarixiy-tasvir",
+    "src": "../../assets/scholars/bobur.jpg",
+    "author": "Baburnama, c. 1589",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Babur_in_1525,_distribution_treasures_after_the_occupation_of_Agra,_Baburnama_circa_1589_painting.jpg"
+  },
   "sources": ["findley-2005", "bosworth-1996"],
   "verified": false
 }

@@ -8,6 +8,13 @@
   "field": ["ma'rifatchilik", "jurnalistika", "ta'lim"],
   "relatedPeoples": ["qrim-tatarlari"],
   "relatedStates": [],
+  "portrait": {
+    "kind": "foto",
+    "src": "../../assets/scholars/gaspirali.jpg",
+    "author": "",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ismail_Gasprinskiy.jpg"
+  },
   "sources": ["findley-2005"],
   "verified": false
 }

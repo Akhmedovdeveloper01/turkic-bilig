@@ -1,0 +1,59 @@
+---
+/**
+ * Alloma portreti. `ai-talqin` bo'lsa, rasm ostida doimo "haqiqiy qiyofasi
+ * ma'lum emas" belgisi chiqadi (alt matnida ham) — badiiy talqin haqiqiy
+ * tasvir deb qabul qilinmasligi uchun.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { createTranslator } from '../../i18n/ui';
+
+type Portrait =
+  | { kind: 'foto' | 'tarixiy-tasvir'; src: ImageMetadata; author: string; license: string; sourceUrl: string }
+  | { kind: 'ai-talqin'; src: ImageMetadata; model: string; prompt: string; created: string };
+
+interface Props {
+  lang: string;
+  name: string;
+  portrait: Portrait;
+  /** page — sahifadagi katta portret izoh bilan; card — ro'yxatdagi kichik eskiz. */
+  variant?: 'page' | 'card';
+}
+const { lang, name, portrait, variant = 'page' } = Astro.props;
+const t = createTranslator(lang);
+const isAi = portrait.kind === 'ai-talqin';
+const label = isAi
+  ? t('scholars.portraitAi')
+  : portrait.kind === 'foto'
+    ? t('scholars.portraitPhoto')
+    : t('scholars.portraitHistoric');
+const alt = `${name} — ${label}`;
+---
+
+{variant === 'card' ? (
+  <div class="relative size-16 shrink-0 overflow-hidden rounded-full border border-line bg-surface">
+    <Image src={portrait.src} alt={alt} widths={[64, 128]} sizes="64px" class="size-full object-cover object-top" />
+    {isAi && (
+      <span class="absolute inset-x-0 bottom-0 bg-ink/70 text-center text-[9px] font-semibold uppercase leading-4 tracking-wide text-surface" aria-hidden="true">AI</span>
+    )}
+  </div>
+) : (
+  <figure class="mb-6 w-full max-w-xs sm:float-end sm:ms-6 sm:w-60">
+    <div class="overflow-hidden rounded-xl border border-line bg-surface-alt">
+      <Image src={portrait.src} alt={alt} widths={[240, 480]} sizes="(min-width: 640px) 240px, 320px" class="aspect-[4/5] w-full object-cover object-top" />
+    </div>
+    <figcaption class="mt-2 text-xs leading-snug text-ink-muted">
+      {isAi ? (
+        <p class="rounded-md border border-gold/40 bg-gold/10 px-2 py-1.5 font-medium text-ink">{label}</p>
+      ) : (
+        <p>
+          {label} ·{' '}
+          <a href={portrait.sourceUrl} class="underline decoration-line underline-offset-2 hover:text-brand" rel="noopener">
+            {portrait.author || 'Wikimedia Commons'}
+          </a>{' '}
+          ({portrait.license})
+        </p>
+      )}
+    </figcaption>
+  </figure>
+)}

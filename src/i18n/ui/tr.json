@@ -219,6 +219,9 @@
     "categoryMunozarali": "Kökeni tartışmalı",
     "sortedNote": "Bilginler doğum (veya faaliyet) dönemine göre sıralanmıştır. Etiket, bilginin Türk dünyasıyla bağını gösterir: Türkçe eser vermiş veya Türk kökeni genel kabul görmüş; Türk devletlerinde faaliyet göstermiş; kökeni bilimsel olarak tartışmalı.",
     "filterLegend": "Bilginleri kategoriye göre süz",
-    "lived": "Yaşadığı dönem"
+    "lived": "Yaşadığı dönem",
+    "portraitAi": "Sanatsal yorum — yapay zekâ ile çizilmiştir. Âlimin gerçek görünümü bilinmemektedir.",
+    "portraitPhoto": "Fotoğraf",
+    "portraitHistoric": "Tarihî tasvir"
   }
 }

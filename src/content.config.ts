@@ -241,7 +241,7 @@ const states = defineCollection({
 // --- Olim va ulamolar ---
 const scholarFacts = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/scholars-facts' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     /** turkiy — turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul
      * qilingan; mintaqaviy — turkiy davlatlarda / turkiy dunyo mintaqasida
      * faoliyat yuritgan (o'zi turkiy deb tasniflanmaydi); munozarali — kelib
@@ -255,6 +255,28 @@ const scholarFacts = defineCollection({
     field: z.array(z.string()).min(1, "Faoliyat sohasi (soha) ko'rsatilishi shart"),
     relatedPeoples: z.array(reference('peopleFacts')).default([]),
     relatedStates: z.array(reference('stateFacts')).default([]),
+    /** Portret. foto / tarixiy-tasvir — Commons'dan, muallif va litsenziya bilan;
+     * ai-talqin — haqiqiy qiyofasi noma'lum alloma uchun AI chizgan badiiy talqin:
+     * sahifada doimo "haqiqiy qiyofasi ma'lum emas" belgisi bilan ko'rsatiladi,
+     * shaffoflik uchun model va prompt saqlanadi. */
+    portrait: z
+      .discriminatedUnion('kind', [
+        z.object({
+          kind: z.enum(['foto', 'tarixiy-tasvir']),
+          src: image(),
+          author: z.string(),
+          license: z.string(),
+          sourceUrl: z.string().url(),
+        }),
+        z.object({
+          kind: z.literal('ai-talqin'),
+          src: image(),
+          model: z.string(),
+          prompt: z.string(),
+          created: z.string(),
+        }),
+      ])
+      .optional(),
     sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
     ...verificationFields,
   }),

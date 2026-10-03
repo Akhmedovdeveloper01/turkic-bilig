@@ -6,6 +6,7 @@ import EntryCard from '../../../components/EntryCard.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
+import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
 import { formatYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -75,6 +76,7 @@ const FILTERS = [
         index={index}
         category={facts.category}
       >
+        {facts.portrait && <ScholarPortrait slot="media" lang={lang!} name={entry.data.title} portrait={facts.portrait} variant="card" />}
         <div class="flex flex-wrap items-center gap-2">
           {lifeSpan(facts) && <span class="text-xs font-medium tabular-nums text-ink-muted">{lifeSpan(facts)}</span>}
           <ScholarCategoryBadge lang={lang!} category={facts.category} />

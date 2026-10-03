@@ -373,5 +373,117 @@
       "id": "tunyuquq",
       "commons": "File:Bilge Tonyukuk - Orkhon Inscriptions.jpeg"
     }
+  ],
+  "peoples/tatarlar": [
+    {
+      "id": "qolsharif",
+      "commons": "File:Kazan Kul Sharif Mosque 2024-07-13 1341.jpg",
+      "unescoYear": 2000
+    }
+  ],
+  "peoples/saxalar": [
+    {
+      "id": "lena-ustunlari",
+      "commons": "File:Lena Pillars 20050716 16.JPG",
+      "unescoYear": 2012
+    }
+  ],
+  "peoples/oltoylar": [
+    {
+      "id": "beluxa",
+      "commons": "File:Belukha from Kurunda 02.jpg",
+      "unescoYear": 1998
+    },
+    {
+      "id": "teletskoye",
+      "commons": "File:Телецкое озеро с севера.jpg",
+      "unescoYear": 1998
+    }
+  ],
+  "peoples/tuvalar": [
+    {
+      "id": "dus-xol",
+      "commons": "File:Озеро Дус-Холь вечером. Тес-Хемский кожуун.jpg"
+    }
+  ],
+  "peoples/uygurlar": [
+    {
+      "id": "idgoh",
+      "commons": "File:Id Kah Mosque Kashgar.jpg"
+    },
+    {
+      "id": "amin-minorasi",
+      "commons": "File:Emin Minaret in 2024.jpg"
+    }
+  ],
+  "peoples/qrim-tatarlari": [
+    {
+      "id": "xon-saroyi",
+      "commons": "File:Bakhchisarai Palace2.jpg"
+    }
+  ],
+  "peoples/karaimlar": [
+    {
+      "id": "chufut-kenasa",
+      "commons": "File:Cufut Qale kenassa.jpg"
+    },
+    {
+      "id": "trakay-kenasa",
+      "commons": "File:Trakai Kenesa 02(js).jpg"
+    }
+  ],
+  "peoples/salarlar": [
+    {
+      "id": "xunhua-1932",
+      "commons": "File:Salar children on a Yak fetch water from the Yellow River with wooden buckets, Xunhua (Shunhua), Qinghai, 1932.jpg"
+    }
+  ],
+  "peoples/qoraqalpoqlar": [
+    {
+      "id": "mizdahkon",
+      "commons": "File:Necropolis Mizdakhan 01.JPG"
+    }
+  ],
+  "peoples/boshqirdlar": [
+    {
+      "id": "shulgantosh",
+      "commons": "File:The Shulgan River.jpg"
+    },
+    {
+      "id": "salovat-yulay",
+      "commons": "File:Ufa. Monument to Salavat Yulaev. square named after him. Salavat Yulaev.jpg"
+    }
+  ],
+  "peoples/bolqorlar": [
+    {
+      "id": "elbrus",
+      "commons": "File:Mount Elbrus from the southeast.JPG"
+    },
+    {
+      "id": "chegem",
+      "commons": "File:Chegem waterfalls 1.jpg"
+    }
+  ],
+  "peoples/qorachoylar": [
+    {
+      "id": "dombay",
+      "commons": "File:Dombay, Dzhuguturlyuchat massif and glacier, Caucasus Mountains, Karachay-Cherkessia.jpg"
+    },
+    {
+      "id": "dombay-ulgen",
+      "commons": "File:Dombay-Ulgen, Caucasus Mountains, Dombay, Karachay-Cherkessia.jpg"
+    }
+  ],
+  "peoples/chuvashlar": [
+    {
+      "id": "cheboksari",
+      "commons": "File:МосковскаяНабережнаяЧебоксары.jpg"
+    }
+  ],
+  "peoples/xakaslar": [
+    {
+      "id": "salbiq",
+      "commons": "File:Салбыкский курган (2).jpg"
+    }
   ]
 }

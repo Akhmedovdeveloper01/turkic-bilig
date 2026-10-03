@@ -10,6 +10,7 @@
   "relatedStates": ["temuriylar"],
   "portrait": {
     "kind": "tarixiy-tasvir",
+    "medium": "miniatyura",
     "src": "../../assets/scholars/alisher-navoiy.jpg",
     "author": "Mahmud Muzahhib (attr.), 15th c.",
     "license": "Public domain",

@@ -8,6 +8,14 @@
   "field": ["she'riyat", "tasavvuf"],
   "relatedPeoples": ["ozarbayjonlar"],
   "relatedStates": [],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "marka",
+    "src": "../../assets/scholars/nasimiy.jpg",
+    "author": "USSR stamp (1973)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Nasimi.jpg"
+  },
   "sources": ["iranica", "golden-1992"],
   "verified": false
 }

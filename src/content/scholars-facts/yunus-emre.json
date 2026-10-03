@@ -8,6 +8,14 @@
   "field": ["she'riyat", "tasavvuf"],
   "relatedPeoples": ["turklar"],
   "relatedStates": ["rum-saljuqiylari"],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "haykal",
+    "src": "../../assets/scholars/yunus-emre.jpg",
+    "author": "Zeynel Cebeci",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Yunus_Emre,_Eski%C5%9Fehir_05_(cropped).jpg"
+  },
   "sources": ["findley-2005"],
   "verified": false
 }

@@ -7,6 +7,14 @@
   "field": ["astronomiya", "matematika", "davlat boshqaruvi"],
   "relatedPeoples": ["ozbeklar"],
   "relatedStates": ["temuriylar"],
+  "portrait": {
+    "kind": "tarixiy-tasvir",
+    "medium": "miniatyura",
+    "src": "../../assets/scholars/ulugbek.jpg",
+    "author": "Timurid artist, c. 1425–1450",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ulugh_Beg_portrait.jpg"
+  },
   "sources": ["golden-1992", "findley-2005"],
   "verified": false
 }

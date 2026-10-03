@@ -8,6 +8,14 @@
   "field": ["she'riyat"],
   "relatedPeoples": ["ozarbayjonlar", "turklar"],
   "relatedStates": ["safaviylar", "usmonli-imperiyasi"],
+  "portrait": {
+    "kind": "tarixiy-tasvir",
+    "medium": "miniatyura",
+    "src": "../../assets/scholars/fuzuliy.jpg",
+    "author": "Âşık Çelebi, Meşâirü'ş-şuarâ (1568)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammad_Fuzuli_(painted_portrait_1568).jpg"
+  },
   "sources": ["iranica", "findley-2005"],
   "verified": false
 }

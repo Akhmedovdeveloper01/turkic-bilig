@@ -5,6 +5,14 @@
   "field": ["adabiyot", "davlat boshqaruvi nazariyasi"],
   "relatedPeoples": [],
   "relatedStates": ["qoraxoniylar"],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "banknota",
+    "src": "../../assets/scholars/yusuf-xos-hojib.jpg",
+    "author": "Kyrgyz 1000 som banknote",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Y%C5%ABsuf_Balasaguni_on_1000_som_note.jpg"
+  },
   "sources": ["golden-1992", "qutadgu-bilig"],
   "verified": false
 }

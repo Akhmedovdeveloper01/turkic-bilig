@@ -255,14 +255,17 @@ const scholarFacts = defineCollection({
     field: z.array(z.string()).min(1, "Faoliyat sohasi (soha) ko'rsatilishi shart"),
     relatedPeoples: z.array(reference('peopleFacts')).default([]),
     relatedStates: z.array(reference('stateFacts')).default([]),
-    /** Portret. foto / tarixiy-tasvir — Commons'dan, muallif va litsenziya bilan;
-     * ai-talqin — haqiqiy qiyofasi noma'lum alloma uchun AI chizgan badiiy talqin:
-     * sahifada doimo "haqiqiy qiyofasi ma'lum emas" belgisi bilan ko'rsatiladi,
-     * shaffoflik uchun model va prompt saqlanadi. */
+    /** Portret. foto — fotosurat; tarixiy-tasvir — alloma hayotligida yoki
+     * yaqin davrda yaratilgan tasvir; badiiy-tasvir — ancha keyin tasavvur
+     * asosida yaratilgan (marka, gravyura, haykal va h.k.). foto va tasvirlar
+     * Commons'dan, muallif va litsenziya bilan. ai-talqin — AI chizgan badiiy
+     * talqin, model va prompt saqlanadi. badiiy-tasvir va ai-talqin sahifada
+     * doimo "haqiqiy qiyofasi ma'lum emas" belgisi bilan ko'rsatiladi. */
     portrait: z
       .discriminatedUnion('kind', [
         z.object({
-          kind: z.enum(['foto', 'tarixiy-tasvir']),
+          kind: z.enum(['foto', 'tarixiy-tasvir', 'badiiy-tasvir']),
+          medium: z.enum(['foto', 'miniatyura', 'gravyura', 'rasm', 'marka', 'banknota', 'haykal']),
           src: image(),
           author: z.string(),
           license: z.string(),

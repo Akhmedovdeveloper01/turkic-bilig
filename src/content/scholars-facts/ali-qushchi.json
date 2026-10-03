@@ -8,6 +8,14 @@
   "field": ["astronomiya", "matematika"],
   "relatedPeoples": [],
   "relatedStates": ["temuriylar", "usmonli-imperiyasi"],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "miniatyura",
+    "src": "../../assets/scholars/ali-qushchi.jpg",
+    "author": "Ottoman miniature, 16th c.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fatih_Sultan_Mehmed_und_Ali_Ku%C5%9F%C3%A7u.jpg"
+  },
   "sources": ["iranica"],
   "verified": false
 }

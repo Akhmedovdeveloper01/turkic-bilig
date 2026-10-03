@@ -222,6 +222,16 @@
     "lived": "Lifetime",
     "portraitAi": "Artistic interpretation drawn with AI. The scholar's actual appearance is unknown.",
     "portraitPhoto": "Photograph",
-    "portraitHistoric": "Historical depiction"
+    "portraitHistoric": "Historical depiction",
+    "portraitImagined": "A later artistic depiction ({medium}). The scholar's actual appearance is unknown.",
+    "medium": {
+      "foto": "photograph",
+      "miniatyura": "miniature",
+      "gravyura": "engraving",
+      "rasm": "drawing",
+      "marka": "postage stamp",
+      "banknota": "banknote",
+      "haykal": "statue"
+    }
   }
 }

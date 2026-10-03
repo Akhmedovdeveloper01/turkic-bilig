@@ -222,6 +222,16 @@
     "lived": "Yashagan davri",
     "portraitAi": "Badiiy talqin — AI yordamida chizilgan. Allomaning haqiqiy qiyofasi ma'lum emas.",
     "portraitPhoto": "Fotosurat",
-    "portraitHistoric": "Tarixiy tasvir"
+    "portraitHistoric": "Tarixiy tasvir",
+    "portraitImagined": "Keyingi davrda yaratilgan badiiy tasvir ({medium}). Allomaning haqiqiy qiyofasi ma'lum emas.",
+    "medium": {
+      "foto": "fotosurat",
+      "miniatyura": "miniatyura",
+      "gravyura": "gravyura",
+      "rasm": "rasm",
+      "marka": "pochta markasi",
+      "banknota": "banknota",
+      "haykal": "haykal"
+    }
   }
 }

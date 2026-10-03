@@ -7,6 +7,14 @@
   "field": ["tilshunoslik", "leksikografiya"],
   "relatedPeoples": [],
   "relatedStates": ["qoraxoniylar"],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "haykal",
+    "src": "../../assets/scholars/mahmud-koshgariy.jpg",
+    "author": "Zossolino",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2015-09-11-080312_-_Upal,_Mausoleum_des_Uigurischen_Philologen_Muhamad_Al_Kashgari.JPG"
+  },
   "sources": ["golden-1992", "devonu-lugotit-turk"],
   "verified": false
 }

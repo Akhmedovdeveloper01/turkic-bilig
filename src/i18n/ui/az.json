@@ -222,6 +222,16 @@
     "lived": "Yaşadığı dövr",
     "portraitAi": "Bədii yozum — süni intellektlə çəkilib. Alimin həqiqi görünüşü məlum deyil.",
     "portraitPhoto": "Fotoşəkil",
-    "portraitHistoric": "Tarixi təsvir"
+    "portraitHistoric": "Tarixi təsvir",
+    "portraitImagined": "Sonrakı dövrdə yaradılmış bədii təsvir ({medium}). Alimin həqiqi görünüşü məlum deyil.",
+    "medium": {
+      "foto": "fotoşəkil",
+      "miniatyura": "miniatür",
+      "gravyura": "qravüra",
+      "rasm": "rəsm",
+      "marka": "poçt markası",
+      "banknota": "əskinas",
+      "haykal": "heykəl"
+    }
   }
 }

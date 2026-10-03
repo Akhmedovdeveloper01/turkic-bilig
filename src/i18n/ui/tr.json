@@ -222,6 +222,16 @@
     "lived": "Yaşadığı dönem",
     "portraitAi": "Sanatsal yorum — yapay zekâ ile çizilmiştir. Âlimin gerçek görünümü bilinmemektedir.",
     "portraitPhoto": "Fotoğraf",
-    "portraitHistoric": "Tarihî tasvir"
+    "portraitHistoric": "Tarihî tasvir",
+    "portraitImagined": "Sonraki dönemde yapılmış sanatsal tasvir ({medium}). Âlimin gerçek görünümü bilinmemektedir.",
+    "medium": {
+      "foto": "fotoğraf",
+      "miniatyura": "minyatür",
+      "gravyura": "gravür",
+      "rasm": "çizim",
+      "marka": "posta pulu",
+      "banknota": "banknot",
+      "haykal": "heykel"
+    }
   }
 }

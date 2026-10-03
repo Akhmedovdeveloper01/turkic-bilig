@@ -10,6 +10,7 @@
   "relatedStates": ["temuriylar", "boburiylar"],
   "portrait": {
     "kind": "tarixiy-tasvir",
+    "medium": "miniatyura",
     "src": "../../assets/scholars/bobur.jpg",
     "author": "Baburnama, c. 1589",
     "license": "Public domain",

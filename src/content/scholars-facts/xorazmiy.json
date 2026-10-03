@@ -8,6 +8,14 @@
   "field": ["matematika", "astronomiya", "geografiya"],
   "relatedPeoples": [],
   "relatedStates": [],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "marka",
+    "src": "../../assets/scholars/xorazmiy.jpg",
+    "author": "Michel Bakni (after a USSR stamp)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Khwarizmi_portrait.jpg"
+  },
   "sources": ["iranica"],
   "verified": false
 }

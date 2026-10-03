@@ -8,6 +8,14 @@
   "field": ["tibbiyot", "falsafa"],
   "relatedPeoples": [],
   "relatedStates": [],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "gravyura",
+    "src": "../../assets/scholars/ibn-sino.jpg",
+    "author": "Anonymous engraving · Wellcome Collection",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_of_Avicenna;_anon.,_Wellcome_M0009341.jpg"
+  },
   "sources": ["iranica"],
   "verified": false,
   "disputed": [

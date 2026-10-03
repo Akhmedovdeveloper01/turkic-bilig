@@ -8,6 +8,14 @@
   "field": ["tarix", "ilohiyot", "ta'lim"],
   "relatedPeoples": ["tatarlar"],
   "relatedStates": [],
+  "portrait": {
+    "kind": "tarixiy-tasvir",
+    "medium": "rasm",
+    "src": "../../assets/scholars/marjoniy.jpg",
+    "author": "",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shihab_al-Din_Marjani.jpg"
+  },
   "sources": ["findley-2005"],
   "verified": false
 }

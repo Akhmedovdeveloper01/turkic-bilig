@@ -1,15 +1,22 @@
 ---
 /**
- * Alloma portreti. `ai-talqin` bo'lsa, rasm ostida doimo "haqiqiy qiyofasi
- * ma'lum emas" belgisi chiqadi (alt matnida ham) — badiiy talqin haqiqiy
- * tasvir deb qabul qilinmasligi uchun.
+ * Alloma portreti. `badiiy-tasvir` va `ai-talqin` bo'lsa, rasm ostida doimo
+ * "haqiqiy qiyofasi ma'lum emas" belgisi chiqadi (alt matnida ham) — keyingi
+ * davr tasavvuri haqiqiy tasvir deb qabul qilinmasligi uchun.
  */
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { createTranslator } from '../../i18n/ui';
 
 type Portrait =
-  | { kind: 'foto' | 'tarixiy-tasvir'; src: ImageMetadata; author: string; license: string; sourceUrl: string }
+  | {
+      kind: 'foto' | 'tarixiy-tasvir' | 'badiiy-tasvir';
+      medium: 'foto' | 'miniatyura' | 'gravyura' | 'rasm' | 'marka' | 'banknota' | 'haykal';
+      src: ImageMetadata;
+      author: string;
+      license: string;
+      sourceUrl: string;
+    }
   | { kind: 'ai-talqin'; src: ImageMetadata; model: string; prompt: string; created: string };
 
 interface Props {
@@ -22,19 +29,25 @@ interface Props {
 const { lang, name, portrait, variant = 'page' } = Astro.props;
 const t = createTranslator(lang);
 const isAi = portrait.kind === 'ai-talqin';
-const label = isAi
-  ? t('scholars.portraitAi')
-  : portrait.kind === 'foto'
-    ? t('scholars.portraitPhoto')
-    : t('scholars.portraitHistoric');
+/** Haqiqiy qiyofani ko'rsatmaydigan tasvir — ogohlantirish bilan chiqadi. */
+const isImagined = isAi || portrait.kind === 'badiiy-tasvir';
+const medium = portrait.kind === 'ai-talqin' ? '' : t(`scholars.medium.${portrait.medium}`);
+const label =
+  portrait.kind === 'ai-talqin'
+    ? t('scholars.portraitAi')
+    : portrait.kind === 'badiiy-tasvir'
+      ? t('scholars.portraitImagined', { medium })
+      : portrait.kind === 'foto'
+        ? t('scholars.portraitPhoto')
+        : `${t('scholars.portraitHistoric')} (${medium})`;
 const alt = `${name} — ${label}`;
 ---
 
 {variant === 'card' ? (
   <div class="relative size-16 shrink-0 overflow-hidden rounded-full border border-line bg-surface">
     <Image src={portrait.src} alt={alt} widths={[64, 128]} sizes="64px" class="size-full object-cover object-top" />
-    {isAi && (
-      <span class="absolute inset-x-0 bottom-0 bg-ink/70 text-center text-[9px] font-semibold uppercase leading-4 tracking-wide text-surface" aria-hidden="true">AI</span>
+    {isImagined && (
+      <span class="absolute inset-x-0 bottom-0 bg-ink/70 text-center text-[9px] font-semibold uppercase leading-4 tracking-wide text-surface" aria-hidden="true">{isAi ? 'AI' : '≈'}</span>
     )}
   </div>
 ) : (
@@ -43,11 +56,12 @@ const alt = `${name} — ${label}`;
       <Image src={portrait.src} alt={alt} widths={[240, 480]} sizes="(min-width: 640px) 240px, 320px" class="aspect-[4/5] w-full object-cover object-top" />
     </div>
     <figcaption class="mt-2 text-xs leading-snug text-ink-muted">
-      {isAi ? (
-        <p class="rounded-md border border-gold/40 bg-gold/10 px-2 py-1.5 font-medium text-ink">{label}</p>
-      ) : (
+      {isImagined && (
+        <p class="mb-1.5 rounded-md border border-gold/40 bg-gold/10 px-2 py-1.5 font-medium text-ink">{label}</p>
+      )}
+      {portrait.kind !== 'ai-talqin' && (
         <p>
-          {label} ·{' '}
+          {!isImagined && <>{label} · </>}
           <a href={portrait.sourceUrl} class="underline decoration-line underline-offset-2 hover:text-brand" rel="noopener">
             {portrait.author || 'Wikimedia Commons'}
           </a>{' '}

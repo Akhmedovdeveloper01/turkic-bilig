@@ -8,6 +8,14 @@
   "field": ["falsafa", "musiqa nazariyasi", "mantiq"],
   "relatedPeoples": [],
   "relatedStates": [],
+  "portrait": {
+    "kind": "badiiy-tasvir",
+    "medium": "rasm",
+    "src": "../../assets/scholars/forobiy.jpg",
+    "author": "",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al-Farabi_,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png"
+  },
   "sources": ["iranica", "golden-1992"],
   "verified": false,
   "disputed": [

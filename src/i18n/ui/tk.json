@@ -222,6 +222,16 @@
     "lived": "Ýaşan döwri",
     "portraitAi": "Çeper düşündiriş — emeli aň bilen çekildi. Alymyň hakyky keşbi belli däl.",
     "portraitPhoto": "Surat",
-    "portraitHistoric": "Taryhy şekil"
+    "portraitHistoric": "Taryhy şekil",
+    "portraitImagined": "Soňky döwürde döredilen çeper şekil ({medium}). Alymyň hakyky keşbi belli däl.",
+    "medium": {
+      "foto": "surat",
+      "miniatyura": "miniatýura",
+      "gravyura": "grawýura",
+      "rasm": "surat",
+      "marka": "poçta markasy",
+      "banknota": "banknot",
+      "haykal": "heýkel"
+    }
   }
 }

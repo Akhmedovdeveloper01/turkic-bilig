@@ -1,0 +1,24 @@
+{
+  "_note": "Haqiqiy qiyofasi ma'lum bo'lmagan allomalar uchun AI badiiy talqin promptlari. Uslub barcha rasmlar uchun bir xil (style + subject). Fotoreal uslub ishlatilmaydi. Etnik stereotip yo'q: kiyim faqat davr va mintaqaga umumiy mos. Natija src/assets/scholars/{slug}.jpg ga, model/prompt/sana scholars-facts/{slug}.json dagi portrait maydoniga yoziladi (kind: ai-talqin). Marjoniy (1818-1889) uchun AI ishlatilmaydi — avval tarixiy fotosurat qidirilsin.",
+  "style": "Illustration in the style of a 15th-16th century Persianate / Central Asian manuscript miniature: flat perspective, fine ink outlines, opaque gouache colors, gold leaf accents, ornamental floral border, plain parchment background. Single figure, three-quarter view, head and upper body, dignified neutral expression. Clearly a painting, not a photograph. No text, no letters, no calligraphy, no signature, no watermark. Vertical 4:5 composition.",
+  "subjects": {
+    "xorazmiy": "A 9th-century scholar of Baghdad's House of Wisdom, seated with an astrolabe and a manuscript with geometric diagrams, simple turban and robe.",
+    "forobiy": "A 10th-century philosopher and music theorist, holding a long-necked lute (oud-like instrument) beside a closed book, simple turban, modest robe.",
+    "beruniy": "An 11th-century scholar of Khwarazm, holding a large brass astrolabe, a celestial globe beside him, simple turban and robe.",
+    "ibn-sino": "An early 11th-century physician and philosopher, seated with an open medical manuscript and a small glass flask, simple turban and robe.",
+    "mahmud-koshgariy": "An 11th-century lexicographer, writing in a large book with a reed pen, a round world-map scroll beside him, simple turban and robe.",
+    "yusuf-xos-hojib": "An 11th-century poet and court official of Kashgar, holding a bound book, dignified court robe, simple turban.",
+    "ahmad-yassaviy": "A 12th-century Sufi poet, elderly, white beard, simple dervish cloak and tall felt cap, holding prayer beads.",
+    "adib-ahmad-yugnakiy": "A 12th-century didactic poet, elderly scholar holding a small book, simple turban and robe. Gentle, contemplative pose.",
+    "yunus-emre": "A 13th-century Anatolian folk Sufi poet, simple wool cloak, felt cap, holding a walking staff, rural landscape motif in the border.",
+    "nasimiy": "A 14th-century poet, middle-aged, simple turban and robe, holding a sheet of paper with a reed pen.",
+    "lutfiy": "A 15th-century Timurid-era poet of Herat, elderly, white beard, seated in a garden setting with a book.",
+    "qozizoda-rumiy": "A 14th-15th century mathematician and astronomer of Samarkand, teaching with a geometric diagram board, simple turban and robe.",
+    "ulugbek": "A 15th-century Timurid ruler and astronomer, Timurid court robe and turban, holding an astronomical instrument, a large observatory arc in the background.",
+    "ali-qushchi": "A 15th-century astronomer and mathematician, holding a quadrant instrument and a book, simple turban and robe.",
+    "abdurahmon-jomiy": "A 15th-century poet and Sufi scholar of Herat, elderly, white beard, seated with an open book in a garden pavilion.",
+    "fuzuliy": "A 16th-century poet of Baghdad, seated with a book of poetry, simple turban and robe, melancholic contemplative mood.",
+    "abulgozi-bahodirxon": "A 17th-century Khan of Khiva and historian, Central Asian court robe and fur-trimmed hat, holding a bound chronicle.",
+    "maxtumquli": "An 18th-century poet, Central Asian robe and tall sheepskin hat (telpek), holding a book, steppe landscape motif in the border."
+  }
+}

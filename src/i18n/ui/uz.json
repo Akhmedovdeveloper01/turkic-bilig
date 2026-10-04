@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Manba kodi",
-    "rights": "Barcha huquqlar himoyalangan"
+    "license": "Litsenziya",
+    "contentLicense": "Kontent: CC BY-NC-SA 4.0",
+    "codeLicense": "Kod: MIT"
   },
   "peoples": {
     "originMapTitle": "Kelib chiqishi va tarqalishi",

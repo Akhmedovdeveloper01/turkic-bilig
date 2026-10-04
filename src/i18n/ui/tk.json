@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Çeşme kody",
-    "rights": "Ähli hukuklar goralan"
+    "license": "Ygtyýarnama",
+    "contentLicense": "Mazmun: CC BY-NC-SA 4.0",
+    "codeLicense": "Kod: MIT"
   },
   "peoples": {
     "originMapTitle": "Gelip çykyşy we ýaýrawy",

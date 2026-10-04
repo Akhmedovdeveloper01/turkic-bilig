@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Mənbə kodu",
-    "rights": "Bütün hüquqlar qorunur"
+    "license": "Lisenziya",
+    "contentLicense": "Məzmun: CC BY-NC-SA 4.0",
+    "codeLicense": "Kod: MIT"
   },
   "peoples": {
     "originMapTitle": "Mənşəyi və yayılması",

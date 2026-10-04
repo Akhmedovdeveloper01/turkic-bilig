@@ -1,43 +1,27 @@
-# Astro Starter Kit: Minimal
+# Turkic Bilig — Turkiy xalqlar ensiklopediyasi
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Turkiy xalqlar haqida ilmiy manbalarga asoslangan, ko'p tilli ensiklopediya.
+Sayt: <https://turkicbilig.uz>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Loyiha qoidalari (ilmiy talablar, ko'p tillilik, papka tuzilishi) — [CLAUDE.md](CLAUDE.md).
 
-## 🚀 Project Structure
+## Ishga tushirish
 
-Inside of your Astro project, you'll see the following folders and files:
+Node.js 22.12 yoki undan yangi versiya kerak.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+| Buyruq            | Vazifasi                                              |
+| :---------------- | :---------------------------------------------------- |
+| `npm install`     | Bog'liqliklarni o'rnatish                             |
+| `npm run dev`     | Lokal server: `localhost:4321`                        |
+| `npm run build`   | Statik saytni `./dist/` ga yig'ish (sxema tekshiruvi) |
+| `npm run preview` | Yig'ilgan saytni ko'rish                              |
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Litsenziya
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Manba kodi** — [MIT](LICENSE).
+- **Kontent va ma'lumotlar** (`src/content/`, `src/data/`, `src/i18n/ui/`) —
+  [CC BY-NC-SA 4.0](LICENSE-CONTENT): manba ko'rsatilgan holda notijorat maqsadda
+  erkin foydalanish mumkin. Tijoriy foydalanish uchun alohida litsenziya kerak —
+  loyiha mualliflariga murojaat qiling.
+- **Uchinchi tomon materiallari** (Wikimedia Commons fotosuratlari, bayroq va gerb
+  tasvirlari va h.k.) o'z litsenziyasini saqlaydi — batafsil: [LICENSE-CONTENT](LICENSE-CONTENT).

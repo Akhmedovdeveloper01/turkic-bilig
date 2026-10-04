@@ -32,6 +32,7 @@ const NAV = [
   { href: 'mavzular', key: 'nav.topics' },
   { href: 'meros', key: 'nav.heritage' },
 ];
+const REPO_URL = 'https://github.com/Akhmedovdeveloper01/turkic-bilig';
 const section = Astro.url.pathname.split('/')[2] ?? '';
 const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')} — ${t('site.description')}`;
 ---
@@ -124,7 +125,15 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
       <div class="mx-auto max-w-6xl px-4 py-8 text-center text-sm text-ink-muted">
         <p class="flex items-center justify-center gap-1.5">
           <Logo class="h-4 w-4 text-brand" />
-          Turkic Bilig — {t('footer.rights')}
+          Turkic Bilig — {t('site.description')}
+        </p>
+        <p class="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
+          <span class="sr-only">{t('footer.license')}:</span>
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" class="underline decoration-line hover:text-brand">{t('footer.contentLicense')}</a>
+          <span aria-hidden="true">·</span>
+          <a href={`${REPO_URL}/blob/main/LICENSE`} rel="noopener" class="underline decoration-line hover:text-brand">{t('footer.codeLicense')}</a>
+          <span aria-hidden="true">·</span>
+          <a href={REPO_URL} rel="noopener" class="underline decoration-line hover:text-brand">{t('footer.sourceCode')}</a>
         </p>
       </div>
     </footer>

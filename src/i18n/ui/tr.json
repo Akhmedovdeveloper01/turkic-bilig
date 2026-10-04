@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Kaynak kod",
-    "rights": "Tüm hakları saklıdır"
+    "license": "Lisans",
+    "contentLicense": "İçerik: CC BY-NC-SA 4.0",
+    "codeLicense": "Kod: MIT"
   },
   "peoples": {
     "originMapTitle": "Köken ve yayılma",

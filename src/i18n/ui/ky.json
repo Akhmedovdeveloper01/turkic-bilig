@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Баштапкы код",
-    "rights": "Бардык укуктар корголгон"
+    "license": "Лицензия",
+    "contentLicense": "Мазмун: CC BY-NC-SA 4.0",
+    "codeLicense": "Код: MIT"
   },
   "peoples": {
     "originMapTitle": "Теги жана таралышы",

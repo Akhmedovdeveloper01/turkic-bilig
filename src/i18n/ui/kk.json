@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Бастапқы код",
-    "rights": "Барлық құқықтар қорғалған"
+    "license": "Лицензия",
+    "contentLicense": "Мазмұн: CC BY-NC-SA 4.0",
+    "codeLicense": "Код: MIT"
   },
   "peoples": {
     "originMapTitle": "Шығу тегі мен таралуы",

@@ -48,7 +48,9 @@
   },
   "footer": {
     "sourceCode": "Исходный код",
-    "rights": "Все права защищены"
+    "license": "Лицензия",
+    "contentLicense": "Контент: CC BY-NC-SA 4.0",
+    "codeLicense": "Код: MIT"
   },
   "peoples": {
     "originMapTitle": "Происхождение и расселение",

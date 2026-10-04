@@ -1,0 +1,63 @@
+Turkic Bilig — kontent litsenziyasi / Content license
+=====================================================
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+(CC BY-NC-SA 4.0)
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+To'liq yuridik matn / Full legal code:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+Copyright (c) 2026 Turkic Bilig contributors
+
+
+Qamrov / Scope
+--------------
+
+Ushbu litsenziya quyidagilarga tegishli / This license covers:
+
+  - src/content/**   — maqolalar, faktlar, bibliografiya yozuvlari
+                       (articles, facts, bibliography records)
+  - src/data/**      — lug'atlar, jadvallar, xronologiya va shu kabi ma'lumotlar
+                       (glossaries, tables, timelines and similar data)
+  - src/i18n/ui/**   — interfeys matnlari (UI strings)
+
+Manba kodi bu litsenziyaga kirmaydi — u MIT litsenziyasi ostida (LICENSE).
+Source code is NOT covered here — it is MIT-licensed (see LICENSE).
+
+
+Qisqacha / In short
+-------------------
+
+Ruxsat etiladi / You may:
+  - nusxa ko'chirish, tarqatish, moslashtirish (copy, share, adapt)
+
+Shartlar / Under these terms:
+  - BY — "Turkic Bilig" va sahifa havolasini ko'rsatish
+         (credit "Turkic Bilig" and link to the page)
+  - NC — tijoriy maqsadda foydalanmaslik (no commercial use)
+  - SA — o'zgartirilgan nusxani shu litsenziya ostida tarqatish
+         (share adaptations under the same license)
+
+Tijoriy foydalanish (nashriyot, ilova, EdTech platformasi, API va h.k.) uchun
+alohida litsenziya kerak — loyiha mualliflariga murojaat qiling.
+Commercial use (publishing, apps, EdTech platforms, API access, etc.) requires
+a separate license — contact the project maintainers.
+
+
+Istisnolar / Exceptions
+-----------------------
+
+Uchinchi tomon materiallari o'z litsenziyasini saqlaydi va bu litsenziyaga
+kirmaydi / Third-party material keeps its own license and is NOT covered here:
+
+  - Wikimedia Commons va boshqa manbalardan olingan fotosuratlar, portretlar,
+    bayroq va gerb tasvirlari (src/assets/**, public/flags/**, public/emblems/**)
+    — har birining muallifi va litsenziyasi saytda yoki metadata faylida
+    ko'rsatilgan. Ulardan foydalanishdan oldin har birining litsenziyasini
+    tekshiring.
+    Photos, portraits, flag and emblem images from Wikimedia Commons and other
+    sources — author and license are given on the site or in metadata files.
+    Check each item's license before reuse.
+  - Iqtibos keltirilgan manbalar matni (cited source texts) — mualliflik
+    huquqi o'z egalarida.
+  - Geografik ma'lumotlar (geo data) — asl manba litsenziyasi bo'yicha.

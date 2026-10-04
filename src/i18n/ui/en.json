@@ -334,7 +334,7 @@
     "zoomHint": "Ctrl + wheel or pinch also works"
   },
   "tm": {
-    "lead": "Drag the year slider or press ▶ — for each year the map shows the capitals of the Turkic states that existed at that time, and the side panel lists the rulers on the throne, scholars alive and events of the period. Everything comes from the site's sourced data.",
+    "lead": "Drag the year slider below or press the «Play» button — for each year the map shows the capitals of the Turkic states that existed at that time, and the side panel lists the rulers on the throne, scholars alive and events of the period. Everything comes from the site's sourced data.",
     "play": "Play",
     "pause": "Pause",
     "back10": "10 years back",

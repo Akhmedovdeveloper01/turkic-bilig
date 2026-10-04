@@ -334,7 +334,7 @@
     "zoomHint": "Ctrl + tekerlek veya iki parmakla da olur"
   },
   "tm": {
-    "lead": "Yıl kaydırıcısını sürükleyin veya ▶ düğmesine basın — her yıl için haritada o dönem var olan Türk devletlerinin başkentleri, yan panelde ise tahttaki hükümdarlar, yaşayan âlimler ve dönemin olayları görünür. Hepsi sitenin kaynaklı verilerinden.",
+    "lead": "Aşağıdaki yıl kaydırıcısını sürükleyin veya «Oynat» düğmesine basın — her yıl için haritada o dönem var olan Türk devletlerinin başkentleri, yan panelde ise tahttaki hükümdarlar, yaşayan âlimler ve dönemin olayları görünür. Hepsi sitenin kaynaklı verilerinden.",
     "play": "Oynat",
     "pause": "Duraklat",
     "back10": "10 yıl geri",

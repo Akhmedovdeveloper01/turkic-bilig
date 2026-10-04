@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1872,
+  "deathYear": 1937,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tilshunoslik", "ma'rifatchilik", "jurnalistika"],
+  "relatedPeoples": ["qozoqlar"],
+  "relatedStates": [],
+  "sources": ["uzme"],
+  "verified": false
+}

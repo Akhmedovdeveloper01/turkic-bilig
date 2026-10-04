@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1897,
+  "deathYear": 1938,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["she'riyat", "nasr", "tarjima"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": [],
+  "sources": ["uzme"],
+  "verified": false
+}

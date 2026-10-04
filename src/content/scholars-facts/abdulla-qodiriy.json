@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1894,
+  "deathYear": 1938,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["nasr", "jurnalistika"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["qoqon-xonligi"],
+  "sources": ["uzme"],
+  "verified": false
+}

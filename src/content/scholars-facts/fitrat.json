@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1886,
+  "deathYear": 1938,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["adabiyot", "adabiyotshunoslik", "dramaturgiya"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["buxoro-amirligi"],
+  "sources": ["uzme", "findley-2005"],
+  "verified": false
+}

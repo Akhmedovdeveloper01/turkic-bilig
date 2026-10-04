@@ -1,0 +1,24 @@
+{
+  "category": "munozarali",
+  "roles": ["hukmdor", "sarkarda"],
+  "deathYear": 453,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "ovrupa-xunlari", "from": 434, "to": 453 }
+  ],
+  "events": [
+    { "id": "e1", "year": 434, "kind": "boshqa" },
+    { "id": "e2", "year": 447, "kind": "yurish" },
+    { "id": "e3", "year": 451, "kind": "jang" },
+    { "id": "e4", "year": 452, "kind": "yurish" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Yevropa xunlarining xunnular bilan bog'liqligi va tili",
+      "sourceIds": ["golden-1992", "sinor-1990"]
+    }
+  ]
+}

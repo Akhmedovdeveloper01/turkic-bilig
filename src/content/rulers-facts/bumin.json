@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor"],
+  "deathYear": 552,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "gokturk-xoqonligi", "from": 552, "to": 552 }
+  ],
+  "events": [
+    { "id": "e1", "year": 552, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "sinor-1990", "zhoushu", "orxun-yozuvlari"],
+  "verified": false
+}

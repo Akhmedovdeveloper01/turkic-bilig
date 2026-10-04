@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "deathYear": 955,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "qoraxoniylar", "from": 940, "to": 955, "uncertain": true }
+  ],
+  "events": [
+    { "id": "e1", "year": 940, "kind": "boshqa", "uncertain": true }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "ei2"],
+  "verified": false
+}

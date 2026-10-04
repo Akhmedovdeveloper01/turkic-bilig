@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "birthYear": 1483,
+  "deathYear": 1530,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "boburiylar", "from": 1526, "to": 1530 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1526, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "scholar": "bobur",
+  "sources": ["bosworth-1996", "findley-2005"],
+  "verified": false
+}

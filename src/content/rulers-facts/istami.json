@@ -1,0 +1,16 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "deathYear": 576,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "gokturk-xoqonligi", "from": 552, "to": 576, "uncertain": true }
+  ],
+  "events": [
+    { "id": "e1", "year": 560, "kind": "jang", "uncertain": true },
+    { "id": "e2", "year": 568, "kind": "shartnoma" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "sinor-1990", "orxun-yozuvlari"],
+  "verified": false
+}

@@ -1,5 +1,6 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import type { ZodType } from 'astro/zod';
 import {
   sourceRef,
   sourceStatus,
@@ -238,6 +239,36 @@ const states = defineCollection({
   }),
 });
 
+/** Shaxs portreti (allomalar, hukmdorlar). foto — fotosurat; tarixiy-tasvir — shaxs
+ * hayotligida yoki yaqin davrda yaratilgan tasvir; badiiy-tasvir — ancha keyin tasavvur
+ * asosida yaratilgan (marka, gravyura, haykal va h.k.). foto va tasvirlar Commons'dan,
+ * muallif va litsenziya bilan. ai-talqin — AI chizgan badiiy talqin, model va prompt
+ * saqlanadi. badiiy-tasvir va ai-talqin sahifada doimo "haqiqiy qiyofasi ma'lum emas"
+ * belgisi bilan ko'rsatiladi. */
+const portraitSchema = <T extends ZodType>(image: () => T) =>
+  z
+    .discriminatedUnion('kind', [
+      z.object({
+        kind: z.enum(['foto', 'tarixiy-tasvir', 'badiiy-tasvir']),
+        medium: z.enum(['foto', 'miniatyura', 'gravyura', 'rasm', 'marka', 'banknota', 'haykal']),
+        src: image(),
+        author: z.string(),
+        license: z.string(),
+        sourceUrl: z.string().url(),
+      }),
+      z.object({
+        kind: z.literal('ai-talqin'),
+        src: image(),
+        model: z.string(),
+        prompt: z.string(),
+        created: z.string(),
+      }),
+    ])
+    .optional();
+
+/** Shaxsning turkiy dunyo bilan bog'liqlik toifasi (allomalar va hukmdorlar uchun umumiy). */
+const personCategory = z.enum(['turkiy', 'mintaqaviy', 'munozarali']).default('turkiy');
+
 // --- Olim va ulamolar ---
 const scholarFacts = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/scholars-facts' }),
@@ -259,31 +290,7 @@ const scholarFacts = defineCollection({
     field: z.array(z.string()).min(1, "Faoliyat sohasi (soha) ko'rsatilishi shart"),
     relatedPeoples: z.array(reference('peopleFacts')).default([]),
     relatedStates: z.array(reference('stateFacts')).default([]),
-    /** Portret. foto — fotosurat; tarixiy-tasvir — alloma hayotligida yoki
-     * yaqin davrda yaratilgan tasvir; badiiy-tasvir — ancha keyin tasavvur
-     * asosida yaratilgan (marka, gravyura, haykal va h.k.). foto va tasvirlar
-     * Commons'dan, muallif va litsenziya bilan. ai-talqin — AI chizgan badiiy
-     * talqin, model va prompt saqlanadi. badiiy-tasvir va ai-talqin sahifada
-     * doimo "haqiqiy qiyofasi ma'lum emas" belgisi bilan ko'rsatiladi. */
-    portrait: z
-      .discriminatedUnion('kind', [
-        z.object({
-          kind: z.enum(['foto', 'tarixiy-tasvir', 'badiiy-tasvir']),
-          medium: z.enum(['foto', 'miniatyura', 'gravyura', 'rasm', 'marka', 'banknota', 'haykal']),
-          src: image(),
-          author: z.string(),
-          license: z.string(),
-          sourceUrl: z.string().url(),
-        }),
-        z.object({
-          kind: z.literal('ai-talqin'),
-          src: image(),
-          model: z.string(),
-          prompt: z.string(),
-          created: z.string(),
-        }),
-      ])
-      .optional(),
+    portrait: portraitSchema(image),
     sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
     ...verificationFields,
   }),
@@ -325,6 +332,71 @@ const topics = defineCollection({
   }),
 });
 
+// --- Hukmdor va sarkardalar ---
+/** Davlat tuzgan, boshqargan yoki qo'shinga qo'mondonlik qilgan shaxslar. Sahifada
+ * merosi bilan birga yurishlarining oqibatlari ham manbalar bilan ko'rsatiladi
+ * (CLAUDE.md: neytral uslub, siyosiy sezgir mavzular qoidasi). Allomalar ro'yxatida
+ * bor shaxs (Bobur, Ulug'bek) uchun `scholar` beriladi — matn takrorlanmaydi,
+ * ro'yxatdagi kartochka alloma sahifasiga olib boradi. */
+const rulerFacts = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/rulers-facts' }),
+  schema: ({ image }) =>
+    z.object({
+      category: personCategory,
+      roles: z.array(z.enum(['asoschi', 'hukmdor', 'sarkarda'])).min(1),
+      birthYear: z.number().int().optional(),
+      birthEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
+      deathYear: z.number().int().optional(),
+      deathEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
+      datesUncertain: z.boolean().default(false),
+      century: z.number().int().optional(),
+      /** Hukmronlik (yoki qo'mondonlik) davrlari. */
+      reigns: z
+        .array(
+          z.object({
+            state: reference('stateFacts').optional(),
+            from: z.number().int(),
+            fromEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
+            to: z.number().int(),
+            toEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
+            uncertain: z.boolean().default(false),
+          })
+        )
+        .default([]),
+      /** Muhim voqealar; matni tarjima faylida (`eventTexts[id]`). */
+      events: z
+        .array(
+          z.object({
+            id: z.string(),
+            year: z.number().int(),
+            era: z.enum(['m.av', 'milodiy']).default('milodiy'),
+            kind: z.enum(['jang', 'yurish', 'shartnoma', 'qurilish', 'qonun', 'boshqa']),
+            uncertain: z.boolean().default(false),
+          })
+        )
+        .default([]),
+      relatedStates: z.array(reference('stateFacts')).default([]),
+      scholar: reference('scholarFacts').optional(),
+      portrait: portraitSchema(image),
+      sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
+      ...verificationFields,
+    }),
+});
+
+const rulers = defineCollection({
+  loader: glob({ pattern: '*/**/*.mdx', base: './src/content/rulers' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    factsId: reference('rulerFacts'),
+    eventTexts: z.record(z.string(), z.string()).default({}),
+    didYouKnow: z
+      .array(z.object({ text: z.string(), sourceIds: z.array(sourceRef).min(1, "Har bir fakt manbaga bog'lanishi shart") }))
+      .default([]),
+    ...translationFields,
+  }),
+});
+
 // --- Ilmiy meros: turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi ---
 /** Hissa kim tomonidan qilingani ATAYLAB yozilmaydi — sahifada `scholars` (alloma toifasi)
  * yoki `states` (turkiy davlat homiyligi) dan avtomatik aniqlanadi. Shunda "turkiy hissa"
@@ -344,6 +416,8 @@ const contributionFacts = defineCollection({
       /** Birinchisi — asosiy muallif (hissa belgisi uning toifasidan olinadi), qolganlari hamkor yoki davomchilar. */
       scholars: z.array(reference('scholarFacts')).default([]),
       states: z.array(reference('stateFacts')).default([]),
+      /** Homiy hukmdorlar (masalan, Toj Mahal — Shohjahon). Belgiga ta'sir qilmaydi. */
+      rulers: z.array(reference('rulerFacts')).default([]),
       /** Ta'sir dalillari turi — o'lchanadigan ko'rsatkichlar (ball yoki foiz emas). */
       evidence: z.array(z.enum(['tarjima', 'darslik', 'atama', 'nashr', 'davomchi', 'meros'])).min(1),
       /** Ta'sir zanjiri qadamlari; matni tarjima faylida (`chainTexts[id]`). */
@@ -382,6 +456,8 @@ export const collections = {
   scholars,
   topicFacts,
   topics,
+  rulerFacts,
+  rulers,
   contributionFacts,
   contributions,
 };

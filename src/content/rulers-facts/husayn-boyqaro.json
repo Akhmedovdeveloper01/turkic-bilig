@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "birthYear": 1438,
+  "deathYear": 1506,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "temuriylar", "from": 1469, "to": 1506 }
+  ],
+  "events": [],
+  "relatedStates": [],
+  "scholar": "husayn-boyqaro",
+  "sources": ["ei2", "iranica"],
+  "verified": false
+}

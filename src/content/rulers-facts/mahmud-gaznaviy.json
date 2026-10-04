@@ -1,0 +1,24 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 971,
+  "deathYear": 1030,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "gaznaviylar", "from": 998, "to": 1030 }
+  ],
+  "events": [
+    { "id": "e1", "year": 998, "kind": "boshqa" },
+    { "id": "e2", "year": 1017, "kind": "yurish" },
+    { "id": "e3", "year": 1025, "kind": "yurish" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "iranica"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Mahmud G'aznaviyning Hindiston yurishlariga turli tarixnavislik an'analaridagi baholar",
+      "sourceIds": ["bosworth-1996", "ei2"]
+    }
+  ]
+}

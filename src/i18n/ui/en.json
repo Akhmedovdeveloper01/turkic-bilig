@@ -10,7 +10,8 @@
     "scholars": "Scholars",
     "topics": "Topics",
     "search": "Search",
-    "heritage": "Scholarly heritage"
+    "heritage": "Scholarly heritage",
+    "rulers": "Rulers and commanders"
   },
   "common": {
     "summary": "Summary",
@@ -200,7 +201,9 @@
     "scholarsLead": "Scholars, poets and thinkers of the Turkic world.",
     "topicsLead": "Ethnogenesis, language classification, script and other general topics.",
     "altHeritage": "Surviving part of the sextant of Ulugh Beg's observatory, Samarkand",
-    "heritageLead": "Contributions of scholars and states of the Turkic world to science and culture — with evidence."
+    "heritageLead": "Contributions of scholars and states of the Turkic world to science and culture — with evidence.",
+    "altRulers": "The earliest known depiction of Timur, Timurid genealogy, Samarkand, 1405–1409",
+    "rulersLead": "People who founded and ruled states and commanded armies — their deeds, legacy and the consequences of their campaigns, with sources."
   },
   "gallery": {
     "title": "Landmarks and symbols",
@@ -223,10 +226,10 @@
     "sortedNote": "Scholars are ordered by when they were born (or active). The badge shows how each relates to the Turkic world: wrote in a Turkic language or of generally accepted Turkic origin; of other or unknown origin, but part of the shared heritage of the Turkic world region; origin scholarly disputed.",
     "filterLegend": "Filter scholars by category",
     "lived": "Lifetime",
-    "portraitAi": "Artistic interpretation drawn with AI. The scholar's actual appearance is unknown.",
+    "portraitAi": "Artistic interpretation drawn with AI. The person's actual appearance is unknown.",
     "portraitPhoto": "Photograph",
     "portraitHistoric": "Historical depiction",
-    "portraitImagined": "A later artistic depiction ({medium}). The scholar's actual appearance is unknown.",
+    "portraitImagined": "A later artistic depiction ({medium}). The person's actual appearance is unknown.",
     "medium": {
       "foto": "photograph",
       "miniatyura": "miniature",
@@ -286,5 +289,27 @@
     },
     "blockTitle": "Contribution to scholarly heritage",
     "blockMore": "More in the Scholarly heritage section"
+  },
+  "rulers": {
+    "sortedNote": "Rulers and commanders are ordered by when they were born (or reigned). Each page gives their legacy together with the consequences of their campaigns and disputed assessments, with sources.",
+    "filterLegend": "Filter rulers and commanders by role",
+    "didYouKnowNote": "{n} facts — each from a ruler's page, with its source. Scroll sideways →",
+    "role": {
+      "asoschi": "Founder of a state",
+      "hukmdor": "Ruler",
+      "sarkarda": "Commander"
+    },
+    "reigns": "Reign",
+    "events": "Key events",
+    "event": {
+      "jang": "battle",
+      "yurish": "campaign",
+      "shartnoma": "treaty",
+      "qurilish": "construction",
+      "qonun": "law and reform",
+      "boshqa": "event"
+    },
+    "stateBlockTitle": "Rulers and commanders",
+    "categoryTurkiy": "Of Turkic origin"
   }
 }

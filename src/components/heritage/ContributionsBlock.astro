@@ -8,11 +8,15 @@ interface Props {
   lang: string;
   scholar?: string;
   state?: string;
+  ruler?: string;
 }
-const { lang, scholar, state } = Astro.props;
+const { lang, scholar, state, ruler } = Astro.props;
 const t = createTranslator(lang);
 const items = (await loadContributions(lang)).filter(
-  (i) => (scholar && i.facts.scholars.some((r) => r.id === scholar)) || (state && i.facts.states.some((r) => r.id === state))
+  (i) =>
+    (scholar && i.facts.scholars.some((r) => r.id === scholar)) ||
+    (state && i.facts.states.some((r) => r.id === state)) ||
+    (ruler && i.facts.rulers.some((r) => r.id === ruler))
 );
 ---
 

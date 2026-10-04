@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "birthYear": 683,
+  "deathYear": 734,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "ikkinchi-turk-xoqonligi", "from": 716, "to": 734 }
+  ],
+  "events": [
+    { "id": "e1", "year": 716, "kind": "boshqa" },
+    { "id": "e2", "year": 735, "kind": "qurilish" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "orxun-yozuvlari", "tekin-1968"],
+  "verified": false
+}

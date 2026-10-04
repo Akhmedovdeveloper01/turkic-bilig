@@ -1,0 +1,24 @@
+{
+  "category": "munozarali",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "deathYear": 174,
+  "deathEra": "m.av",
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "xunnu", "from": 209, "to": 174, "fromEra": "m.av", "toEra": "m.av" }
+  ],
+  "events": [
+    { "id": "e1", "year": 209, "kind": "boshqa", "era": "m.av" },
+    { "id": "e2", "year": 200, "kind": "jang", "era": "m.av" },
+    { "id": "e3", "year": 198, "kind": "shartnoma", "era": "m.av", "uncertain": true }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "sinor-1990"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Xunnularning etnik va til mansubligi (turkiy, mo'g'ul, yenisey yoki ko'p etnosli birlashma)",
+      "sourceIds": ["golden-1992", "sinor-1990"]
+    }
+  ]
+}

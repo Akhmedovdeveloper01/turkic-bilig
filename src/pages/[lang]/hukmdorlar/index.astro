@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import EntryCard from '../../../components/EntryCard.astro';
+import DidYouKnow from '../../../components/DidYouKnow.astro';
+import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
+import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
+import RoleBadge from '../../../components/rulers/RoleBadge.astro';
+import { locales } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+import { formatCentury, formatYear } from '../../../i18n/years';
+import { loadRulers, type RulerFacts } from '../../../lib/rulers';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+const items = await loadRulers(lang!);
+
+const ROLES = ['asoschi', 'hukmdor', 'sarkarda'] as const;
+const CATEGORY_ACCENT = { turkiy: 'bg-cat-turkiy', mintaqaviy: 'bg-cat-sulola', munozarali: 'bg-cat-munozarali' } as const;
+
+const lifeSpan = (f: RulerFacts) => {
+  const b = f.birthYear !== undefined ? formatYear(t, f.birthYear, f.birthEra) : '?';
+  const d = f.deathYear !== undefined ? formatYear(t, f.deathYear, f.deathEra) : '?';
+  if (b === '?' && d === '?') return f.century !== undefined ? formatCentury(t, f.century) : null;
+  return `${f.datesUncertain ? '≈ ' : ''}${b} – ${d}`;
+};
+
+const filters = [
+  { value: 'hammasi', label: t('states.filterAll'), count: items.length },
+  ...ROLES.map((r) => ({ value: r, label: t(`rulers.role.${r}`), count: items.filter((i) => i.facts.roles.includes(r)).length })),
+].filter((f) => f.count > 0);
+// Shaxs bir nechta rolga ega bo'lishi mumkin — data-category da bo'sh joy bilan ajratilgan, filtr ~= bilan.
+const filterCss = ROLES.map((r) => `.tb-filter:has(input[value='${r}']:checked) [data-category]:not([data-category~='${r}'])`).join(',\n');
+---
+
+<BaseLayout lang={lang!} title={t('nav.rulers')} description={t('hero.rulersLead')}>
+  <PageHero lang={lang!} image="hukmdorlar" alt={t('hero.altRulers')} title={t('nav.rulers')} lead={t('hero.rulersLead')} fit="contain" />
+  <p class="mb-5 text-sm text-ink-muted">{t('rulers.sortedNote')}</p>
+
+  <DidYouKnow
+    lang={lang!}
+    items={items
+      .filter((i) => i.entry)
+      .map((i) => ({ href: i.href, title: i.title, accentClass: CATEGORY_ACCENT[i.facts.category], cards: i.entry!.data.didYouKnow }))}
+    note={t('rulers.didYouKnowNote')}
+  />
+
+  <style is:inline set:html={`${filterCss} { display: none; }`}></style>
+
+  <div class="tb-filter">
+    <fieldset class="mb-6">
+      <legend class="sr-only">{t('rulers.filterLegend')}</legend>
+      <div class="flex flex-wrap gap-2">
+        {filters.map((f) => (
+          <label class="tb-filter-tab">
+            <input type="radio" name="ruler-role" value={f.value} checked={f.value === 'hammasi'} class="sr-only" />
+            <span>{f.label}</span>
+            <span class="tb-filter-count tabular-nums">{f.count}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    <ul class="grid gap-4 sm:grid-cols-2">
+      {items.map((i, index) => (
+        <EntryCard lang={lang!} href={i.href} title={i.title} summary={i.summary} isFallback={i.isFallback} index={index} category={i.facts.roles.join(' ')}>
+          {i.facts.portrait && <ScholarPortrait slot="media" lang={lang!} name={i.title} portrait={i.facts.portrait} variant="card" />}
+          <div class="flex flex-wrap items-center gap-2">
+            {lifeSpan(i.facts) && <span class="text-xs font-medium tabular-nums text-ink-muted">{lifeSpan(i.facts)}</span>}
+            {i.facts.roles.map((r) => <RoleBadge lang={lang!} role={r} />)}
+            {i.facts.category !== 'turkiy' && <ScholarCategoryBadge lang={lang!} category={i.facts.category} kind="ruler" />}
+          </div>
+        </EntryCard>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

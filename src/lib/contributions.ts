@@ -27,6 +27,7 @@ export interface Contribution {
   actor: ActorType;
   scholars: LinkedEntry[];
   states: LinkedEntry[];
+  rulers: LinkedEntry[];
   sources: CollectionEntry<'sources'>[];
 }
 
@@ -38,7 +39,7 @@ function actorFor(categories: CollectionEntry<'scholarFacts'>['data']['category'
   return lead === 'turkiy' ? 'turkiy-alloma' : lead === 'munozarali' ? 'munozarali' : 'mintaqa';
 }
 
-async function localizedTitle(collection: 'scholars' | 'states', lang: string, slug: string): Promise<string> {
+async function localizedTitle(collection: 'scholars' | 'states' | 'rulers', lang: string, slug: string): Promise<string> {
   const entry = (await getEntry(collection, `${lang}/${slug}`)) ?? (await getEntry(collection, `uz/${slug}`));
   return entry?.data.title ?? slug;
 }
@@ -68,6 +69,7 @@ async function load(lang: string): Promise<Contribution[]> {
         actor: actorFor(scholarFacts.map((s) => s.data.category), f.data.states.length > 0),
         scholars: await Promise.all(f.data.scholars.map(async (r) => ({ slug: r.id, title: await localizedTitle('scholars', lang, r.id) }))),
         states: await Promise.all(f.data.states.map(async (r) => ({ slug: r.id, title: await localizedTitle('states', lang, r.id) }))),
+        rulers: await Promise.all(f.data.rulers.map(async (r) => ({ slug: r.id, title: await localizedTitle('rulers', lang, r.id) }))),
         sources,
       } satisfies Contribution;
     })

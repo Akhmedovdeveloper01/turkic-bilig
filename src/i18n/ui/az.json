@@ -10,7 +10,8 @@
     "scholars": "Alimlər",
     "topics": "Mövzular",
     "search": "Axtarış",
-    "heritage": "Elmi irs"
+    "heritage": "Elmi irs",
+    "rulers": "Hökmdarlar və sərkərdələr"
   },
   "common": {
     "summary": "Qısaca",
@@ -200,7 +201,9 @@
     "scholarsLead": "Türk dünyasının alimləri, şairləri və mütəfəkkirləri.",
     "topicsLead": "Etnogenez, dil təsnifatı, yazı və digər ümumi mövzular.",
     "altHeritage": "Uluqbəy rəsədxanası sekstantının qalan hissəsi, Səmərqənd",
-    "heritageLead": "Türk dünyası alimlərinin və dövlətlərinin elmə və mədəniyyətə töhfəsi — dəlillərlə."
+    "heritageLead": "Türk dünyası alimlərinin və dövlətlərinin elmə və mədəniyyətə töhfəsi — dəlillərlə.",
+    "altRulers": "Əmir Teymurun məlum olan ən qədim təsviri, Teymurilər şəcərəsi, Səmərqənd, 1405–1409",
+    "rulersLead": "Dövlət quran, idarə edən və ordulara komandanlıq edən şəxslər — gördükləri işlər, qoyduqları irs və yürüşlərinin nəticələri, mənbələri ilə."
   },
   "gallery": {
     "title": "Görməli yerlər və rəmzlər",
@@ -223,10 +226,10 @@
     "sortedNote": "Alimlər doğulduğu (və ya fəaliyyət göstərdiyi) dövrə görə sıralanıb. Nişan alimin türk dünyası ilə əlaqəsini göstərir: türk dilində yaradıb və ya türk mənşəyi ümumən qəbul olunub; mənşəyi başqa və ya məlum deyil, lakin türk dünyası regionunun ortaq irsinə aiddir; mənşəyi elmi mübahisəlidir.",
     "filterLegend": "Alimləri kateqoriyaya görə süz",
     "lived": "Yaşadığı dövr",
-    "portraitAi": "Bədii yozum — süni intellektlə çəkilib. Alimin həqiqi görünüşü məlum deyil.",
+    "portraitAi": "Bədii yozum — süni intellektlə çəkilib. Şəxsin həqiqi görünüşü məlum deyil.",
     "portraitPhoto": "Fotoşəkil",
     "portraitHistoric": "Tarixi təsvir",
-    "portraitImagined": "Sonrakı dövrdə yaradılmış bədii təsvir ({medium}). Alimin həqiqi görünüşü məlum deyil.",
+    "portraitImagined": "Sonrakı dövrdə yaradılmış bədii təsvir ({medium}). Şəxsin həqiqi görünüşü məlum deyil.",
     "medium": {
       "foto": "fotoşəkil",
       "miniatyura": "miniatür",
@@ -286,5 +289,27 @@
     },
     "blockTitle": "Elmi irsə töhfəsi",
     "blockMore": "«Elmi irs» bölməsində ətraflı"
+  },
+  "rulers": {
+    "sortedNote": "Hökmdarlar və sərkərdələr doğulduğu (və ya hökmranlıq etdiyi) dövrə görə sıralanıb. Hər səhifədə irslə yanaşı yürüşlərin nəticələri və mübahisəli qiymətlər də mənbələri ilə verilir.",
+    "filterLegend": "Hökmdarları və sərkərdələri rola görə süz",
+    "didYouKnowNote": "{n} fakt — hər biri hökmdarın səhifəsindən, mənbəyi ilə. Yana sürüşdürün →",
+    "role": {
+      "asoschi": "Dövlətin banisi",
+      "hukmdor": "Hökmdar",
+      "sarkarda": "Sərkərdə"
+    },
+    "reigns": "Hökmranlıq dövrü",
+    "events": "Mühüm hadisələr",
+    "event": {
+      "jang": "döyüş",
+      "yurish": "yürüş",
+      "shartnoma": "müqavilə",
+      "qurilish": "tikinti",
+      "qonun": "qanun və islahat",
+      "boshqa": "hadisə"
+    },
+    "stateBlockTitle": "Hökmdarları və sərkərdələri",
+    "categoryTurkiy": "Türk mənşəli"
   }
 }

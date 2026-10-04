@@ -1,0 +1,36 @@
+---
+/** Davlat sahifasidagi "Hukmdor va sarkardalari" bloki — rulers kolleksiyasidan avtomatik. */
+import { createTranslator } from '../../i18n/ui';
+import { formatYear } from '../../i18n/years';
+import { loadRulers } from '../../lib/rulers';
+
+interface Props {
+  lang: string;
+  state: string;
+}
+const { lang, state } = Astro.props;
+const t = createTranslator(lang);
+const items = (await loadRulers(lang)).filter(
+  (r) => r.facts.reigns.some((g) => g.state?.id === state) || r.facts.relatedStates.some((s) => s.id === state)
+);
+const reignOf = (r: (typeof items)[number]) => {
+  const g = r.facts.reigns.find((x) => x.state?.id === state);
+  return g ? `${g.uncertain ? '≈ ' : ''}${formatYear(t, g.from, g.fromEra)} – ${formatYear(t, g.to, g.toEra)}` : null;
+};
+---
+
+{items.length > 0 && (
+  <section class="mt-8" aria-labelledby="state-rulers-title">
+    <h2 id="state-rulers-title" class="mb-3 text-lg font-semibold text-ink">{t('rulers.stateBlockTitle')}</h2>
+    <ul class="flex flex-wrap gap-2">
+      {items.map((r) => (
+        <li>
+          <a href={r.href} class="inline-flex items-baseline gap-2 rounded-full border border-line bg-surface-alt px-3 py-1 text-sm text-ink transition-colors hover:border-brand/40 hover:text-brand">
+            {r.title}
+            {reignOf(r) && <span class="text-xs tabular-nums text-ink-muted">{reignOf(r)}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

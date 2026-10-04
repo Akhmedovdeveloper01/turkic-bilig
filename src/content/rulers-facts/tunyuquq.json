@@ -1,0 +1,14 @@
+{
+  "category": "turkiy",
+  "roles": ["sarkarda"],
+  "birthYear": 646,
+  "deathYear": 726,
+  "datesUncertain": true,
+  "reigns": [],
+  "events": [
+    { "id": "e1", "year": 682, "kind": "boshqa" }
+  ],
+  "relatedStates": ["ikkinchi-turk-xoqonligi"],
+  "sources": ["golden-1992", "orxun-yozuvlari", "tekin-1968"],
+  "verified": false
+}

@@ -10,7 +10,8 @@
     "scholars": "Allomalar",
     "topics": "Mavzular",
     "search": "Qidiruv",
-    "heritage": "Ilmiy meros"
+    "heritage": "Ilmiy meros",
+    "rulers": "Hukmdor va sarkardalar"
   },
   "common": {
     "summary": "Qisqacha",
@@ -200,7 +201,9 @@
     "scholarsLead": "Turkiy dunyo olimlari, shoirlari va mutafakkirlari.",
     "topicsLead": "Etnogenez, til tasnifi, yozuv va boshqa umumiy mavzular.",
     "altHeritage": "Ulug'bek rasadxonasi sekstantining saqlanib qolgan qismi, Samarqand",
-    "heritageLead": "Turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi — dalillar bilan."
+    "heritageLead": "Turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi — dalillar bilan.",
+    "altRulers": "Amir Temurning ma'lum bo'lgan eng qadimgi tasviri, Temuriylar shajarasi, Samarqand, 1405–1409",
+    "rulersLead": "Davlat tuzgan, boshqargan va qo'shinlarga qo'mondonlik qilgan shaxslar — qilgan ishlari, qoldirgan merosi va yurishlarining oqibatlari manbalar bilan."
   },
   "gallery": {
     "title": "Diqqatga sazovor joylar va ramzlar",
@@ -223,10 +226,10 @@
     "sortedNote": "Allomalar tug'ilgan (yoki faoliyat yuritgan) davri bo'yicha tartiblangan. Toifa belgisi allomaning turkiy dunyo bilan bog'liqligini bildiradi: turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul qilingan; kelib chiqishi boshqa yoki noma'lum, lekin turkiy dunyo mintaqasining umumiy merosiga mansub; kelib chiqishi ilmiy munozarali.",
     "filterLegend": "Allomalarni toifa bo'yicha saralash",
     "lived": "Yashagan davri",
-    "portraitAi": "Badiiy talqin — AI yordamida chizilgan. Allomaning haqiqiy qiyofasi ma'lum emas.",
+    "portraitAi": "Badiiy talqin — AI yordamida chizilgan. Uning haqiqiy qiyofasi ma'lum emas.",
     "portraitPhoto": "Fotosurat",
     "portraitHistoric": "Tarixiy tasvir",
-    "portraitImagined": "Keyingi davrda yaratilgan badiiy tasvir ({medium}). Allomaning haqiqiy qiyofasi ma'lum emas.",
+    "portraitImagined": "Keyingi davrda yaratilgan badiiy tasvir ({medium}). Uning haqiqiy qiyofasi ma'lum emas.",
     "medium": {
       "foto": "fotosurat",
       "miniatyura": "miniatyura",
@@ -286,5 +289,27 @@
     },
     "blockTitle": "Ilmiy merosdagi hissasi",
     "blockMore": "Ilmiy meros bo'limida batafsil"
+  },
+  "rulers": {
+    "sortedNote": "Hukmdor va sarkardalar tug'ilgan (yoki hukmronlik qilgan) davri bo'yicha tartiblangan. Har bir sahifada merosi bilan birga yurishlarining oqibatlari va bahsli baholar ham manbalar bilan beriladi.",
+    "filterLegend": "Hukmdor va sarkardalarni roli bo'yicha saralash",
+    "didYouKnowNote": "{n} ta fakt — har biri hukmdor sahifasidan, manbasi bilan. Yonga suring →",
+    "role": {
+      "asoschi": "Davlat asoschisi",
+      "hukmdor": "Hukmdor",
+      "sarkarda": "Sarkarda"
+    },
+    "reigns": "Hukmronlik davri",
+    "events": "Muhim voqealar",
+    "event": {
+      "jang": "jang",
+      "yurish": "yurish",
+      "shartnoma": "shartnoma",
+      "qurilish": "qurilish",
+      "qonun": "qonun va islohot",
+      "boshqa": "voqea"
+    },
+    "stateBlockTitle": "Hukmdor va sarkardalari",
+    "categoryTurkiy": "Turkiy kelib chiqishli"
   }
 }

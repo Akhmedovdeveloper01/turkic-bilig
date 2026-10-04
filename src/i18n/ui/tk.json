@@ -10,7 +10,8 @@
     "scholars": "Alymlar",
     "topics": "Temalar",
     "search": "Gözleg",
-    "heritage": "Ylmy miras"
+    "heritage": "Ylmy miras",
+    "rulers": "Hökümdarlar we serkerdeler"
   },
   "common": {
     "summary": "Gysgaça",
@@ -200,7 +201,9 @@
     "scholarsLead": "Türki dünýäsiniň alymlary, şahyrlary we akyldarlary.",
     "topicsLead": "Etnogenez, dil toparlary, ýazuw we beýleki umumy mowzuklar.",
     "altHeritage": "Ulugbeg obserwatoriýasynyň sekstantynyň saklanyp galan bölegi, Samarkant",
-    "heritageLead": "Türki dünýäsiniň alymlarynyň we döwletleriniň ylma we medeniýete goşandy — subutnamalary bilen."
+    "heritageLead": "Türki dünýäsiniň alymlarynyň we döwletleriniň ylma we medeniýete goşandy — subutnamalary bilen.",
+    "altRulers": "Emir Teýmuryň belli bolan iň gadymy şekili, Teýmurylaryň şejeresi, Samarkant, 1405–1409",
+    "rulersLead": "Döwlet guran, dolandyran we goşunlara serkerdelik eden şahslar — eden işleri, galdyran mirasy we ýörişleriniň netijeleri, çeşmeleri bilen."
   },
   "gallery": {
     "title": "Görmäge degerli ýerler we nyşanlar",
@@ -223,10 +226,10 @@
     "sortedNote": "Alymlar doglan (ýa-da işlän) döwri boýunça tertiplenen. Belgi alymyň türki dünýäsi bilen baglanyşygyny görkezýär: türki dilde döredijilik eden ýa-da türki gelip çykyşy umumy kabul edilen; gelip çykyşy başga ýa-da belli däl, emma türki dünýäsi sebitiniň umumy mirasyna degişli; gelip çykyşy ylmy taýdan jedelli.",
     "filterLegend": "Alymlary kategoriýa boýunça süzmek",
     "lived": "Ýaşan döwri",
-    "portraitAi": "Çeper düşündiriş — emeli aň bilen çekildi. Alymyň hakyky keşbi belli däl.",
+    "portraitAi": "Çeper düşündiriş — emeli aň bilen çekildi. Şahsyň hakyky keşbi belli däl.",
     "portraitPhoto": "Surat",
     "portraitHistoric": "Taryhy şekil",
-    "portraitImagined": "Soňky döwürde döredilen çeper şekil ({medium}). Alymyň hakyky keşbi belli däl.",
+    "portraitImagined": "Soňky döwürde döredilen çeper şekil ({medium}). Şahsyň hakyky keşbi belli däl.",
     "medium": {
       "foto": "surat",
       "miniatyura": "miniatýura",
@@ -286,5 +289,27 @@
     },
     "blockTitle": "Ylmy mirasa goşandy",
     "blockMore": "«Ylmy miras» bölüminde giňişleýin"
+  },
+  "rulers": {
+    "sortedNote": "Hökümdarlar we serkerdeler doglan (ýa-da höküm süren) döwri boýunça tertiplenen. Her sahypada mirasy bilen bilelikde ýörişleriniň netijeleri we jedelli bahalar hem çeşmeleri bilen berilýär.",
+    "filterLegend": "Hökümdarlary we serkerdeleri roly boýunça süzmek",
+    "didYouKnowNote": "{n} fakt — her biri hökümdaryň sahypasyndan, çeşmesi bilen. Gapdala süýşüriň →",
+    "role": {
+      "asoschi": "Döwleti esaslandyryjy",
+      "hukmdor": "Hökümdar",
+      "sarkarda": "Serkerde"
+    },
+    "reigns": "Höküm süren döwri",
+    "events": "Möhüm wakalar",
+    "event": {
+      "jang": "söweş",
+      "yurish": "ýöriş",
+      "shartnoma": "şertnama",
+      "qurilish": "gurluşyk",
+      "qonun": "kanun we özgertme",
+      "boshqa": "waka"
+    },
+    "stateBlockTitle": "Hökümdarlary we serkerdeleri",
+    "categoryTurkiy": "Türki gelip çykyşly"
   }
 }

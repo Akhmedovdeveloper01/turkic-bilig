@@ -10,7 +10,8 @@
     "scholars": "Bilginler",
     "topics": "Konular",
     "search": "Ara",
-    "heritage": "İlmî miras"
+    "heritage": "İlmî miras",
+    "rulers": "Hükümdarlar ve komutanlar"
   },
   "common": {
     "summary": "Özet",
@@ -200,7 +201,9 @@
     "scholarsLead": "Türk dünyasının bilginleri, şairleri ve düşünürleri.",
     "topicsLead": "Etnogenez, dil sınıflandırması, yazı ve diğer genel konular.",
     "altHeritage": "Uluğ Bey Rasathanesi sekstantının günümüze ulaşan bölümü, Semerkant",
-    "heritageLead": "Türk dünyası âlimlerinin ve devletlerinin bilime ve kültüre katkısı — kanıtlarıyla."
+    "heritageLead": "Türk dünyası âlimlerinin ve devletlerinin bilime ve kültüre katkısı — kanıtlarıyla.",
+    "altRulers": "Timur'un bilinen en eski tasviri, Timurlu şeceresi, Semerkant, 1405–1409",
+    "rulersLead": "Devlet kuran, yöneten ve ordulara komuta eden kişiler — yaptıkları, bıraktıkları miras ve seferlerinin sonuçları, kaynaklarıyla."
   },
   "gallery": {
     "title": "Görülecek yerler ve semboller",
@@ -223,10 +226,10 @@
     "sortedNote": "Bilginler doğum (veya faaliyet) dönemine göre sıralanmıştır. Etiket, bilginin Türk dünyasıyla bağını gösterir: Türkçe eser vermiş veya Türk kökeni genel kabul görmüş; kökeni farklı veya bilinmiyor, ancak Türk dünyası bölgesinin ortak mirasına ait; kökeni bilimsel olarak tartışmalı.",
     "filterLegend": "Bilginleri kategoriye göre süz",
     "lived": "Yaşadığı dönem",
-    "portraitAi": "Sanatsal yorum — yapay zekâ ile çizilmiştir. Âlimin gerçek görünümü bilinmemektedir.",
+    "portraitAi": "Sanatsal yorum — yapay zekâ ile çizilmiştir. Kişinin gerçek görünümü bilinmemektedir.",
     "portraitPhoto": "Fotoğraf",
     "portraitHistoric": "Tarihî tasvir",
-    "portraitImagined": "Sonraki dönemde yapılmış sanatsal tasvir ({medium}). Âlimin gerçek görünümü bilinmemektedir.",
+    "portraitImagined": "Sonraki dönemde yapılmış sanatsal tasvir ({medium}). Kişinin gerçek görünümü bilinmemektedir.",
     "medium": {
       "foto": "fotoğraf",
       "miniatyura": "minyatür",
@@ -286,5 +289,27 @@
     },
     "blockTitle": "İlmî mirasa katkısı",
     "blockMore": "İlmî miras bölümünde ayrıntılı"
+  },
+  "rulers": {
+    "sortedNote": "Hükümdarlar ve komutanlar doğum (veya hükümdarlık) dönemine göre sıralanmıştır. Her sayfada mirasla birlikte seferlerin sonuçları ve tartışmalı değerlendirmeler de kaynaklarıyla verilir.",
+    "filterLegend": "Hükümdarları ve komutanları role göre süz",
+    "didYouKnowNote": "{n} bilgi — her biri hükümdarın sayfasından, kaynağıyla birlikte. Yana kaydırın →",
+    "role": {
+      "asoschi": "Devlet kurucusu",
+      "hukmdor": "Hükümdar",
+      "sarkarda": "Komutan"
+    },
+    "reigns": "Hükümdarlık dönemi",
+    "events": "Önemli olaylar",
+    "event": {
+      "jang": "savaş",
+      "yurish": "sefer",
+      "shartnoma": "antlaşma",
+      "qurilish": "inşa",
+      "qonun": "kanun ve reform",
+      "boshqa": "olay"
+    },
+    "stateBlockTitle": "Hükümdarları ve komutanları",
+    "categoryTurkiy": "Türk kökenli"
   }
 }

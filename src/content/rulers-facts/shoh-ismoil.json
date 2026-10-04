@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor"],
+  "birthYear": 1487,
+  "deathYear": 1524,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "safaviylar", "from": 1501, "to": 1524 }
+  ],
+  "events": [],
+  "relatedStates": [],
+  "scholar": "shoh-ismoil-xatoiy",
+  "sources": ["ei2", "iranica"],
+  "verified": false
+}

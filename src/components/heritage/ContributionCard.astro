@@ -75,6 +75,9 @@ const year = `${facts.yearUncertain ? '≈ ' : ''}${formatYear(t, facts.year, fa
     {item.scholars.map((s) => (
       <a href={`/${lang}/allomalar/${s.slug}`} class="font-medium text-brand hover:underline">{s.title}</a>
     ))}
+    {item.rulers.map((r) => (
+      <a href={`/${lang}/hukmdorlar/${r.slug}`} class="font-medium text-brand hover:underline">{r.title}</a>
+    ))}
     {item.states.map((s) => (
       <a href={`/${lang}/davlatlar/${s.slug}`} class="font-medium text-brand hover:underline">{s.title}</a>
     ))}

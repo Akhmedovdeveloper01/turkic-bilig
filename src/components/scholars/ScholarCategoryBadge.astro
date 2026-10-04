@@ -5,11 +5,13 @@ import { createTranslator } from '../../i18n/ui';
 interface Props {
   lang: string;
   category: 'turkiy' | 'mintaqaviy' | 'munozarali';
+  /** ruler — hukmdor va sarkardalar uchun ("Turkiy alloma" emas, "Turkiy"). */
+  kind?: 'scholar' | 'ruler';
 }
-const { lang, category } = Astro.props;
+const { lang, category, kind = 'scholar' } = Astro.props;
 const t = createTranslator(lang);
 const LABEL = {
-  turkiy: t('scholars.categoryTurkiy'),
+  turkiy: kind === 'ruler' ? t('rulers.categoryTurkiy') : t('scholars.categoryTurkiy'),
   mintaqaviy: t('scholars.categoryMintaqaviy'),
   munozarali: t('scholars.categoryMunozarali'),
 };

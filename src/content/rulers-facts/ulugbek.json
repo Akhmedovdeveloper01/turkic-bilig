@@ -1,0 +1,15 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "birthYear": 1394,
+  "deathYear": 1449,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "temuriylar", "from": 1447, "to": 1449 }
+  ],
+  "events": [],
+  "relatedStates": [],
+  "scholar": "ulugbek",
+  "sources": ["findley-2005"],
+  "verified": false
+}

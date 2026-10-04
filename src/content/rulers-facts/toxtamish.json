@@ -1,0 +1,16 @@
+{
+  "category": "mintaqaviy",
+  "roles": ["hukmdor", "sarkarda"],
+  "deathYear": 1406,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "oltin-orda", "from": 1380, "to": 1395 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1382, "kind": "yurish" },
+    { "id": "e2", "year": 1395, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "ei2"],
+  "verified": false
+}

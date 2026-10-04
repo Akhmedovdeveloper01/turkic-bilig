@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1223,
+  "deathYear": 1277,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "misr-mamluklari", "from": 1260, "to": 1277 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1260, "kind": "jang" },
+    { "id": "e2", "year": 1261, "kind": "boshqa" },
+    { "id": "e3", "year": 1268, "kind": "yurish" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2"],
+  "verified": false
+}

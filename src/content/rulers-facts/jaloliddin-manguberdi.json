@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1199,
+  "deathYear": 1231,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "xorazmshohlar", "from": 1220, "to": 1231 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1221, "kind": "jang" },
+    { "id": "e2", "year": 1221, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "iranica"],
+  "verified": false
+}

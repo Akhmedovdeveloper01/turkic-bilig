@@ -1,0 +1,28 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "birthYear": 1336,
+  "deathYear": 1405,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "temuriylar", "from": 1370, "to": 1405 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1370, "kind": "boshqa" },
+    { "id": "e2", "year": 1387, "kind": "yurish" },
+    { "id": "e3", "year": 1395, "kind": "jang" },
+    { "id": "e4", "year": 1398, "kind": "yurish" },
+    { "id": "e5", "year": 1402, "kind": "jang" },
+    { "id": "e6", "year": 1404, "kind": "qurilish" }
+  ],
+  "relatedStates": [],
+  "portrait": { "kind": "tarixiy-tasvir", "medium": "miniatyura", "src": "../../assets/rulers/amir-temur.jpg", "author": "Timurid genealogy, Samarkand, 1405–1409 (TSMK H2152)", "license": "Public domain", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Timur_seated_(earliest_known_portrait),_Timurid_genealogy,_1405-1409,_Samarkand_(TSMK,_H2152).jpg" },
+  "sources": ["ei2", "iranica", "findley-2005", "clavijo-1406", "unesco-whl"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Amir Temurga turli tarixnavislik an'analaridagi baholar: davlat arbobi va homiy yoki vayronkor bosqinchi",
+      "sourceIds": ["ei2", "iranica", "findley-2005"]
+    }
+  ]
+}

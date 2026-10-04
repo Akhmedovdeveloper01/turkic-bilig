@@ -1,0 +1,16 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor"],
+  "birthYear": 1258,
+  "deathYear": 1324,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "usmonli-imperiyasi", "from": 1299, "to": 1324, "uncertain": true }
+  ],
+  "events": [
+    { "id": "e1", "year": 1302, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "tdv-islam", "findley-2005"],
+  "verified": false
+}

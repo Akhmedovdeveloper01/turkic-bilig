@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "birthYear": 990,
+  "deathYear": 1063,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "saljuqiylar", "from": 1038, "to": 1063 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1040, "kind": "jang" },
+    { "id": "e2", "year": 1055, "kind": "boshqa" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "findley-2005"],
+  "verified": false
+}

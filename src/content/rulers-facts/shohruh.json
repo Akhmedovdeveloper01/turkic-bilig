@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "birthYear": 1377,
+  "deathYear": 1447,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "temuriylar", "from": 1409, "to": 1447 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1409, "kind": "boshqa" },
+    { "id": "e2", "year": 1419, "kind": "shartnoma" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "iranica", "bosworth-1996"],
+  "verified": false
+}

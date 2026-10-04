@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1029,
+  "deathYear": 1072,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "saljuqiylar", "from": 1063, "to": 1072 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1071, "kind": "jang" },
+    { "id": "e2", "year": 1072, "kind": "yurish" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "findley-2005"],
+  "verified": false
+}

@@ -1,0 +1,16 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor"],
+  "birthYear": 1055,
+  "deathYear": 1092,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "saljuqiylar", "from": 1072, "to": 1092 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1079, "kind": "qonun" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "iranica"],
+  "verified": false
+}

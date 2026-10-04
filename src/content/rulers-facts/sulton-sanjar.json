@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1086,
+  "deathYear": 1157,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "saljuqiylar", "from": 1118, "to": 1157 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1141, "kind": "jang" },
+    { "id": "e2", "year": 1153, "kind": "boshqa" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "unesco-whl"],
+  "verified": false
+}

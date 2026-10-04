@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1809,
+  "deathYear": 1874,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tarix", "she'riyat", "tarjima"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["xiva-xonligi"],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

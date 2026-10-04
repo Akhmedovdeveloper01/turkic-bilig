@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1499,
+  "deathYear": 1551,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tarix", "davlat boshqaruvi"],
+  "relatedPeoples": [],
+  "relatedStates": ["yorkent-xonligi", "boburiylar"],
+  "sources": ["ei2", "iranica"],
+  "verified": false
+}

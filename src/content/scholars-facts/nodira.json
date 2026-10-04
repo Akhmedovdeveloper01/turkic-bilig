@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1792,
+  "deathYear": 1842,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["she'riyat"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["qoqon-xonligi", "buxoro-amirligi"],
+  "sources": ["uzme"],
+  "verified": false
+}

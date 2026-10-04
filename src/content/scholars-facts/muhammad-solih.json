@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1455,
+  "deathYear": 1535,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["she'riyat", "tarix"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["shayboniylar", "temuriylar"],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

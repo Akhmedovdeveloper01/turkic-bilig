@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1523,
+  "deathYear": 1603,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["tarix"],
+  "relatedPeoples": [],
+  "relatedStates": ["boburiylar"],
+  "sources": ["ei2", "iranica"],
+  "verified": false
+}

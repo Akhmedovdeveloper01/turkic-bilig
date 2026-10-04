@@ -581,3 +581,64 @@ body {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
 }
+
+/* ---- Zamon mashinasi ---- */
+.tb-tm-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background-color: var(--c);
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 35%, transparent);
+  transition: transform 0.15s;
+}
+.tb-tm-dot:hover {
+  transform: translate(-50%, -50%) scale(1.25);
+  z-index: 2;
+}
+.tb-tm-dot-sm {
+  width: 9px;
+  height: 9px;
+  border-width: 1.5px;
+}
+.tb-tm-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  font-size: clamp(10px, 1.6cqi, 12.5px);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-shadow: 0 0 3px var(--color-surface), 0 0 3px var(--color-surface), 0 0 2px var(--color-surface);
+  pointer-events: none;
+}
+.tb-tm-label[data-place='e'] { transform: translate(10px, -50%); }
+.tb-tm-label[data-place='w'] { transform: translate(calc(-100% - 10px), -50%); }
+.tb-tm-label[data-place='n'] { transform: translate(-50%, calc(-100% - 10px)); }
+.tb-tm-label[data-place='s'] { transform: translate(-50%, 10px); }
+.tb-tm-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--c);
+}
+.tb-tm-terr {
+  fill: color-mix(in srgb, var(--c) 22%, transparent);
+  stroke: var(--c);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 3;
+  vector-effect: non-scaling-stroke;
+}
+@media (prefers-color-scheme: dark) {
+  .tb-tm-dot, .tb-tm-swatch { background-color: var(--cd, var(--c)); }
+  .tb-tm-terr { fill: color-mix(in srgb, var(--cd, var(--c)) 22%, transparent); stroke: var(--cd, var(--c)); }
+}
+.tb-tm-range {
+  accent-color: var(--color-brand);
+  height: 2rem;
+  cursor: pointer;
+}

@@ -13,7 +13,8 @@
     "heritage": "İlmî miras",
     "rulers": "Hükümdarlar ve komutanlar",
     "menu": "Menü",
-    "main": "Ana menü"
+    "main": "Ana menü",
+    "timeMachine": "Zaman makinesi"
   },
   "common": {
     "summary": "Özet",
@@ -331,5 +332,30 @@
     "zoomFitShort": "Sığdır",
     "zoomReset": "Gerçek boyut (%100)",
     "zoomHint": "Ctrl + tekerlek veya iki parmakla da olur"
+  },
+  "tm": {
+    "lead": "Yıl kaydırıcısını sürükleyin veya ▶ düğmesine basın — her yıl için haritada o dönem var olan Türk devletlerinin başkentleri, yan panelde ise tahttaki hükümdarlar, yaşayan âlimler ve dönemin olayları görünür. Hepsi sitenin kaynaklı verilerinden.",
+    "play": "Oynat",
+    "pause": "Duraklat",
+    "back10": "10 yıl geri",
+    "back1": "1 yıl geri",
+    "fwd1": "1 yıl ileri",
+    "fwd10": "10 yıl ileri",
+    "sliderLabel": "Yıl seçin",
+    "jump": "Döneme git",
+    "mapLabel": "Türk devletlerinin başkentleri haritası",
+    "mapNote": "Haritada sitedeki devletlerin başkentleri gösterilir (birden fazla başkent varsa hepsi; başkentin ne zaman taşındığı gösterilmez). Sitede henüz olmayan devletler haritada da yoktur.",
+    "territories": "Yaklaşık toprakları göster (yalnızca bazı devletler, tek bir yıl itibarıyla)",
+    "territoryOf": "{state} — {year} yılı itibarıyla, yaklaşık",
+    "panelLabel": "Seçilen yıl hakkında",
+    "states": "Devletler",
+    "rulers": "Tahttaki hükümdarlar",
+    "scholars": "O dönem yaşayan âlimler",
+    "events": "Dönemin olayları (±10 yıl)",
+    "noStates": "Sitenin verilerine göre bu yıl için Türk devleti kaydı yok.",
+    "noRulers": "Sitede bu yıl hüküm süren hükümdar henüz yok.",
+    "noScholars": "Sitede bu dönemde yaşamış âlim henüz yok.",
+    "noEvents": "Sitede bu döneme ait olay henüz yok.",
+    "summary": "{year}: {states} devlet, {rulers} hükümdar, {scholars} âlim"
   }
 }

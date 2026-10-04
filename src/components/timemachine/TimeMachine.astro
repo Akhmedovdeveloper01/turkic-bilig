@@ -1,0 +1,466 @@
+---
+/**
+ * "Zamon mashinasi" — yil slayderi bilan turkiy davlatlar xaritasi.
+ *
+ * Barcha ma'lumot saytdagi manbali yozuvlardan build vaqtida yig'iladi (yangi fakt yo'q):
+ * davlatlar davri va poytaxtlari, hukmdorlar hukmronligi, allomalar hayot yillari,
+ * hukmdor voqealari va Ilmiy meros yozuvlari. Sahifada barcha elementlar oldindan
+ * chiziladi; skript faqat tanlangan yilga qarab ko'rsatadi/yashiradi.
+ *
+ * Ilmiy ehtiyotkorlik: xaritada faqat poytaxtlar (aniq geografik fakt). Tarixiy
+ * chegaralar faqat bir nechta davlat uchun va bitta yil holatiga bor — ular ixtiyoriy
+ * "taxminiy hudud" tugmasi bilan, yili ko'rsatilgan holda chiqadi.
+ */
+import { getCollection, getEntry } from 'astro:content';
+import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import { createProjection, geometryToPath, graticulePath, landPath } from '../../data/geo/basemap';
+import { getStateGeoJSON } from '../../data/geo';
+import { createTranslator } from '../../i18n/ui';
+import { formatPeriod, formatYear, sortableYear } from '../../i18n/years';
+import { loadRulers } from '../../lib/rulers';
+import { loadContributions } from '../../lib/contributions';
+
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+const t = createTranslator(lang);
+const titleOf = async (c: 'states' | 'scholars', id: string) =>
+  ((await getEntry(c, `${lang}/${id}`)) ?? (await getEntry(c, `uz/${id}`)))?.data.title ?? id;
+
+const CAT_COLOR = {
+  turkiy: 'var(--color-cat-turkiy)',
+  'turkiy-sulola': 'var(--color-cat-sulola)',
+  munozarali: 'var(--color-cat-munozarali)',
+} as const;
+
+// --- Davlatlar ---
+const states = (
+  await Promise.all(
+    (await getCollection('stateFacts')).map(async (f) => {
+      const p = f.data.period;
+      return {
+        id: f.id,
+        title: await titleOf('states', f.id),
+        href: `/${lang}/davlatlar/${f.id}`,
+        from: sortableYear(p.startYear, p.startEra),
+        to: sortableYear(p.endYear, p.endEra),
+        approx: p.approximate,
+        period: formatPeriod(t, p),
+        color: f.data.mapColor?.light ?? CAT_COLOR[f.data.category],
+        colorDark: f.data.mapColor?.dark ?? CAT_COLOR[f.data.category],
+        capitals: f.data.capitals ?? [],
+        mapYear: f.data.mapYear,
+      };
+    })
+  )
+).sort((a, b) => a.from - b.from);
+
+// Proyeksiya — barcha poytaxtlar bo'yicha (StateMap/CapitalsMap bilan bir xil asos xarita).
+const fc: FeatureCollection = {
+  type: 'FeatureCollection',
+  features: states.flatMap((s) =>
+    s.capitals.map((c) => ({ type: 'Feature' as const, properties: {}, geometry: { type: 'Point' as const, coordinates: [c.lng, c.lat] } }))
+  ),
+};
+const proj = createProjection(fc, { lon: 0.04, lat: 0.1 });
+const land = landPath(proj);
+const grid = graticulePath(proj);
+const pct = (lng: number, lat: number) => {
+  const [x, y] = proj.project([lng, lat]);
+  return { left: (x / proj.width) * 100, top: (y / proj.height) * 100 };
+};
+const markers = states.flatMap((s) =>
+  s.capitals.map((c, i) => ({ state: s, name: c.name, primary: i === 0, ...pct(c.lng, c.lat) }))
+);
+
+// Taxminiy hududlar — faqat GeoJSON fayli bor davlatlar, bitta yil holatiga.
+const territories = states
+  .map((s) => {
+    const g = s.mapYear !== undefined ? getStateGeoJSON(s.id, s.mapYear) : undefined;
+    const d = g?.features
+      .filter((f) => f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon'))
+      .map((f) => geometryToPath(f.geometry as Polygon | MultiPolygon, proj))
+      .join('');
+    return d ? { state: s, d, year: s.mapYear! } : null;
+  })
+  .filter((x) => x !== null);
+
+// --- Hukmdorlar (har bir hukmronlik davri alohida) ---
+const rulers = (await loadRulers(lang)).flatMap((r) =>
+  r.facts.reigns.map((g) => ({
+    title: r.title,
+    href: r.href,
+    from: sortableYear(g.from, g.fromEra),
+    to: sortableYear(g.to, g.toEra),
+    state: g.state ? states.find((s) => s.id === g.state!.id)?.title : undefined,
+    period: `${g.uncertain ? '≈ ' : ''}${formatYear(t, g.from, g.fromEra)} – ${formatYear(t, g.to, g.toEra)}`,
+  }))
+);
+
+// --- Allomalar (hayot yillari; faqat asr ma'lum bo'lsa — asr oralig'i) ---
+const scholars = (
+  await Promise.all(
+    (await getCollection('scholarFacts')).map(async (f) => {
+      const d = f.data;
+      const b = d.birthYear !== undefined ? sortableYear(d.birthYear, d.birthEra) : undefined;
+      const e = d.deathYear !== undefined ? sortableYear(d.deathYear, d.deathEra) : undefined;
+      let from: number, to: number, approx = d.datesUncertain;
+      if (b !== undefined && e !== undefined) [from, to] = [b, e];
+      else if (e !== undefined) [from, to, approx] = [e - 60, e, true];
+      else if (b !== undefined) [from, to, approx] = [b, b + 60, true];
+      else if (d.century !== undefined) [from, to, approx] = [(d.century - 1) * 100 + 1, d.century * 100, true];
+      else return null;
+      return { title: await titleOf('scholars', f.id), href: `/${lang}/allomalar/${f.id}`, from, to, approx };
+    })
+  )
+)
+  .filter((x) => x !== null)
+  .sort((a, b) => a.from - b.from);
+
+// --- Voqealar: hukmdorlar voqealari va Ilmiy meros yozuvlari ---
+const events = [
+  ...(await loadRulers(lang)).flatMap((r) =>
+    (r.entry ? r.facts.events : [])
+      .filter((e) => r.entry!.data.eventTexts[e.id])
+      .map((e) => ({
+        year: sortableYear(e.year, e.era),
+        label: formatYear(t, e.year, e.era),
+        text: r.entry!.data.eventTexts[e.id],
+        who: r.title,
+        href: r.href,
+      }))
+  ),
+  ...(await loadContributions(lang)).map((c) => ({
+    year: sortableYear(c.facts.year, c.facts.era),
+    label: `${c.facts.yearUncertain ? '≈ ' : ''}${formatYear(t, c.facts.year, c.facts.era)}`,
+    text: c.entry.data.title,
+    who: t(`heritage.domain.${c.facts.domain}`),
+    href: `/${lang}/meros#${c.id}`,
+  })),
+].sort((a, b) => a.year - b.year);
+
+const MIN = Math.min(...states.map((s) => s.from));
+const MAX = Math.max(...states.map((s) => s.to));
+const INITIAL = 1405;
+// Davrga tez o'tish: saytdagi bir nechta davlat (tanlangan yil — xaritasi bo'lsa shu yil, bo'lmasa davr o'rtasi).
+const JUMPS = ['xunnu', 'gokturk-xoqonligi', 'qoraxoniylar', 'saljuqiylar', 'oltin-orda', 'temuriylar', 'boburiylar', 'usmonli-imperiyasi']
+  .map((id) => states.find((s) => s.id === id))
+  .filter((s) => s !== undefined)
+  .map((s) => ({ title: s.title, year: s.mapYear ?? Math.round((s.from + s.to) / 2) }));
+
+const strings = {
+  yearBC: t('common.yearBC'),
+  play: t('tm.play'),
+  pause: t('tm.pause'),
+  summary: t('tm.summary'),
+};
+---
+
+<section
+  class="tb-tm"
+  data-tm
+  data-min={MIN}
+  data-max={MAX}
+  data-initial={INITIAL}
+  data-strings={JSON.stringify(strings)}
+  aria-labelledby="tm-year"
+>
+  <!-- Boshqaruv: yil, slayder, ijro va davrlar -->
+  <div class="sticky z-20 -mx-4 border-b border-line bg-surface px-4 pb-2 pt-2 sm:static sm:mx-0 sm:rounded-t-xl sm:border sm:border-b-0 sm:bg-surface-alt sm:px-4 sm:pt-4" data-tm-sticky>
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+      <p id="tm-year" class="min-w-[8ch] text-2xl font-bold tabular-nums tracking-tight text-ink sm:text-4xl" data-tm-year aria-live="off">{INITIAL}</p>
+      <div class="flex items-center gap-1.5">
+        <button type="button" class="tb-zoom-btn" data-tm-step="-10" aria-label={t('tm.back10')} title={t('tm.back10')}>«</button>
+        <button type="button" class="tb-zoom-btn" data-tm-step="-1" aria-label={t('tm.back1')} title={t('tm.back1')}>‹</button>
+        <button type="button" class="tb-zoom-btn gap-1.5 px-3 font-medium" data-tm-play aria-pressed="false">
+          <svg viewBox="0 0 24 24" class="size-4" fill="currentColor" aria-hidden="true" data-tm-icon="play"><path d="M7 5v14l11-7z"></path></svg>
+          <svg viewBox="0 0 24 24" class="hidden size-4" fill="currentColor" aria-hidden="true" data-tm-icon="pause"><path d="M7 5h4v14H7zM13 5h4v14h-4z"></path></svg>
+          <span class="text-sm" data-tm-play-label>{t('tm.play')}</span>
+        </button>
+        <button type="button" class="tb-zoom-btn" data-tm-step="1" aria-label={t('tm.fwd1')} title={t('tm.fwd1')}>›</button>
+        <button type="button" class="tb-zoom-btn" data-tm-step="10" aria-label={t('tm.fwd10')} title={t('tm.fwd10')}>»</button>
+      </div>
+    </div>
+    <label class="mt-2 block">
+      <span class="sr-only">{t('tm.sliderLabel')}</span>
+      <input type="range" min={MIN} max={MAX} step="1" value={INITIAL} class="tb-tm-range w-full" data-tm-range />
+    </label>
+    <div class="mt-0.5 flex justify-between text-[0.7rem] tabular-nums text-ink-muted" aria-hidden="true">
+      <span>{formatYear(t, Math.abs(MIN), MIN < 0 ? 'm.av' : 'milodiy')}</span>
+      <span>{MAX}</span>
+    </div>
+  </div>
+  <div class="mb-4 sm:rounded-b-xl sm:border sm:border-t-0 sm:border-line sm:bg-surface-alt sm:px-4 sm:pb-4">
+    <div class="flex gap-1.5 overflow-x-auto py-2" role="group" aria-label={t('tm.jump')}>
+      {JUMPS.map((j) => (
+        <button type="button" class="shrink-0 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-ink hover:border-brand hover:text-brand" data-tm-jump={j.year}>
+          {j.title}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem]">
+    <!-- Xarita -->
+    <div class="min-w-0">
+      <div class="overflow-x-auto rounded-xl border border-line" tabindex="0" role="region" aria-label={t('tm.mapLabel')}>
+        <div class="relative min-w-[36rem] overflow-hidden bg-map-sea [container-type:inline-size]" data-tm-map>
+          <svg viewBox={`0 0 ${proj.width} ${proj.height}`} class="block h-auto w-full" aria-hidden="true">
+            <rect width={proj.width} height={proj.height} fill="var(--color-map-sea)"></rect>
+            <path d={grid} fill="none" stroke="var(--color-map-grid)" stroke-width="0.75" stroke-dasharray="2 5" vector-effect="non-scaling-stroke"></path>
+            <path d={land} fill="var(--color-map-land)" stroke="var(--color-map-coast)" stroke-width="0.9" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+            {territories.map((tr) => (
+              <path
+                d={tr.d}
+                class="tb-tm-terr hidden"
+                style={`--c:${tr.state.color};--cd:${tr.state.colorDark}`}
+                data-tm-terr
+                data-from={tr.state.from}
+                data-to={tr.state.to}
+              ></path>
+            ))}
+          </svg>
+          {/* Geografik joylashuv RTL'da aylanmaydi — ataylab fizik left/top. */}
+          <div class="absolute inset-0" aria-hidden="true">
+            {markers.map((m) => (
+              <a
+                href={m.state.href}
+                class:list={['tb-tm-dot', !m.primary && 'tb-tm-dot-sm']}
+                style={`left:${m.left}%;top:${m.top}%;--c:${m.state.color};--cd:${m.state.colorDark}`}
+                title={`${m.state.title} — ${m.name}`}
+                tabindex="-1"
+                data-tm-item
+                data-from={m.state.from}
+                data-to={m.state.to}
+                hidden
+              >
+                {m.primary && <span class="tb-tm-label" data-tm-label>{m.state.title}</span>}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 space-y-1.5 text-xs text-ink-muted">
+        <p>{t('tm.mapNote')}</p>
+        {territories.length > 0 && (
+          <label class="inline-flex cursor-pointer items-center gap-2 font-medium text-ink">
+            <input type="checkbox" class="size-4 accent-[var(--color-brand)]" data-tm-terr-toggle />
+            {t('tm.territories')}
+          </label>
+        )}
+        <ul class="hidden space-y-0.5" data-tm-terr-note>
+          {territories.map((tr) => (
+            <li data-tm-item data-from={tr.state.from} data-to={tr.state.to} hidden>
+              {t('tm.territoryOf', { state: tr.state.title, year: String(tr.year) })}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- "Bu yili" paneli -->
+    <aside class="min-w-0 space-y-5" aria-label={t('tm.panelLabel')}>
+      <p class="sr-only" aria-live="polite" data-tm-live></p>
+
+      <div>
+        <h2 class="mb-2 flex items-center justify-between text-sm font-semibold uppercase tracking-wide text-ink-muted">
+          {t('tm.states')} <span class="rounded-full bg-brand/10 px-2 py-0.5 text-xs text-brand" data-tm-count="states">0</span>
+        </h2>
+        <ul class="space-y-1" data-tm-list="states">
+          {states.map((s) => (
+            <li data-tm-item data-from={s.from} data-to={s.to} hidden>
+              <a href={s.href} class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm hover:bg-surface-alt">
+                <span class="tb-tm-swatch" style={`--c:${s.color};--cd:${s.colorDark}`} aria-hidden="true"></span>
+                <span class="min-w-0 flex-1 truncate font-medium text-ink">{s.title}</span>
+                <span class="shrink-0 text-xs tabular-nums text-ink-muted">{s.approx ? '≈ ' : ''}{s.period}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="hidden px-2 text-sm text-ink-muted" data-tm-empty="states">{t('tm.noStates')}</p>
+      </div>
+
+      <div>
+        <h2 class="mb-2 flex items-center justify-between text-sm font-semibold uppercase tracking-wide text-ink-muted">
+          {t('tm.rulers')} <span class="rounded-full bg-brand/10 px-2 py-0.5 text-xs text-brand" data-tm-count="rulers">0</span>
+        </h2>
+        <ul class="space-y-1" data-tm-list="rulers">
+          {rulers.map((r) => (
+            <li data-tm-item data-from={r.from} data-to={r.to} hidden>
+              <a href={r.href} class="block rounded-lg px-2 py-1.5 text-sm hover:bg-surface-alt">
+                <span class="font-medium text-ink">{r.title}</span>
+                <span class="block text-xs text-ink-muted">{r.period}{r.state && ` · ${r.state}`}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="hidden px-2 text-sm text-ink-muted" data-tm-empty="rulers">{t('tm.noRulers')}</p>
+      </div>
+
+      <div>
+        <h2 class="mb-2 flex items-center justify-between text-sm font-semibold uppercase tracking-wide text-ink-muted">
+          {t('tm.scholars')} <span class="rounded-full bg-brand/10 px-2 py-0.5 text-xs text-brand" data-tm-count="scholars">0</span>
+        </h2>
+        <ul class="flex flex-wrap gap-1.5" data-tm-list="scholars">
+          {scholars.map((s) => (
+            <li data-tm-item data-from={s.from} data-to={s.to} hidden>
+              <a href={s.href} class="inline-block rounded-full border border-line bg-surface-alt px-2.5 py-1 text-xs text-ink hover:border-brand hover:text-brand">
+                {s.approx && '≈ '}{s.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="hidden px-2 text-sm text-ink-muted" data-tm-empty="scholars">{t('tm.noScholars')}</p>
+      </div>
+
+      <div>
+        <h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-ink-muted">{t('tm.events')}</h2>
+        <ol class="space-y-2 border-s border-line ps-3" data-tm-list="events">
+          {events.map((e) => (
+            <li data-tm-event={e.year} hidden>
+              <a href={e.href} class="block text-sm hover:text-brand">
+                <span class="font-semibold tabular-nums text-ink">{e.label}</span>
+                <span class="text-ink"> — {e.text}</span>
+                <span class="block text-xs text-ink-muted">{e.who}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <p class="hidden text-sm text-ink-muted" data-tm-empty="events">{t('tm.noEvents')}</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<script>
+  const WINDOW = 10; // voqealar: tanlangan yil ±10 yil
+
+  function init(root: HTMLElement) {
+    if (root.dataset.ready) return;
+    root.dataset.ready = '1';
+    const MIN = Number(root.dataset.min);
+    const MAX = Number(root.dataset.max);
+    const S = JSON.parse(root.dataset.strings!) as Record<string, string>;
+    const range = root.querySelector<HTMLInputElement>('[data-tm-range]')!;
+    const yearEl = root.querySelector<HTMLElement>('[data-tm-year]')!;
+    const live = root.querySelector<HTMLElement>('[data-tm-live]')!;
+    const playBtn = root.querySelector<HTMLButtonElement>('[data-tm-play]')!;
+    const map = root.querySelector<HTMLElement>('[data-tm-map]')!;
+    const terrToggle = root.querySelector<HTMLInputElement>('[data-tm-terr-toggle]');
+    const terrNote = root.querySelector<HTMLElement>('[data-tm-terr-note]');
+    const items = [...root.querySelectorAll<HTMLElement>('[data-tm-item]')];
+    const terrs = [...root.querySelectorAll<SVGPathElement>('[data-tm-terr]')];
+    const evs = [...root.querySelectorAll<HTMLElement>('[data-tm-event]')];
+    const labels = [...root.querySelectorAll<HTMLElement>('[data-tm-label]')];
+
+    const fmt = (y: number) => (y < 0 ? S.yearBC.replace('{year}', String(-y)) : String(y));
+    const active = (el: Element, y: number) => Number((el as HTMLElement).dataset.from) <= y && y <= Number((el as HTMLElement).dataset.to);
+
+    // Yorliqlar to'qnashmasligi uchun: navbat bilan sharq/g'arb/shimol/janub, sig'masa yashiriladi.
+    function placeLabels() {
+      const box = map.getBoundingClientRect();
+      const taken: DOMRect[] = [];
+      const overlaps = (r: DOMRect) =>
+        r.left < box.left || r.right > box.right || r.top < box.top || r.bottom > box.bottom ||
+        taken.some((o) => r.left < o.right + 2 && r.right + 2 > o.left && r.top < o.bottom + 1 && r.bottom + 1 > o.top);
+      for (const l of labels) {
+        const dot = l.parentElement!;
+        if (dot.hidden) continue;
+        taken.push(dot.getBoundingClientRect());
+      }
+      for (const l of labels) {
+        if (l.parentElement!.hidden) continue;
+        l.hidden = false;
+        let ok = false;
+        for (const place of ['e', 'w', 'n', 's']) {
+          l.dataset.place = place;
+          const r = l.getBoundingClientRect();
+          if (!overlaps(r)) { taken.push(r); ok = true; break; }
+        }
+        l.hidden = !ok;
+      }
+    }
+
+    let liveTimer: number | undefined;
+    function render(y: number, announce = true) {
+      y = Math.max(MIN, Math.min(MAX, Math.round(y)));
+      range.value = String(y);
+      range.setAttribute('aria-valuetext', fmt(y));
+      yearEl.textContent = fmt(y);
+      for (const el of items) el.hidden = !active(el, y);
+      const showTerr = !!terrToggle?.checked;
+      for (const p of terrs) p.classList.toggle('hidden', !(showTerr && active(p, y)));
+      terrNote?.classList.toggle('hidden', !showTerr);
+      let nEv = 0;
+      for (const e of evs) {
+        const on = Math.abs(Number(e.dataset.tmEvent) - y) <= WINDOW;
+        e.hidden = !on;
+        if (on) nEv++;
+      }
+      const counts: Record<string, number> = {};
+      for (const key of ['states', 'rulers', 'scholars']) {
+        const n = root.querySelectorAll(`[data-tm-list="${key}"] > [data-tm-item]:not([hidden])`).length;
+        counts[key] = n;
+        root.querySelector(`[data-tm-count="${key}"]`)!.textContent = String(n);
+        root.querySelector(`[data-tm-empty="${key}"]`)!.classList.toggle('hidden', n > 0);
+      }
+      root.querySelector('[data-tm-empty="events"]')!.classList.toggle('hidden', nEv > 0);
+      placeLabels();
+      if (announce) {
+        clearTimeout(liveTimer);
+        liveTimer = window.setTimeout(() => {
+          live.textContent = S.summary
+            .replace('{year}', fmt(y))
+            .replace('{states}', String(counts.states))
+            .replace('{rulers}', String(counts.rulers))
+            .replace('{scholars}', String(counts.scholars));
+          const url = new URL(location.href);
+          url.searchParams.set('yil', String(y));
+          history.replaceState(history.state, '', url);
+        }, 400);
+      }
+    }
+
+    // Ijro: yillar avtomatik o'tadi (foydalanuvchi boshqaruvni qo'lga olsa — to'xtaydi).
+    let timer: number | undefined;
+    const setPlaying = (on: boolean) => {
+      playBtn.setAttribute('aria-pressed', String(on));
+      playBtn.querySelector('[data-tm-play-label]')!.textContent = on ? S.pause : S.play;
+      playBtn.querySelector('[data-tm-icon="play"]')!.classList.toggle('hidden', on);
+      playBtn.querySelector('[data-tm-icon="pause"]')!.classList.toggle('hidden', !on);
+      clearInterval(timer);
+      if (!on) return;
+      if (Number(range.value) >= MAX) render(MIN);
+      timer = window.setInterval(() => {
+        const next = Number(range.value) + 3;
+        render(next, false);
+        if (next >= MAX) setPlaying(false);
+      }, 120);
+    };
+    playBtn.addEventListener('click', () => setPlaying(playBtn.getAttribute('aria-pressed') !== 'true'));
+    range.addEventListener('input', () => { setPlaying(false); render(Number(range.value)); });
+    root.querySelectorAll<HTMLButtonElement>('[data-tm-step]').forEach((b) =>
+      b.addEventListener('click', () => { setPlaying(false); render(Number(range.value) + Number(b.dataset.tmStep)); })
+    );
+    root.querySelectorAll<HTMLButtonElement>('[data-tm-jump]').forEach((b) =>
+      b.addEventListener('click', () => { setPlaying(false); render(Number(b.dataset.tmJump)); })
+    );
+    terrToggle?.addEventListener('change', () => render(Number(range.value), false));
+    window.addEventListener('resize', () => placeLabels());
+
+    // Telefonda boshqaruv paneli sayt sarlavhasi ostida yopishib turadi — sarlavha balandligi bo'yicha.
+    const sticky = root.querySelector<HTMLElement>('[data-tm-sticky]')!;
+    const header = document.querySelector<HTMLElement>('body > header');
+    const setTop = () => (sticky.style.top = `${header?.getBoundingClientRect().height ?? 0}px`);
+    setTop();
+    window.addEventListener('resize', setTop);
+
+    const fromUrl = Number(new URL(location.href).searchParams.get('yil'));
+    render(Number.isFinite(fromUrl) && fromUrl !== 0 ? fromUrl : Number(root.dataset.initial), false);
+  }
+
+  const run = () => document.querySelectorAll<HTMLElement>('[data-tm]').forEach(init);
+  run();
+  document.addEventListener('astro:page-load', run);
+</script>

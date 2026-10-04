@@ -13,7 +13,8 @@
     "heritage": "Ilmiy meros",
     "rulers": "Hukmdor va sarkardalar",
     "menu": "Menyu",
-    "main": "Asosiy menyu"
+    "main": "Asosiy menyu",
+    "timeMachine": "Zamon mashinasi"
   },
   "common": {
     "summary": "Qisqacha",
@@ -331,5 +332,30 @@
     "zoomFitShort": "Sig'dirish",
     "zoomReset": "Asl o'lcham (100%)",
     "zoomHint": "Ctrl + g'ildirak yoki ikki barmoq bilan ham bo'ladi"
+  },
+  "tm": {
+    "lead": "Yil slayderini suring yoki ▶ tugmasini bosing — har bir yil uchun xaritada o'sha paytda mavjud bo'lgan turkiy davlatlar poytaxtlari, yon panelda esa taxtdagi hukmdorlar, yashagan allomalar va shu davr voqealari chiqadi. Hammasi saytdagi manbali ma'lumotlardan.",
+    "play": "Ijro",
+    "pause": "To'xtatish",
+    "back10": "10 yil orqaga",
+    "back1": "1 yil orqaga",
+    "fwd1": "1 yil oldinga",
+    "fwd10": "10 yil oldinga",
+    "sliderLabel": "Yilni tanlash",
+    "jump": "Davrga o'tish",
+    "mapLabel": "Turkiy davlatlar poytaxtlari xaritasi",
+    "mapNote": "Xaritada saytdagi davlatlarning poytaxtlari ko'rsatilgan (bir necha poytaxti bo'lsa — barchasi, davr ichida qachon ko'chirilgani ko'rsatilmagan). Saytda hali yo'q davlatlar xaritada ham yo'q.",
+    "territories": "Taxminiy hududlarni ko'rsatish (faqat ba'zi davlatlar, bitta yil holatiga)",
+    "territoryOf": "{state} — {year}-yil holatiga, taxminiy",
+    "panelLabel": "Tanlangan yil haqida",
+    "states": "Mavjud davlatlar",
+    "rulers": "Taxtdagi hukmdorlar",
+    "scholars": "Shu davrda yashagan allomalar",
+    "events": "Shu davr voqealari (±10 yil)",
+    "noStates": "Saytdagi ma'lumotlarga ko'ra bu yili turkiy davlat qayd etilmagan.",
+    "noRulers": "Saytda bu yili hukmronlik qilgan hukmdor hali yo'q.",
+    "noScholars": "Saytda shu davrda yashagan alloma hali yo'q.",
+    "noEvents": "Saytda bu davrga oid voqea hali yo'q.",
+    "summary": "{year}: {states} ta davlat, {rulers} ta hukmdor, {scholars} ta alloma"
   }
 }

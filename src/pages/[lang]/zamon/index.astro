@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TimeMachine from '../../../components/timemachine/TimeMachine.astro';
+import { locales } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+---
+
+<BaseLayout lang={lang!} title={t('nav.timeMachine')} description={t('tm.lead')}>
+  <header class="mb-5">
+    <h1 class="text-3xl font-bold tracking-tight text-ink sm:text-4xl">{t('nav.timeMachine')}</h1>
+    <p class="mt-2 max-w-3xl text-ink-muted">{t('tm.lead')}</p>
+  </header>
+  <TimeMachine lang={lang!} />
+</BaseLayout>

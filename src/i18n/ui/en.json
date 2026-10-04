@@ -13,7 +13,8 @@
     "heritage": "Scholarly heritage",
     "rulers": "Rulers and commanders",
     "menu": "Menu",
-    "main": "Main menu"
+    "main": "Main menu",
+    "timeMachine": "Time machine"
   },
   "common": {
     "summary": "Summary",
@@ -331,5 +332,30 @@
     "zoomFitShort": "Fit",
     "zoomReset": "Actual size (100%)",
     "zoomHint": "Ctrl + wheel or pinch also works"
+  },
+  "tm": {
+    "lead": "Drag the year slider or press ▶ — for each year the map shows the capitals of the Turkic states that existed at that time, and the side panel lists the rulers on the throne, scholars alive and events of the period. Everything comes from the site's sourced data.",
+    "play": "Play",
+    "pause": "Pause",
+    "back10": "10 years back",
+    "back1": "1 year back",
+    "fwd1": "1 year forward",
+    "fwd10": "10 years forward",
+    "sliderLabel": "Choose a year",
+    "jump": "Jump to a period",
+    "mapLabel": "Map of Turkic state capitals",
+    "mapNote": "The map shows the capitals of the states on this site (if a state had several capitals, all are shown; when the capital moved is not shown). States not yet on the site are not on the map either.",
+    "territories": "Show approximate territories (only some states, as of a single year)",
+    "territoryOf": "{state} — as of {year}, approximate",
+    "panelLabel": "About the selected year",
+    "states": "States",
+    "rulers": "Rulers on the throne",
+    "scholars": "Scholars alive at the time",
+    "events": "Events of the period (±10 years)",
+    "noStates": "According to the site's data, no Turkic state is recorded for this year.",
+    "noRulers": "No ruler on the site reigned in this year yet.",
+    "noScholars": "No scholar on the site lived in this period yet.",
+    "noEvents": "No event of this period on the site yet.",
+    "summary": "{year}: {states} states, {rulers} rulers, {scholars} scholars"
   }
 }

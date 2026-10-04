@@ -13,7 +13,8 @@
     "heritage": "Ylmy miras",
     "rulers": "Hökümdarlar we serkerdeler",
     "menu": "Menýu",
-    "main": "Esasy menýu"
+    "main": "Esasy menýu",
+    "timeMachine": "Wagt maşyny"
   },
   "common": {
     "summary": "Gysgaça",
@@ -331,5 +332,30 @@
     "zoomFitShort": "Sygdyr",
     "zoomReset": "Hakyky ölçeg (100%)",
     "zoomHint": "Ctrl + tigir ýa-da iki barmak bilen hem bolýar"
+  },
+  "tm": {
+    "lead": "Ýyl süýşgüjini süýşüriň ýa-da ▶ düwmesine basyň — her ýyl üçin kartada şol wagt bar bolan türki döwletleriň paýtagtlary, gapdal panelde bolsa tagtdaky hökümdarlar, ýaşan alymlar we döwrüň wakalary çykýar. Hemmesi saýtyň çeşmeli maglumatlaryndan.",
+    "play": "Oýnat",
+    "pause": "Duruz",
+    "back10": "10 ýyl yza",
+    "back1": "1 ýyl yza",
+    "fwd1": "1 ýyl öňe",
+    "fwd10": "10 ýyl öňe",
+    "sliderLabel": "Ýyly saýlaň",
+    "jump": "Döwre geç",
+    "mapLabel": "Türki döwletleriň paýtagtlarynyň kartasy",
+    "mapNote": "Kartada saýtdaky döwletleriň paýtagtlary görkezilýär (birnäçe paýtagt bolsa — hemmesi; paýtagtyň haçan göçürilendigi görkezilmeýär). Saýtda entek ýok döwletler kartada hem ýok.",
+    "territories": "Takmynan territoriýalary görkez (diňe käbir döwletler, bir ýylyň ýagdaýy)",
+    "territoryOf": "{state} — {year}-nji ýylyň ýagdaýy, takmynan",
+    "panelLabel": "Saýlanan ýyl barada",
+    "states": "Döwletler",
+    "rulers": "Tagtdaky hökümdarlar",
+    "scholars": "Şol döwürde ýaşan alymlar",
+    "events": "Döwrüň wakalary (±10 ýyl)",
+    "noStates": "Saýtyň maglumatlaryna görä bu ýyl türki döwleti bellenilmedi.",
+    "noRulers": "Saýtda bu ýyl höküm süren hökümdar entek ýok.",
+    "noScholars": "Saýtda bu döwürde ýaşan alym entek ýok.",
+    "noEvents": "Saýtda bu döwre degişli waka entek ýok.",
+    "summary": "{year}: {states} döwlet, {rulers} hökümdar, {scholars} alym"
   }
 }

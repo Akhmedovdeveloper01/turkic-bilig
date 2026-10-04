@@ -13,7 +13,8 @@
     "heritage": "Elmi irs",
     "rulers": "Hökmdarlar və sərkərdələr",
     "menu": "Menyu",
-    "main": "Əsas menyu"
+    "main": "Əsas menyu",
+    "timeMachine": "Zaman maşını"
   },
   "common": {
     "summary": "Qısaca",
@@ -331,5 +332,30 @@
     "zoomFitShort": "Sığdır",
     "zoomReset": "Həqiqi ölçü (100%)",
     "zoomHint": "Ctrl + təkər və ya iki barmaqla da olar"
+  },
+  "tm": {
+    "lead": "İl sürgüsünü sürüşdürün və ya ▶ düyməsini basın — hər il üçün xəritədə o vaxt mövcud olan türk dövlətlərinin paytaxtları, yan paneldə isə taxtdakı hökmdarlar, yaşamış alimlər və dövrün hadisələri görünür. Hamısı saytın mənbəli məlumatlarından.",
+    "play": "Oynat",
+    "pause": "Dayandır",
+    "back10": "10 il geri",
+    "back1": "1 il geri",
+    "fwd1": "1 il irəli",
+    "fwd10": "10 il irəli",
+    "sliderLabel": "İli seçin",
+    "jump": "Dövrə keç",
+    "mapLabel": "Türk dövlətlərinin paytaxtları xəritəsi",
+    "mapNote": "Xəritədə saytdakı dövlətlərin paytaxtları göstərilir (bir neçə paytaxt varsa — hamısı; paytaxtın nə vaxt köçürüldüyü göstərilmir). Saytda hələ olmayan dövlətlər xəritədə də yoxdur.",
+    "territories": "Təxmini əraziləri göstər (yalnız bəzi dövlətlər, bir il üzrə)",
+    "territoryOf": "{state} — {year}-ci il üzrə, təxmini",
+    "panelLabel": "Seçilmiş il haqqında",
+    "states": "Dövlətlər",
+    "rulers": "Taxtdakı hökmdarlar",
+    "scholars": "O dövrdə yaşamış alimlər",
+    "events": "Dövrün hadisələri (±10 il)",
+    "noStates": "Saytın məlumatına görə bu il türk dövləti qeyd olunmayıb.",
+    "noRulers": "Saytda bu il hökmranlıq edən hökmdar hələ yoxdur.",
+    "noScholars": "Saytda bu dövrdə yaşamış alim hələ yoxdur.",
+    "noEvents": "Saytda bu dövrə aid hadisə hələ yoxdur.",
+    "summary": "{year}: {states} dövlət, {rulers} hökmdar, {scholars} alim"
   }
 }

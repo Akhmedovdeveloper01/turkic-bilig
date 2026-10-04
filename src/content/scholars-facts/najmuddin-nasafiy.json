@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1068,
+  "deathYear": 1142,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["kalom", "fiqh", "tafsir"],
+  "relatedPeoples": [],
+  "relatedStates": ["qoraxoniylar"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

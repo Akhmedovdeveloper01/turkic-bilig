@@ -1,0 +1,19 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1075,
+  "deathYear": 1144,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["tafsir", "tilshunoslik", "adabiyot"],
+  "relatedPeoples": [],
+  "relatedStates": ["xorazmshohlar"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Zamaxshariyning mu'taziliy qarashlari va «al-Kashshof»ga sunniy olimlarning munosabati",
+      "sourceIds": ["ei2", "tdv-islam"]
+    }
+  ]
+}

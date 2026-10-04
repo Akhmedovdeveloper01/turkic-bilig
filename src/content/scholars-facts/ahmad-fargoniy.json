@@ -1,0 +1,12 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 800,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["astronomiya", "muhandislik"],
+  "relatedPeoples": [],
+  "relatedStates": [],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1117,
+  "deathYear": 1197,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["fiqh"],
+  "relatedPeoples": [],
+  "relatedStates": ["qoraxoniylar"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

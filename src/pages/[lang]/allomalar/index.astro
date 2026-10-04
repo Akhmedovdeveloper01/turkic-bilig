@@ -68,7 +68,24 @@ const FILTERS = [
     note={t('scholars.didYouKnowNote')}
   />
 
-  <div class="tb-filter">
+  <div class="tb-filter" data-scholar-list>
+    <div class="mb-4 max-w-md" data-search-box hidden>
+      <label for="scholar-search" class="sr-only">{t('scholars.searchLabel')}</label>
+      <div class="relative">
+        <svg viewBox="0 0 24 24" class="pointer-events-none absolute start-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5" stroke-linecap="round"></path>
+        </svg>
+        <input
+          id="scholar-search"
+          type="search"
+          autocomplete="off"
+          placeholder={t('scholars.searchPlaceholder')}
+          class="w-full rounded-full border border-line bg-surface-alt py-2 ps-9 pe-4 text-sm text-ink placeholder:text-ink-muted focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
+          data-search-input
+        />
+      </div>
+      <p class="sr-only" aria-live="polite" data-search-status data-found={t('scholars.searchFound')}></p>
+    </div>
     <fieldset class="mb-6">
       <legend class="sr-only">{t('scholars.filterLegend')}</legend>
       <div class="flex flex-wrap gap-2">
@@ -91,6 +108,7 @@ const FILTERS = [
         isFallback={isFallback}
         index={index}
         category={facts.category}
+        searchText={facts.field.join(' ')}
       >
         {facts.portrait && <ScholarPortrait slot="media" lang={lang!} name={entry.data.title} portrait={facts.portrait} variant="card" />}
         <div class="flex flex-wrap items-center gap-2">
@@ -100,5 +118,46 @@ const FILTERS = [
       </EntryCard>
     ))}
   </ul>
+  <p class="py-8 text-center text-sm text-ink-muted" data-search-empty hidden>{t('scholars.searchEmpty')}</p>
   </div>
 </BaseLayout>
+
+<script>
+  // Allomalar ro'yxati ichida qidiruv. Toifa filtri CSS (:has) bilan ishlaydi,
+  // qidiruv unga qo'shimcha: mos kelmagan kartochkaga data-search-hidden qo'yiladi.
+  // JavaScript o'chiq bo'lsa, qidiruv maydoni umuman ko'rinmaydi.
+  const root = document.querySelector<HTMLElement>('[data-scholar-list]');
+  if (root) {
+    const box = root.querySelector<HTMLElement>('[data-search-box]')!;
+    const input = root.querySelector<HTMLInputElement>('[data-search-input]')!;
+    const status = root.querySelector<HTMLElement>('[data-search-status]')!;
+    const empty = root.querySelector<HTMLElement>('[data-search-empty]')!;
+    const cards = [...root.querySelectorAll<HTMLElement>('[data-search]')];
+
+    // Kichik harf, diakritikasiz; o' / o‘ / oʻ / o` kabi tutuq belgilari bir xil.
+    const normalize = (text: string) =>
+      text
+        .toLocaleLowerCase()
+        .normalize('NFD')
+        .replace(/\p{M}/gu, '')
+        .replace(/['‘’ʻʼ`´]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    const haystacks = new Map(cards.map((c) => [c, normalize(c.dataset.search ?? '')]));
+
+    const update = () => {
+      const terms = normalize(input.value).split(' ').filter(Boolean);
+      for (const card of cards) {
+        const text = haystacks.get(card)!;
+        card.toggleAttribute('data-search-hidden', !terms.every((term) => text.includes(term)));
+      }
+      const visible = cards.filter((c) => getComputedStyle(c).display !== 'none').length;
+      empty.hidden = visible > 0;
+      status.textContent = terms.length > 0 ? (status.dataset.found ?? '').replace('{n}', String(visible)) : '';
+    };
+
+    box.hidden = false;
+    input.addEventListener('input', update);
+    root.addEventListener('change', update);
+  }
+</script>

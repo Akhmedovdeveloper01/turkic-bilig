@@ -11,8 +11,10 @@ interface Props {
   index?: number;
   /** Ro'yxat filtrlari uchun (masalan, davlat toifasi). */
   category?: string;
+  /** Ro'yxat ichida qidiruv uchun qo'shimcha matn (sarlavha va qisqacha matndan tashqari). */
+  searchText?: string;
 }
-const { lang, href, title, summary, isFallback, index = 0, category } = Astro.props;
+const { lang, href, title, summary, isFallback, index = 0, category, searchText } = Astro.props;
 const t = createTranslator(lang);
 const endonym = (getLocale(lang) ?? getLocale(defaultLocale)!).endonym;
 const delay = `${Math.min(index, 8) * 0.06}s`;
@@ -22,6 +24,7 @@ const delay = `${Math.min(index, 8) * 0.06}s`;
   class="tb-reveal group rounded-xl border border-line bg-surface-alt p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/10"
   style={`transition-delay: ${delay};`}
   data-category={category}
+  data-search={searchText !== undefined ? `${title} ${summary} ${searchText}` : undefined}
 >
   <div class="flex items-start gap-4">
     {Astro.slots.has('media') && <slot name="media" />}

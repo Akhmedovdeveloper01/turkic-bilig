@@ -384,6 +384,10 @@ body {
 .tb-filter:has(input[value='mintaqaviy']:checked) [data-category]:not([data-category='mintaqaviy']) {
   display: none;
 }
+/* Ro'yxat ichidagi qidiruv (allomalar sahifasi) mos kelmagan kartochkalarni yashiradi. */
+[data-search-hidden] {
+  display: none;
+}
 
 /* ---- Davlatlar xronologiyasi (StatesTimeline) ----
  * Rang + naqsh: turkiy — to'liq; sulola — shtrix; munozarali — xira to'ldirish

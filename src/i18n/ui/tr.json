@@ -233,6 +233,10 @@
       "banknota": "banknot",
       "haykal": "heykel"
     },
-    "didYouKnowNote": "{n} bilgi — her biri âlimin sayfasından, kaynağıyla birlikte. Yana kaydırın →"
+    "didYouKnowNote": "{n} bilgi — her biri âlimin sayfasından, kaynağıyla birlikte. Yana kaydırın →",
+    "searchLabel": "Âlimlerde ara",
+    "searchPlaceholder": "Ad, eser veya alana göre arayın…",
+    "searchEmpty": "Sonuç bulunamadı. Başka bir kelime deneyin veya kategori filtresini değiştirin.",
+    "searchFound": "{n} âlim bulundu"
   }
 }

@@ -233,6 +233,10 @@
       "banknota": "banknot",
       "haykal": "heýkel"
     },
-    "didYouKnowNote": "{n} fakt — her biri alymyň sahypasyndan, çeşmesi bilen. Gapdala süýşüriň →"
+    "didYouKnowNote": "{n} fakt — her biri alymyň sahypasyndan, çeşmesi bilen. Gapdala süýşüriň →",
+    "searchLabel": "Alymlary gözle",
+    "searchPlaceholder": "Ady, eseri ýa-da ugry boýunça gözläň…",
+    "searchEmpty": "Hiç zat tapylmady. Başga söz bilen synanyşyň ýa-da kategoriýa süzgüjini üýtgediň.",
+    "searchFound": "{n} alym tapyldy"
   }
 }

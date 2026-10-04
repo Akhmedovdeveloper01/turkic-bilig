@@ -233,6 +233,10 @@
       "banknota": "əskinas",
       "haykal": "heykəl"
     },
-    "didYouKnowNote": "{n} fakt — hər biri alimin səhifəsindən, mənbəyi ilə. Yana sürüşdürün →"
+    "didYouKnowNote": "{n} fakt — hər biri alimin səhifəsindən, mənbəyi ilə. Yana sürüşdürün →",
+    "searchLabel": "Alimlərdə axtar",
+    "searchPlaceholder": "Ad, əsər və ya sahə üzrə axtarın…",
+    "searchEmpty": "Heç nə tapılmadı. Başqa söz yoxlayın və ya kateqoriya filtrini dəyişin.",
+    "searchFound": "{n} alim tapıldı"
   }
 }

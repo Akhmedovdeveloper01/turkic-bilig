@@ -233,6 +233,10 @@
       "banknota": "banknote",
       "haykal": "statue"
     },
-    "didYouKnowNote": "{n} facts — each from a scholar's page, with its source. Scroll sideways →"
+    "didYouKnowNote": "{n} facts — each from a scholar's page, with its source. Scroll sideways →",
+    "searchLabel": "Search scholars",
+    "searchPlaceholder": "Search by name, work or field…",
+    "searchEmpty": "Nothing found. Try another word or change the category filter.",
+    "searchFound": "{n} scholars found"
   }
 }

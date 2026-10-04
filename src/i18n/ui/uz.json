@@ -233,6 +233,10 @@
       "banknota": "banknota",
       "haykal": "haykal"
     },
-    "didYouKnowNote": "{n} ta fakt — har biri alloma sahifasidan, manbasi bilan. Yonga suring →"
+    "didYouKnowNote": "{n} ta fakt — har biri alloma sahifasidan, manbasi bilan. Yonga suring →",
+    "searchLabel": "Allomalarni qidirish",
+    "searchPlaceholder": "Ism, asar yoki soha bo'yicha qidiring…",
+    "searchEmpty": "Hech narsa topilmadi. Boshqa so'z bilan urinib ko'ring yoki toifa filtrini o'zgartiring.",
+    "searchFound": "{n} ta alloma topildi"
   }
 }

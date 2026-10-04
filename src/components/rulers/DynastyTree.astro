@@ -97,7 +97,7 @@ const markerHiId = `arrow-hi-${id}`;
       <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <span class="text-xs font-medium">{t('dynasty.zoomFitShort')}</span>
     </button>
-    <button type="button" class="tb-zoom-btn px-2.5 text-xs font-medium" data-zoom="reset" title={t('dynasty.zoomReset')}>100%</button>
+    <button type="button" class="tb-zoom-btn px-2.5 text-xs font-medium" data-zoom="reset" title={t('dynasty.zoomReset')} aria-label={t('dynasty.zoomReset')}>1:1</button>
     <span class="ms-1 hidden text-xs text-ink-muted sm:inline">{t('dynasty.zoomHint')}</span>
   </div>
   <div class="tb-tree max-h-[75vh] overflow-auto rounded-xl border border-line bg-surface p-4" style="touch-action: pan-x pan-y" tabindex="0" role="group" aria-label={entry.data.title} data-tree-scroll>
@@ -146,7 +146,7 @@ const markerHiId = `arrow-hi-${id}`;
             style={`inset-inline-start:${n.x}px;top:${n.y}px;width:${NODE_W}px;height:${NODE_H}px`}
             aria-label={ariaLabel(nid)}
             aria-current={isFocus ? 'true' : undefined}
-            data-tree-focus={isFocus ? '' : undefined}
+            data-tree-focus={isFocus ? (m.parent ? '' : 'root') : undefined}
           >
             <span class="relative shrink-0">
               {m.portraitSrc ? (
@@ -296,9 +296,14 @@ const markerHiId = `arrow-hi-${id}`;
     box.addEventListener('pointerup', up);
     box.addEventListener('pointercancel', up);
 
-    // Ajratilgan shaxs bo'lsa — 100% da unga suriladi; bo'lmasa butun silsila sig'diriladi.
+    // Ajratilgan shaxs bo'lsa — unga suriladi (telefonda atrofi ham ko'rinishi uchun 60% da);
+    // bo'lmasa butun silsila sig'diriladi.
     const node = box.querySelector<HTMLElement>('[data-tree-focus]');
-    if (node) {
+    if (node && node.dataset.treeFocus === 'root' && W > box.clientWidth) {
+      // Ildiz (masalan, sulola asoschisi) — butun silsila uning avlodlari, shuning uchun sig'diriladi.
+      fit();
+    } else if (node) {
+      if (box.clientWidth < 640) setZoom(0.6, 0, 0);
       const b = box.getBoundingClientRect();
       const n = node.getBoundingClientRect();
       box.scrollBy({ left: n.left - b.left - b.width / 2 + n.width / 2, top: n.top - b.top - b.height / 2 + n.height / 2 });

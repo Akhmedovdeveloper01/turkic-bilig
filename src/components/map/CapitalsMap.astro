@@ -81,7 +81,9 @@ const LEGEND = [
 ---
 
 <figure class="not-prose">
-  <div class="relative overflow-hidden rounded-xl border border-line bg-map-sea [container-type:inline-size]">
+  <!-- Telefonda xarita kichrayib yozuvlar ustma-ust tushmasligi uchun minimal kenglik va gorizontal surish. -->
+  <div class="overflow-x-auto rounded-xl border border-line" tabindex="0" role="region" aria-label={t('states.capitalsMapTitle')}>
+  <div class="relative min-w-[40rem] overflow-hidden bg-map-sea [container-type:inline-size]">
     <svg viewBox={`0 0 ${proj.width} ${proj.height}`} class="block h-auto w-full" role="img" aria-labelledby="capitals-map-title">
       <title id="capitals-map-title">{t('states.capitalsMapTitle')}</title>
       <rect width={proj.width} height={proj.height} fill="var(--color-map-sea)"></rect>
@@ -103,6 +105,7 @@ const LEGEND = [
         </div>
       ))}
     </div>
+  </div>
   </div>
 
   <figcaption class="mt-3 space-y-2">

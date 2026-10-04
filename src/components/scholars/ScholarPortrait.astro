@@ -51,11 +51,11 @@ const alt = `${name} — ${label}`;
     )}
   </div>
 ) : (
-  <figure class="mb-6 w-full max-w-xs sm:float-end sm:ms-6 sm:w-60">
-    <div class="overflow-hidden rounded-xl border border-line bg-surface-alt">
-      <Image src={portrait.src} alt={alt} widths={[240, 480]} sizes="(min-width: 640px) 240px, 320px" class="aspect-[4/5] w-full object-cover object-top" />
+  <figure class="mb-6 flex items-start gap-3 sm:float-end sm:ms-6 sm:block sm:w-60">
+    <div class="w-28 shrink-0 overflow-hidden rounded-xl border border-line bg-surface-alt sm:w-full">
+      <Image src={portrait.src} alt={alt} widths={[120, 240, 480]} sizes="(min-width: 640px) 240px, 112px" class="aspect-[4/5] w-full object-cover object-top" />
     </div>
-    <figcaption class="mt-2 text-xs leading-snug text-ink-muted">
+    <figcaption class="min-w-0 flex-1 text-xs leading-snug text-ink-muted sm:mt-2">
       {isImagined && (
         <p class="mb-1.5 rounded-md border border-gold/40 bg-gold/10 px-2 py-1.5 font-medium text-ink">{label}</p>
       )}

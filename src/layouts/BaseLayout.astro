@@ -22,6 +22,17 @@ await SCRIPT_FONT_IMPORTS[locale.script]();
 await SCRIPT_FONT_WEIGHT_IMPORTS[locale.script]();
 
 const t = createTranslator(locale.code);
+
+// Asosiy bo'limlar — katta ekranda gorizontal menyu, kichik ekranda ochiladigan menyu.
+const NAV = [
+  { href: 'xalqlar', key: 'nav.peoples' },
+  { href: 'davlatlar', key: 'nav.states' },
+  { href: 'allomalar', key: 'nav.scholars' },
+  { href: 'hukmdorlar', key: 'nav.rulers' },
+  { href: 'mavzular', key: 'nav.topics' },
+  { href: 'meros', key: 'nav.heritage' },
+];
+const section = Astro.url.pathname.split('/')[2] ?? '';
 const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')} — ${t('site.description')}`;
 ---
 
@@ -29,7 +40,7 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description ?? t('site.description')} />
@@ -42,27 +53,49 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
           <Logo class="h-6 w-6 transition-transform duration-500 group-hover:rotate-45" />
           <span class="text-lg font-semibold tracking-tight text-ink">{t('site.title')}</span>
         </a>
-        <nav class="flex items-center gap-5">
-          <a href={`/${locale.code}/xalqlar`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.peoples')}
-          </a>
-          <a href={`/${locale.code}/davlatlar`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.states')}
-          </a>
-          <a href={`/${locale.code}/allomalar`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.scholars')}
-          </a>
-          <a href={`/${locale.code}/hukmdorlar`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.rulers')}
-          </a>
-          <a href={`/${locale.code}/mavzular`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.topics')}
-          </a>
-          <a href={`/${locale.code}/meros`} class="tb-nav-link hidden text-sm font-medium text-ink-muted transition-colors hover:text-brand sm:inline">
-            {t('nav.heritage')}
-          </a>
+        <div class="flex items-center gap-2 lg:gap-5">
+          <nav class="hidden items-center gap-5 lg:flex" aria-label={t('nav.main')}>
+            {NAV.map((n) => (
+              <a
+                href={`/${locale.code}/${n.href}`}
+                class:list={['tb-nav-link text-sm font-medium transition-colors hover:text-brand', section === n.href ? 'text-brand' : 'text-ink-muted']}
+                aria-current={section === n.href ? 'page' : undefined}
+              >
+                {t(n.key)}
+              </a>
+            ))}
+          </nav>
           <LanguageSwitcher currentLang={locale.code} />
-        </nav>
+          <details class="tb-mobile-nav group lg:hidden">
+            <summary
+              class="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-brand hover:text-brand [&::-webkit-details-marker]:hidden"
+              aria-label={t('nav.menu')}
+            >
+              <svg viewBox="0 0 24 24" class="size-5 group-open:hidden" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path></svg>
+              <svg viewBox="0 0 24 24" class="hidden size-5 group-open:block" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path></svg>
+            </summary>
+            <nav class="absolute inset-x-0 top-full border-b border-line bg-surface shadow-lg shadow-ink/5" aria-label={t('nav.main')}>
+              <ul class="mx-auto max-w-6xl px-4 py-2">
+                <li>
+                  <a href={`/${locale.code}/`} class:list={['flex min-h-12 items-center rounded-lg px-3 text-base font-medium hover:bg-surface-alt', section === '' ? 'text-brand' : 'text-ink']} aria-current={section === '' ? 'page' : undefined}>
+                    {t('nav.home')}
+                  </a>
+                </li>
+                {NAV.map((n) => (
+                  <li>
+                    <a
+                      href={`/${locale.code}/${n.href}`}
+                      class:list={['flex min-h-12 items-center rounded-lg px-3 text-base font-medium hover:bg-surface-alt', section === n.href ? 'bg-surface-alt text-brand' : 'text-ink']}
+                      aria-current={section === n.href ? 'page' : undefined}
+                    >
+                      {t(n.key)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </details>
+        </div>
       </div>
       <OrnamentDivider class="text-brand/25" />
     </header>

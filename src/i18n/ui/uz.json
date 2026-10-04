@@ -11,7 +11,9 @@
     "topics": "Mavzular",
     "search": "Qidiruv",
     "heritage": "Ilmiy meros",
-    "rulers": "Hukmdor va sarkardalar"
+    "rulers": "Hukmdor va sarkardalar",
+    "menu": "Menyu",
+    "main": "Asosiy menyu"
   },
   "common": {
     "summary": "Qisqacha",

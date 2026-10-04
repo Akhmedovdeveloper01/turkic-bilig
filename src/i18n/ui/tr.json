@@ -50,7 +50,10 @@
     "sourceCode": "Kaynak kod",
     "license": "Lisans",
     "contentLicense": "İçerik: CC BY-NC-SA 4.0",
-    "codeLicense": "Kod: MIT"
+    "codeLicense": "Kod: MIT",
+    "independence": "Yayın bağımsızlığı",
+    "support": "Projeye destek",
+    "about": "Proje hakkında"
   },
   "peoples": {
     "originMapTitle": "Köken ve yayılma",
@@ -333,5 +336,56 @@
     "zoomFitShort": "Sığdır",
     "zoomReset": "Gerçek boyut (%100)",
     "zoomHint": "Ctrl + tekerlek veya iki parmakla da olur"
+  },
+  "independence": {
+    "title": "Yayın bağımsızlığı politikası",
+    "lead": "Turkic Bilig, bilimsel kaynaklara dayanan kâr amacı gütmeyen bir ansiklopedidir. Proje nasıl finanse edilirse edilsin, makalelerin içeriği yalnızca bilimsel kaynaklar ve uzman değerlendirmesiyle belirlenir.",
+    "funding": {
+      "title": "Finansman",
+      "body": "Proje; hibeler, okurların gönüllü bağışları ve içeriğin ticari lisanslanması yoluyla finanse edilir. Maddi destek, hiçbir makale, sonuç veya yoruma etki etme hakkı vermez."
+    },
+    "sponsors": {
+      "title": "Sponsorlar ve hibe verenler",
+      "body": "Sponsorlar, hibe veren kuruluşlar ve kamu kurumları makaleleri yayından önce incelemez, onaylamaz ve değiştirilmelerini talep edemez. Hibe ile hazırlanan bölümlerde bu durum açıkça belirtilir."
+    },
+    "sensitive": {
+      "title": "Tartışmalı ve siyasi açıdan hassas konular",
+      "body": "Tartışmalı meseleler ve siyasi açıdan hassas konular, herhangi bir sponsorun veya finansörün tutumundan bağımsız olarak, uluslararası bilimsel ve resmî kaynaklara dayanılarak tarafların görüşleriyle birlikte ele alınır."
+    },
+    "ads": {
+      "title": "Reklam ve ortaklık bağlantıları",
+      "body": "Bilimsel makalelerde reklam yer almaz. Turizm bölümünde ortaklık bağlantıları bulunursa, bunlar açıkça \"Ortaklık bağlantısı\" olarak işaretlenir ve makale içeriğini etkilemez."
+    },
+    "corrections": {
+      "title": "Hatalar ve düzeltmeler",
+      "body": "Her sayfada kaynaklar, değerlendirme durumu ve değişiklik geçmişi gösterilir. Olgu, tarih, sayı veya yorumdaki önemli düzeltmeler sayfanın \"Değişiklikler\" bölümünde kısa bir notla kaydedilir."
+    },
+    "transparency": {
+      "title": "Şeffaflık",
+      "body": "Projeye maddi destek veren kuruluşların adları açıkça yayımlanır. Bu politika değişirse, değişikliğin tarihi ve içeriği bu sayfada gösterilir."
+    }
+  },
+  "support": {
+    "title": "Projeye destek olun",
+    "lead": "Turkic Bilig ücretsiz ve reklamsız bir bilimsel ansiklopedidir. Desteğiniz yeni makalelere, uzman değerlendirmesine ve çevirilere harcanır.",
+    "usesTitle": "Desteğiniz nereye harcanır",
+    "use": {
+      "content": "Halklar, devletler ve âlimler hakkında yeni makaleler hazırlamak",
+      "review": "Tarihçi, dilbilimci ve etnograf uzmanların değerlendirmesi",
+      "translation": "Makalelerin başka dillere çevrilmesi ve ana dili konuşurlarınca kontrolü",
+      "hosting": "Site barındırma ve alan adı"
+    },
+    "methodsTitle": "Destek yolları",
+    "method": {
+      "payme": "Özbekistan'dan — Payme ile",
+      "click": "Özbekistan'dan — Click ile",
+      "boosty": "Yurt dışından — tek seferlik veya aylık"
+    },
+    "donate": "Destek ol",
+    "comingSoon": "Yakında",
+    "orgTitle": "Kuruluşlar için",
+    "orgBody": "Hibe, sponsorluk veya içeriğin ticari lisanslanması konusunda iş birliği için bize ulaşın.",
+    "contactSoon": "İletişim bilgileri yakında yayımlanacaktır.",
+    "independenceNote": "Bağışlar ve sponsorluk makale içeriğini etkilemez."
   }
 }

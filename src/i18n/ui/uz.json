@@ -50,7 +50,10 @@
     "sourceCode": "Manba kodi",
     "license": "Litsenziya",
     "contentLicense": "Kontent: CC BY-NC-SA 4.0",
-    "codeLicense": "Kod: MIT"
+    "codeLicense": "Kod: MIT",
+    "independence": "Tahririy mustaqillik",
+    "support": "Qo'llab-quvvatlash",
+    "about": "Loyiha haqida"
   },
   "peoples": {
     "originMapTitle": "Kelib chiqishi va tarqalishi",
@@ -333,5 +336,56 @@
     "zoomFitShort": "Sig'dirish",
     "zoomReset": "Asl o'lcham (100%)",
     "zoomHint": "Ctrl + g'ildirak yoki ikki barmoq bilan ham bo'ladi"
+  },
+  "independence": {
+    "title": "Tahririy mustaqillik siyosati",
+    "lead": "Turkic Bilig — ilmiy manbalarga asoslangan notijorat ensiklopediya. Loyiha qanday moliyalashtirilishidan qat'i nazar, maqolalar mazmuni faqat ilmiy manbalar va ekspert taqrizi asosida belgilanadi.",
+    "funding": {
+      "title": "Moliyalashtirish",
+      "body": "Loyiha grantlar, foydalanuvchilarning ixtiyoriy xayriyalari va kontentni tijoriy litsenziyalash hisobidan moliyalashtiriladi. Moliyaviy yordam hech qanday maqola, xulosa yoki talqinga ta'sir qilish huquqini bermaydi."
+    },
+    "sponsors": {
+      "title": "Homiylar va grant beruvchilar",
+      "body": "Homiylar, grant beruvchi tashkilotlar va davlat idoralari maqolalarni nashrdan oldin ko'rib chiqmaydi, tasdiqlamaydi va ularni o'zgartirishni talab qila olmaydi. Grant hisobidan tayyorlangan bo'limlarda bu haqda ochiq yoziladi."
+    },
+    "sensitive": {
+      "title": "Munozarali va siyosiy sezgir mavzular",
+      "body": "Bahsli masalalar va siyosiy sezgir mavzular homiy yoki moliyalashtiruvchining pozitsiyasidan qat'i nazar, xalqaro ilmiy va rasmiy manbalar asosida, tomonlarning qarashlari bilan birga yoritiladi."
+    },
+    "ads": {
+      "title": "Reklama va hamkor havolalari",
+      "body": "Ilmiy maqolalarda reklama joylashtirilmaydi. Turizm bo'limida hamkor havolalari paydo bo'lsa, ular aniq \"Hamkor havolasi\" deb belgilanadi va maqola mazmuniga ta'sir qilmaydi."
+    },
+    "corrections": {
+      "title": "Xatolar va tuzatishlar",
+      "body": "Har bir sahifada manbalar, taqriz holati va o'zgarishlar tarixi ko'rsatiladi. Fakt, sana, raqam yoki talqindagi muhim tuzatishlar sahifaning \"O'zgarishlar\" bo'limida qisqa izoh bilan qayd etiladi."
+    },
+    "transparency": {
+      "title": "Ochiqlik",
+      "body": "Loyihani moliyaviy qo'llab-quvvatlagan tashkilotlar nomi ochiq e'lon qilinadi. Ushbu siyosat o'zgarsa, o'zgarish sanasi va mazmuni shu sahifada ko'rsatiladi."
+    }
+  },
+  "support": {
+    "title": "Loyihani qo'llab-quvvatlash",
+    "lead": "Turkic Bilig — bepul va reklamasiz ilmiy ensiklopediya. Yordamingiz yangi maqolalar, ekspert taqrizi va tarjimalarga sarflanadi.",
+    "usesTitle": "Yordam nimaga sarflanadi",
+    "use": {
+      "content": "Yangi xalqlar, davlatlar va allomalar haqida maqolalar tayyorlash",
+      "review": "Tarixchi, tilshunos va etnograf ekspertlarning taqrizi",
+      "translation": "Maqolalarni boshqa tillarga tarjima qilish va ona tili egalari tomonidan tekshirish",
+      "hosting": "Sayt xostingi va domen"
+    },
+    "methodsTitle": "Qo'llab-quvvatlash usullari",
+    "method": {
+      "payme": "O'zbekistondan — Payme orqali",
+      "click": "O'zbekistondan — Click orqali",
+      "boosty": "Xorijdan — bir martalik yoki oylik obuna"
+    },
+    "donate": "Qo'llab-quvvatlash",
+    "comingSoon": "Tez orada",
+    "orgTitle": "Tashkilotlar uchun",
+    "orgBody": "Grant, homiylik yoki kontentni tijoriy litsenziyalash bo'yicha hamkorlik uchun murojaat qiling.",
+    "contactSoon": "Aloqa ma'lumotlari tez orada e'lon qilinadi.",
+    "independenceNote": "Xayriya va homiylik maqolalar mazmuniga ta'sir qilmaydi."
   }
 }

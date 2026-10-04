@@ -127,6 +127,10 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
           <Logo class="h-4 w-4 text-brand" />
           Turkic Bilig — {t('site.description')}
         </p>
+        <nav class="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1" aria-label={t('footer.about')}>
+          <a href={`/${locale.code}/mustaqillik`} class="hover:text-brand">{t('footer.independence')}</a>
+          <a href={`/${locale.code}/qollab-quvvatlash`} class="font-medium text-brand hover:underline">{t('footer.support')}</a>
+        </nav>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs">
           <span class="sr-only">{t('footer.license')}:</span>
           <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" class="underline decoration-line hover:text-brand">{t('footer.contentLicense')}</a>

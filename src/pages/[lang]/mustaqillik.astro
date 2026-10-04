@@ -1,0 +1,44 @@
+---
+/**
+ * Tahririy mustaqillik siyosati: moliyalashtirish manbalari (grant, xayriya,
+ * homiylik, tijoriy litsenziya) maqolalar mazmuniga ta'sir qilmasligi haqidagi
+ * ochiq majburiyat. Matn src/i18n/ui/{til}.json dagi "independence" kalitida.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locales } from '../../i18n/locales';
+import { createTranslator } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+
+const SECTIONS = ['funding', 'sponsors', 'sensitive', 'ads', 'corrections', 'transparency'];
+---
+
+<BaseLayout lang={lang!} title={t('independence.title')} description={t('independence.lead')}>
+  <article class="mx-auto max-w-3xl">
+    <h1 class="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">{t('independence.title')}</h1>
+    <p class="mt-4 text-lg text-ink-muted">{t('independence.lead')}</p>
+
+    <ol class="mt-10 space-y-6">
+      {SECTIONS.map((id, i) => (
+        <li class="rounded-xl border border-line bg-surface-alt p-5">
+          <h2 class="flex items-baseline gap-3 text-lg font-semibold text-ink">
+            <span class="text-sm font-bold tabular-nums text-brand" aria-hidden="true">{i + 1}.</span>
+            {t(`independence.${id}.title`)}
+          </h2>
+          <p class="mt-2 text-ink">{t(`independence.${id}.body`)}</p>
+        </li>
+      ))}
+    </ol>
+
+    <p class="mt-10 text-sm text-ink-muted">
+      <a href={`/${lang}/qollab-quvvatlash`} class="font-medium text-brand underline decoration-brand/40 hover:decoration-brand">
+        {t('support.title')}
+      </a>
+    </p>
+  </article>
+</BaseLayout>

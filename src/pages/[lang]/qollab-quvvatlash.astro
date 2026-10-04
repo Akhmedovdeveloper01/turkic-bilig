@@ -1,0 +1,84 @@
+---
+/**
+ * Loyihani qo'llab-quvvatlash: xayriya usullari va tashkilotlar uchun
+ * hamkorlik. To'lov havolalari src/data/support.ts da — havola yo'q usul
+ * "Tez orada" holatida ko'rsatiladi.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locales } from '../../i18n/locales';
+import { createTranslator } from '../../i18n/ui';
+import { supportMethods, partnershipEmail } from '../../data/support';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+
+const USES = ['content', 'review', 'translation', 'hosting'];
+---
+
+<BaseLayout lang={lang!} title={t('support.title')} description={t('support.lead')}>
+  <div class="mx-auto max-w-3xl">
+    <h1 class="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">{t('support.title')}</h1>
+    <p class="mt-4 text-lg text-ink-muted">{t('support.lead')}</p>
+
+    <section class="mt-10" aria-labelledby="support-uses-title">
+      <h2 id="support-uses-title" class="mb-4 text-xl font-semibold text-ink">{t('support.usesTitle')}</h2>
+      <ul class="grid gap-3 sm:grid-cols-2">
+        {USES.map((id) => (
+          <li class="flex gap-3 rounded-xl border border-line bg-surface-alt p-4 text-ink">
+            <span class="mt-2 size-2 shrink-0 rounded-full bg-brand" aria-hidden="true"></span>
+            <span>{t(`support.use.${id}`)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-10" aria-labelledby="support-methods-title">
+      <h2 id="support-methods-title" class="mb-4 text-xl font-semibold text-ink">{t('support.methodsTitle')}</h2>
+      <ul class="grid gap-4 sm:grid-cols-3">
+        {supportMethods.map((m) => (
+          <li class="flex flex-col rounded-xl border border-line p-5">
+            <h3 class="text-lg font-semibold text-ink">{m.name}</h3>
+            <p class="mt-1 flex-1 text-sm text-ink-muted">{t(`support.method.${m.id}`)}</p>
+            {m.url ? (
+              <a
+                href={m.url}
+                rel="noopener"
+                class="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-brand px-4 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+              >
+                {t('support.donate')}
+                <span class="sr-only">— {m.name}</span>
+              </a>
+            ) : (
+              <span class="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border border-line px-4 text-sm font-medium text-ink-muted">
+                {t('support.comingSoon')}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-10 rounded-xl border border-line bg-surface-alt p-5" aria-labelledby="support-org-title">
+      <h2 id="support-org-title" class="text-xl font-semibold text-ink">{t('support.orgTitle')}</h2>
+      <p class="mt-2 text-ink">{t('support.orgBody')}</p>
+      <p class="mt-3 text-sm">
+        {partnershipEmail ? (
+          <a href={`mailto:${partnershipEmail}`} class="font-medium text-brand underline decoration-brand/40 hover:decoration-brand">{partnershipEmail}</a>
+        ) : (
+          <span class="text-ink-muted">{t('support.contactSoon')}</span>
+        )}
+      </p>
+    </section>
+
+    <p class="mt-8 text-sm text-ink-muted">
+      {t('support.independenceNote')}{' '}
+      <a href={`/${lang}/mustaqillik`} class="font-medium text-brand underline decoration-brand/40 hover:decoration-brand">
+        {t('independence.title')}
+      </a>
+    </p>
+  </div>
+</BaseLayout>

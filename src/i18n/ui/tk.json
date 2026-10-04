@@ -50,7 +50,10 @@
     "sourceCode": "Çeşme kody",
     "license": "Ygtyýarnama",
     "contentLicense": "Mazmun: CC BY-NC-SA 4.0",
-    "codeLicense": "Kod: MIT"
+    "codeLicense": "Kod: MIT",
+    "independence": "Redaksiýa garaşsyzlygy",
+    "support": "Taslama goldaw",
+    "about": "Taslama barada"
   },
   "peoples": {
     "originMapTitle": "Gelip çykyşy we ýaýrawy",
@@ -333,5 +336,56 @@
     "zoomFitShort": "Sygdyr",
     "zoomReset": "Hakyky ölçeg (100%)",
     "zoomHint": "Ctrl + tigir ýa-da iki barmak bilen hem bolýar"
+  },
+  "independence": {
+    "title": "Redaksiýa garaşsyzlygy syýasaty",
+    "lead": "Turkic Bilig ylmy çeşmelere esaslanýan täjirçilik däl ensiklopediýadyr. Taslama nähili maliýeleşdirilse-de, makalalaryň mazmuny diňe ylmy çeşmeler we hünärmen synlary esasynda kesgitlenýär.",
+    "funding": {
+      "title": "Maliýeleşdirme",
+      "body": "Taslama grantlar, okyjylaryň meýletin haýyr-sahawatlary we mazmuny täjirçilik taýdan ygtyýarlandyrmak arkaly maliýeleşdirilýär. Maliýe goldawy hiç bir makala, netije ýa-da düşündirişe täsir etmek hukugyny bermeýär."
+    },
+    "sponsors": {
+      "title": "Hemaýatkärler we grant berijiler",
+      "body": "Hemaýatkärler, grant beriji guramalar we döwlet edaralary makalalary çap edilmezden öň gözden geçirmeýär, tassyklamaýar we olaryň üýtgedilmegini talap edip bilmeýär. Grant hasabyna taýýarlanan bölümlerde bu barada açyk ýazylýar."
+    },
+    "sensitive": {
+      "title": "Jedelli we syýasy taýdan duýgur mowzuklar",
+      "body": "Jedelli meseleler we syýasy taýdan duýgur mowzuklar hemaýatkäriň ýa-da maliýeleşdirijiniň garaýşyna garamazdan, halkara ylmy we resmi çeşmeler esasynda, taraplaryň garaýyşlary bilen bilelikde beýan edilýär."
+    },
+    "ads": {
+      "title": "Mahabat we hyzmatdaş salgylanmalary",
+      "body": "Ylmy makalalarda mahabat ýerleşdirilmeýär. Syýahatçylyk bölüminde hyzmatdaş salgylanmalary peýda bolsa, olar anyk \"Hyzmatdaş salgylanmasy\" diýlip bellenýär we makalanyň mazmunyna täsir etmeýär."
+    },
+    "corrections": {
+      "title": "Ýalňyşlyklar we düzedişler",
+      "body": "Her sahypada çeşmeler, syn ýagdaýy we üýtgeşmeler taryhy görkezilýär. Faktlardaky, senelerdäki, sanlardaky ýa-da düşündirişlerdäki möhüm düzedişler sahypanyň \"Üýtgeşmeler\" bölüminde gysga bellik bilen hasaba alynýar."
+    },
+    "transparency": {
+      "title": "Açyklyk",
+      "body": "Taslama maliýe goldawyny beren guramalaryň atlary açyk yglan edilýär. Bu syýasat üýtgese, üýtgeşmäniň senesi we mazmuny şu sahypada görkezilýär."
+    }
+  },
+  "support": {
+    "title": "Taslama goldaw beriň",
+    "lead": "Turkic Bilig mugt we mahabatsyz ylmy ensiklopediýadyr. Siziň goldawyňyz täze makalalara, hünärmen synlaryna we terjimelere sarp edilýär.",
+    "usesTitle": "Goldaw nämä sarp edilýär",
+    "use": {
+      "content": "Halklar, döwletler we alymlar barada täze makalalary taýýarlamak",
+      "review": "Taryhçy, dilçi we etnograf hünärmenleriň syny",
+      "translation": "Makalalary başga dillere terjime etmek we ene dilinde gürleýänler tarapyndan barlamak",
+      "hosting": "Saýtyň hostingi we domeni"
+    },
+    "methodsTitle": "Goldaw ýollary",
+    "method": {
+      "payme": "Özbegistandan — Payme arkaly",
+      "click": "Özbegistandan — Click arkaly",
+      "boosty": "Daşary ýurtdan — bir gezeklik ýa-da aýlyk"
+    },
+    "donate": "Goldaw ber",
+    "comingSoon": "Ýakyn wagtda",
+    "orgTitle": "Guramalar üçin",
+    "orgBody": "Grant, hemaýatkärlik ýa-da mazmuny täjirçilik taýdan ygtyýarlandyrmak boýunça hyzmatdaşlyk üçin biz bilen habarlaşyň.",
+    "contactSoon": "Habarlaşmak üçin maglumatlar ýakyn wagtda yglan ediler.",
+    "independenceNote": "Haýyr-sahawat we hemaýatkärlik makalalaryň mazmunyna täsir etmeýär."
   }
 }

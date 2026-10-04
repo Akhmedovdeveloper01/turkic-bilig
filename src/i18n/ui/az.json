@@ -50,7 +50,10 @@
     "sourceCode": "Mənbə kodu",
     "license": "Lisenziya",
     "contentLicense": "Məzmun: CC BY-NC-SA 4.0",
-    "codeLicense": "Kod: MIT"
+    "codeLicense": "Kod: MIT",
+    "independence": "Redaksiya müstəqilliyi",
+    "support": "Layihəyə dəstək",
+    "about": "Layihə haqqında"
   },
   "peoples": {
     "originMapTitle": "Mənşəyi və yayılması",
@@ -333,5 +336,56 @@
     "zoomFitShort": "Sığdır",
     "zoomReset": "Həqiqi ölçü (100%)",
     "zoomHint": "Ctrl + təkər və ya iki barmaqla da olar"
+  },
+  "independence": {
+    "title": "Redaksiya müstəqilliyi siyasəti",
+    "lead": "Turkic Bilig elmi mənbələrə əsaslanan qeyri-kommersiya ensiklopediyasıdır. Layihənin necə maliyyələşdirilməsindən asılı olmayaraq, məqalələrin məzmunu yalnız elmi mənbələr və ekspert rəyi əsasında müəyyən edilir.",
+    "funding": {
+      "title": "Maliyyələşdirmə",
+      "body": "Layihə qrantlar, oxucuların könüllü ianələri və məzmunun kommersiya lisenziyalaşdırılması hesabına maliyyələşdirilir. Maliyyə dəstəyi heç bir məqaləyə, nəticəyə və ya şərhə təsir etmək hüququ vermir."
+    },
+    "sponsors": {
+      "title": "Sponsorlar və qrant verənlər",
+      "body": "Sponsorlar, qrant verən təşkilatlar və dövlət orqanları məqalələri dərcdən əvvəl nəzərdən keçirmir, təsdiqləmir və onların dəyişdirilməsini tələb edə bilməz. Qrant hesabına hazırlanmış bölmələrdə bu barədə açıq yazılır."
+    },
+    "sensitive": {
+      "title": "Mübahisəli və siyasi cəhətdən həssas mövzular",
+      "body": "Mübahisəli məsələlər və siyasi cəhətdən həssas mövzular hər hansı sponsorun və ya maliyyələşdirənin mövqeyindən asılı olmayaraq, beynəlxalq elmi və rəsmi mənbələr əsasında, tərəflərin mövqeləri ilə birlikdə işıqlandırılır."
+    },
+    "ads": {
+      "title": "Reklam və tərəfdaş keçidləri",
+      "body": "Elmi məqalələrdə reklam yerləşdirilmir. Turizm bölməsində tərəfdaş keçidləri olarsa, onlar açıq şəkildə \"Tərəfdaş keçidi\" kimi işarələnir və məqalə məzmununa təsir etmir."
+    },
+    "corrections": {
+      "title": "Səhvlər və düzəlişlər",
+      "body": "Hər səhifədə mənbələr, rəy statusu və dəyişikliklər tarixçəsi göstərilir. Fakt, tarix, rəqəm və ya şərhdəki mühüm düzəlişlər səhifənin \"Dəyişikliklər\" bölməsində qısa qeydlə qeydə alınır."
+    },
+    "transparency": {
+      "title": "Şəffaflıq",
+      "body": "Layihəyə maliyyə dəstəyi göstərən təşkilatların adları açıq dərc olunur. Bu siyasət dəyişərsə, dəyişikliyin tarixi və məzmunu bu səhifədə göstərilir."
+    }
+  },
+  "support": {
+    "title": "Layihəyə dəstək olun",
+    "lead": "Turkic Bilig pulsuz və reklamsız elmi ensiklopediyadır. Dəstəyiniz yeni məqalələrə, ekspert rəyinə və tərcümələrə sərf olunur.",
+    "usesTitle": "Dəstək nəyə sərf olunur",
+    "use": {
+      "content": "Xalqlar, dövlətlər və alimlər haqqında yeni məqalələrin hazırlanması",
+      "review": "Tarixçi, dilçi və etnoqraf ekspertlərin rəyi",
+      "translation": "Məqalələrin başqa dillərə tərcüməsi və ana dili daşıyıcıları tərəfindən yoxlanması",
+      "hosting": "Saytın hostinqi və domeni"
+    },
+    "methodsTitle": "Dəstək yolları",
+    "method": {
+      "payme": "Özbəkistandan — Payme vasitəsilə",
+      "click": "Özbəkistandan — Click vasitəsilə",
+      "boosty": "Xaricdən — birdəfəlik və ya aylıq"
+    },
+    "donate": "Dəstək ol",
+    "comingSoon": "Tezliklə",
+    "orgTitle": "Təşkilatlar üçün",
+    "orgBody": "Qrant, sponsorluq və ya məzmunun kommersiya lisenziyalaşdırılması üzrə əməkdaşlıq üçün bizimlə əlaqə saxlayın.",
+    "contactSoon": "Əlaqə məlumatları tezliklə dərc olunacaq.",
+    "independenceNote": "İanələr və sponsorluq məqalələrin məzmununa təsir etmir."
   }
 }

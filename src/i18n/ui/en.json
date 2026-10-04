@@ -50,7 +50,10 @@
     "sourceCode": "Source code",
     "license": "License",
     "contentLicense": "Content: CC BY-NC-SA 4.0",
-    "codeLicense": "Code: MIT"
+    "codeLicense": "Code: MIT",
+    "independence": "Editorial independence",
+    "support": "Support the project",
+    "about": "About the project"
   },
   "peoples": {
     "originMapTitle": "Origins and spread",
@@ -333,5 +336,56 @@
     "zoomFitShort": "Fit",
     "zoomReset": "Actual size (100%)",
     "zoomHint": "Ctrl + wheel or pinch also works"
+  },
+  "independence": {
+    "title": "Editorial independence policy",
+    "lead": "Turkic Bilig is a non-profit encyclopedia based on scholarly sources. However the project is funded, the content of its articles is determined solely by scholarly sources and expert review.",
+    "funding": {
+      "title": "Funding",
+      "body": "The project is funded through grants, voluntary donations from readers and commercial licensing of its content. Financial support grants no right to influence any article, conclusion or interpretation."
+    },
+    "sponsors": {
+      "title": "Sponsors and grant-makers",
+      "body": "Sponsors, grant-making organizations and government bodies do not review or approve articles before publication and cannot demand changes to them. Sections prepared with grant funding say so openly."
+    },
+    "sensitive": {
+      "title": "Disputed and politically sensitive topics",
+      "body": "Disputed questions and politically sensitive topics are covered on the basis of international scholarly and official sources, together with the positions of all parties, regardless of the position of any sponsor or funder."
+    },
+    "ads": {
+      "title": "Advertising and partner links",
+      "body": "No advertising is placed in scholarly articles. If partner links appear in the tourism section, they are clearly labelled \"Partner link\" and do not affect article content."
+    },
+    "corrections": {
+      "title": "Errors and corrections",
+      "body": "Every page shows its sources, review status and change history. Significant corrections of facts, dates, figures or interpretations are recorded with a short note in the page's \"Changes\" section."
+    },
+    "transparency": {
+      "title": "Transparency",
+      "body": "The names of organizations that have financially supported the project are published. If this policy changes, the date and substance of the change are shown on this page."
+    }
+  },
+  "support": {
+    "title": "Support the project",
+    "lead": "Turkic Bilig is a free, ad-free scholarly encyclopedia. Your support pays for new articles, expert review and translations.",
+    "usesTitle": "What your support pays for",
+    "use": {
+      "content": "Writing new articles on peoples, states and scholars",
+      "review": "Review by experts: historians, linguists and ethnographers",
+      "translation": "Translating articles into other languages and review by native speakers",
+      "hosting": "Website hosting and domain"
+    },
+    "methodsTitle": "Ways to support",
+    "method": {
+      "payme": "From Uzbekistan — via Payme",
+      "click": "From Uzbekistan — via Click",
+      "boosty": "From abroad — one-time or monthly"
+    },
+    "donate": "Support",
+    "comingSoon": "Coming soon",
+    "orgTitle": "For organizations",
+    "orgBody": "Get in touch about grants, sponsorship or commercial licensing of the content.",
+    "contactSoon": "Contact details will be published soon.",
+    "independenceNote": "Donations and sponsorship do not influence article content."
   }
 }

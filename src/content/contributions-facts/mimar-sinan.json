@@ -1,0 +1,15 @@
+{
+  "domain": "memorchilik",
+  "year": 1557,
+  "yearUncertain": false,
+  "scholars": ["mimar-sinan"],
+  "states": ["usmonli-imperiyasi"],
+  "evidence": ["meros", "davomchi"],
+  "chain": [
+    { "id": "c1", "year": 1557 },
+    { "id": "c2", "year": 1575 },
+    { "id": "c3" }
+  ],
+  "sources": ["ei2", "tdv-islam", "unesco-whl"],
+  "verified": false
+}

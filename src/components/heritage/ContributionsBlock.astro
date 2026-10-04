@@ -1,0 +1,36 @@
+---
+/** Alloma yoki davlat sahifasidagi "Ilmiy merosdagi hissasi" bloki — contributions kolleksiyasidan avtomatik. */
+import { createTranslator } from '../../i18n/ui';
+import { formatYear } from '../../i18n/years';
+import { loadContributions } from '../../lib/contributions';
+
+interface Props {
+  lang: string;
+  scholar?: string;
+  state?: string;
+}
+const { lang, scholar, state } = Astro.props;
+const t = createTranslator(lang);
+const items = (await loadContributions(lang)).filter(
+  (i) => (scholar && i.facts.scholars.some((r) => r.id === scholar)) || (state && i.facts.states.some((r) => r.id === state))
+);
+---
+
+{items.length > 0 && (
+  <section class="mt-8 rounded-xl border border-line bg-surface-alt p-5" aria-labelledby="heritage-block-title">
+    <h2 id="heritage-block-title" class="mb-3 text-lg font-semibold text-ink">{t('heritage.blockTitle')}</h2>
+    <ul class="space-y-2">
+      {items.map((i) => (
+        <li class="text-sm">
+          <a href={`/${lang}/meros#${i.id}`} class="font-medium text-brand hover:underline">{i.entry.data.title}</a>
+          <span class="ms-2 text-xs text-ink-muted">
+            {i.facts.yearUncertain ? '≈ ' : ''}{formatYear(t, i.facts.year, i.facts.era)} · {t(`heritage.domain.${i.facts.domain}`)}
+          </span>
+        </li>
+      ))}
+    </ul>
+    <a href={`/${lang}/meros`} class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-ink-muted hover:text-brand">
+      {t('heritage.blockMore')} <span aria-hidden="true" class="rtl:-scale-x-100">→</span>
+    </a>
+  </section>
+)}

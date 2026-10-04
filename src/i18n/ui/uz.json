@@ -9,7 +9,8 @@
     "states": "Davlatlar",
     "scholars": "Allomalar",
     "topics": "Mavzular",
-    "search": "Qidiruv"
+    "search": "Qidiruv",
+    "heritage": "Ilmiy meros"
   },
   "common": {
     "summary": "Qisqacha",
@@ -197,7 +198,9 @@
     "peoplesLead": "Altoydan Bolqongacha — turkiy xalqlarning tili, joylashuvi va davlatchiligi.",
     "statesLead": "Xunnudan Usmonlilargacha — turkiy davlatlar va sulolalar, ularning xronologiyasi va vorisligi.",
     "scholarsLead": "Turkiy dunyo olimlari, shoirlari va mutafakkirlari.",
-    "topicsLead": "Etnogenez, til tasnifi, yozuv va boshqa umumiy mavzular."
+    "topicsLead": "Etnogenez, til tasnifi, yozuv va boshqa umumiy mavzular.",
+    "altHeritage": "Ulug'bek rasadxonasi sekstantining saqlanib qolgan qismi, Samarqand",
+    "heritageLead": "Turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi — dalillar bilan."
   },
   "gallery": {
     "title": "Diqqatga sazovor joylar va ramzlar",
@@ -238,5 +241,50 @@
     "searchPlaceholder": "Ism, asar yoki soha bo'yicha qidiring…",
     "searchEmpty": "Hech narsa topilmadi. Boshqa so'z bilan urinib ko'ring yoki toifa filtrini o'zgartiring.",
     "searchFound": "{n} ta alloma topildi"
+  },
+  "heritage": {
+    "lead": "Bu bo'limda turkiy dunyo allomalari va turkiy davlatlar homiyligidagi ilmiy markazlar ilm-fan, islom ilmlari, adabiyot va me'morchilikka qanday hissa qo'shgani ko'rsatiladi. Har bir hissaning ta'siri o'lchanadigan dalillar bilan beriladi: tarjimalar, darslik sifatida qo'llanilgan davr, tillarga kirgan atamalar, nashrlar va saqlanib qolgan meros.",
+    "method": "Ta'sirni foiz yoki ball bilan o'lchab bo'lmaydi, shuning uchun bu yerda baho emas, manbaga bog'langan faktlar keltiriladi. Hissa kim tomonidan qilingani avtomatik belgilanadi: turkiy allomalar, turkiy davlat homiyligida qilingan ishlar va kelib chiqishi boshqa yoki noma'lum bo'lgan, lekin mintaqa merosiga mansub allomalarning hissasi alohida ko'rsatiladi.",
+    "actorsTitle": "Hissa kim tomonidan",
+    "actor": {
+      "turkiy-alloma": "Turkiy alloma",
+      "turkiy-davlat": "Turkiy davlat homiyligida",
+      "mintaqa": "Turkiy dunyo mintaqasidan",
+      "munozarali": "Kelib chiqishi munozarali"
+    },
+    "actorNote": {
+      "turkiy-alloma": "Turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul qilingan alloma.",
+      "turkiy-davlat": "Turkiy sulola homiyligida tashkil etilgan muassasa yoki inshoot.",
+      "mintaqa": "Kelib chiqishi boshqa yoki noma'lum, lekin turkiy dunyo mintaqasi merosiga mansub alloma.",
+      "munozarali": "Allomaning kelib chiqishi ilmiy munozarali — sahifasida qarashlar manbasi bilan berilgan."
+    },
+    "domainsTitle": "Sohalar bo'yicha",
+    "domain": {
+      "matematika": "Matematika",
+      "astronomiya": "Astronomiya",
+      "tibbiyot": "Tibbiyot",
+      "geografiya": "Geografiya va kartografiya",
+      "tilshunoslik": "Tilshunoslik",
+      "islom-ilmlari": "Islom ilmlari",
+      "falsafa": "Falsafa",
+      "tarix": "Tarixnavislik",
+      "adabiyot": "Adabiyot",
+      "memorchilik": "Me'morchilik",
+      "talim": "Ta'lim va ma'rifat"
+    },
+    "filterLegend": "Hissalarni soha bo'yicha saralash",
+    "sortedNote": "Hissalar sanasi bo'yicha tartiblangan.",
+    "impactTitle": "Ta'sir dalillari",
+    "chainTitle": "Ta'sir zanjiri",
+    "evidence": {
+      "tarjima": "tarjima",
+      "darslik": "darslik",
+      "atama": "atama",
+      "nashr": "nashr",
+      "davomchi": "davomchilar",
+      "meros": "saqlangan meros"
+    },
+    "blockTitle": "Ilmiy merosdagi hissasi",
+    "blockMore": "Ilmiy meros bo'limida batafsil"
   }
 }

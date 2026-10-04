@@ -9,7 +9,8 @@
     "states": "States",
     "scholars": "Scholars",
     "topics": "Topics",
-    "search": "Search"
+    "search": "Search",
+    "heritage": "Scholarly heritage"
   },
   "common": {
     "summary": "Summary",
@@ -197,7 +198,9 @@
     "peoplesLead": "From the Altai to the Balkans — the languages, homelands and statehood of the Turkic peoples.",
     "statesLead": "From the Xiongnu to the Ottomans — Turkic states and dynasties, their chronology and succession.",
     "scholarsLead": "Scholars, poets and thinkers of the Turkic world.",
-    "topicsLead": "Ethnogenesis, language classification, script and other general topics."
+    "topicsLead": "Ethnogenesis, language classification, script and other general topics.",
+    "altHeritage": "Surviving part of the sextant of Ulugh Beg's observatory, Samarkand",
+    "heritageLead": "Contributions of scholars and states of the Turkic world to science and culture — with evidence."
   },
   "gallery": {
     "title": "Landmarks and symbols",
@@ -238,5 +241,50 @@
     "searchPlaceholder": "Search by name, work or field…",
     "searchEmpty": "Nothing found. Try another word or change the category filter.",
     "searchFound": "{n} scholars found"
+  },
+  "heritage": {
+    "lead": "This section shows how scholars of the Turkic world and scientific centres under the patronage of Turkic states contributed to science, the Islamic sciences, literature and architecture. The influence of each contribution is given through measurable evidence: translations, how long a work was used as a textbook, terms that entered other languages, editions and surviving heritage.",
+    "method": "Influence cannot be measured in percentages or scores, so this section gives facts tied to sources rather than judgements. Who made a contribution is labelled automatically: contributions of Turkic scholars, works made under the patronage of Turkic states, and those of scholars of other or unknown origin who belong to the region's heritage are shown separately.",
+    "actorsTitle": "Who made the contribution",
+    "actor": {
+      "turkiy-alloma": "Turkic scholar",
+      "turkiy-davlat": "Under Turkic state patronage",
+      "mintaqa": "From the Turkic world region",
+      "munozarali": "Origin disputed"
+    },
+    "actorNote": {
+      "turkiy-alloma": "A scholar who wrote in a Turkic language or whose Turkic origin is generally accepted.",
+      "turkiy-davlat": "An institution or building founded under the patronage of a Turkic dynasty.",
+      "mintaqa": "A scholar of other or unknown origin who belongs to the heritage of the Turkic world region.",
+      "munozarali": "The scholar's origin is disputed — the views are given with sources on their page."
+    },
+    "domainsTitle": "By field",
+    "domain": {
+      "matematika": "Mathematics",
+      "astronomiya": "Astronomy",
+      "tibbiyot": "Medicine",
+      "geografiya": "Geography and cartography",
+      "tilshunoslik": "Linguistics",
+      "islom-ilmlari": "Islamic sciences",
+      "falsafa": "Philosophy",
+      "tarix": "Historiography",
+      "adabiyot": "Literature",
+      "memorchilik": "Architecture",
+      "talim": "Education and enlightenment"
+    },
+    "filterLegend": "Filter contributions by field",
+    "sortedNote": "Contributions are ordered by date.",
+    "impactTitle": "Evidence of influence",
+    "chainTitle": "Chain of influence",
+    "evidence": {
+      "tarjima": "translation",
+      "darslik": "textbook",
+      "atama": "term",
+      "nashr": "edition",
+      "davomchi": "successors",
+      "meros": "surviving heritage"
+    },
+    "blockTitle": "Contribution to scholarly heritage",
+    "blockMore": "More in the Scholarly heritage section"
   }
 }

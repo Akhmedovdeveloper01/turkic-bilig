@@ -1,0 +1,15 @@
+{
+  "domain": "talim",
+  "year": 1884,
+  "yearUncertain": false,
+  "scholars": ["gaspirali"],
+  "states": [],
+  "evidence": ["davomchi"],
+  "chain": [
+    { "id": "c1", "year": 1883 },
+    { "id": "c2" },
+    { "id": "c3" }
+  ],
+  "sources": ["findley-2005"],
+  "verified": false
+}

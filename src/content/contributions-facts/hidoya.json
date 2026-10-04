@@ -1,0 +1,15 @@
+{
+  "domain": "islom-ilmlari",
+  "year": 1190,
+  "yearUncertain": true,
+  "scholars": ["marginoniy"],
+  "states": [],
+  "evidence": ["darslik", "tarjima"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2" },
+    { "id": "c3", "year": 1791 }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

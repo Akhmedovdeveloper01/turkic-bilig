@@ -9,7 +9,8 @@
     "states": "Dövlətlər",
     "scholars": "Alimlər",
     "topics": "Mövzular",
-    "search": "Axtarış"
+    "search": "Axtarış",
+    "heritage": "Elmi irs"
   },
   "common": {
     "summary": "Qısaca",
@@ -197,7 +198,9 @@
     "peoplesLead": "Altaydan Balkanlara — türk xalqlarının dili, məskəni və dövlətçiliyi.",
     "statesLead": "Hunlardan Osmanlılara — türk dövlətləri və sülalələri, xronologiyası və varisliyi.",
     "scholarsLead": "Türk dünyasının alimləri, şairləri və mütəfəkkirləri.",
-    "topicsLead": "Etnogenez, dil təsnifatı, yazı və digər ümumi mövzular."
+    "topicsLead": "Etnogenez, dil təsnifatı, yazı və digər ümumi mövzular.",
+    "altHeritage": "Uluqbəy rəsədxanası sekstantının qalan hissəsi, Səmərqənd",
+    "heritageLead": "Türk dünyası alimlərinin və dövlətlərinin elmə və mədəniyyətə töhfəsi — dəlillərlə."
   },
   "gallery": {
     "title": "Görməli yerlər və rəmzlər",
@@ -238,5 +241,50 @@
     "searchPlaceholder": "Ad, əsər və ya sahə üzrə axtarın…",
     "searchEmpty": "Heç nə tapılmadı. Başqa söz yoxlayın və ya kateqoriya filtrini dəyişin.",
     "searchFound": "{n} alim tapıldı"
+  },
+  "heritage": {
+    "lead": "Bu bölmədə türk dünyası alimlərinin və türk dövlətlərinin himayəsindəki elmi mərkəzlərin elmə, islam elmlərinə, ədəbiyyata və memarlığa necə töhfə verdiyi göstərilir. Hər töhfənin təsiri ölçülə bilən dəlillərlə verilir: tərcümələr, dərslik kimi istifadə olunduğu dövr, başqa dillərə keçən terminlər, nəşrlər və qalan irs.",
+    "method": "Təsiri faiz və ya balla ölçmək olmaz, buna görə burada qiymət deyil, mənbəyə əsaslanan faktlar verilir. Töhfənin kimə aid olduğu avtomatik müəyyən edilir: türk alimlərinin töhfəsi, türk dövlətlərinin himayəsində görülən işlər və mənşəyi başqa və ya məlum olmayan, lakin regionun irsinə aid alimlərin töhfəsi ayrıca göstərilir.",
+    "actorsTitle": "Töhfə kimə aiddir",
+    "actor": {
+      "turkiy-alloma": "Türk alimi",
+      "turkiy-davlat": "Türk dövlətinin himayəsində",
+      "mintaqa": "Türk dünyası regionundan",
+      "munozarali": "Mənşəyi mübahisəli"
+    },
+    "actorNote": {
+      "turkiy-alloma": "Türk dilində yaradan və ya türk mənşəyi ümumən qəbul olunan alim.",
+      "turkiy-davlat": "Türk sülaləsinin himayəsində qurulan qurum və ya tikili.",
+      "mintaqa": "Mənşəyi başqa və ya məlum olmayan, lakin türk dünyası regionunun irsinə aid alim.",
+      "munozarali": "Alimin mənşəyi mübahisəlidir — baxışlar mənbələri ilə onun səhifəsində verilib."
+    },
+    "domainsTitle": "Sahələr üzrə",
+    "domain": {
+      "matematika": "Riyaziyyat",
+      "astronomiya": "Astronomiya",
+      "tibbiyot": "Tibb",
+      "geografiya": "Coğrafiya və kartoqrafiya",
+      "tilshunoslik": "Dilçilik",
+      "islom-ilmlari": "İslam elmləri",
+      "falsafa": "Fəlsəfə",
+      "tarix": "Tarixşünaslıq",
+      "adabiyot": "Ədəbiyyat",
+      "memorchilik": "Memarlıq",
+      "talim": "Təhsil və maarif"
+    },
+    "filterLegend": "Töhfələri sahəyə görə süz",
+    "sortedNote": "Töhfələr tarixə görə sıralanıb.",
+    "impactTitle": "Təsirin dəlilləri",
+    "chainTitle": "Təsir zənciri",
+    "evidence": {
+      "tarjima": "tərcümə",
+      "darslik": "dərslik",
+      "atama": "termin",
+      "nashr": "nəşr",
+      "davomchi": "davamçılar",
+      "meros": "qalan irs"
+    },
+    "blockTitle": "Elmi irsə töhfəsi",
+    "blockMore": "«Elmi irs» bölməsində ətraflı"
   }
 }

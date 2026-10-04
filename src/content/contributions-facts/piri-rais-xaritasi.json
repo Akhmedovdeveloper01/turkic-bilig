@@ -1,0 +1,15 @@
+{
+  "domain": "geografiya",
+  "year": 1513,
+  "yearUncertain": false,
+  "scholars": ["piri-rais"],
+  "states": ["usmonli-imperiyasi"],
+  "evidence": ["meros"],
+  "chain": [
+    { "id": "c1", "year": 1513 },
+    { "id": "c2", "year": 1521 },
+    { "id": "c3", "year": 1929 }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

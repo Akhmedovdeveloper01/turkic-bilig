@@ -1,0 +1,11 @@
+{
+  "domain": "talim",
+  "year": 1875,
+  "yearUncertain": false,
+  "scholars": ["zardobiy"],
+  "states": [],
+  "evidence": ["davomchi"],
+  "chain": [],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

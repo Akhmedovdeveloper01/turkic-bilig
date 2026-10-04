@@ -1,0 +1,11 @@
+{
+  "domain": "islom-ilmlari",
+  "year": 846,
+  "yearUncertain": true,
+  "scholars": ["imom-buxoriy"],
+  "states": [],
+  "evidence": ["darslik", "davomchi"],
+  "chain": [],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

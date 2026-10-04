@@ -1,0 +1,15 @@
+{
+  "domain": "astronomiya",
+  "year": 850,
+  "yearUncertain": true,
+  "scholars": ["ahmad-fargoniy"],
+  "states": [],
+  "evidence": ["tarjima", "darslik"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2", "year": 1135 },
+    { "id": "c3" }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

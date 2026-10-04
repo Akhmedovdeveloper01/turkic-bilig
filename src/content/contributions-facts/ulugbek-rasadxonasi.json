@@ -1,0 +1,15 @@
+{
+  "domain": "astronomiya",
+  "year": 1428,
+  "yearUncertain": true,
+  "scholars": ["ulugbek", "qozizoda-rumiy", "ali-qushchi"],
+  "states": ["temuriylar"],
+  "evidence": ["nashr", "davomchi", "meros"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2", "year": 1665 },
+    { "id": "c3", "year": 1908 }
+  ],
+  "sources": ["ei2", "iranica", "findley-2005"],
+  "verified": false
+}

@@ -1,0 +1,15 @@
+{
+  "domain": "tarix",
+  "year": 1530,
+  "yearUncertain": true,
+  "scholars": ["bobur"],
+  "states": ["boburiylar"],
+  "evidence": ["tarjima", "nashr"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2", "year": 1589 },
+    { "id": "c3" }
+  ],
+  "sources": ["ei2", "iranica", "findley-2005"],
+  "verified": false
+}

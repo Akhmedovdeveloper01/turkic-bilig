@@ -1,0 +1,16 @@
+{
+  "domain": "islom-ilmlari",
+  "year": 944,
+  "yearUncertain": false,
+  "scholars": ["moturidiy", "abu-muin-nasafiy", "najmuddin-nasafiy", "taftazoniy"],
+  "states": [],
+  "evidence": ["davomchi", "darslik"],
+  "chain": [
+    { "id": "c1", "year": 944 },
+    { "id": "c2", "year": 1114 },
+    { "id": "c3", "year": 1142 },
+    { "id": "c4" }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

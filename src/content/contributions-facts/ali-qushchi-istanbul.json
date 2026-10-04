@@ -1,0 +1,15 @@
+{
+  "domain": "astronomiya",
+  "year": 1472,
+  "yearUncertain": true,
+  "scholars": ["ali-qushchi"],
+  "states": ["usmonli-imperiyasi"],
+  "evidence": ["davomchi"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2" },
+    { "id": "c3" }
+  ],
+  "sources": ["iranica", "tdv-islam"],
+  "verified": false
+}

@@ -1,0 +1,15 @@
+{
+  "domain": "matematika",
+  "year": 825,
+  "yearUncertain": true,
+  "scholars": ["xorazmiy"],
+  "states": [],
+  "evidence": ["atama", "tarjima"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2" },
+    { "id": "c3" }
+  ],
+  "sources": ["iranica", "ei2"],
+  "verified": false
+}

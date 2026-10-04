@@ -10,6 +10,7 @@ import { createTranslator } from '../../../i18n/ui';
 import { formatCentury, formatYear } from '../../../i18n/years';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
+import ContributionsBlock from '../../../components/heritage/ContributionsBlock.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('scholarFacts');
@@ -111,6 +112,8 @@ const century = !birth && !death && facts?.data.century !== undefined ? formatCe
       </ul>
     </section>
   )}
+
+  <ContributionsBlock lang={lang!} scholar={slug} />
 
   {facts && <DisputedList lang={lang!} topics={facts.data.disputed} />}
 

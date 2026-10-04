@@ -1,0 +1,16 @@
+{
+  "domain": "tibbiyot",
+  "year": 1025,
+  "yearUncertain": true,
+  "scholars": ["ibn-sino"],
+  "states": [],
+  "evidence": ["tarjima", "darslik", "nashr"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2" },
+    { "id": "c3", "year": 1593 },
+    { "id": "c4" }
+  ],
+  "sources": ["iranica", "ei2"],
+  "verified": false
+}

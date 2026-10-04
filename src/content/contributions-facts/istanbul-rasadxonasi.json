@@ -1,0 +1,11 @@
+{
+  "domain": "astronomiya",
+  "year": 1577,
+  "yearUncertain": false,
+  "scholars": ["taqiyuddin"],
+  "states": ["usmonli-imperiyasi"],
+  "evidence": ["meros"],
+  "chain": [],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

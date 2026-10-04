@@ -1,0 +1,15 @@
+{
+  "domain": "talim",
+  "year": 1067,
+  "yearUncertain": false,
+  "scholars": [],
+  "states": ["saljuqiylar"],
+  "evidence": ["davomchi", "meros"],
+  "chain": [
+    { "id": "c1", "year": 1067 },
+    { "id": "c2" },
+    { "id": "c3" }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

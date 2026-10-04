@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ContributionCard from '../../../components/heritage/ContributionCard.astro';
+import ActorBadge from '../../../components/heritage/ActorBadge.astro';
+import { locales } from '../../../i18n/locales';
+import { createTranslator } from '../../../i18n/ui';
+import { ACTOR_ORDER, DOMAINS, loadContributions } from '../../../lib/contributions';
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { lang: locale.code } }));
+}
+
+const { lang } = Astro.params;
+const t = createTranslator(lang!);
+const items = await loadContributions(lang!);
+
+// Statistika — faqat ma'lumotdan hisoblanadi (o'ylab topilgan ball yoki foiz yo'q).
+const actorCounts = ACTOR_ORDER.map((a) => ({ actor: a, count: items.filter((i) => i.actor === a).length })).filter((a) => a.count > 0);
+const domainCounts = DOMAINS.map((d) => ({ domain: d, count: items.filter((i) => i.facts.domain === d).length })).filter((d) => d.count > 0);
+const maxDomain = Math.max(1, ...domainCounts.map((d) => d.count));
+
+// Soha filtri CSS (:has) bilan ishlaydi — har bir soha uchun qoida shu yerda yaratiladi.
+const filterCss = domainCounts
+  .map(({ domain }) => `.tb-filter:has(input[value='${domain}']:checked) [data-category]:not([data-category='${domain}'])`)
+  .join(',\n');
+---
+
+<BaseLayout lang={lang!} title={t('nav.heritage')} description={t('heritage.lead')}>
+  <PageHero lang={lang!} image="meros" alt={t('hero.altHeritage')} title={t('nav.heritage')} lead={t('hero.heritageLead')} />
+
+  <section class="mb-8 grid gap-4 lg:grid-cols-[1fr_20rem]">
+    <div class="space-y-3 text-ink">
+      <p class="text-lg">{t('heritage.lead')}</p>
+      <p class="text-sm text-ink-muted">{t('heritage.method')}</p>
+    </div>
+    <aside class="rounded-xl border border-line bg-surface-alt p-4 text-sm" aria-labelledby="heritage-actors-title">
+      <h2 id="heritage-actors-title" class="mb-3 font-semibold text-ink">{t('heritage.actorsTitle')}</h2>
+      <ul class="space-y-2.5">
+        {actorCounts.map((a) => (
+          <li>
+            <div class="flex items-center justify-between gap-2">
+              <ActorBadge lang={lang!} actor={a.actor} />
+              <span class="font-semibold tabular-nums text-ink">{a.count}</span>
+            </div>
+            <p class="mt-1 text-xs text-ink-muted">{t(`heritage.actorNote.${a.actor}`)}</p>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  </section>
+
+  <section class="mb-8" aria-labelledby="heritage-domains-title">
+    <h2 id="heritage-domains-title" class="mb-3 text-lg font-semibold text-ink">{t('heritage.domainsTitle')}</h2>
+    <ul class="grid gap-x-8 gap-y-2 sm:grid-cols-2">
+      {domainCounts.map((d) => (
+        <li class="grid grid-cols-[9rem_1fr_2rem] items-center gap-3 text-sm">
+          <span class="truncate text-ink">{t(`heritage.domain.${d.domain}`)}</span>
+          <span class="h-2 rounded-full bg-line" aria-hidden="true">
+            <span class="block h-2 rounded-full bg-brand" style={`width:${(d.count / maxDomain) * 100}%`}></span>
+          </span>
+          <span class="text-end font-semibold tabular-nums text-ink">{d.count}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style is:inline set:html={`${filterCss} { display: none; }`}></style>
+
+  <div class="tb-filter">
+    <fieldset class="mb-6">
+      <legend class="sr-only">{t('heritage.filterLegend')}</legend>
+      <div class="flex flex-wrap gap-2">
+        <label class="tb-filter-tab">
+          <input type="radio" name="heritage-domain" value="hammasi" checked class="sr-only" />
+          <span>{t('states.filterAll')}</span>
+          <span class="tb-filter-count tabular-nums">{items.length}</span>
+        </label>
+        {domainCounts.map((d) => (
+          <label class="tb-filter-tab">
+            <input type="radio" name="heritage-domain" value={d.domain} class="sr-only" />
+            <span>{t(`heritage.domain.${d.domain}`)}</span>
+            <span class="tb-filter-count tabular-nums">{d.count}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <p class="mb-4 text-xs text-ink-muted">{t('heritage.sortedNote')}</p>
+    <ol class="grid gap-4">
+      {items.map((item) => <ContributionCard lang={lang!} item={item} />)}
+    </ol>
+  </div>
+</BaseLayout>

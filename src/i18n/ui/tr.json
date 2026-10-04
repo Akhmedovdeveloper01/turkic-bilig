@@ -9,7 +9,8 @@
     "states": "Devletler",
     "scholars": "Bilginler",
     "topics": "Konular",
-    "search": "Ara"
+    "search": "Ara",
+    "heritage": "İlmî miras"
   },
   "common": {
     "summary": "Özet",
@@ -197,7 +198,9 @@
     "peoplesLead": "Altay'dan Balkanlar'a — Türk halklarının dili, yurdu ve devletliliği.",
     "statesLead": "Hunlardan Osmanlılara — Türk devletleri ve hanedanları, kronolojileri ve halefiyetleri.",
     "scholarsLead": "Türk dünyasının bilginleri, şairleri ve düşünürleri.",
-    "topicsLead": "Etnogenez, dil sınıflandırması, yazı ve diğer genel konular."
+    "topicsLead": "Etnogenez, dil sınıflandırması, yazı ve diğer genel konular.",
+    "altHeritage": "Uluğ Bey Rasathanesi sekstantının günümüze ulaşan bölümü, Semerkant",
+    "heritageLead": "Türk dünyası âlimlerinin ve devletlerinin bilime ve kültüre katkısı — kanıtlarıyla."
   },
   "gallery": {
     "title": "Görülecek yerler ve semboller",
@@ -238,5 +241,50 @@
     "searchPlaceholder": "Ad, eser veya alana göre arayın…",
     "searchEmpty": "Sonuç bulunamadı. Başka bir kelime deneyin veya kategori filtresini değiştirin.",
     "searchFound": "{n} âlim bulundu"
+  },
+  "heritage": {
+    "lead": "Bu bölümde Türk dünyası âlimlerinin ve Türk devletlerinin himayesindeki ilim merkezlerinin bilime, İslami ilimlere, edebiyata ve mimariye nasıl katkı sağladığı gösterilir. Her katkının etkisi ölçülebilir kanıtlarla verilir: tercümeler, ders kitabı olarak okutulduğu süre, başka dillere geçen terimler, baskılar ve günümüze ulaşan miras.",
+    "method": "Etki yüzde veya puanla ölçülemez; bu yüzden burada değerlendirme değil, kaynağa bağlı olgular verilir. Katkının kime ait olduğu otomatik belirlenir: Türk âlimlerin katkıları, Türk devletlerinin himayesinde yapılan işler ve kökeni farklı veya bilinmeyen ancak bölgenin mirasına ait âlimlerin katkıları ayrı gösterilir.",
+    "actorsTitle": "Katkı kime ait",
+    "actor": {
+      "turkiy-alloma": "Türk âlim",
+      "turkiy-davlat": "Türk devleti himayesinde",
+      "mintaqa": "Türk dünyası bölgesinden",
+      "munozarali": "Kökeni tartışmalı"
+    },
+    "actorNote": {
+      "turkiy-alloma": "Türkçe eser vermiş veya Türk kökeni genel kabul görmüş âlim.",
+      "turkiy-davlat": "Bir Türk hanedanının himayesinde kurulan kurum veya yapı.",
+      "mintaqa": "Kökeni farklı veya bilinmeyen, ancak Türk dünyası bölgesinin mirasına ait âlim.",
+      "munozarali": "Âlimin kökeni tartışmalıdır — görüşler kaynaklarıyla sayfasında verilmiştir."
+    },
+    "domainsTitle": "Alanlara göre",
+    "domain": {
+      "matematika": "Matematik",
+      "astronomiya": "Astronomi",
+      "tibbiyot": "Tıp",
+      "geografiya": "Coğrafya ve kartografya",
+      "tilshunoslik": "Dilbilim",
+      "islom-ilmlari": "İslami ilimler",
+      "falsafa": "Felsefe",
+      "tarix": "Tarih yazımı",
+      "adabiyot": "Edebiyat",
+      "memorchilik": "Mimari",
+      "talim": "Eğitim ve aydınlanma"
+    },
+    "filterLegend": "Katkıları alana göre süz",
+    "sortedNote": "Katkılar tarihe göre sıralanmıştır.",
+    "impactTitle": "Etkinin kanıtları",
+    "chainTitle": "Etki zinciri",
+    "evidence": {
+      "tarjima": "tercüme",
+      "darslik": "ders kitabı",
+      "atama": "terim",
+      "nashr": "baskı",
+      "davomchi": "takipçiler",
+      "meros": "günümüze ulaşan miras"
+    },
+    "blockTitle": "İlmî mirasa katkısı",
+    "blockMore": "İlmî miras bölümünde ayrıntılı"
   }
 }

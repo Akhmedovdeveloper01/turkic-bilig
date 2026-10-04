@@ -1,0 +1,15 @@
+{
+  "domain": "tarix",
+  "year": 1030,
+  "yearUncertain": false,
+  "scholars": ["beruniy"],
+  "states": ["gaznaviylar"],
+  "evidence": ["nashr", "tarjima"],
+  "chain": [
+    { "id": "c1", "year": 1030 },
+    { "id": "c2", "year": 1887 },
+    { "id": "c3", "year": 1888 }
+  ],
+  "sources": ["iranica", "ei2"],
+  "verified": false
+}

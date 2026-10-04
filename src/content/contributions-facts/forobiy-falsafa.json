@@ -1,0 +1,15 @@
+{
+  "domain": "falsafa",
+  "year": 940,
+  "yearUncertain": true,
+  "scholars": ["forobiy"],
+  "states": [],
+  "evidence": ["davomchi"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2" },
+    { "id": "c3" }
+  ],
+  "sources": ["iranica", "ei2"],
+  "verified": false
+}

@@ -1,0 +1,11 @@
+{
+  "domain": "tarix",
+  "year": 1652,
+  "yearUncertain": true,
+  "scholars": ["kotib-chalabiy"],
+  "states": ["usmonli-imperiyasi"],
+  "evidence": ["nashr", "tarjima"],
+  "chain": [],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

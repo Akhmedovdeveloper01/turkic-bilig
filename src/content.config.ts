@@ -325,6 +325,52 @@ const topics = defineCollection({
   }),
 });
 
+// --- Ilmiy meros: turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi ---
+/** Hissa kim tomonidan qilingani ATAYLAB yozilmaydi — sahifada `scholars` (alloma toifasi)
+ * yoki `states` (turkiy davlat homiyligi) dan avtomatik aniqlanadi. Shunda "turkiy hissa"
+ * belgisi alloma toifasiga zid bo'lib qolmaydi (masalan, Ibn Sino — "Turkiy dunyo mintaqasidan"). */
+const contributionFacts = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/contributions-facts' }),
+  schema: z
+    .object({
+      domain: z.enum([
+        'matematika', 'astronomiya', 'tibbiyot', 'geografiya', 'tilshunoslik', 'islom-ilmlari',
+        'falsafa', 'tarix', 'adabiyot', 'memorchilik', 'talim',
+      ]),
+      /** Asosiy sana (asar yozilgan, inshoot qurilgan va h.k.). */
+      year: z.number().int(),
+      era: z.enum(['m.av', 'milodiy']).default('milodiy'),
+      yearUncertain: z.boolean().default(false),
+      /** Birinchisi — asosiy muallif (hissa belgisi uning toifasidan olinadi), qolganlari hamkor yoki davomchilar. */
+      scholars: z.array(reference('scholarFacts')).default([]),
+      states: z.array(reference('stateFacts')).default([]),
+      /** Ta'sir dalillari turi — o'lchanadigan ko'rsatkichlar (ball yoki foiz emas). */
+      evidence: z.array(z.enum(['tarjima', 'darslik', 'atama', 'nashr', 'davomchi', 'meros'])).min(1),
+      /** Ta'sir zanjiri qadamlari; matni tarjima faylida (`chainTexts[id]`). */
+      chain: z.array(z.object({ id: z.string(), year: z.number().int().optional() })).default([]),
+      sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
+      ...verificationFields,
+    })
+    .refine((d) => d.scholars.length > 0 || d.states.length > 0, {
+      message: "Hissa kamida bitta alloma yoki davlatga bog'lanishi shart",
+    }),
+});
+
+const contributions = defineCollection({
+  loader: glob({ pattern: '*/**/*.mdx', base: './src/content/contributions' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    factsId: reference('contributionFacts'),
+    /** Ta'sir dalillari — har biri manbaga bog'langan aniq fakt. */
+    impact: z
+      .array(z.object({ text: z.string(), sourceIds: z.array(sourceRef).min(1, "Har bir dalil manbaga bog'lanishi shart") }))
+      .min(1),
+    chainTexts: z.record(z.string(), z.string()).default({}),
+    ...translationFields,
+  }),
+});
+
 export const collections = {
   sources,
   contributors,
@@ -336,4 +382,6 @@ export const collections = {
   scholars,
   topicFacts,
   topics,
+  contributionFacts,
+  contributions,
 };

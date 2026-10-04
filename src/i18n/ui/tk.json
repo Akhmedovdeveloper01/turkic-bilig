@@ -9,7 +9,8 @@
     "states": "Döwletler",
     "scholars": "Alymlar",
     "topics": "Temalar",
-    "search": "Gözleg"
+    "search": "Gözleg",
+    "heritage": "Ylmy miras"
   },
   "common": {
     "summary": "Gysgaça",
@@ -197,7 +198,9 @@
     "peoplesLead": "Altaýdan Balkanlara çenli — türki halklaryň dili, mekany we döwletliligi.",
     "statesLead": "Hunlardan Osmanlylara çenli — türki döwletler we nebereler, olaryň hronologiýasy we mirasdüşerligi.",
     "scholarsLead": "Türki dünýäsiniň alymlary, şahyrlary we akyldarlary.",
-    "topicsLead": "Etnogenez, dil toparlary, ýazuw we beýleki umumy mowzuklar."
+    "topicsLead": "Etnogenez, dil toparlary, ýazuw we beýleki umumy mowzuklar.",
+    "altHeritage": "Ulugbeg obserwatoriýasynyň sekstantynyň saklanyp galan bölegi, Samarkant",
+    "heritageLead": "Türki dünýäsiniň alymlarynyň we döwletleriniň ylma we medeniýete goşandy — subutnamalary bilen."
   },
   "gallery": {
     "title": "Görmäge degerli ýerler we nyşanlar",
@@ -238,5 +241,50 @@
     "searchPlaceholder": "Ady, eseri ýa-da ugry boýunça gözläň…",
     "searchEmpty": "Hiç zat tapylmady. Başga söz bilen synanyşyň ýa-da kategoriýa süzgüjini üýtgediň.",
     "searchFound": "{n} alym tapyldy"
+  },
+  "heritage": {
+    "lead": "Bu bölümde türki dünýäsiniň alymlarynyň we türki döwletleriň howandarlygyndaky ylmy merkezleriň ylma, yslam ylymlaryna, edebiýata we binagärlige nähili goşant goşandygy görkezilýär. Her goşandyň täsiri ölçenip bilinýän subutnamalar bilen berilýär: terjimeler, okuw kitaby hökmünde ulanylan döwri, başga dillere geçen adalgalar, neşirler we saklanyp galan miras.",
+    "method": "Täsiri göterim ýa-da bal bilen ölçäp bolmaýar, şonuň üçin bu ýerde baha däl-de, çeşmä daýanýan faktlar berilýär. Goşandyň kime degişlidigi awtomatik kesgitlenýär: türki alymlaryň goşandy, türki döwletleriň howandarlygynda edilen işler we gelip çykyşy başga ýa-da belli däl, emma sebitiň mirasyna degişli alymlaryň goşandy aýratyn görkezilýär.",
+    "actorsTitle": "Goşant kime degişli",
+    "actor": {
+      "turkiy-alloma": "Türki alym",
+      "turkiy-davlat": "Türki döwletiň howandarlygynda",
+      "mintaqa": "Türki dünýäsi sebitinden",
+      "munozarali": "Gelip çykyşy jedelli"
+    },
+    "actorNote": {
+      "turkiy-alloma": "Türki dilde döredijilik eden ýa-da türki gelip çykyşy umumy kabul edilen alym.",
+      "turkiy-davlat": "Türki neberäniň howandarlygynda döredilen edara ýa-da desga.",
+      "mintaqa": "Gelip çykyşy başga ýa-da belli däl, emma türki dünýäsi sebitiniň mirasyna degişli alym.",
+      "munozarali": "Alymyň gelip çykyşy jedelli — garaýyşlar çeşmeleri bilen onuň sahypasynda berlen."
+    },
+    "domainsTitle": "Ugurlar boýunça",
+    "domain": {
+      "matematika": "Matematika",
+      "astronomiya": "Astronomiýa",
+      "tibbiyot": "Lukmançylyk",
+      "geografiya": "Geografiýa we kartografiýa",
+      "tilshunoslik": "Dil bilimi",
+      "islom-ilmlari": "Yslam ylymlary",
+      "falsafa": "Pelsepe",
+      "tarix": "Taryhnamaçylyk",
+      "adabiyot": "Edebiýat",
+      "memorchilik": "Binagärlik",
+      "talim": "Bilim we magaryf"
+    },
+    "filterLegend": "Goşantlary ugur boýunça süzmek",
+    "sortedNote": "Goşantlar senesi boýunça tertiplenen.",
+    "impactTitle": "Täsiriň subutnamalary",
+    "chainTitle": "Täsir zynjyry",
+    "evidence": {
+      "tarjima": "terjime",
+      "darslik": "okuw kitaby",
+      "atama": "adalga",
+      "nashr": "neşir",
+      "davomchi": "dowamçylar",
+      "meros": "saklanyp galan miras"
+    },
+    "blockTitle": "Ylmy mirasa goşandy",
+    "blockMore": "«Ylmy miras» bölüminde giňişleýin"
   }
 }

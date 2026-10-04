@@ -1,0 +1,11 @@
+{
+  "domain": "adabiyot",
+  "year": 1499,
+  "yearUncertain": false,
+  "scholars": ["alisher-navoiy"],
+  "states": ["temuriylar"],
+  "evidence": ["meros", "davomchi"],
+  "chain": [],
+  "sources": ["johanson-csato-2021", "findley-2005"],
+  "verified": false
+}

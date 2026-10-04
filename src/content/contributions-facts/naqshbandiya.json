@@ -1,0 +1,16 @@
+{
+  "domain": "islom-ilmlari",
+  "year": 1389,
+  "yearUncertain": false,
+  "scholars": ["gijduvoniy", "bahouddin-naqshband", "xoja-ahror"],
+  "states": [],
+  "evidence": ["davomchi"],
+  "chain": [
+    { "id": "c1" },
+    { "id": "c2", "year": 1389 },
+    { "id": "c3", "year": 1490 },
+    { "id": "c4" }
+  ],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

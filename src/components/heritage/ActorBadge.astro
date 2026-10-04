@@ -1,0 +1,22 @@
+---
+/** Hissa kim tomonidan qilingani belgisi — alloma toifalari bilan bir xil rang tizimi. */
+import { createTranslator } from '../../i18n/ui';
+import type { ActorType } from '../../lib/contributions';
+
+interface Props {
+  lang: string;
+  actor: ActorType;
+}
+const { lang, actor } = Astro.props;
+const t = createTranslator(lang);
+const STYLE: Record<ActorType, string> = {
+  'turkiy-alloma': 'border-cat-turkiy/40 bg-cat-turkiy/10 text-brand-dark dark:text-brand',
+  'turkiy-davlat': 'border-cat-turkiy/40 bg-surface text-brand-dark dark:text-brand',
+  mintaqa: 'border-cat-sulola/40 bg-gold-soft text-gold',
+  munozarali: 'border-dashed border-cat-munozarali/50 bg-cat-munozarali/10 text-cat-munozarali',
+};
+---
+
+<span class:list={['inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium', STYLE[actor]]}>
+  {t(`heritage.actor.${actor}`)}
+</span>

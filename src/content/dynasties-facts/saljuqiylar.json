@@ -1,0 +1,21 @@
+{
+  "state": "saljuqiylar",
+  "members": [
+    { "id": "saljuq" },
+    { "id": "mikoil", "parent": "saljuq" },
+    { "id": "togrulbek", "parent": "mikoil", "birthYear": 990, "deathYear": 1063, "datesUncertain": true, "reign": { "from": 1038, "to": 1063 }, "ruler": "togrulbek" },
+    { "id": "chagribek", "parent": "mikoil", "birthYear": 989, "deathYear": 1060, "datesUncertain": true },
+    { "id": "alp-arslon", "parent": "chagribek", "birthYear": 1029, "deathYear": 1072, "reign": { "from": 1063, "to": 1072 }, "ruler": "alp-arslon" },
+    { "id": "malikshoh", "parent": "alp-arslon", "birthYear": 1055, "deathYear": 1092, "reign": { "from": 1072, "to": 1092 }, "ruler": "malikshoh" },
+    { "id": "barkiyaruq", "parent": "malikshoh", "birthYear": 1081, "deathYear": 1105, "reign": { "from": 1094, "to": 1105 } },
+    { "id": "muhammad-tapar", "parent": "malikshoh", "birthYear": 1082, "deathYear": 1118, "reign": { "from": 1105, "to": 1118 } },
+    { "id": "sanjar", "parent": "malikshoh", "birthYear": 1086, "deathYear": 1157, "reign": { "from": 1118, "to": 1157 }, "ruler": "sulton-sanjar" },
+    { "id": "tutush", "parent": "alp-arslon", "deathYear": 1095 },
+    { "id": "qovurd", "parent": "chagribek", "deathYear": 1073 },
+    { "id": "arslon-isroil", "parent": "saljuq" },
+    { "id": "qutalmish", "parent": "arslon-isroil", "deathYear": 1064 },
+    { "id": "sulaymon", "parent": "qutalmish", "deathYear": 1086, "reign": { "from": 1077, "to": 1086 } }
+  ],
+  "sources": ["bosworth-1996", "ei2"],
+  "verified": false
+}

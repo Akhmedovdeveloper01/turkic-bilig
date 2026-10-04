@@ -1,0 +1,29 @@
+{
+  "state": "temuriylar",
+  "members": [
+    { "id": "temur", "birthYear": 1336, "deathYear": 1405, "reign": { "from": 1370, "to": 1405 }, "ruler": "amir-temur" },
+    { "id": "jahongir", "parent": "temur", "birthYear": 1356, "deathYear": 1376, "datesUncertain": true },
+    { "id": "muhammad-sulton", "parent": "jahongir", "birthYear": 1375, "deathYear": 1403 },
+    { "id": "pir-muhammad", "parent": "jahongir", "birthYear": 1376, "deathYear": 1407 },
+    { "id": "umarshayx", "parent": "temur", "birthYear": 1356, "deathYear": 1394 },
+    { "id": "iskandar", "parent": "umarshayx", "birthYear": 1384, "deathYear": 1415 },
+    { "id": "boyqaro", "parent": "umarshayx" },
+    { "id": "mansur", "parent": "boyqaro" },
+    { "id": "husayn", "parent": "mansur", "birthYear": 1438, "deathYear": 1506, "reign": { "from": 1469, "to": 1506 }, "ruler": "husayn-boyqaro" },
+    { "id": "mironshoh", "parent": "temur", "birthYear": 1366, "deathYear": 1408 },
+    { "id": "xalil-sulton", "parent": "mironshoh", "birthYear": 1384, "deathYear": 1411, "reign": { "from": 1405, "to": 1409 } },
+    { "id": "sulton-muhammad", "parent": "mironshoh" },
+    { "id": "abusaid", "parent": "sulton-muhammad", "birthYear": 1424, "deathYear": 1469, "reign": { "from": 1451, "to": 1469 } },
+    { "id": "umarshayx-ii", "parent": "abusaid", "birthYear": 1456, "deathYear": 1494 },
+    { "id": "bobur", "parent": "umarshayx-ii", "birthYear": 1483, "deathYear": 1530, "reign": { "from": 1526, "to": 1530 }, "ruler": "bobur" },
+    { "id": "humoyun", "parent": "bobur", "birthYear": 1508, "deathYear": 1556, "reign": { "from": 1530, "to": 1540 } },
+    { "id": "akbar", "parent": "humoyun", "birthYear": 1542, "deathYear": 1605, "reign": { "from": 1556, "to": 1605 }, "ruler": "akbar" },
+    { "id": "shohruh", "parent": "temur", "birthYear": 1377, "deathYear": 1447, "reign": { "from": 1409, "to": 1447 }, "ruler": "shohruh" },
+    { "id": "ulugbek", "parent": "shohruh", "birthYear": 1394, "deathYear": 1449, "reign": { "from": 1447, "to": 1449 }, "ruler": "ulugbek" },
+    { "id": "abdullatif", "parent": "ulugbek", "deathYear": 1450, "reign": { "from": 1449, "to": 1450 } },
+    { "id": "boysungur", "parent": "shohruh", "birthYear": 1397, "deathYear": 1433 },
+    { "id": "abulqosim-bobur", "parent": "boysungur", "birthYear": 1422, "deathYear": 1457, "reign": { "from": 1449, "to": 1457 } }
+  ],
+  "sources": ["bosworth-1996", "ei2", "iranica"],
+  "verified": false
+}

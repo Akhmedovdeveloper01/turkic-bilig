@@ -311,5 +311,13 @@
     },
     "stateBlockTitle": "Hükümdarları ve komutanları",
     "categoryTurkiy": "Türk kökenli"
+  },
+  "dynasty": {
+    "title": "Hanedan şecereleri",
+    "hint": "Her şecereyi açın. Kart kişinin sayfasına götürür; geniş şecereyi yana kaydırın.",
+    "ruled": "Tahta çıktı",
+    "reignShort": "hük. {from}–{to}",
+    "arrow": "Ok — babadan çocuğa",
+    "childOf": "{name} oğlu/kızı"
   }
 }

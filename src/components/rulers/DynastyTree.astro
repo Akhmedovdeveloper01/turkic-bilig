@@ -1,0 +1,141 @@
+---
+/**
+ * Sulola silsilasi: rasmli kartochkalar va otadan farzandga strelkalar (SVG).
+ * Joylashuv build vaqtida hisoblanadi (src/lib/familyTree.ts). Ekran o'quvchilar
+ * uchun har bir kartochka nomida otasi ham aytiladi.
+ */
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import { createTranslator } from '../../i18n/ui';
+import { layoutTree, NODE_H, NODE_W } from '../../lib/familyTree';
+
+interface Props {
+  lang: string;
+  id: string;
+  /** false — sarlavha tashqarida (masalan, <details> ichidagi <summary>). */
+  heading?: boolean;
+}
+const { lang, id, heading = true } = Astro.props;
+const t = createTranslator(lang);
+
+const facts = (await getEntry('dynastyFacts', id))!;
+const localized = await getEntry('dynasties', `${lang}/${id}`);
+const entry = (localized ?? (await getEntry('dynasties', `uz/${id}`)))!;
+const uzEntry = localized ? await getEntry('dynasties', `uz/${id}`) : entry;
+const sources = (await Promise.all(facts.data.sources.map((r) => getEntry(r)))).filter((s) => s !== undefined);
+
+const layout = layoutTree(facts.data.members);
+const titleOf = async (c: 'rulers' | 'scholars', slug: string) =>
+  ((await getEntry(c, `${lang}/${slug}`)) ?? (await getEntry(c, `uz/${slug}`)))?.data.title;
+
+const members = new Map(
+  await Promise.all(
+    facts.data.members.map(async (m) => {
+      const rulerFacts = m.ruler ? await getEntry(m.ruler) : undefined;
+      const scholarFacts = m.scholar ? await getEntry(m.scholar) : undefined;
+      // Allomalar ro'yxatidagi hukmdor (scholar orqali) — sahifasi allomalar bo'limida.
+      const viaScholar = rulerFacts?.data.scholar?.id;
+      const href = scholarFacts
+        ? `/${lang}/allomalar/${scholarFacts.id}`
+        : viaScholar
+          ? `/${lang}/allomalar/${viaScholar}`
+          : rulerFacts
+            ? `/${lang}/hukmdorlar/${rulerFacts.id}`
+            : null;
+      const portraitSrc =
+        rulerFacts?.data.portrait?.src ??
+        scholarFacts?.data.portrait?.src ??
+        (viaScholar ? (await getEntry('scholarFacts', viaScholar))?.data.portrait?.src : undefined);
+      const name =
+        entry.data.names[m.id] ??
+        uzEntry?.data.names[m.id] ??
+        (scholarFacts ? await titleOf('scholars', scholarFacts.id) : undefined) ??
+        (rulerFacts ? await titleOf('rulers', rulerFacts.id) : undefined) ??
+        m.id;
+      const approx = m.datesUncertain ? '≈ ' : '';
+      const dates = m.birthYear || m.deathYear ? `${approx}${m.birthYear ?? '?'} – ${m.deathYear ?? '?'}` : null;
+      const initials = name.split(/[\s'ʻ’-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+      return [m.id, { ...m, name, href, portraitSrc, dates, initials, note: entry.data.notes[m.id] ?? uzEntry?.data.notes[m.id] }] as const;
+    })
+  )
+);
+
+// Ekran o'quvchilar uchun har bir kartochka nomida otasi ham aytiladi — silsila tuzilmasi yo'qolmaydi.
+const ariaLabel = (nid: string) => {
+  const m = members.get(nid)!;
+  const parts = [m.name, m.dates, m.reign && t('dynasty.reignShort', { from: String(m.reign.from), to: String(m.reign.to) }), m.note];
+  if (m.parent) parts.push(t('dynasty.childOf', { name: members.get(m.parent)!.name }));
+  return parts.filter(Boolean).join(', ');
+};
+const markerId = `arrow-${id}`;
+---
+
+<figure class="mb-10" aria-labelledby={`dynasty-${id}-title`}>
+  <figcaption class="mb-3">
+    <h3 id={`dynasty-${id}-title`} class:list={['text-lg font-semibold text-ink', !heading && 'sr-only']}>{entry.data.title}</h3>
+    <p class="mt-1 max-w-3xl text-sm text-ink-muted">{entry.data.summary}</p>
+  </figcaption>
+
+  <div class="tb-tree -mx-4 overflow-x-auto px-4 pb-4" tabindex="0" role="group" aria-label={entry.data.title}>
+    <div class="relative" style={`width:${layout.width}px;height:${layout.height}px`}>
+      <svg aria-hidden="true" class="absolute inset-0 text-line rtl:-scale-x-100" width={layout.width} height={layout.height} viewBox={`0 0 ${layout.width} ${layout.height}`}>
+        <defs>
+          <marker id={markerId} viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="currentColor"></path>
+          </marker>
+        </defs>
+        {layout.paths.map((d) => (
+          <path d={d} fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" marker-end={`url(#${markerId})`}></path>
+        ))}
+      </svg>
+
+      {layout.order.map((nid) => {
+        const n = layout.nodes.get(nid)!;
+        const m = members.get(nid)!;
+        const Tag = m.href ? 'a' : 'div';
+        return (
+          <Tag
+            href={m.href ?? undefined}
+            class:list={[
+              'absolute flex items-center gap-2.5 rounded-xl border p-2.5 text-start transition-colors',
+              m.reign ? 'border-brand/50 bg-surface-alt' : 'border-line bg-surface',
+              m.href && 'hover:border-brand hover:shadow-md',
+            ]}
+            style={`inset-inline-start:${n.x}px;top:${n.y}px;width:${NODE_W}px;height:${NODE_H}px`}
+            aria-label={ariaLabel(nid)}
+          >
+            <span class="relative shrink-0">
+              {m.portraitSrc ? (
+                <Image src={m.portraitSrc} alt="" widths={[48, 96]} sizes="48px" class="size-12 rounded-full border border-line object-cover object-top" />
+              ) : (
+                <span class="flex size-12 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-brand-dark dark:text-brand">{m.initials}</span>
+              )}
+              {m.reign && (
+                <span class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-gold text-surface" title={t('dynasty.ruled')}>
+                  <svg viewBox="0 0 24 24" class="size-3" fill="currentColor"><path d="M3 18h18l-1.5-10-4.5 4-3-7-3 7-4.5-4z"></path></svg>
+                </span>
+              )}
+            </span>
+            <span class="min-w-0">
+              <span class="block truncate text-sm font-semibold text-ink">{m.name}</span>
+              {m.dates && <span class="block text-xs tabular-nums text-ink-muted"><bdi dir="ltr">{m.dates}</bdi></span>}
+              {m.reign && <span class="block whitespace-nowrap text-[0.7rem] tabular-nums text-brand">{t('dynasty.reignShort', { from: String(m.reign.from), to: String(m.reign.to) })}</span>}
+              {m.note && <span class="block truncate text-[0.7rem] text-ink-muted" title={m.note}>{m.note}</span>}
+            </span>
+          </Tag>
+        );
+      })}
+    </div>
+  </div>
+
+  <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs text-ink-muted">
+    <span class="inline-flex items-center gap-1.5">
+      <span class="flex size-4 items-center justify-center rounded-full bg-gold text-surface" aria-hidden="true">
+        <svg viewBox="0 0 24 24" class="size-2.5" fill="currentColor"><path d="M3 18h18l-1.5-10-4.5 4-3-7-3 7-4.5-4z"></path></svg>
+      </span>
+      {t('dynasty.ruled')}
+    </span>
+    <span class="inline-flex items-center gap-1.5"><span aria-hidden="true">↓</span>{t('dynasty.arrow')}</span>
+    <span>{t('states.symbolSource')}: {sources.map((s) => (s.data.year ? `${s.data.author} (${s.data.year})` : s.data.title)).join('; ')}</span>
+  </div>
+</figure>

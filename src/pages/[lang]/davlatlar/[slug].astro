@@ -9,6 +9,7 @@ import StateMap from '../../../components/map/StateMap.astro';
 import StateSymbols from '../../../components/symbols/StateSymbols.astro';
 import ContributionsBlock from '../../../components/heritage/ContributionsBlock.astro';
 import RulersBlock from '../../../components/rulers/RulersBlock.astro';
+import DynastyTree from '../../../components/rulers/DynastyTree.astro';
 import Carousel, { type Slide } from '../../../components/gallery/Carousel.astro';
 import galleryData from '../../../data/gallery.json';
 import { getStateGeoJSON } from '../../../data/geo';
@@ -182,6 +183,10 @@ const stateGeoJSON =
   )}
 
   <RulersBlock lang={lang!} state={slug!} />
+
+  {(await getCollection('dynastyFacts')).filter((d) => d.data.state.id === slug).map((d) => (
+    <section class="mt-8"><DynastyTree lang={lang!} id={d.id} /></section>
+  ))}
 
   <ContributionsBlock lang={lang!} state={slug} />
 

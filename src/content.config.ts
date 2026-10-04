@@ -397,6 +397,58 @@ const rulers = defineCollection({
   }),
 });
 
+// --- Sulolalar silsilasi (shajara) ---
+/** Har bir qarindoshlik bog'lanishi — fakt, shuning uchun silsila ham manbaga bog'lanadi.
+ * Ismlar tarjima faylida (`names[id]`); `ruler` / `scholar` berilsa, kartochka o'sha sahifaga
+ * olib boradi va portret o'sha yozuvdan olinadi. */
+const dynastyFacts = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/dynasties-facts' }),
+  schema: z
+    .object({
+      state: reference('stateFacts'),
+      members: z
+        .array(
+          z.object({
+            id: z.string(),
+            /** Otasi (silsiladagi `id`); ildiz uchun berilmaydi. */
+            parent: z.string().optional(),
+            birthYear: z.number().int().optional(),
+            deathYear: z.number().int().optional(),
+            datesUncertain: z.boolean().default(false),
+            /** Taxtga o'tirgan bo'lsa — hukmronlik yillari (qaysi hududda ekani matnda). */
+            reign: z.object({ from: z.number().int(), to: z.number().int() }).optional(),
+            ruler: reference('rulerFacts').optional(),
+            scholar: reference('scholarFacts').optional(),
+          })
+        )
+        .min(2),
+      sources: z.array(sourceRef).min(1, 'Kamida bitta manba shart'),
+      ...verificationFields,
+    })
+    .superRefine((d, ctx) => {
+      const ids = new Set(d.members.map((m) => m.id));
+      if (ids.size !== d.members.length) ctx.addIssue({ code: 'custom', message: "Silsilada takroriy id bor" });
+      const roots = d.members.filter((m) => !m.parent);
+      if (roots.length !== 1) ctx.addIssue({ code: 'custom', message: "Silsilada aynan bitta ildiz (parent'siz a'zo) bo'lishi kerak" });
+      for (const m of d.members)
+        if (m.parent && !ids.has(m.parent)) ctx.addIssue({ code: 'custom', message: `«${m.id}» uchun ota «${m.parent}» silsilada yo'q` });
+    }),
+});
+
+const dynasties = defineCollection({
+  loader: glob({ pattern: '*/**/*.mdx', base: './src/content/dynasties' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    factsId: reference('dynastyFacts'),
+    /** A'zolarning ismlari (har til uchun) — kaliti `members[].id`. */
+    names: z.record(z.string(), z.string()),
+    /** Kartochka ostidagi qisqa izoh (masalan, «Farg'ona hokimi»). */
+    notes: z.record(z.string(), z.string()).default({}),
+    ...translationFields,
+  }),
+});
+
 // --- Ilmiy meros: turkiy dunyo allomalari va davlatlarining ilm-fan va madaniyatga hissasi ---
 /** Hissa kim tomonidan qilingani ATAYLAB yozilmaydi — sahifada `scholars` (alloma toifasi)
  * yoki `states` (turkiy davlat homiyligi) dan avtomatik aniqlanadi. Shunda "turkiy hissa"
@@ -458,6 +510,8 @@ export const collections = {
   topics,
   rulerFacts,
   rulers,
+  dynastyFacts,
+  dynasties,
   contributionFacts,
   contributions,
 };

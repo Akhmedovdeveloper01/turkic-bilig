@@ -311,5 +311,13 @@
     },
     "stateBlockTitle": "Rulers and commanders",
     "categoryTurkiy": "Of Turkic origin"
+  },
+  "dynasty": {
+    "title": "Dynastic family trees",
+    "hint": "Open each family tree. A card leads to the person's page; scroll sideways on wide trees.",
+    "ruled": "Held the throne",
+    "reignShort": "r. {from}–{to}",
+    "arrow": "Arrow — from parent to child",
+    "childOf": "child of {name}"
   }
 }

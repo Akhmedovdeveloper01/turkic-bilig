@@ -311,5 +311,13 @@
     },
     "stateBlockTitle": "Hökümdarlary we serkerdeleri",
     "categoryTurkiy": "Türki gelip çykyşly"
+  },
+  "dynasty": {
+    "title": "Neberelerň şejeresi",
+    "hint": "Her şejeräni açyp görüň. Kartoçka şahsyň sahypasyna alyp barýar; giň şejeräni gapdala süýşüriň.",
+    "ruled": "Tagta çykan",
+    "reignShort": "hök. {from}–{to}",
+    "arrow": "Ok — atadan çaga",
+    "childOf": "{name} çagasy"
   }
 }

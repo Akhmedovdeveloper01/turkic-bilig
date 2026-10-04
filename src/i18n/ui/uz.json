@@ -311,5 +311,13 @@
     },
     "stateBlockTitle": "Hukmdor va sarkardalari",
     "categoryTurkiy": "Turkiy kelib chiqishli"
+  },
+  "dynasty": {
+    "title": "Sulolalar silsilasi",
+    "hint": "Har bir silsilani ochib ko'ring. Kartochka shaxs sahifasiga olib boradi; keng silsilani yonga suring.",
+    "ruled": "Taxtga o'tirgan",
+    "reignShort": "hukmr. {from}–{to}",
+    "arrow": "Strelka — otadan farzandga",
+    "childOf": "{name}ning farzandi"
   }
 }

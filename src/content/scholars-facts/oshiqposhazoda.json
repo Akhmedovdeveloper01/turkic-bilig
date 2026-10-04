@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1400,
+  "deathYear": 1484,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["tarix"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

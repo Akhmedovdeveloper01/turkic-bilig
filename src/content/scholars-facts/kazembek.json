@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1802,
+  "deathYear": 1870,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["sharqshunoslik", "tilshunoslik"],
+  "relatedPeoples": ["ozarbayjonlar"],
+  "relatedStates": [],
+  "sources": ["iranica", "tdv-islam"],
+  "verified": false
+}

@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1611,
+  "deathYear": 1682,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["sayohat", "geografiya", "etnografiya"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

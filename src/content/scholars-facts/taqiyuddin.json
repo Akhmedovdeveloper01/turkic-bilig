@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1526,
+  "deathYear": 1585,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["astronomiya", "matematika", "muhandislik"],
+  "relatedPeoples": [],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

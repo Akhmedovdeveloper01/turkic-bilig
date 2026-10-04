@@ -1,0 +1,19 @@
+{
+  "category": "munozarali",
+  "birthYear": 1490,
+  "deathYear": 1588,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["me'morchilik", "muhandislik"],
+  "relatedPeoples": [],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false,
+  "disputed": [
+    {
+      "topic": "Mimar Sinanning etnik kelib chiqishi — devshirma yo'li bilan olingan nasroniy oiladan; yunon, arman yoki boshqa ekani haqida turli qarashlar",
+      "sourceIds": ["ei2", "tdv-islam"]
+    }
+  ]
+}

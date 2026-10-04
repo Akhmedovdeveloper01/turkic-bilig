@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1487,
+  "deathYear": 1524,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["she'riyat", "davlat boshqaruvi"],
+  "relatedPeoples": ["ozarbayjonlar"],
+  "relatedStates": ["safaviylar"],
+  "sources": ["ei2", "iranica"],
+  "verified": false
+}

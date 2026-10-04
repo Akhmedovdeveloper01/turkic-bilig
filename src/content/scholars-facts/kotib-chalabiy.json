@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1609,
+  "deathYear": 1657,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["bibliografiya", "geografiya", "tarix"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

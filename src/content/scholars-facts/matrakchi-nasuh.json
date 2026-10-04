@@ -1,0 +1,13 @@
+{
+  "category": "mintaqaviy",
+  "birthYear": 1480,
+  "deathYear": 1564,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["tarix", "miniatyura", "matematika"],
+  "relatedPeoples": [],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

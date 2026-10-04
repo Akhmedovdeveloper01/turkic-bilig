@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1465,
+  "deathYear": 1553,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": true,
+  "field": ["kartografiya", "dengizchilik"],
+  "relatedPeoples": ["turklar"],
+  "relatedStates": ["usmonli-imperiyasi"],
+  "sources": ["ei2", "tdv-islam"],
+  "verified": false
+}

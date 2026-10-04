@@ -6,8 +6,7 @@ import DidYouKnow from '../../../components/DidYouKnow.astro';
 import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import RoleBadge from '../../../components/rulers/RoleBadge.astro';
-import DynastyTree from '../../../components/rulers/DynastyTree.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { membershipsOf } from '../../../lib/dynasties';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import { formatCentury, formatYear } from '../../../i18n/years';
@@ -20,14 +19,10 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = createTranslator(lang!);
 const items = await loadRulers(lang!);
-const dynasties = await Promise.all(
-  (await getCollection('dynastyFacts')).map(async (d) => ({
-    id: d.id,
-    // Tartib uchun: silsiladagi eng erta ma'lum sana.
-    year: Math.min(...d.data.members.flatMap((m) => [m.birthYear, m.reign?.from, m.deathYear].filter((y): y is number => y !== undefined))),
-    title: ((await getEntry('dynasties', `${lang}/${d.id}`)) ?? (await getEntry('dynasties', `uz/${d.id}`)))?.data.title ?? d.id,
-  }))
-).then((list) => list.sort((a, b) => a.year - b.year));
+// Silsilaga kiruvchi shaxslar kartochkasida "Silsila" havolasi (shaxs sahifasidagi #silsila bo'limiga).
+const inTree = new Set(
+  (await Promise.all(items.map(async (i) => ((await membershipsOf({ ruler: i.slug })).length > 0 ? i.slug : null)))).filter(Boolean)
+);
 
 const ROLES = ['asoschi', 'hukmdor', 'sarkarda'] as const;
 const CATEGORY_ACCENT = { turkiy: 'bg-cat-turkiy', mintaqaviy: 'bg-cat-sulola', munozarali: 'bg-cat-munozarali' } as const;
@@ -59,19 +54,6 @@ const filterCss = ROLES.map((r) => `.tb-filter:has(input[value='${r}']:checked) 
     note={t('rulers.didYouKnowNote')}
   />
 
-  {dynasties.length > 0 && (
-    <section class="mb-10" aria-labelledby="dynasties-title">
-      <h2 id="dynasties-title" class="mb-1 text-xl font-semibold text-ink">{t('dynasty.title')}</h2>
-      <p class="mb-4 text-sm text-ink-muted">{t('dynasty.hint')}</p>
-      {dynasties.map((d, i) => (
-        <details class="tb-dynasty mb-3 rounded-xl border border-line bg-surface-alt/50 px-4 pt-3" open>
-          <summary class="cursor-pointer pb-3 text-lg font-semibold text-ink">{d.title}</summary>
-          <DynastyTree lang={lang!} id={d.id} heading={false} />
-        </details>
-      ))}
-    </section>
-  )}
-
   <style is:inline set:html={`${filterCss} { display: none; }`}></style>
 
   <div class="tb-filter">
@@ -95,6 +77,12 @@ const filterCss = ROLES.map((r) => `.tb-filter:has(input[value='${r}']:checked) 
             {lifeSpan(i.facts) && <span class="text-xs font-medium tabular-nums text-ink-muted">{lifeSpan(i.facts)}</span>}
             {i.facts.roles.map((r) => <RoleBadge lang={lang!} role={r} />)}
             {i.facts.category !== 'turkiy' && <ScholarCategoryBadge lang={lang!} category={i.facts.category} kind="ruler" />}
+            {inTree.has(i.slug) && (
+              <a href={`${i.href}#silsila`} class="inline-flex items-center gap-1 rounded-full border border-brand/40 px-2.5 py-0.5 text-xs font-medium text-brand hover:bg-brand/10">
+                <svg viewBox="0 0 24 24" class="size-3" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3v6m0 0v6a3 3 0 0 0 3 3h6M6 9h9" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="18" cy="9" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+                {t('dynasty.cardLink')}
+              </a>
+            )}
           </div>
         </EntryCard>
       ))}

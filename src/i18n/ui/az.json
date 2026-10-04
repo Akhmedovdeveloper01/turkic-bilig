@@ -314,10 +314,13 @@
   },
   "dynasty": {
     "title": "Sülalələrin şəcərəsi",
-    "hint": "Hər şəcərəni açın. Kart şəxsin səhifəsinə aparır; geniş şəcərəni yana sürüşdürün.",
+    "hint": "Şəxs seçilib, əcdadlar xətti rənglidir. Kart şəxsin səhifəsinə aparır; böyük şəcərəni çərçivə daxilində sürüşdürün.",
     "ruled": "Taxta çıxıb",
     "reignShort": "hök. {from}–{to}",
     "arrow": "Ox — atadan övlada",
-    "childOf": "{name} övladı"
+    "childOf": "{name} övladı",
+    "lineage": "Əcdadlar xətti",
+    "sectionTitle": "Şəcərə",
+    "cardLink": "Şəcərə"
   }
 }

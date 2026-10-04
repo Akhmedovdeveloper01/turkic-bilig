@@ -314,10 +314,13 @@
   },
   "dynasty": {
     "title": "Neberelerň şejeresi",
-    "hint": "Her şejeräni açyp görüň. Kartoçka şahsyň sahypasyna alyp barýar; giň şejeräni gapdala süýşüriň.",
+    "hint": "Şahs bellenen, ata-babalar çyzygy reňkli. Kartoçka şahsyň sahypasyna alyp barýar; uly şejeräni penjiräniň içinde süýşüriň.",
     "ruled": "Tagta çykan",
     "reignShort": "hök. {from}–{to}",
     "arrow": "Ok — atadan çaga",
-    "childOf": "{name} çagasy"
+    "childOf": "{name} çagasy",
+    "lineage": "Ata-babalar çyzygy",
+    "sectionTitle": "Şejere",
+    "cardLink": "Şejere"
   }
 }

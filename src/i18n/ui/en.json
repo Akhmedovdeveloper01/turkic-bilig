@@ -314,10 +314,13 @@
   },
   "dynasty": {
     "title": "Dynastic family trees",
-    "hint": "Open each family tree. A card leads to the person's page; scroll sideways on wide trees.",
+    "hint": "The person is highlighted and the line of ancestors is coloured. A card leads to the person's page; scroll inside the frame on large trees.",
     "ruled": "Held the throne",
     "reignShort": "r. {from}–{to}",
     "arrow": "Arrow — from parent to child",
-    "childOf": "child of {name}"
+    "childOf": "child of {name}",
+    "lineage": "Line of ancestors",
+    "sectionTitle": "Family tree",
+    "cardLink": "Family tree"
   }
 }

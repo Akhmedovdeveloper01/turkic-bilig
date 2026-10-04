@@ -9,6 +9,7 @@ import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro'
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import RoleBadge from '../../../components/rulers/RoleBadge.astro';
 import ContributionsBlock from '../../../components/heritage/ContributionsBlock.astro';
+import PersonDynasties from '../../../components/rulers/PersonDynasties.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import { formatCentury, formatYear } from '../../../i18n/years';
@@ -116,6 +117,8 @@ const century = !birth && !death && f.century !== undefined ? formatCentury(t, f
     <Content />
   </article>
   <div class="clear-both"></div>
+
+  <PersonDynasties lang={lang!} ruler={slug} />
 
   <ContributionsBlock lang={lang!} ruler={slug} />
 

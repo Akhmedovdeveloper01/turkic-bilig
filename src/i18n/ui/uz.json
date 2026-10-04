@@ -314,10 +314,13 @@
   },
   "dynasty": {
     "title": "Sulolalar silsilasi",
-    "hint": "Har bir silsilani ochib ko'ring. Kartochka shaxs sahifasiga olib boradi; keng silsilani yonga suring.",
+    "hint": "Shaxs ajratib ko'rsatilgan, ota-bobolar chizig'i rangli. Kartochka shaxs sahifasiga olib boradi; katta silsilani oyna ichida suring.",
     "ruled": "Taxtga o'tirgan",
     "reignShort": "hukmr. {from}–{to}",
     "arrow": "Strelka — otadan farzandga",
-    "childOf": "{name}ning farzandi"
+    "childOf": "{name}ning farzandi",
+    "lineage": "Ota-bobolar chizig'i",
+    "sectionTitle": "Silsila",
+    "cardLink": "Silsila"
   }
 }

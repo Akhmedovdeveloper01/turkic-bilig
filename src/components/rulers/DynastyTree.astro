@@ -1,21 +1,25 @@
 ---
 /**
  * Sulola silsilasi: rasmli kartochkalar va otadan farzandga strelkalar (SVG).
- * Joylashuv build vaqtida hisoblanadi (src/lib/familyTree.ts). Ekran o'quvchilar
- * uchun har bir kartochka nomida otasi ham aytiladi.
+ * Joylashuv build vaqtida hisoblanadi (src/lib/familyTree.ts). `focus` berilsa,
+ * shu shaxs ajratiladi, uning ota-bobolari chizig'i rangli bo'ladi va chizma
+ * ochilganda unga suriladi. Ekran o'quvchilar uchun har bir kartochka nomida
+ * otasi ham aytiladi.
  */
 import { getEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import { createTranslator } from '../../i18n/ui';
-import { layoutTree, NODE_H, NODE_W } from '../../lib/familyTree';
+import { layoutTree, lineage, NODE_H, NODE_W } from '../../lib/familyTree';
 
 interface Props {
   lang: string;
   id: string;
-  /** false — sarlavha tashqarida (masalan, <details> ichidagi <summary>). */
+  /** false — sarlavha ko'rinmaydi (faqat ekran o'quvchilar uchun). */
   heading?: boolean;
+  /** Ajratib ko'rsatiladigan a'zo (`members[].id`). */
+  focus?: string;
 }
-const { lang, id, heading = true } = Astro.props;
+const { lang, id, heading = true, focus } = Astro.props;
 const t = createTranslator(lang);
 
 const facts = (await getEntry('dynastyFacts', id))!;
@@ -25,6 +29,7 @@ const uzEntry = localized ? await getEntry('dynasties', `uz/${id}`) : entry;
 const sources = (await Promise.all(facts.data.sources.map((r) => getEntry(r)))).filter((s) => s !== undefined);
 
 const layout = layoutTree(facts.data.members);
+const line = focus ? lineage(layout, focus) : new Set<string>();
 const titleOf = async (c: 'rulers' | 'scholars', slug: string) =>
   ((await getEntry(c, `${lang}/${slug}`)) ?? (await getEntry(c, `uz/${slug}`)))?.data.title;
 
@@ -55,72 +60,97 @@ const members = new Map(
       const approx = m.datesUncertain ? '≈ ' : '';
       const dates = m.birthYear || m.deathYear ? `${approx}${m.birthYear ?? '?'} – ${m.deathYear ?? '?'}` : null;
       const initials = name.split(/[\s'ʻ’-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
-      return [m.id, { ...m, name, href, portraitSrc, dates, initials, note: entry.data.notes[m.id] ?? uzEntry?.data.notes[m.id] }] as const;
+      const note = entry.data.notes[m.id] ?? uzEntry?.data.notes[m.id];
+      return [m.id, { ...m, name, href, portraitSrc, dates, initials, note }] as const;
     })
   )
 );
 
+const reignText = (r: { from: number; to: number }) => t('dynasty.reignShort', { from: String(r.from), to: String(r.to) });
 // Ekran o'quvchilar uchun har bir kartochka nomida otasi ham aytiladi — silsila tuzilmasi yo'qolmaydi.
 const ariaLabel = (nid: string) => {
   const m = members.get(nid)!;
-  const parts = [m.name, m.dates, m.reign && t('dynasty.reignShort', { from: String(m.reign.from), to: String(m.reign.to) }), m.note];
+  const parts = [m.name, m.dates, m.reign && reignText(m.reign), m.note];
   if (m.parent) parts.push(t('dynasty.childOf', { name: members.get(m.parent)!.name }));
   return parts.filter(Boolean).join(', ');
 };
 const markerId = `arrow-${id}`;
+const markerHiId = `arrow-hi-${id}`;
 ---
 
-<figure class="mb-10" aria-labelledby={`dynasty-${id}-title`}>
+<figure class="mb-8" aria-labelledby={`dynasty-${id}-title`}>
   <figcaption class="mb-3">
     <h3 id={`dynasty-${id}-title`} class:list={['text-lg font-semibold text-ink', !heading && 'sr-only']}>{entry.data.title}</h3>
-    <p class="mt-1 max-w-3xl text-sm text-ink-muted">{entry.data.summary}</p>
+    {heading && <p class="mt-1 max-w-3xl text-sm text-ink-muted">{entry.data.summary}</p>}
   </figcaption>
 
-  <div class="tb-tree -mx-4 overflow-x-auto px-4 pb-4" tabindex="0" role="group" aria-label={entry.data.title}>
+  <div class="tb-tree max-h-[75vh] overflow-auto rounded-xl border border-line bg-surface p-4" tabindex="0" role="group" aria-label={entry.data.title} data-tree-scroll>
     <div class="relative" style={`width:${layout.width}px;height:${layout.height}px`}>
-      <svg aria-hidden="true" class="absolute inset-0 text-line rtl:-scale-x-100" width={layout.width} height={layout.height} viewBox={`0 0 ${layout.width} ${layout.height}`}>
+      <svg aria-hidden="true" class="absolute inset-0 rtl:-scale-x-100" width={layout.width} height={layout.height} viewBox={`0 0 ${layout.width} ${layout.height}`}>
         <defs>
-          <marker id={markerId} viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" fill="currentColor"></path>
+          <marker id={markerId} viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" class="fill-line"></path>
+          </marker>
+          <marker id={markerHiId} viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" class="fill-brand"></path>
           </marker>
         </defs>
-        {layout.paths.map((d) => (
-          <path d={d} fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" marker-end={`url(#${markerId})`}></path>
-        ))}
+        {layout.edges.map((e) => {
+          const hi = line.has(e.from) && line.has(e.to);
+          return (
+            <path
+              d={e.d}
+              fill="none"
+              class={hi ? 'stroke-brand' : 'stroke-line'}
+              stroke-width={hi ? 2.5 : 1.5}
+              stroke-linejoin="round"
+              marker-end={`url(#${hi ? markerHiId : markerId})`}
+            ></path>
+          );
+        })}
       </svg>
 
       {layout.order.map((nid) => {
         const n = layout.nodes.get(nid)!;
         const m = members.get(nid)!;
         const Tag = m.href ? 'a' : 'div';
+        const isFocus = nid === focus;
         return (
           <Tag
             href={m.href ?? undefined}
+            title={m.note}
             class:list={[
-              'absolute flex items-center gap-2.5 rounded-xl border p-2.5 text-start transition-colors',
+              'absolute flex items-center gap-2 rounded-lg border px-2 py-1.5 text-start transition-colors',
               m.reign ? 'border-brand/50 bg-surface-alt' : 'border-line bg-surface',
+              line.has(nid) && !isFocus && 'border-brand',
+              isFocus && 'z-10 border-brand bg-brand/10 ring-2 ring-brand',
               m.href && 'hover:border-brand hover:shadow-md',
             ]}
             style={`inset-inline-start:${n.x}px;top:${n.y}px;width:${NODE_W}px;height:${NODE_H}px`}
             aria-label={ariaLabel(nid)}
+            aria-current={isFocus ? 'true' : undefined}
+            data-tree-focus={isFocus ? '' : undefined}
           >
             <span class="relative shrink-0">
               {m.portraitSrc ? (
-                <Image src={m.portraitSrc} alt="" widths={[48, 96]} sizes="48px" class="size-12 rounded-full border border-line object-cover object-top" />
+                <Image src={m.portraitSrc} alt="" widths={[40, 80]} sizes="40px" class="size-10 rounded-full border border-line object-cover object-top" />
               ) : (
-                <span class="flex size-12 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-brand-dark dark:text-brand">{m.initials}</span>
+                <span class="flex size-10 items-center justify-center rounded-full bg-brand/10 text-xs font-semibold text-brand-dark dark:text-brand">{m.initials}</span>
               )}
               {m.reign && (
-                <span class="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-gold text-surface" title={t('dynasty.ruled')}>
-                  <svg viewBox="0 0 24 24" class="size-3" fill="currentColor"><path d="M3 18h18l-1.5-10-4.5 4-3-7-3 7-4.5-4z"></path></svg>
+                <span class="absolute -end-1 -top-1 flex size-4 items-center justify-center rounded-full bg-gold text-surface">
+                  <svg viewBox="0 0 24 24" class="size-2.5" fill="currentColor" aria-hidden="true"><path d="M3 18h18l-1.5-10-4.5 4-3-7-3 7-4.5-4z"></path></svg>
                 </span>
               )}
             </span>
-            <span class="min-w-0">
-              <span class="block truncate text-sm font-semibold text-ink">{m.name}</span>
-              {m.dates && <span class="block text-xs tabular-nums text-ink-muted"><bdi dir="ltr">{m.dates}</bdi></span>}
-              {m.reign && <span class="block whitespace-nowrap text-[0.7rem] tabular-nums text-brand">{t('dynasty.reignShort', { from: String(m.reign.from), to: String(m.reign.to) })}</span>}
-              {m.note && <span class="block truncate text-[0.7rem] text-ink-muted" title={m.note}>{m.note}</span>}
+            <span class="min-w-0 leading-tight">
+              <span class="block truncate text-[0.8rem] font-semibold text-ink">{m.name}</span>
+              {m.dates && <span class="block text-[0.7rem] tabular-nums text-ink-muted"><bdi dir="ltr">{m.dates}</bdi></span>}
+              {m.reign ? (
+                <span class="block truncate text-[0.68rem] tabular-nums text-brand">{reignText(m.reign)}{m.note && ` · ${m.note}`}</span>
+              ) : (
+                m.note && <span class="block truncate text-[0.68rem] text-ink-muted">{m.note}</span>
+              )}
             </span>
           </Tag>
         );
@@ -135,7 +165,23 @@ const markerId = `arrow-${id}`;
       </span>
       {t('dynasty.ruled')}
     </span>
-    <span class="inline-flex items-center gap-1.5"><span aria-hidden="true">↓</span>{t('dynasty.arrow')}</span>
+    <span class="inline-flex items-center gap-1.5"><span aria-hidden="true" class="rtl:-scale-x-100">→</span>{t('dynasty.arrow')}</span>
+    {focus && <span class="inline-flex items-center gap-1.5"><span class="h-0.5 w-5 rounded bg-brand" aria-hidden="true"></span>{t('dynasty.lineage')}</span>}
     <span>{t('states.symbolSource')}: {sources.map((s) => (s.data.year ? `${s.data.author} (${s.data.year})` : s.data.title)).join('; ')}</span>
   </div>
 </figure>
+
+<script>
+  // Ajratilgan shaxsni silsila oynasining o'rtasiga suradi (sahifaning o'zi siljimaydi).
+  const center = () => {
+    for (const box of document.querySelectorAll<HTMLElement>('[data-tree-scroll]')) {
+      const node = box.querySelector<HTMLElement>('[data-tree-focus]');
+      if (!node) continue;
+      const b = box.getBoundingClientRect();
+      const n = node.getBoundingClientRect();
+      box.scrollBy({ left: n.left - b.left - b.width / 2 + n.width / 2, top: n.top - b.top - b.height / 2 + n.height / 2 });
+    }
+  };
+  center();
+  document.addEventListener('astro:page-load', center);
+</script>

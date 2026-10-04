@@ -11,6 +11,7 @@ import { formatCentury, formatYear } from '../../../i18n/years';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
 import ContributionsBlock from '../../../components/heritage/ContributionsBlock.astro';
+import PersonDynasties from '../../../components/rulers/PersonDynasties.astro';
 
 export async function getStaticPaths() {
   const facts = await getCollection('scholarFacts');
@@ -112,6 +113,8 @@ const century = !birth && !death && facts?.data.century !== undefined ? formatCe
       </ul>
     </section>
   )}
+
+  <PersonDynasties lang={lang!} scholar={slug} />
 
   <ContributionsBlock lang={lang!} scholar={slug} />
 

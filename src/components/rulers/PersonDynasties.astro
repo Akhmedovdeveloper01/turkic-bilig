@@ -1,0 +1,23 @@
+---
+/** Shaxs sahifasidagi "Silsila" bo'limi — shaxs kirgan har bir silsila, u ajratilgan holda. */
+import { createTranslator } from '../../i18n/ui';
+import { membershipsOf } from '../../lib/dynasties';
+import DynastyTree from './DynastyTree.astro';
+
+interface Props {
+  lang: string;
+  ruler?: string;
+  scholar?: string;
+}
+const { lang, ruler, scholar } = Astro.props;
+const t = createTranslator(lang);
+const list = await membershipsOf({ ruler, scholar });
+---
+
+{list.length > 0 && (
+  <section id="silsila" class="mt-10 scroll-mt-24" aria-labelledby="person-dynasty-title">
+    <h2 id="person-dynasty-title" class="mb-1 text-xl font-semibold text-ink">{t('dynasty.sectionTitle')}</h2>
+    <p class="mb-4 text-sm text-ink-muted">{t('dynasty.hint')}</p>
+    {list.map((m) => <DynastyTree lang={lang} id={m.dynasty} focus={m.member} />)}
+  </section>
+)}

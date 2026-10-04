@@ -314,10 +314,13 @@
   },
   "dynasty": {
     "title": "Hanedan şecereleri",
-    "hint": "Her şecereyi açın. Kart kişinin sayfasına götürür; geniş şecereyi yana kaydırın.",
+    "hint": "Kişi vurgulanmış, ata soyu çizgisi renklidir. Kart kişinin sayfasına götürür; büyük şecereyi çerçeve içinde kaydırın.",
     "ruled": "Tahta çıktı",
     "reignShort": "hük. {from}–{to}",
     "arrow": "Ok — babadan çocuğa",
-    "childOf": "{name} oğlu/kızı"
+    "childOf": "{name} oğlu/kızı",
+    "lineage": "Ata soyu çizgisi",
+    "sectionTitle": "Şecere",
+    "cardLink": "Şecere"
   }
 }

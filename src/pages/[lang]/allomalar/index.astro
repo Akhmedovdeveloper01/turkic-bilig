@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import EntryCard from '../../../components/EntryCard.astro';
+import DidYouKnow from '../../../components/DidYouKnow.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
@@ -38,6 +39,8 @@ const lifeSpan = (f: (typeof items)[number]['facts']) => {
   return `${f.datesUncertain ? '≈ ' : ''}${b} – ${d}`;
 };
 
+const CATEGORY_ACCENT = { turkiy: 'bg-cat-turkiy', mintaqaviy: 'bg-cat-sulola', munozarali: 'bg-cat-munozarali' } as const;
+
 const FILTERS = [
   { value: 'hammasi', label: t('states.filterAll'), count: items.length },
   ...(['turkiy', 'mintaqaviy', 'munozarali'] as const).map((c) => ({
@@ -51,6 +54,19 @@ const FILTERS = [
 <BaseLayout lang={lang!} title={t('nav.scholars')}>
   <PageHero lang={lang!} image="allomalar" alt={t('hero.altScholars')} title={t('nav.scholars')} lead={t('hero.scholarsLead')} fit="contain" />
   <p class="mb-5 text-sm text-ink-muted">{t('scholars.sortedNote')}</p>
+
+  <DidYouKnow
+    lang={lang!}
+    items={items
+      .filter((i) => i.entry)
+      .map((i) => ({
+        href: `/${lang}/allomalar/${i.slug}`,
+        title: i.entry!.data.title,
+        accentClass: CATEGORY_ACCENT[i.facts.category],
+        cards: i.entry!.data.didYouKnow,
+      }))}
+    note={t('scholars.didYouKnowNote')}
+  />
 
   <div class="tb-filter">
     <fieldset class="mb-6">

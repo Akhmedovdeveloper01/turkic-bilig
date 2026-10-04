@@ -10,7 +10,7 @@ import StatesStats from '../../../components/states/StatesStats.astro';
 import StatesTimeline from '../../../components/states/StatesTimeline.astro';
 import CapitalsMap from '../../../components/map/CapitalsMap.astro';
 import StatesGenealogy from '../../../components/states/StatesGenealogy.astro';
-import DidYouKnow from '../../../components/states/DidYouKnow.astro';
+import DidYouKnow from '../../../components/DidYouKnow.astro';
 import { formatPeriod, sortableYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
@@ -72,7 +72,13 @@ const chartItems = items
     lang={lang!}
     items={items
       .filter((i) => i.entry)
-      .map((i) => ({ href: `/${lang}/davlatlar/${i.slug}`, title: i.entry!.data.title, facts: i.facts, cards: i.entry!.data.didYouKnow }))}
+      .map((i) => ({
+        href: `/${lang}/davlatlar/${i.slug}`,
+        title: i.entry!.data.title,
+        accentClass: `tb-tl-${i.facts.category === 'turkiy-sulola' ? 'sulola' : i.facts.category}`,
+        cards: i.entry!.data.didYouKnow,
+      }))}
+    note={t('states.didYouKnowNote')}
   />
 
   <StatesStats lang={lang!} items={chartItems} />

@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1845,
+  "deathYear": 1904,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["she'riyat", "falsafa", "tarjima"],
+  "relatedPeoples": ["qozoqlar"],
+  "relatedStates": [],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

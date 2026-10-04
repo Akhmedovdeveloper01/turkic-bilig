@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1878,
+  "deathYear": 1934,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["ma'rifatchilik", "she'riyat", "pedagogika"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": [],
+  "sources": ["uzme"],
+  "verified": false
+}

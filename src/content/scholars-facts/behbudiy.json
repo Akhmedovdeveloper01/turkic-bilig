@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1875,
+  "deathYear": 1919,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["ma'rifatchilik", "jurnalistika", "dramaturgiya"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["buxoro-amirligi"],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

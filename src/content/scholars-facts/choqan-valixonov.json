@@ -1,0 +1,13 @@
+{
+  "category": "turkiy",
+  "birthYear": 1835,
+  "deathYear": 1865,
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "field": ["etnografiya", "tarix", "geografiya"],
+  "relatedPeoples": ["qozoqlar", "qirgizlar"],
+  "relatedStates": [],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1533,
+  "deathYear": 1598,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "shayboniylar", "from": 1583, "to": 1598 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1557, "kind": "yurish" },
+    { "id": "e2", "year": 1583, "kind": "boshqa" },
+    { "id": "e3", "year": 1588, "kind": "qurilish", "uncertain": true }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2"],
+  "verified": false
+}

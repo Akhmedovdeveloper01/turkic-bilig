@@ -1,0 +1,19 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1542,
+  "deathYear": 1605,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "boburiylar", "from": 1556, "to": 1605 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1556, "kind": "jang" },
+    { "id": "e2", "year": 1564, "kind": "qonun" },
+    { "id": "e3", "year": 1568, "kind": "yurish" },
+    { "id": "e4", "year": 1571, "kind": "qurilish" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "iranica", "bosworth-1996", "unesco-whl"],
+  "verified": false
+}

@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "birthYear": 1688,
+  "deathYear": 1747,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "afshoriylar", "from": 1736, "to": 1747 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1736, "kind": "boshqa" },
+    { "id": "e2", "year": 1739, "kind": "yurish" },
+    { "id": "e3", "year": 1747, "kind": "boshqa" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "iranica", "bosworth-1996"],
+  "verified": false
+}

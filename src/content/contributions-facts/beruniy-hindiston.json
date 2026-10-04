@@ -4,6 +4,7 @@
   "yearUncertain": false,
   "scholars": ["beruniy"],
   "states": ["gaznaviylar"],
+  "rulers": ["mahmud-gaznaviy"],
   "evidence": ["nashr", "tarjima"],
   "chain": [
     { "id": "c1", "year": 1030 },

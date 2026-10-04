@@ -4,6 +4,7 @@
   "yearUncertain": false,
   "scholars": ["mimar-sinan"],
   "states": ["usmonli-imperiyasi"],
+  "rulers": ["sulaymon-qonuniy"],
   "evidence": ["meros", "davomchi"],
   "chain": [
     { "id": "c1", "year": 1557 },

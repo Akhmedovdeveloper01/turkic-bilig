@@ -1,0 +1,17 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1412,
+  "deathYear": 1468,
+  "datesUncertain": false,
+  "reigns": [
+    { "from": 1428, "to": 1468 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1428, "kind": "boshqa" },
+    { "id": "e2", "year": 1457, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "bosworth-1996", "ei2"],
+  "verified": false
+}

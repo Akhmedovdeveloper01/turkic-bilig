@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["asoschi", "hukmdor", "sarkarda"],
+  "birthYear": 1451,
+  "deathYear": 1510,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "shayboniylar", "from": 1500, "to": 1510 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1500, "kind": "yurish" },
+    { "id": "e2", "year": 1507, "kind": "yurish" },
+    { "id": "e3", "year": 1510, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["bosworth-1996", "ei2", "iranica"],
+  "verified": false
+}

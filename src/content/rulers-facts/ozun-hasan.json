@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1423,
+  "deathYear": 1478,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "oqqoyunlular", "from": 1453, "to": 1478 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1467, "kind": "jang" },
+    { "id": "e2", "year": 1469, "kind": "jang" },
+    { "id": "e3", "year": 1473, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "iranica", "bosworth-1996"],
+  "verified": false
+}

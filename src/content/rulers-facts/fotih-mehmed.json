@@ -1,0 +1,18 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1432,
+  "deathYear": 1481,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "usmonli-imperiyasi", "from": 1451, "to": 1481 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1453, "kind": "jang" },
+    { "id": "e2", "year": 1459, "kind": "qurilish" },
+    { "id": "e3", "year": 1477, "kind": "qonun", "uncertain": true }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "tdv-islam", "findley-2005", "unesco-whl"],
+  "verified": false
+}

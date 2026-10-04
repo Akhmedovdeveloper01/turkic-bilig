@@ -1,0 +1,19 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1494,
+  "deathYear": 1566,
+  "datesUncertain": false,
+  "reigns": [
+    { "state": "usmonli-imperiyasi", "from": 1520, "to": 1566 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1526, "kind": "jang" },
+    { "id": "e2", "year": 1529, "kind": "yurish" },
+    { "id": "e3", "year": 1534, "kind": "yurish" },
+    { "id": "e4", "year": 1566, "kind": "jang" }
+  ],
+  "relatedStates": [],
+  "sources": ["ei2", "tdv-islam", "findley-2005"],
+  "verified": false
+}

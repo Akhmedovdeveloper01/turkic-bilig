@@ -4,6 +4,7 @@
   "yearUncertain": false,
   "scholars": [],
   "states": ["saljuqiylar"],
+  "rulers": ["alp-arslon", "malikshoh"],
   "evidence": ["davomchi", "meros"],
   "chain": [
     { "id": "c1", "year": 1067 },

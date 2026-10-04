@@ -1,0 +1,16 @@
+{
+  "category": "turkiy",
+  "roles": ["hukmdor", "sarkarda"],
+  "birthYear": 1711,
+  "deathYear": 1781,
+  "datesUncertain": true,
+  "reigns": [
+    { "state": "qozoq-xonligi", "from": 1771, "to": 1781 }
+  ],
+  "events": [
+    { "id": "e1", "year": 1771, "kind": "boshqa" }
+  ],
+  "relatedStates": [],
+  "sources": ["golden-1992", "uzme"],
+  "verified": false
+}

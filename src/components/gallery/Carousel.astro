@@ -12,15 +12,14 @@
  * (astro.config: image.domains); har slaydda muallif va litsenziya.
  */
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import StateSymbol from '../symbols/StateSymbol.astro';
 import { createTranslator } from '../../i18n/ui';
 
 export type Slide =
   | {
       kind: 'photo';
-      src: string;
-      width: number;
-      height: number;
+      src: ImageMetadata;
       caption: string;
       unescoYear?: number | null;
       credit: { author: string; license: string; licenseUrl: string | null; sourceUrl: string };
@@ -78,8 +77,6 @@ const total = slides.length;
             {s.kind === 'photo' && (
               <Image
                 src={s.src}
-                width={s.width}
-                height={s.height}
                 widths={[640, 1024, 1600]}
                 sizes="(min-width: 1152px) 1120px, 100vw"
                 alt={s.caption}

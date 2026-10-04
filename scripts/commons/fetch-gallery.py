@@ -1,12 +1,15 @@
 """
 Karusel rasmlari uchun Wikimedia Commons metama'lumotini oladi:
 scripts/commons/gallery-sources.json -> src/data/gallery.json
-(muallif, litsenziya, havola, 1600px eskiz URL, o'lcham). Gerb SVG'lari
-public/emblems/ ga yuklanadi (skript va tashqi havola tekshiriladi).
+(muallif, litsenziya, havola, o'lcham). Fotosuratlar src/assets/gallery/ ga
+yuklab olinadi (1400px gacha, JPEG) — build tashqi serverga bog'liq bo'lmasligi
+uchun; mavjud fayl qayta yuklanmaydi. Gerb SVG'lari public/emblems/ ga
+yuklanadi (skript va tashqi havola tekshiriladi).
 
 Ishga tushirish: python3 scripts/commons/fetch-gallery.py
 """
-import json, re, sys, urllib.parse, urllib.request, pathlib
+import io, json, re, sys, time, urllib.parse, urllib.request, pathlib
+from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 UA = 'TurkicBilig/0.1 (https://turkicbilig.uz)'
@@ -22,6 +25,7 @@ def main():
     sources = json.loads((ROOT / 'scripts/commons/gallery-sources.json').read_text())
     out = {}
     (ROOT / 'public/emblems').mkdir(exist_ok=True)
+    (ROOT / 'src/assets/gallery').mkdir(exist_ok=True)
     for entity, items in sources.items():
         if entity.startswith('_'):
             continue
@@ -55,7 +59,17 @@ def main():
                 (ROOT / 'public/emblems' / name).write_text(svg)
                 rec.update({'src': f'/emblems/{name}', 'width': ii['width'], 'height': ii['height']})
             else:
-                rec.update({'src': ii['thumburl'], 'width': ii['thumbwidth'], 'height': ii['thumbheight']})
+                name = f"{entity.replace('/', '-')}-{it['id']}.jpg"
+                out_file = ROOT / 'src/assets/gallery' / name
+                if not out_file.exists():
+                    data = urllib.request.urlopen(urllib.request.Request(ii['thumburl'], headers={'User-Agent': UA})).read()
+                    im = Image.open(io.BytesIO(data)).convert('RGB')
+                    if im.width > 1400:
+                        im = im.resize((1400, round(im.height * 1400 / im.width)), Image.LANCZOS)
+                    im.save(out_file, quality=76, optimize=True, progressive=True)
+                    time.sleep(1.5)  # Wikimedia so'rovlar chegarasiga hurmat
+                w, h = Image.open(out_file).size
+                rec.update({'src': f'gallery/{name}', 'width': w, 'height': h})
             out[entity].append(rec)
             print(f"{entity:32} {it['id']:14} {rec['license']:14} {rec['author'][:40]}")
     (ROOT / 'src/data/gallery.json').write_text(json.dumps(out, ensure_ascii=False, indent=2) + '\n')

@@ -1,0 +1,12 @@
+{
+  "category": "turkiy",
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "century": 14,
+  "field": ["adabiyot"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["oltin-orda"],
+  "sources": ["tdv-islam", "uzme"],
+  "verified": false
+}

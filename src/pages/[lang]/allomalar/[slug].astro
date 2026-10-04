@@ -7,7 +7,7 @@ import DisputedList from '../../../components/DisputedList.astro';
 import SourcesList from '../../../components/SourcesList.astro';
 import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
-import { formatYear } from '../../../i18n/years';
+import { formatCentury, formatYear } from '../../../i18n/years';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
 
@@ -49,6 +49,7 @@ const yearOrNull = (year: number | undefined, era: 'm.av' | 'milodiy') =>
   year === undefined ? null : formatYear(t, year, era);
 const birth = facts ? yearOrNull(facts.data.birthYear, facts.data.birthEra) : null;
 const death = facts ? yearOrNull(facts.data.deathYear, facts.data.deathEra) : null;
+const century = !birth && !death && facts?.data.century !== undefined ? formatCentury(t, facts.data.century) : null;
 ---
 
 <BaseLayout lang={lang!} title={entry.data.title} description={entry.data.summary}>
@@ -66,6 +67,12 @@ const death = facts ? yearOrNull(facts.data.deathYear, facts.data.deathEra) : nu
 
   {facts && (
     <section class="mb-6 flex flex-wrap gap-6 rounded-xl border border-line bg-surface-alt p-5 text-sm">
+      {century && (
+        <div>
+          <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.period')}</p>
+          <p class="text-ink">{century}</p>
+        </div>
+      )}
       {(birth || death) && (
         <div>
           <p class="font-semibold uppercase tracking-wide text-ink-muted">{t('common.period')}</p>

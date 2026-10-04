@@ -8,7 +8,7 @@ import { locales } from '../../../i18n/locales';
 import { createTranslator } from '../../../i18n/ui';
 import ScholarCategoryBadge from '../../../components/scholars/ScholarCategoryBadge.astro';
 import ScholarPortrait from '../../../components/scholars/ScholarPortrait.astro';
-import { formatYear } from '../../../i18n/years';
+import { formatCentury, formatYear } from '../../../i18n/years';
 
 export function getStaticPaths() {
   return locales.map((locale) => ({ params: { lang: locale.code } }));
@@ -29,13 +29,14 @@ const items = await Promise.all(
 );
 
 // Tug'ilgan yil bo'yicha (bo'lmasa — vafot yilidan 60 yil oldin deb taxminlanadi, faqat tartib uchun).
-const orderYear = (f: (typeof items)[number]['facts']) => f.birthYear ?? (f.deathYear !== undefined ? f.deathYear - 60 : 9999);
+const orderYear = (f: (typeof items)[number]['facts']) =>
+  f.birthYear ?? (f.deathYear !== undefined ? f.deathYear - 60 : f.century !== undefined ? (f.century - 1) * 100 + 30 : 9999);
 items.sort((a, b) => orderYear(a.facts) - orderYear(b.facts));
 
 const lifeSpan = (f: (typeof items)[number]['facts']) => {
   const b = f.birthYear !== undefined ? formatYear(t, f.birthYear, f.birthEra) : '?';
   const d = f.deathYear !== undefined ? formatYear(t, f.deathYear, f.deathEra) : '?';
-  if (b === '?' && d === '?') return null;
+  if (b === '?' && d === '?') return f.century !== undefined ? formatCentury(t, f.century) : null;
   return `${f.datesUncertain ? '≈ ' : ''}${b} – ${d}`;
 };
 

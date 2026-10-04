@@ -252,6 +252,9 @@ const scholarFacts = defineCollection({
     deathYear: z.number().int().optional(),
     deathEra: z.enum(['m.av', 'milodiy']).default('milodiy'),
     datesUncertain: z.boolean().default(false),
+    /** Tug'ilgan va vafot yillari ma'lum bo'lmasa — manbada aytilgan faoliyat asri
+     * (masalan 15 = XV asr). Yil o'ylab topilmaydi; ro'yxatda tartib uchun ham ishlatiladi. */
+    century: z.number().int().optional(),
     field: z.array(z.string()).min(1, "Faoliyat sohasi (soha) ko'rsatilishi shart"),
     relatedPeoples: z.array(reference('peopleFacts')).default([]),
     relatedStates: z.array(reference('stateFacts')).default([]),

@@ -1,0 +1,12 @@
+{
+  "category": "turkiy",
+  "birthEra": "milodiy",
+  "deathEra": "milodiy",
+  "datesUncertain": false,
+  "century": 15,
+  "field": ["she'riyat"],
+  "relatedPeoples": ["ozbeklar"],
+  "relatedStates": ["temuriylar"],
+  "sources": ["johanson-csato-2021", "uzme"],
+  "verified": false
+}

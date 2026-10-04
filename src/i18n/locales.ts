@@ -22,7 +22,7 @@ export interface Locale {
   endonym: string;
   script: Script;
   dir: Direction;
-  /** CSS font-family nomi — src/i18n/fonts.ts dagi SCRIPT_FONTS bilan mos keladi */
+  /** CSS font-family nomi — src/components/fonts/ScriptFont.astro ulagan paket bilan mos keladi */
   font: string;
   group: LocaleGroup;
   status: LocaleStatus;

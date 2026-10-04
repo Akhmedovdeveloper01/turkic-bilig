@@ -2,11 +2,11 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getLocale, defaultLocale } from '../i18n/locales';
-import { SCRIPT_FONT_IMPORTS, SCRIPT_FONT_WEIGHT_IMPORTS } from '../i18n/fonts';
 import { createTranslator } from '../i18n/ui';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Logo from '../components/Logo.astro';
 import OrnamentDivider from '../components/OrnamentDivider.astro';
+import ScriptFont from '../components/fonts/ScriptFont.astro';
 
 interface Props {
   lang: string;
@@ -17,9 +17,6 @@ interface Props {
 const { lang, title, description } = Astro.props;
 const locale = getLocale(lang) ?? getLocale(defaultLocale)!;
 
-// Faqat shu sahifaga kerakli skript uchun shrift yuklanadi.
-await SCRIPT_FONT_IMPORTS[locale.script]();
-await SCRIPT_FONT_WEIGHT_IMPORTS[locale.script]();
 
 const t = createTranslator(locale.code);
 
@@ -45,20 +42,21 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
     <title>{pageTitle}</title>
     <meta name="description" content={description ?? t('site.description')} />
     <ClientRouter />
+    <ScriptFont script={locale.script} />
   </head>
   <body class="min-h-screen bg-surface text-ink antialiased" style="font-family: var(--font-sans);">
     <header class="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <a href={`/${locale.code}/`} class="group flex items-center gap-2 text-brand" transition:name="site-logo">
           <Logo class="h-6 w-6 transition-transform duration-500 group-hover:rotate-45" />
-          <span class="text-lg font-semibold tracking-tight text-ink">{t('site.title')}</span>
+          <span class="whitespace-nowrap text-lg font-semibold tracking-tight text-ink">{t('site.title')}</span>
         </a>
-        <div class="flex items-center gap-2 lg:gap-5">
-          <nav class="hidden items-center gap-5 lg:flex" aria-label={t('nav.main')}>
+        <div class="flex items-center gap-2 xl:gap-5">
+          <nav class="hidden items-center gap-5 xl:flex" aria-label={t('nav.main')}>
             {NAV.map((n) => (
               <a
                 href={`/${locale.code}/${n.href}`}
-                class:list={['tb-nav-link text-sm font-medium transition-colors hover:text-brand', section === n.href ? 'text-brand' : 'text-ink-muted']}
+                class:list={['tb-nav-link whitespace-nowrap text-sm font-medium transition-colors hover:text-brand', section === n.href ? 'text-brand' : 'text-ink-muted']}
                 aria-current={section === n.href ? 'page' : undefined}
               >
                 {t(n.key)}
@@ -66,7 +64,7 @@ const pageTitle = title ? `${title} — ${t('site.title')}` : `${t('site.title')
             ))}
           </nav>
           <LanguageSwitcher currentLang={locale.code} />
-          <details class="tb-mobile-nav tb-popover group lg:hidden">
+          <details class="tb-mobile-nav tb-popover group xl:hidden">
             <summary
               class="flex h-10 cursor-pointer list-none items-center gap-1.5 rounded-full border border-brand/40 bg-brand/10 px-3.5 text-sm font-semibold text-brand-dark transition-colors hover:border-brand dark:text-brand [&::-webkit-details-marker]:hidden"
               aria-label={t('nav.menu')}

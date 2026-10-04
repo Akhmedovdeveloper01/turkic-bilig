@@ -1,0 +1,41 @@
+---
+/**
+ * Sahifa tilining yozuviga mos Noto Sans shriftini ulaydi — faqat kerakli paket.
+ * CSS `?url` bilan import qilinadi: Vite uni (shrift fayllari bilan) alohida fayl qilib
+ * chiqaradi, biz esa faqat shu sahifaga <link> qilamiz. Oddiy (statik) import barcha
+ * paketlarni har sahifaga bitta katta CSS'ga qo'shib yuborardi; oldingi dinamik
+ * `import()` usulida esa shrift fayllari build natijasiga umuman chiqmasdi.
+ * Paketlar to'liq (barcha subsetlar, unicode-range bilan): brauzer faqat matnda
+ * uchragan qismni yuklaydi — masalan, qozoqcha ә, қ, ң uchun cyrillic-ext.
+ */
+import type { Script } from '../../i18n/locales';
+import notoSans400 from '@fontsource/noto-sans/400.css?url';
+import notoSans700 from '@fontsource/noto-sans/700.css?url';
+import arabic400 from '@fontsource/noto-sans-arabic/400.css?url';
+import arabic700 from '@fontsource/noto-sans-arabic/700.css?url';
+import sc400 from '@fontsource/noto-sans-sc/400.css?url';
+import sc700 from '@fontsource/noto-sans-sc/700.css?url';
+import jp400 from '@fontsource/noto-sans-jp/400.css?url';
+import jp700 from '@fontsource/noto-sans-jp/700.css?url';
+import kr400 from '@fontsource/noto-sans-kr/400.css?url';
+import kr700 from '@fontsource/noto-sans-kr/700.css?url';
+import deva400 from '@fontsource/noto-sans-devanagari/400.css?url';
+import deva700 from '@fontsource/noto-sans-devanagari/700.css?url';
+
+const FONT_CSS: Record<Script, string[]> = {
+  latin: [notoSans400, notoSans700],
+  cyrillic: [notoSans400, notoSans700],
+  arabic: [arabic400, arabic700],
+  hans: [sc400, sc700],
+  jp: [jp400, jp700],
+  kr: [kr400, kr700],
+  devanagari: [deva400, deva700],
+};
+
+interface Props {
+  script: Script;
+}
+const { script } = Astro.props;
+---
+
+{FONT_CSS[script].map((href) => <link rel="stylesheet" href={href} />)}

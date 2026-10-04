@@ -183,10 +183,9 @@ src/
     glossary/       # atamalar va nomlarning har tildagi yozilishi
   i18n/
     locales.ts      # tillar konfiguratsiyasi (BCP-47, script, dir, font, group, status)
-    fonts.ts        # skriptga mos Noto Sans paketini dinamik yuklash
     ui.ts           # interfeys tarjimasi uchun fallback (til -> en -> uz) va t() funksiyasi
     ui/             # interfeys tarjimalari (uz.json, en.json, ...)
-  components/
+  components/     # fonts/ScriptFont.astro — skriptga mos Noto Sans paketini ulash
   layouts/
   pages/
 ```

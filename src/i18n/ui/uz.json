@@ -321,6 +321,13 @@
     "childOf": "{name}ning farzandi",
     "lineage": "Ota-bobolar chizig'i",
     "sectionTitle": "Silsila",
-    "cardLink": "Silsila"
+    "cardLink": "Silsila",
+    "zoomToolbar": "Silsilani kattalashtirish",
+    "zoomIn": "Kattalashtirish",
+    "zoomOut": "Kichraytirish",
+    "zoomFit": "Butun silsilani sig'dirish",
+    "zoomFitShort": "Sig'dirish",
+    "zoomReset": "Asl o'lcham (100%)",
+    "zoomHint": "Ctrl + g'ildirak yoki ikki barmoq bilan ham bo'ladi"
   }
 }

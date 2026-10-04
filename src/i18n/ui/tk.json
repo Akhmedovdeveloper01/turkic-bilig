@@ -321,6 +321,13 @@
     "childOf": "{name} çagasy",
     "lineage": "Ata-babalar çyzygy",
     "sectionTitle": "Şejere",
-    "cardLink": "Şejere"
+    "cardLink": "Şejere",
+    "zoomToolbar": "Şejeräni ulaltmak",
+    "zoomIn": "Ulalt",
+    "zoomOut": "Kiçelt",
+    "zoomFit": "Tutuş şejeräni sygdyr",
+    "zoomFitShort": "Sygdyr",
+    "zoomReset": "Hakyky ölçeg (100%)",
+    "zoomHint": "Ctrl + tigir ýa-da iki barmak bilen hem bolýar"
   }
 }

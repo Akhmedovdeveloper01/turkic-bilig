@@ -321,6 +321,13 @@
     "childOf": "{name} баласы",
     "lineage": "Ата-бабалар сызыгы",
     "sectionTitle": "Санжыра",
-    "cardLink": "Санжыра"
+    "cardLink": "Санжыра",
+    "zoomToolbar": "Санжыраны масштабдоо",
+    "zoomIn": "Чоңойтуу",
+    "zoomOut": "Кичирейтүү",
+    "zoomFit": "Бүт санжыраны батыруу",
+    "zoomFitShort": "Батыруу",
+    "zoomReset": "Чыныгы өлчөм (100%)",
+    "zoomHint": "Ctrl + дөңгөлөк же эки манжа менен да болот"
   }
 }

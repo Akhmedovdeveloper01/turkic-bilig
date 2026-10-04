@@ -321,6 +321,13 @@
     "childOf": "{name} övladı",
     "lineage": "Əcdadlar xətti",
     "sectionTitle": "Şəcərə",
-    "cardLink": "Şəcərə"
+    "cardLink": "Şəcərə",
+    "zoomToolbar": "Şəcərənin miqyası",
+    "zoomIn": "Böyüt",
+    "zoomOut": "Kiçilt",
+    "zoomFit": "Bütün şəcərəni sığdır",
+    "zoomFitShort": "Sığdır",
+    "zoomReset": "Həqiqi ölçü (100%)",
+    "zoomHint": "Ctrl + təkər və ya iki barmaqla da olar"
   }
 }

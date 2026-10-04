@@ -321,6 +321,13 @@
     "childOf": "{name} oğlu/kızı",
     "lineage": "Ata soyu çizgisi",
     "sectionTitle": "Şecere",
-    "cardLink": "Şecere"
+    "cardLink": "Şecere",
+    "zoomToolbar": "Şecere yakınlaştırma",
+    "zoomIn": "Yakınlaştır",
+    "zoomOut": "Uzaklaştır",
+    "zoomFit": "Tüm şecereyi sığdır",
+    "zoomFitShort": "Sığdır",
+    "zoomReset": "Gerçek boyut (%100)",
+    "zoomHint": "Ctrl + tekerlek veya iki parmakla da olur"
   }
 }

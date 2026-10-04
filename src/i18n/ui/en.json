@@ -321,6 +321,13 @@
     "childOf": "child of {name}",
     "lineage": "Line of ancestors",
     "sectionTitle": "Family tree",
-    "cardLink": "Family tree"
+    "cardLink": "Family tree",
+    "zoomToolbar": "Family tree zoom",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "zoomFit": "Fit the whole tree",
+    "zoomFitShort": "Fit",
+    "zoomReset": "Actual size (100%)",
+    "zoomHint": "Ctrl + wheel or pinch also works"
   }
 }

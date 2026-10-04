@@ -84,8 +84,25 @@ const markerHiId = `arrow-hi-${id}`;
     {heading && <p class="mt-1 max-w-3xl text-sm text-ink-muted">{entry.data.summary}</p>}
   </figcaption>
 
-  <div class="tb-tree max-h-[75vh] overflow-auto rounded-xl border border-line bg-surface p-4" tabindex="0" role="group" aria-label={entry.data.title} data-tree-scroll>
-    <div class="relative" style={`width:${layout.width}px;height:${layout.height}px`}>
+  <div data-tree data-w={layout.width} data-h={layout.height}>
+  <div class="mb-2 flex flex-wrap items-center gap-1.5" role="toolbar" aria-label={t('dynasty.zoomToolbar')} data-tree-toolbar hidden>
+    <button type="button" class="tb-zoom-btn" data-zoom="out" aria-label={t('dynasty.zoomOut')} title={t('dynasty.zoomOut')}>
+      <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14" stroke-linecap="round"></path></svg>
+    </button>
+    <output class="w-12 text-center text-xs font-medium tabular-nums text-ink-muted" data-zoom-value aria-live="polite">100%</output>
+    <button type="button" class="tb-zoom-btn" data-zoom="in" aria-label={t('dynasty.zoomIn')} title={t('dynasty.zoomIn')}>
+      <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"></path></svg>
+    </button>
+    <button type="button" class="tb-zoom-btn gap-1.5 px-2.5" data-zoom="fit" title={t('dynasty.zoomFit')}>
+      <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span class="text-xs font-medium">{t('dynasty.zoomFitShort')}</span>
+    </button>
+    <button type="button" class="tb-zoom-btn px-2.5 text-xs font-medium" data-zoom="reset" title={t('dynasty.zoomReset')}>100%</button>
+    <span class="ms-1 hidden text-xs text-ink-muted sm:inline">{t('dynasty.zoomHint')}</span>
+  </div>
+  <div class="tb-tree max-h-[75vh] overflow-auto rounded-xl border border-line bg-surface p-4" style="touch-action: pan-x pan-y" tabindex="0" role="group" aria-label={entry.data.title} data-tree-scroll>
+    <div class="relative" style={`width:${layout.width}px;height:${layout.height}px`} data-tree-sizer>
+    <div class="absolute start-0 top-0 origin-top-left rtl:origin-top-right" style={`width:${layout.width}px;height:${layout.height}px;transform:scale(var(--tb-zoom,1))`} data-tree-canvas>
       <svg aria-hidden="true" class="absolute inset-0 rtl:-scale-x-100" width={layout.width} height={layout.height} viewBox={`0 0 ${layout.width} ${layout.height}`}>
         <defs>
           <marker id={markerId} viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -156,6 +173,8 @@ const markerHiId = `arrow-hi-${id}`;
         );
       })}
     </div>
+    </div>
+  </div>
   </div>
 
   <div class="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-xs text-ink-muted">
@@ -172,16 +191,123 @@ const markerHiId = `arrow-hi-${id}`;
 </figure>
 
 <script>
-  // Ajratilgan shaxsni silsila oynasining o'rtasiga suradi (sahifaning o'zi siljimaydi).
-  const center = () => {
-    for (const box of document.querySelectorAll<HTMLElement>('[data-tree-scroll]')) {
-      const node = box.querySelector<HTMLElement>('[data-tree-focus]');
-      if (!node) continue;
+  // Silsilani kattalashtirish / kichraytirish. Chizma CSS scale bilan o'zgaradi, tashqi
+  // "sizer" esa aylantirish (scroll) maydonini yangi o'lchamga moslaydi. Kattalashtirishda
+  // ko'rsatkich (yoki oyna markazi) ostidagi nuqta joyida qoladi; RTL'da scrollLeft
+  // manfiy bo'lgani hisobga olinadi. JavaScript bo'lmasa chizma 100% da ishlayveradi.
+  const MIN = 0.25;
+  const MAX = 1.75;
+  const STEP = 1.2;
+
+  function init(tree: HTMLElement) {
+    if (tree.dataset.ready) return;
+    tree.dataset.ready = '1';
+    const box = tree.querySelector<HTMLElement>('[data-tree-scroll]')!;
+    const sizer = tree.querySelector<HTMLElement>('[data-tree-sizer]')!;
+    const canvas = tree.querySelector<HTMLElement>('[data-tree-canvas]')!;
+    const value = tree.querySelector<HTMLElement>('[data-zoom-value]')!;
+    const toolbar = tree.querySelector<HTMLElement>('[data-tree-toolbar]')!;
+    const W = Number(tree.dataset.w);
+    const H = Number(tree.dataset.h);
+    const rtl = getComputedStyle(box).direction === 'rtl';
+    let z = 1;
+    toolbar.hidden = false;
+
+    const pad = () => parseFloat(getComputedStyle(box).paddingLeft) * 2;
+    // Oynadagi nuqta (start chetidan) — kontent koordinatasiga va aksincha.
+    const startScroll = () => (rtl ? -box.scrollLeft : box.scrollLeft);
+    const setStartScroll = (v: number) => (box.scrollLeft = rtl ? -v : v);
+
+    function setZoom(next: number, ax?: number, ay?: number) {
+      next = Math.min(MAX, Math.max(MIN, next));
+      const ox = ax ?? box.clientWidth / 2;
+      const oy = ay ?? box.clientHeight / 2;
+      const cx = (startScroll() + ox) / z;
+      const cy = (box.scrollTop + oy) / z;
+      z = next;
+      canvas.style.setProperty('--tb-zoom', String(z));
+      sizer.style.width = `${W * z}px`;
+      sizer.style.height = `${H * z}px`;
+      setStartScroll(cx * z - ox);
+      box.scrollTop = cy * z - oy;
+      value.textContent = `${Math.round(z * 100)}%`;
+    }
+    const fit = () => setZoom(Math.min(1, (box.clientWidth - pad()) / W, (box.clientHeight - pad()) / H), 0, 0);
+    const anchor = (e: { clientX: number; clientY: number }) => {
+      const b = box.getBoundingClientRect();
+      return [rtl ? b.right - e.clientX : e.clientX - b.left, e.clientY - b.top] as const;
+    };
+
+    toolbar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-zoom]');
+      if (!btn) return;
+      const k = btn.dataset.zoom;
+      if (k === 'in') setZoom(z * STEP);
+      else if (k === 'out') setZoom(z / STEP);
+      else if (k === 'fit') fit();
+      else setZoom(1);
+    });
+    box.addEventListener('keydown', (e) => {
+      if (e.key === '+' || e.key === '=') setZoom(z * STEP);
+      else if (e.key === '-') setZoom(z / STEP);
+      else if (e.key === '0') fit();
+      else return;
+      e.preventDefault();
+    });
+    // Ctrl + g'ildirak (trekpaddagi ikki barmoqli kattalashtirish ham shu hodisa sifatida keladi).
+    box.addEventListener(
+      'wheel',
+      (e) => {
+        if (!e.ctrlKey && !e.metaKey) return;
+        e.preventDefault();
+        const [x, y] = anchor(e);
+        setZoom(z * Math.exp(-e.deltaY * 0.002), x, y);
+      },
+      { passive: false }
+    );
+    // Sensorli ekranda ikki barmoq bilan.
+    const pts = new Map<number, PointerEvent>();
+    let startDist = 0;
+    let startZ = 1;
+    const dist = () => {
+      const [a, b] = [...pts.values()];
+      return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    };
+    box.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'touch') return;
+      pts.set(e.pointerId, e);
+      if (pts.size === 2) {
+        startDist = dist();
+        startZ = z;
+      }
+    });
+    box.addEventListener('pointermove', (e) => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, e);
+      if (pts.size !== 2 || !startDist) return;
+      const [a, b] = [...pts.values()];
+      const [x, y] = anchor({ clientX: (a.clientX + b.clientX) / 2, clientY: (a.clientY + b.clientY) / 2 });
+      setZoom(startZ * (dist() / startDist), x, y);
+    });
+    const up = (e: PointerEvent) => {
+      pts.delete(e.pointerId);
+      if (pts.size < 2) startDist = 0;
+    };
+    box.addEventListener('pointerup', up);
+    box.addEventListener('pointercancel', up);
+
+    // Ajratilgan shaxs bo'lsa — 100% da unga suriladi; bo'lmasa butun silsila sig'diriladi.
+    const node = box.querySelector<HTMLElement>('[data-tree-focus]');
+    if (node) {
       const b = box.getBoundingClientRect();
       const n = node.getBoundingClientRect();
       box.scrollBy({ left: n.left - b.left - b.width / 2 + n.width / 2, top: n.top - b.top - b.height / 2 + n.height / 2 });
+    } else if (W > box.clientWidth) {
+      fit();
     }
-  };
-  center();
-  document.addEventListener('astro:page-load', center);
+  }
+
+  const run = () => document.querySelectorAll<HTMLElement>('[data-tree]').forEach(init);
+  run();
+  document.addEventListener('astro:page-load', run);
 </script>

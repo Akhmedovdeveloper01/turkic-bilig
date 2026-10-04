@@ -321,6 +321,13 @@
     "childOf": "{name} баласы",
     "lineage": "Ата-баба желісі",
     "sectionTitle": "Шежіре",
-    "cardLink": "Шежіре"
+    "cardLink": "Шежіре",
+    "zoomToolbar": "Шежірені масштабтау",
+    "zoomIn": "Үлкейту",
+    "zoomOut": "Кішірейту",
+    "zoomFit": "Бүкіл шежірені сыйғызу",
+    "zoomFitShort": "Сыйғызу",
+    "zoomReset": "Нақты өлшем (100%)",
+    "zoomHint": "Ctrl + дөңгелек немесе екі саусақпен де болады"
   }
 }

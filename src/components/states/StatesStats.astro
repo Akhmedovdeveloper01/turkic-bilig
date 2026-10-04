@@ -18,6 +18,8 @@ interface Props {
   items: Item[];
 }
 const { lang, items } = Astro.props;
+// Kolleksiya bo'sh bo'lsa (masalan, dev serverda kontent bazasi hali sinxronlanmagan) — blok chiqmaydi.
+if (items.length === 0) return null;
 const t = createTranslator(lang);
 const num = new Intl.NumberFormat(lang, { maximumFractionDigits: 0 });
 

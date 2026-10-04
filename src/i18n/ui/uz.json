@@ -215,9 +215,9 @@
   },
   "scholars": {
     "categoryTurkiy": "Turkiy alloma",
-    "categoryMintaqaviy": "Turkiy davlatlarda faoliyat yuritgan",
+    "categoryMintaqaviy": "Turkiy dunyo mintaqasidan",
     "categoryMunozarali": "Kelib chiqishi munozarali",
-    "sortedNote": "Allomalar tug'ilgan (yoki faoliyat yuritgan) davri bo'yicha tartiblangan. Toifa belgisi allomaning turkiy dunyo bilan bog'liqligini bildiradi: turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul qilingan; turkiy davlatlarda faoliyat yuritgan; kelib chiqishi ilmiy munozarali.",
+    "sortedNote": "Allomalar tug'ilgan (yoki faoliyat yuritgan) davri bo'yicha tartiblangan. Toifa belgisi allomaning turkiy dunyo bilan bog'liqligini bildiradi: turkiy tilda ijod qilgan yoki turkiy kelib chiqishi umum qabul qilingan; kelib chiqishi boshqa yoki noma'lum, lekin turkiy dunyo mintaqasining umumiy merosiga mansub; kelib chiqishi ilmiy munozarali.",
     "filterLegend": "Allomalarni toifa bo'yicha saralash",
     "lived": "Yashagan davri",
     "portraitAi": "Badiiy talqin — AI yordamida chizilgan. Allomaning haqiqiy qiyofasi ma'lum emas.",

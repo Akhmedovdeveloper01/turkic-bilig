@@ -215,9 +215,9 @@
   },
   "scholars": {
     "categoryTurkiy": "Türk alimi",
-    "categoryMintaqaviy": "Türk dövlətlərində fəaliyyət göstərib",
+    "categoryMintaqaviy": "Türk dünyası regionundan",
     "categoryMunozarali": "Mənşəyi mübahisəli",
-    "sortedNote": "Alimlər doğulduğu (və ya fəaliyyət göstərdiyi) dövrə görə sıralanıb. Nişan alimin türk dünyası ilə əlaqəsini göstərir: türk dilində yaradıb və ya türk mənşəyi ümumən qəbul olunub; türk dövlətlərində fəaliyyət göstərib; mənşəyi elmi mübahisəlidir.",
+    "sortedNote": "Alimlər doğulduğu (və ya fəaliyyət göstərdiyi) dövrə görə sıralanıb. Nişan alimin türk dünyası ilə əlaqəsini göstərir: türk dilində yaradıb və ya türk mənşəyi ümumən qəbul olunub; mənşəyi başqa və ya məlum deyil, lakin türk dünyası regionunun ortaq irsinə aiddir; mənşəyi elmi mübahisəlidir.",
     "filterLegend": "Alimləri kateqoriyaya görə süz",
     "lived": "Yaşadığı dövr",
     "portraitAi": "Bədii yozum — süni intellektlə çəkilib. Alimin həqiqi görünüşü məlum deyil.",
